@@ -1,0 +1,19 @@
+redo Train: 17 clips
+extraction finished, reducing
+[02:59:30] reduced 8 this pass, 8 total, 0 csv left, 0 errors
+reduction finished for Train
+re-verifying
+Train: 7983 clips
+  2000 / 7983
+  4000 / 7983
+  6000 / 7983
+checked 7974, missing a descriptor 9, short against source 8
+  subject_102_ax9bbn1mcc_vid_1_5.mp4             source  10000, stored    430
+  subject_102_ax9bbn1mcc_vid_1_6.mp4             source  10000, stored    437
+  subject_102_ax9bbn1mcc_vid_1_7.mp4             source  10000, stored    432
+  subject_102_ax9bbn1mcc_vid_1_8.mp4             source  10000, stored    427
+  subject_102_ax9bbn1mcc_vid_1_9.mp4             source  10000, stored    430
+  subject_104_06lc4xlb48_vid_1_17.mp4            source    297, stored    174
+  subject_104_06lc4xlb48_vid_1_2.mp4             source    300, stored    142
+  subject_104_06lc4xlb48_vid_1_21.mp4            source    297, stored    190
+wrote ~/p4/logs/redo_Train.txt

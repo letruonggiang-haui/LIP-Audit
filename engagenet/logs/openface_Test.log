@@ -1,0 +1,22 @@
+Test: 2257 clips on disk, 20 parallel
+already reduced: 0, pending: 2257
+EXTRACT_DONE Test: 0 reduced, 0 csv still to reduce, of 2257
+/dev/mapper/ubuntu--vg-ubuntu--lv  490G  433G   32G  94% /
+Test: 2257 clips on disk, 20 parallel
+already reduced: 0, pending: 2257
+EXTRACT_DONE Test: 0 reduced, 0 csv still to reduce, of 2257
+/dev/mapper/ubuntu--vg-ubuntu--lv  490G  433G   32G  94% /
+Test: 2257 clips on disk, 20 parallel
+already reduced: 0, pending: 2257
+Test: 2257 clips on disk, 20 parallel
+already reduced: 0, pending: 2188
+--- command that will run in the container ---
+#!/bin/sh
+# Runs inside the container. /data/logs/pending_Test.txt.docker and Test are filled in by the host.
+xargs -P 20 -I{} sh -c \
+  '/home/openface-build/build/bin/FeatureExtraction -f "$1" -aus -pose -gaze \
+     -out_dir /data/openface/Test > /dev/null 2>&1 || true' _ {} \
+  < /data/logs/pending_Test.txt.docker
+---------------------------------------------
+EXTRACT_DONE Test: 2207 reduced, 50 csv still to reduce, of 2257
+/dev/mapper/ubuntu--vg-ubuntu--lv  490G  433G   32G  94% /

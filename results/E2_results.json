@@ -1,0 +1,641 @@
+{
+  "settings": {
+    "n_boot": 2000,
+    "seed": 20260904,
+    "generated": "2026-09-04 11:56:21",
+    "engagenet_test_included": true
+  },
+  "DAiSEE": {
+    "Train": {
+      "n_clips_labelled": 5358,
+      "n_recordings": 121,
+      "n_subjects": 69,
+      "four_class": {
+        "point": {
+          "pairs": 3511,
+          "n_clips": 5358,
+          "a": 0.5297636001139276,
+          "a_iid": 0.4568473971376227,
+          "kappa": 0.13424625527345635,
+          "floor": 0.4884285181037701
+        },
+        "ci_recording_clustered": {
+          "n_boot": 2000,
+          "n_clusters": 121,
+          "a_lo": 0.5101101927755163,
+          "a_hi": 0.5493019030247079,
+          "kappa_lo": 0.09994235828664995,
+          "kappa_hi": 0.16746442916248935
+        },
+        "ci_subject_clustered": {
+          "n_boot": 2000,
+          "n_clusters": 69,
+          "a_lo": 0.5075622941866391,
+          "a_hi": 0.5550101929260701,
+          "kappa_lo": 0.09547148969489036,
+          "kappa_hi": 0.17544128388002622
+        },
+        "eta2_between_subject": 0.13112269545249966,
+        "eta2_between_subject_ci": {
+          "lo": 0.0932617210350168,
+          "hi": 0.16948322663688345,
+          "n_boot": 2000
+        },
+        "eta2_between_recording": 0.15798775817005486,
+        "eta2_between_recording_ci": {
+          "lo": 0.12425574349368726,
+          "hi": 0.19150962578701053,
+          "n_boot": 2000
+        },
+        "oracle_subject_majority": 0.6198208286674132,
+        "oracle_recording_majority": 0.6284061216871967,
+        "purity_subject": {
+          "n_subjects": 69,
+          "n_at_or_above": 4,
+          "thresh": 0.8,
+          "majority_counts": {
+            "2.0": 43,
+            "3.0": 26
+          }
+        }
+      },
+      "decisive": {
+        "point": {
+          "pairs": 3225,
+          "n_clips": 5111,
+          "a": 0.5720930232558139,
+          "a_iid": 0.5002895799343405,
+          "kappa": 0.1436901061859762,
+          "floor": 0.5120328702797887
+        },
+        "ci_recording_clustered": {
+          "n_boot": 2000,
+          "n_clusters": 121,
+          "a_lo": 0.5525461111253323,
+          "a_hi": 0.591794398610508,
+          "kappa_lo": 0.10393514848307708,
+          "kappa_hi": 0.18194089635824434
+        },
+        "ci_subject_clustered": {
+          "n_boot": 2000,
+          "n_clusters": 69,
+          "a_lo": 0.5503620668017976,
+          "a_hi": 0.596544366785808,
+          "kappa_lo": 0.09829835440593328,
+          "kappa_hi": 0.1910770008145129
+        },
+        "eta2_between_subject": 0.12124100686583923,
+        "eta2_between_subject_ci": {
+          "lo": 0.08616710522087072,
+          "hi": 0.15674011604654867,
+          "n_boot": 2000
+        },
+        "eta2_between_recording": 0.13911493018286403,
+        "eta2_between_recording_ci": {
+          "lo": 0.10918461898587783,
+          "hi": 0.1680967401256128,
+          "n_boot": 2000
+        },
+        "oracle_subject_majority": 0.6497749951085893,
+        "oracle_recording_majority": 0.658579534337703,
+        "purity_subject": {
+          "n_subjects": 69,
+          "n_at_or_above": 6,
+          "thresh": 0.8,
+          "majority_counts": {
+            "2.0": 43,
+            "3.0": 26
+          }
+        }
+      },
+      "seconds": 2.1
+    },
+    "Validation": {
+      "n_clips_labelled": 1429,
+      "n_recordings": 33,
+      "n_subjects": 19,
+      "four_class": {
+        "point": {
+          "pairs": 949,
+          "n_clips": 1429,
+          "a": 0.4773445732349842,
+          "a_iid": 0.4331191195475507,
+          "kappa": 0.07801542654276053,
+          "floor": 0.5689293212036389
+        },
+        "ci_recording_clustered": {
+          "n_boot": 2000,
+          "n_clusters": 33,
+          "a_lo": 0.4439635736991224,
+          "a_hi": 0.5158372474465072,
+          "kappa_lo": 0.026075728208831746,
+          "kappa_hi": 0.12460575425583949
+        },
+        "ci_subject_clustered": {
+          "n_boot": 2000,
+          "n_clusters": 19,
+          "a_lo": 0.44932002977553825,
+          "a_hi": 0.5049444849182518,
+          "kappa_lo": 0.04022835099366242,
+          "kappa_hi": 0.11159574822892246
+        },
+        "eta2_between_subject": 0.09846409187730906,
+        "eta2_between_subject_ci": {
+          "lo": 0.05456813988198733,
+          "hi": 0.14467698996965084,
+          "n_boot": 2000
+        },
+        "eta2_between_recording": 0.1284046281114017,
+        "eta2_between_recording_ci": {
+          "lo": 0.07938250614982303,
+          "hi": 0.1735611004029914,
+          "n_boot": 2000
+        },
+        "oracle_subject_majority": 0.5997200839748076,
+        "oracle_recording_majority": 0.6011196641007698,
+        "purity_subject": {
+          "n_subjects": 19,
+          "n_at_or_above": 0,
+          "thresh": 0.8,
+          "majority_counts": {
+            "2.0": 15,
+            "3.0": 4
+          }
+        }
+      },
+      "decisive": {
+        "point": {
+          "pairs": 748,
+          "n_clips": 1263,
+          "a": 0.5802139037433155,
+          "a_iid": 0.5413025202972225,
+          "kappa": 0.08483016621610054,
+          "floor": 0.6437054631828979
+        },
+        "ci_recording_clustered": {
+          "n_boot": 2000,
+          "n_clusters": 33,
+          "a_lo": 0.5384615384615384,
+          "a_hi": 0.6302122009075908,
+          "kappa_lo": 0.004754172124451666,
+          "kappa_hi": 0.1606201903742556
+        },
+        "ci_subject_clustered": {
+          "n_boot": 2000,
+          "n_clusters": 19,
+          "a_lo": 0.5448711512717537,
+          "a_hi": 0.6164388338014176,
+          "kappa_lo": 0.02172723730661793,
+          "kappa_hi": 0.14585165674373715
+        },
+        "eta2_between_subject": 0.09105170612114549,
+        "eta2_between_subject_ci": {
+          "lo": 0.04551067111419815,
+          "hi": 0.12944792254764645,
+          "n_boot": 2000
+        },
+        "eta2_between_recording": 0.11135372822692245,
+        "eta2_between_recording_ci": {
+          "lo": 0.06387385350534187,
+          "hi": 0.1543676517664917,
+          "n_boot": 2000
+        },
+        "oracle_subject_majority": 0.6785431512272367,
+        "oracle_recording_majority": 0.6801266825019794,
+        "purity_subject": {
+          "n_subjects": 19,
+          "n_at_or_above": 3,
+          "thresh": 0.8,
+          "majority_counts": {
+            "2.0": 15,
+            "3.0": 4
+          }
+        }
+      },
+      "seconds": 0.8
+    },
+    "Test": {
+      "n_clips_labelled": 1784,
+      "n_recordings": 43,
+      "n_subjects": 21,
+      "four_class": {
+        "point": {
+          "pairs": 1135,
+          "n_clips": 1784,
+          "a": 0.49427312775330395,
+          "a_iid": 0.45483772044481086,
+          "kappa": 0.07233700640599966,
+          "floor": 0.4943946188340807
+        },
+        "ci_recording_clustered": {
+          "n_boot": 2000,
+          "n_clusters": 43,
+          "a_lo": 0.4646937620287558,
+          "a_hi": 0.5260058680115687,
+          "kappa_lo": 0.008014944774581053,
+          "kappa_hi": 0.1267510568318763
+        },
+        "ci_subject_clustered": {
+          "n_boot": 2000,
+          "n_clusters": 21,
+          "a_lo": 0.462491293243557,
+          "a_hi": 0.523774880577729,
+          "kappa_lo": -0.0003400220288771665,
+          "kappa_hi": 0.12795904724191356
+        },
+        "eta2_between_subject": 0.09875099858210472,
+        "eta2_between_subject_ci": {
+          "lo": 0.05626171721767822,
+          "hi": 0.13476889154176575,
+          "n_boot": 2000
+        },
+        "eta2_between_recording": 0.12331553213064954,
+        "eta2_between_recording_ci": {
+          "lo": 0.08356982718738445,
+          "hi": 0.15555030901522554,
+          "n_boot": 2000
+        },
+        "oracle_subject_majority": 0.6053811659192825,
+        "oracle_recording_majority": 0.6143497757847534,
+        "purity_subject": {
+          "n_subjects": 21,
+          "n_at_or_above": 0,
+          "thresh": 0.8,
+          "majority_counts": {
+            "2.0": 11,
+            "3.0": 10
+          }
+        }
+      },
+      "decisive": {
+        "point": {
+          "pairs": 1045,
+          "n_clips": 1696,
+          "a": 0.5272727272727272,
+          "a_iid": 0.5008037780348877,
+          "kappa": 0.0530231361400194,
+          "floor": 0.5200471698113207
+        },
+        "ci_recording_clustered": {
+          "n_boot": 2000,
+          "n_clusters": 43,
+          "a_lo": 0.49379919862953453,
+          "a_hi": 0.5605421309260383,
+          "kappa_lo": -0.019864682148969658,
+          "kappa_hi": 0.11768781634477346
+        },
+        "ci_subject_clustered": {
+          "n_boot": 2000,
+          "n_clusters": 21,
+          "a_lo": 0.49004385384363264,
+          "a_hi": 0.5626781541334407,
+          "kappa_lo": -0.02752597882800353,
+          "kappa_hi": 0.12192510502493159
+        },
+        "eta2_between_subject": 0.09324726786918498,
+        "eta2_between_subject_ci": {
+          "lo": 0.05166274126063457,
+          "hi": 0.1293167855737037,
+          "n_boot": 2000
+        },
+        "eta2_between_recording": 0.10674620797461153,
+        "eta2_between_recording_ci": {
+          "lo": 0.07609451240231556,
+          "hi": 0.13438697041262185,
+          "n_boot": 2000
+        },
+        "oracle_subject_majority": 0.6367924528301887,
+        "oracle_recording_majority": 0.6462264150943396,
+        "purity_subject": {
+          "n_subjects": 21,
+          "n_at_or_above": 1,
+          "thresh": 0.8,
+          "majority_counts": {
+            "2.0": 11,
+            "3.0": 10
+          }
+        }
+      },
+      "seconds": 1.3
+    }
+  },
+  "EngageNet": {
+    "train": {
+      "n_clips_labelled": 7879,
+      "n_recordings": 247,
+      "n_subjects": 91,
+      "four_class": {
+        "point": {
+          "pairs": 7632,
+          "n_clips": 7879,
+          "a": 0.6834381551362684,
+          "a_iid": 0.32054028051290623,
+          "kappa": 0.5340977017700242,
+          "floor": 0.47467952785886536
+        },
+        "ci_recording_clustered": {
+          "n_boot": 2000,
+          "n_clusters": 247,
+          "a_lo": 0.6595998442665698,
+          "a_hi": 0.7068579584695428,
+          "kappa_lo": 0.4955733691632133,
+          "kappa_hi": 0.5666625834308385
+        },
+        "ci_subject_clustered": {
+          "n_boot": 2000,
+          "n_clusters": 91,
+          "a_lo": 0.6488959028571243,
+          "a_hi": 0.7155794097545594,
+          "kappa_lo": 0.4811046105490539,
+          "kappa_hi": 0.5800905214856351
+        },
+        "eta2_between_subject": 0.5104618792193962,
+        "eta2_between_subject_ci": {
+          "lo": 0.4079098099101789,
+          "hi": 0.5975192726211365,
+          "n_boot": 2000
+        },
+        "eta2_between_recording": 0.6033761598872931,
+        "eta2_between_recording_ci": {
+          "lo": 0.5502560342616891,
+          "hi": 0.6483305259456619,
+          "n_boot": 2000
+        },
+        "oracle_subject_majority": 0.6392943266912045,
+        "oracle_recording_majority": 0.6873968777763676,
+        "purity_subject": {
+          "n_subjects": 91,
+          "n_at_or_above": 32,
+          "thresh": 0.8,
+          "majority_counts": {
+            "0.0": 20,
+            "1.0": 8,
+            "2.0": 16,
+            "3.0": 47
+          }
+        }
+      },
+      "decisive": {
+        "point": {
+          "pairs": 4669,
+          "n_clips": 5398,
+          "a": 0.7706146926536732,
+          "a_iid": 0.574381630510717,
+          "kappa": 0.4610540244736719,
+          "floor": 0.6928492034086698
+        },
+        "ci_recording_clustered": {
+          "n_boot": 2000,
+          "n_clusters": 238,
+          "a_lo": 0.7487396765822159,
+          "a_hi": 0.7923209695781916,
+          "kappa_lo": 0.4153773308214166,
+          "kappa_hi": 0.5053544411721007
+        },
+        "ci_subject_clustered": {
+          "n_boot": 2000,
+          "n_clusters": 85,
+          "a_lo": 0.7385860197893394,
+          "a_hi": 0.8016470964771443,
+          "kappa_lo": 0.39227399862442264,
+          "kappa_hi": 0.5215968164658807
+        },
+        "eta2_between_subject": 0.2571001476905832,
+        "eta2_between_subject_ci": {
+          "lo": 0.19095307907826578,
+          "hi": 0.32268138471752006,
+          "n_boot": 2000
+        },
+        "eta2_between_recording": 0.3251295870830252,
+        "eta2_between_recording_ci": {
+          "lo": 0.2803515096112163,
+          "hi": 0.3693573046419821,
+          "n_boot": 2000
+        },
+        "oracle_subject_majority": 0.7675064838829196,
+        "oracle_recording_majority": 0.7938125231567247,
+        "purity_subject": {
+          "n_subjects": 85,
+          "n_at_or_above": 39,
+          "thresh": 0.8,
+          "majority_counts": {
+            "2.0": 30,
+            "3.0": 55
+          }
+        }
+      },
+      "seconds": 5.4
+    },
+    "validation": {
+      "n_clips_labelled": 1071,
+      "n_recordings": 33,
+      "n_subjects": 11,
+      "four_class": {
+        "point": {
+          "pairs": 1038,
+          "n_clips": 1071,
+          "a": 0.651252408477842,
+          "a_iid": 0.3706258102369488,
+          "kappa": 0.44588196148708364,
+          "floor": 0.5312791783380019
+        },
+        "ci_recording_clustered": {
+          "n_boot": 2000,
+          "n_clusters": 33,
+          "a_lo": 0.5984445728968304,
+          "a_hi": 0.7044700667878859,
+          "kappa_lo": 0.3337240042523274,
+          "kappa_hi": 0.5357735346336546
+        },
+        "ci_subject_clustered": {
+          "n_boot": 2000,
+          "n_clusters": 11,
+          "a_lo": 0.5814258562874384,
+          "a_hi": 0.7204326628235006,
+          "kappa_lo": 0.28212126337412885,
+          "kappa_hi": 0.5793134877401771
+        },
+        "eta2_between_subject": 0.46275852046310745,
+        "eta2_between_subject_ci": {
+          "lo": 0.06163992792908879,
+          "hi": 0.6726289846079584,
+          "n_boot": 2000
+        },
+        "eta2_between_recording": 0.5600380679266102,
+        "eta2_between_recording_ci": {
+          "lo": 0.3480046051903481,
+          "hi": 0.6849811752214872,
+          "n_boot": 2000
+        },
+        "oracle_subject_majority": 0.611577964519141,
+        "oracle_recording_majority": 0.6433239962651728,
+        "purity_subject": {
+          "n_subjects": 11,
+          "n_at_or_above": 2,
+          "thresh": 0.8,
+          "majority_counts": {
+            "0.0": 1,
+            "1.0": 1,
+            "3.0": 9
+          }
+        }
+      },
+      "decisive": {
+        "point": {
+          "pairs": 760,
+          "n_clips": 842,
+          "a": 0.7039473684210527,
+          "a_iid": 0.5617915719274886,
+          "kappa": 0.32440224191681033,
+          "floor": 0.6757719714964371
+        },
+        "ci_recording_clustered": {
+          "n_boot": 2000,
+          "n_clusters": 33,
+          "a_lo": 0.6507108490315263,
+          "a_hi": 0.755674993951667,
+          "kappa_lo": 0.22465047934297003,
+          "kappa_hi": 0.41264778552124304
+        },
+        "ci_subject_clustered": {
+          "n_boot": 2000,
+          "n_clusters": 11,
+          "a_lo": 0.6381836384439359,
+          "a_hi": 0.762666363373488,
+          "kappa_lo": 0.22618499224782723,
+          "kappa_hi": 0.4205366334483906
+        },
+        "eta2_between_subject": 0.08811277389914242,
+        "eta2_between_subject_ci": {
+          "lo": 0.036279660703296426,
+          "hi": 0.13556192573344242,
+          "n_boot": 2000
+        },
+        "eta2_between_recording": 0.17547051827349708,
+        "eta2_between_recording_ci": {
+          "lo": 0.11383180632629963,
+          "hi": 0.24137236012544083,
+          "n_boot": 2000
+        },
+        "oracle_subject_majority": 0.6876484560570071,
+        "oracle_recording_majority": 0.7161520190023754,
+        "purity_subject": {
+          "n_subjects": 11,
+          "n_at_or_above": 3,
+          "thresh": 0.8,
+          "majority_counts": {
+            "2.0": 2,
+            "3.0": 9
+          }
+        }
+      },
+      "seconds": 1.1
+    },
+    "test": {
+      "n_clips_labelled": 2256,
+      "n_recordings": 75,
+      "n_subjects": 26,
+      "four_class": {
+        "point": {
+          "pairs": 2181,
+          "n_clips": 2256,
+          "a": 0.6923429619440623,
+          "a_iid": 0.3400864047331623,
+          "kappa": 0.5337919384256119,
+          "floor": 0.5026595744680851
+        },
+        "ci_recording_clustered": {
+          "n_boot": 2000,
+          "n_clusters": 75,
+          "a_lo": 0.6434740349084047,
+          "a_hi": 0.7436668308527916,
+          "kappa_lo": 0.47417516789610115,
+          "kappa_hi": 0.592078707087276
+        },
+        "ci_subject_clustered": {
+          "n_boot": 2000,
+          "n_clusters": 26,
+          "a_lo": 0.6087932965064198,
+          "a_hi": 0.7695960286371292,
+          "kappa_lo": 0.4369525000510636,
+          "kappa_hi": 0.6165116231909684
+        },
+        "eta2_between_subject": 0.5317094803731337,
+        "eta2_between_subject_ci": {
+          "lo": 0.3698835785164497,
+          "hi": 0.6484081583131346,
+          "n_boot": 2000
+        },
+        "eta2_between_recording": 0.5985584042760937,
+        "eta2_between_recording_ci": {
+          "lo": 0.5039541151136324,
+          "hi": 0.6747954508087791,
+          "n_boot": 2000
+        },
+        "oracle_subject_majority": 0.6582446808510638,
+        "oracle_recording_majority": 0.6945921985815603,
+        "purity_subject": {
+          "n_subjects": 26,
+          "n_at_or_above": 9,
+          "thresh": 0.8,
+          "majority_counts": {
+            "0.0": 6,
+            "1.0": 2,
+            "2.0": 2,
+            "3.0": 16
+          }
+        }
+      },
+      "decisive": {
+        "point": {
+          "pairs": 1317,
+          "n_clips": 1553,
+          "a": 0.8283978739559605,
+          "a_iid": 0.6059837242501376,
+          "kappa": 0.564479599941756,
+          "floor": 0.7301996136509981
+        },
+        "ci_recording_clustered": {
+          "n_boot": 2000,
+          "n_clusters": 72,
+          "a_lo": 0.7856965242102962,
+          "a_hi": 0.8672188333968738,
+          "kappa_lo": 0.4805567658858468,
+          "kappa_hi": 0.6427106762800454
+        },
+        "ci_subject_clustered": {
+          "n_boot": 2000,
+          "n_clusters": 26,
+          "a_lo": 0.756627101494396,
+          "a_hi": 0.8847228379240408,
+          "kappa_lo": 0.45329507329838314,
+          "kappa_hi": 0.6562272399640374
+        },
+        "eta2_between_subject": 0.32297378856364983,
+        "eta2_between_subject_ci": {
+          "lo": 0.20151889636939332,
+          "hi": 0.44912821141389986,
+          "n_boot": 2000
+        },
+        "eta2_between_recording": 0.39375782738752413,
+        "eta2_between_recording_ci": {
+          "lo": 0.30429323618018383,
+          "hi": 0.48396369663041644,
+          "n_boot": 2000
+        },
+        "oracle_subject_majority": 0.789439793947199,
+        "oracle_recording_majority": 0.8216355441081777,
+        "purity_subject": {
+          "n_subjects": 26,
+          "n_at_or_above": 10,
+          "thresh": 0.8,
+          "majority_counts": {
+            "2.0": 8,
+            "3.0": 18
+          }
+        }
+      },
+      "seconds": 1.7
+    }
+  }
+}

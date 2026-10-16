@@ -1,0 +1,39 @@
+{
+ "kappa": {
+  "Train": 0.1437,
+  "Validation": 0.0848,
+  "Test": 0.053
+ },
+ "n_boot": 2000,
+ "seed": 20260928,
+ "pairwise": {
+  "Train-Validation": {
+   "point": 0.0589,
+   "ci": [
+    -0.0288,
+    0.1484
+   ],
+   "p_two_sided": 0.185
+  },
+  "Train-Test": {
+   "point": 0.0907,
+   "ci": [
+    0.0143,
+    0.1715
+   ],
+   "p_two_sided": 0.025
+  },
+  "Validation-Test": {
+   "point": 0.0318,
+   "ci": [
+    -0.0821,
+    0.1401
+   ],
+   "p_two_sided": 0.539
+  }
+ },
+ "heterogeneity": {
+  "observed_range": 0.0907,
+  "null_range_p": 0.139
+ }
+}

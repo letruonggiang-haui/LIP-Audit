@@ -1,0 +1,4 @@
+Train: 5358/5358 ok, thieu 0
+Validation: 1429/1429 ok, thieu 0
+Test: 1784/1784 ok, thieu 0
+csv: 6787 train(+val), 1784 test

@@ -1,0 +1,381 @@
+{
+  "n_clips": 7879,
+  "n_participants": 91,
+  "n_participants_multi_recording": 78,
+  "A4a_acquisition_only_probe": {
+    "features": [
+      "frames_ok",
+      "frames_total",
+      "frames_total-frames_ok",
+      "log1p(frames_total)"
+    ],
+    "random_all91": {
+      "split": "random",
+      "n_classes": 91,
+      "chance": 0.01098901098901099,
+      "acc": 0.0757,
+      "M": 6.89,
+      "n_probe_train": 5911,
+      "n_probe_test": 1968
+    },
+    "recording_78": {
+      "split": "recording",
+      "n_classes": 78,
+      "chance": 0.01282051282051282,
+      "acc": 0.0559,
+      "M": 4.36,
+      "n_probe_train": 5187,
+      "n_probe_test": 2612
+    }
+  },
+  "A4b_capture_groups": {
+    "modal_fps": 30.0,
+    "participants_at_modal_fps": 59,
+    "of_which_multi_recording": 57,
+    "fps_histogram": {
+      "30.0": 59,
+      "29.5": 1,
+      "15.0": 5,
+      "1000.0": 7,
+      "7.2": 1,
+      "14.8": 2,
+      "7.5": 2,
+      "16.7": 1,
+      "28.5": 1,
+      "15.1": 1,
+      "10.0": 1,
+      "15.9": 1,
+      "29.9": 1,
+      "14.2": 1,
+      "984.4": 1,
+      "30.1": 1,
+      "0.1": 1,
+      "7.7": 1,
+      "20.0": 1,
+      "25.0": 1,
+      "250.0": 1
+    }
+  },
+  "representations": [
+    {
+      "representation": "raw_openface98",
+      "dim": 98,
+      "random_78": {
+        "split": "random",
+        "n_classes": 78,
+        "chance": 0.01282051282051282,
+        "acc": 0.9154,
+        "M": 71.4,
+        "n_probe_train": 5849,
+        "n_probe_test": 1950
+      },
+      "recording_78": {
+        "split": "recording",
+        "n_classes": 78,
+        "chance": 0.01282051282051282,
+        "acc": 0.7795,
+        "M": 60.8,
+        "n_probe_train": 5187,
+        "n_probe_test": 2612
+      },
+      "random_all91": {
+        "split": "random",
+        "n_classes": 91,
+        "chance": 0.01098901098901099,
+        "acc": 0.9126,
+        "M": 83.05,
+        "n_probe_train": 5911,
+        "n_probe_test": 1968
+      },
+      "recording_fps_matched": {
+        "split": "recording",
+        "n_classes": 57,
+        "chance": 0.017543859649122806,
+        "acc": 0.8217,
+        "M": 46.84,
+        "n_probe_train": 3829,
+        "n_probe_test": 1890
+      }
+    },
+    {
+      "representation": "raw_openface98_seq",
+      "dim": 882,
+      "random_78": {
+        "split": "random",
+        "n_classes": 78,
+        "chance": 0.01282051282051282,
+        "acc": 0.8933,
+        "M": 69.68,
+        "n_probe_train": 5849,
+        "n_probe_test": 1950
+      },
+      "recording_78": {
+        "split": "recording",
+        "n_classes": 78,
+        "chance": 0.01282051282051282,
+        "acc": 0.7718,
+        "M": 60.2,
+        "n_probe_train": 5187,
+        "n_probe_test": 2612
+      },
+      "random_all91": {
+        "split": "random",
+        "n_classes": 91,
+        "chance": 0.01098901098901099,
+        "acc": 0.8923,
+        "M": 81.2,
+        "n_probe_train": 5911,
+        "n_probe_test": 1968
+      },
+      "recording_fps_matched": {
+        "split": "recording",
+        "n_classes": 57,
+        "chance": 0.017543859649122806,
+        "acc": 0.836,
+        "M": 47.65,
+        "n_probe_train": 3829,
+        "n_probe_test": 1890
+      }
+    },
+    {
+      "representation": "raw_marlin",
+      "dim": 9216,
+      "random_78": {
+        "split": "random",
+        "n_classes": 78,
+        "chance": 0.01282051282051282,
+        "acc": 0.9974,
+        "M": 77.8,
+        "n_probe_train": 5849,
+        "n_probe_test": 1950
+      },
+      "recording_78": {
+        "split": "recording",
+        "n_classes": 78,
+        "chance": 0.01282051282051282,
+        "acc": 0.9793,
+        "M": 76.39,
+        "n_probe_train": 5187,
+        "n_probe_test": 2612
+      },
+      "random_all91": {
+        "split": "random",
+        "n_classes": 91,
+        "chance": 0.01098901098901099,
+        "acc": 0.997,
+        "M": 90.72,
+        "n_probe_train": 5911,
+        "n_probe_test": 1968
+      },
+      "recording_fps_matched": {
+        "split": "recording",
+        "n_classes": 57,
+        "chance": 0.017543859649122806,
+        "acc": 0.9905,
+        "M": 56.46,
+        "n_probe_train": 3829,
+        "n_probe_test": 1890
+      }
+    },
+    {
+      "representation": "model_of_cnnlstm_s0",
+      "dim": 128,
+      "random_78": {
+        "split": "random",
+        "n_classes": 78,
+        "chance": 0.01282051282051282,
+        "acc": 0.6,
+        "M": 46.8,
+        "n_probe_train": 5849,
+        "n_probe_test": 1950
+      },
+      "recording_78": {
+        "split": "recording",
+        "n_classes": 78,
+        "chance": 0.01282051282051282,
+        "acc": 0.49,
+        "M": 38.22,
+        "n_probe_train": 5187,
+        "n_probe_test": 2612
+      },
+      "random_all91": {
+        "split": "random",
+        "n_classes": 91,
+        "chance": 0.01098901098901099,
+        "acc": 0.6062,
+        "M": 55.16,
+        "n_probe_train": 5911,
+        "n_probe_test": 1968
+      },
+      "recording_fps_matched": {
+        "split": "recording",
+        "n_classes": 57,
+        "chance": 0.017543859649122806,
+        "acc": 0.5534,
+        "M": 31.55,
+        "n_probe_train": 3829,
+        "n_probe_test": 1890
+      }
+    },
+    {
+      "representation": "model_of_lstm_s0",
+      "dim": 128,
+      "random_78": {
+        "split": "random",
+        "n_classes": 78,
+        "chance": 0.01282051282051282,
+        "acc": 0.6364,
+        "M": 49.64,
+        "n_probe_train": 5849,
+        "n_probe_test": 1950
+      },
+      "recording_78": {
+        "split": "recording",
+        "n_classes": 78,
+        "chance": 0.01282051282051282,
+        "acc": 0.4977,
+        "M": 38.82,
+        "n_probe_train": 5187,
+        "n_probe_test": 2612
+      },
+      "random_all91": {
+        "split": "random",
+        "n_classes": 91,
+        "chance": 0.01098901098901099,
+        "acc": 0.6153,
+        "M": 56.0,
+        "n_probe_train": 5911,
+        "n_probe_test": 1968
+      },
+      "recording_fps_matched": {
+        "split": "recording",
+        "n_classes": 57,
+        "chance": 0.017543859649122806,
+        "acc": 0.5397,
+        "M": 30.76,
+        "n_probe_train": 3829,
+        "n_probe_test": 1890
+      }
+    },
+    {
+      "representation": "model_of_mlp_s0",
+      "dim": 128,
+      "random_78": {
+        "split": "random",
+        "n_classes": 78,
+        "chance": 0.01282051282051282,
+        "acc": 0.8328,
+        "M": 64.96,
+        "n_probe_train": 5849,
+        "n_probe_test": 1950
+      },
+      "recording_78": {
+        "split": "recording",
+        "n_classes": 78,
+        "chance": 0.01282051282051282,
+        "acc": 0.6864,
+        "M": 53.54,
+        "n_probe_train": 5187,
+        "n_probe_test": 2612
+      },
+      "random_all91": {
+        "split": "random",
+        "n_classes": 91,
+        "chance": 0.01098901098901099,
+        "acc": 0.8242,
+        "M": 75.0,
+        "n_probe_train": 5911,
+        "n_probe_test": 1968
+      },
+      "recording_fps_matched": {
+        "split": "recording",
+        "n_classes": 57,
+        "chance": 0.017543859649122806,
+        "acc": 0.7418,
+        "M": 42.28,
+        "n_probe_train": 3829,
+        "n_probe_test": 1890
+      }
+    },
+    {
+      "representation": "model_of_tcn_s0",
+      "dim": 128,
+      "random_78": {
+        "split": "random",
+        "n_classes": 78,
+        "chance": 0.01282051282051282,
+        "acc": 0.561,
+        "M": 43.76,
+        "n_probe_train": 5849,
+        "n_probe_test": 1950
+      },
+      "recording_78": {
+        "split": "recording",
+        "n_classes": 78,
+        "chance": 0.01282051282051282,
+        "acc": 0.4594,
+        "M": 35.83,
+        "n_probe_train": 5187,
+        "n_probe_test": 2612
+      },
+      "random_all91": {
+        "split": "random",
+        "n_classes": 91,
+        "chance": 0.01098901098901099,
+        "acc": 0.56,
+        "M": 50.96,
+        "n_probe_train": 5911,
+        "n_probe_test": 1968
+      },
+      "recording_fps_matched": {
+        "split": "recording",
+        "n_classes": 57,
+        "chance": 0.017543859649122806,
+        "acc": 0.5032,
+        "M": 28.68,
+        "n_probe_train": 3829,
+        "n_probe_test": 1890
+      }
+    },
+    {
+      "representation": "model_of_transformer_s0",
+      "dim": 128,
+      "random_78": {
+        "split": "random",
+        "n_classes": 78,
+        "chance": 0.01282051282051282,
+        "acc": 0.6569,
+        "M": 51.24,
+        "n_probe_train": 5849,
+        "n_probe_test": 1950
+      },
+      "recording_78": {
+        "split": "recording",
+        "n_classes": 78,
+        "chance": 0.01282051282051282,
+        "acc": 0.508,
+        "M": 39.63,
+        "n_probe_train": 5187,
+        "n_probe_test": 2612
+      },
+      "random_all91": {
+        "split": "random",
+        "n_classes": 91,
+        "chance": 0.01098901098901099,
+        "acc": 0.6489,
+        "M": 59.05,
+        "n_probe_train": 5911,
+        "n_probe_test": 1968
+      },
+      "recording_fps_matched": {
+        "split": "recording",
+        "n_classes": 57,
+        "chance": 0.017543859649122806,
+        "acc": 0.5852,
+        "M": 33.36,
+        "n_probe_train": 3829,
+        "n_probe_test": 1890
+      }
+    }
+  ]
+}

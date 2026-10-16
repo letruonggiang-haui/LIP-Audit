@@ -1,0 +1,2658 @@
+{
+  "n_boot": 2000,
+  "seed": 20260910,
+  "rows": [
+    {
+      "tag": "marlin_s0",
+      "split": "validation",
+      "n_clips": 1071,
+      "n_participants": 11,
+      "point": {
+        "eta2_score_ordinal": 0.6461444206964744,
+        "eta2_label_ordinal": 0.46275852046310745,
+        "eta2_score_decisive": 0.47320631308988276,
+        "eta2_label_decisive": 0.08811277389914254,
+        "rho_b": 0.4090909090909091,
+        "auc_within_person": 0.7802703127097049,
+        "n_participants_usable": 11
+      },
+      "ci": {
+        "eta2_score_ordinal": [
+          0.27585318964141475,
+          0.7878535461824654
+        ],
+        "eta2_label_ordinal": [
+          0.06445881393072006,
+          0.6683983123862915
+        ],
+        "eta2_score_decisive": [
+          0.2455213661771512,
+          0.6294715760836344
+        ],
+        "eta2_label_decisive": [
+          0.03628745101080891,
+          0.13790095835988603
+        ],
+        "rho_b": [
+          -0.2957923419916484,
+          0.794392523364486
+        ],
+        "auc_within_person": [
+          0.6900126375935547,
+          0.8599522618069698
+        ],
+        "diff_ordinal": [
+          0.09019544703956338,
+          0.33715549255058036
+        ],
+        "diff_decisive": [
+          0.1507660130964972,
+          0.5610338301484548
+        ]
+      },
+      "diff_ordinal_point": 0.18338590023336693,
+      "diff_decisive_point": 0.3850935391907402
+    },
+    {
+      "tag": "marlin_s1",
+      "split": "validation",
+      "n_clips": 1071,
+      "n_participants": 11,
+      "point": {
+        "eta2_score_ordinal": 0.5823923899191574,
+        "eta2_label_ordinal": 0.46275852046310745,
+        "eta2_score_decisive": 0.40696958579120773,
+        "eta2_label_decisive": 0.08811277389914254,
+        "rho_b": 0.29090909090909095,
+        "auc_within_person": 0.7943968888274029,
+        "n_participants_usable": 11
+      },
+      "ci": {
+        "eta2_score_ordinal": [
+          0.22450703462104252,
+          0.7269561770797118
+        ],
+        "eta2_label_ordinal": [
+          0.05928240691257762,
+          0.6666029620225045
+        ],
+        "eta2_score_decisive": [
+          0.2022631086569551,
+          0.5271496813340075
+        ],
+        "eta2_label_decisive": [
+          0.03800314525952434,
+          0.14373204424274455
+        ],
+        "rho_b": [
+          -0.369054532256601,
+          0.6822429906542056
+        ],
+        "auc_within_person": [
+          0.7187977352422164,
+          0.8579060088210049
+        ],
+        "diff_ordinal": [
+          -0.028754067631731738,
+          0.34596413240145485
+        ],
+        "diff_decisive": [
+          0.09174893630628168,
+          0.46230249384917227
+        ]
+      },
+      "diff_ordinal_point": 0.11963386945604998,
+      "diff_decisive_point": 0.31885681189206516
+    },
+    {
+      "tag": "marlin_s2",
+      "split": "validation",
+      "n_clips": 1071,
+      "n_participants": 11,
+      "point": {
+        "eta2_score_ordinal": 0.5408941603434699,
+        "eta2_label_ordinal": 0.46275852046310745,
+        "eta2_score_decisive": 0.3023807146613755,
+        "eta2_label_decisive": 0.08811277389914254,
+        "rho_b": 0.43636363636363645,
+        "auc_within_person": 0.7866598434220958,
+        "n_participants_usable": 11
+      },
+      "ci": {
+        "eta2_score_ordinal": [
+          0.19979786938932925,
+          0.7016694633681246
+        ],
+        "eta2_label_ordinal": [
+          0.05969252603459226,
+          0.6630549383769712
+        ],
+        "eta2_score_decisive": [
+          0.13934910870763387,
+          0.4171704288661874
+        ],
+        "eta2_label_decisive": [
+          0.03643524950503622,
+          0.14174995049655442
+        ],
+        "rho_b": [
+          -0.27102803738317754,
+          0.7183098591549296
+        ],
+        "auc_within_person": [
+          0.7131133023875759,
+          0.8491242001609969
+        ],
+        "diff_ordinal": [
+          -0.05335232342989574,
+          0.32519538525417174
+        ],
+        "diff_decisive": [
+          0.0259648247471394,
+          0.35740122028302684
+        ]
+      },
+      "diff_ordinal_point": 0.07813563988036248,
+      "diff_decisive_point": 0.21426794076223296
+    },
+    {
+      "tag": "of_cnnlstm_s0",
+      "split": "validation",
+      "n_clips": 1071,
+      "n_participants": 11,
+      "point": {
+        "eta2_score_ordinal": 0.5435561891228463,
+        "eta2_label_ordinal": 0.46275852046310745,
+        "eta2_score_decisive": 0.298232440091733,
+        "eta2_label_decisive": 0.08811277389914254,
+        "rho_b": 0.20909090909090913,
+        "auc_within_person": 0.8298966394128489,
+        "n_participants_usable": 11
+      },
+      "ci": {
+        "eta2_score_ordinal": [
+          0.1690222011852897,
+          0.6705977109326695
+        ],
+        "eta2_label_ordinal": [
+          0.06131994371582096,
+          0.6621431035379219
+        ],
+        "eta2_score_decisive": [
+          0.13956170140270485,
+          0.4002351647509025
+        ],
+        "eta2_label_decisive": [
+          0.037938716763748555,
+          0.13898259049737705
+        ],
+        "rho_b": [
+          -0.49295774647887325,
+          0.7573193638093377
+        ],
+        "auc_within_person": [
+          0.7781785817586799,
+          0.883771441908425
+        ],
+        "diff_ordinal": [
+          -0.017187254365658766,
+          0.16522570168339898
+        ],
+        "diff_decisive": [
+          0.05733816828735196,
+          0.3275567118787098
+        ]
+      },
+      "diff_ordinal_point": 0.08079766865973886,
+      "diff_decisive_point": 0.21011966619259045
+    },
+    {
+      "tag": "of_cnnlstm_s1",
+      "split": "validation",
+      "n_clips": 1071,
+      "n_participants": 11,
+      "point": {
+        "eta2_score_ordinal": 0.5232494134189094,
+        "eta2_label_ordinal": 0.46275852046310745,
+        "eta2_score_decisive": 0.26758993178751833,
+        "eta2_label_decisive": 0.08811277389914254,
+        "rho_b": 0.45454545454545453,
+        "auc_within_person": 0.8044928557714982,
+        "n_participants_usable": 11
+      },
+      "ci": {
+        "eta2_score_ordinal": [
+          0.15130023176592597,
+          0.6683118889957754
+        ],
+        "eta2_label_ordinal": [
+          0.06426342224352952,
+          0.6651765188863243
+        ],
+        "eta2_score_decisive": [
+          0.06087439974366543,
+          0.3633332072238033
+        ],
+        "eta2_label_decisive": [
+          0.037472411301948866,
+          0.13719400335201662
+        ],
+        "rho_b": [
+          -0.17763084112149533,
+          0.8269845971563976
+        ],
+        "auc_within_person": [
+          0.7426163945601582,
+          0.8604398583178167
+        ],
+        "diff_ordinal": [
+          -0.03121679371489664,
+          0.19202827169528364
+        ],
+        "diff_decisive": [
+          -0.02852472455066051,
+          0.2886936528890313
+        ]
+      },
+      "diff_ordinal_point": 0.060490892955801956,
+      "diff_decisive_point": 0.1794771578883758
+    },
+    {
+      "tag": "of_cnnlstm_s2",
+      "split": "validation",
+      "n_clips": 1071,
+      "n_participants": 11,
+      "point": {
+        "eta2_score_ordinal": 0.5278783478252231,
+        "eta2_label_ordinal": 0.46275852046310745,
+        "eta2_score_decisive": 0.2876818824691182,
+        "eta2_label_decisive": 0.08811277389914254,
+        "rho_b": 0.41818181818181827,
+        "auc_within_person": 0.8373594308661173,
+        "n_participants_usable": 11
+      },
+      "ci": {
+        "eta2_score_ordinal": [
+          0.21530983719739477,
+          0.6566618375221946
+        ],
+        "eta2_label_ordinal": [
+          0.0662473057025974,
+          0.6726942851386266
+        ],
+        "eta2_score_decisive": [
+          0.10583460789407824,
+          0.4123044667879653
+        ],
+        "eta2_label_decisive": [
+          0.0381925341236243,
+          0.13974940212476805
+        ],
+        "rho_b": [
+          -0.26268493815183114,
+          0.886255924170616
+        ],
+        "auc_within_person": [
+          0.7919674873484852,
+          0.8867110884851916
+        ],
+        "diff_ordinal": [
+          -0.06296884644080283,
+          0.2568435714691784
+        ],
+        "diff_decisive": [
+          0.015476493045318597,
+          0.3439144312077262
+        ]
+      },
+      "diff_ordinal_point": 0.06511982736211569,
+      "diff_decisive_point": 0.19956910856997565
+    },
+    {
+      "tag": "of_lstm_s0",
+      "split": "validation",
+      "n_clips": 1071,
+      "n_participants": 11,
+      "point": {
+        "eta2_score_ordinal": 0.45405565847670926,
+        "eta2_label_ordinal": 0.46275852046310745,
+        "eta2_score_decisive": 0.19340407055648526,
+        "eta2_label_decisive": 0.08811277389914254,
+        "rho_b": 0.6000000000000001,
+        "auc_within_person": 0.8071100756503946,
+        "n_participants_usable": 11
+      },
+      "ci": {
+        "eta2_score_ordinal": [
+          0.12781522107518334,
+          0.6266999148524719
+        ],
+        "eta2_label_ordinal": [
+          0.05880367206042241,
+          0.6662091518043727
+        ],
+        "eta2_score_decisive": [
+          0.06986415435223417,
+          0.3189646817787742
+        ],
+        "eta2_label_decisive": [
+          0.03584590749521849,
+          0.14284725811831428
+        ],
+        "rho_b": [
+          -0.03358142831827042,
+          0.943127962085308
+        ],
+        "auc_within_person": [
+          0.7634377010761719,
+          0.8536165260113688
+        ],
+        "diff_ordinal": [
+          -0.13118779317900733,
+          0.1667782382381752
+        ],
+        "diff_decisive": [
+          -0.005277570806876337,
+          0.20603617780540695
+        ]
+      },
+      "diff_ordinal_point": -0.008702861986398192,
+      "diff_decisive_point": 0.10529129665734271
+    },
+    {
+      "tag": "of_lstm_s1",
+      "split": "validation",
+      "n_clips": 1071,
+      "n_participants": 11,
+      "point": {
+        "eta2_score_ordinal": 0.5160465982388038,
+        "eta2_label_ordinal": 0.46275852046310745,
+        "eta2_score_decisive": 0.30169126341332086,
+        "eta2_label_decisive": 0.08811277389914254,
+        "rho_b": 0.4727272727272727,
+        "auc_within_person": 0.7942370592860967,
+        "n_participants_usable": 11
+      },
+      "ci": {
+        "eta2_score_ordinal": [
+          0.1347180994068122,
+          0.6463454281702556
+        ],
+        "eta2_label_ordinal": [
+          0.061715599519700494,
+          0.6605633226461379
+        ],
+        "eta2_score_decisive": [
+          0.10970517838178767,
+          0.4359878939338654
+        ],
+        "eta2_label_decisive": [
+          0.039537779614791387,
+          0.13743166455490569
+        ],
+        "rho_b": [
+          -0.20187793427230044,
+          0.8756707507937214
+        ],
+        "auc_within_person": [
+          0.7344955779613703,
+          0.8546518910057295
+        ],
+        "diff_ordinal": [
+          -0.05858060571281184,
+          0.28218322339208046
+        ],
+        "diff_decisive": [
+          0.026005049903412028,
+          0.35260994139094987
+        ]
+      },
+      "diff_ordinal_point": 0.053288077775696385,
+      "diff_decisive_point": 0.21357848951417832
+    },
+    {
+      "tag": "of_lstm_s2",
+      "split": "validation",
+      "n_clips": 1071,
+      "n_participants": 11,
+      "point": {
+        "eta2_score_ordinal": 0.5698400423259522,
+        "eta2_label_ordinal": 0.46275852046310745,
+        "eta2_score_decisive": 0.33928359858585017,
+        "eta2_label_decisive": 0.08811277389914254,
+        "rho_b": 0.3181818181818182,
+        "auc_within_person": 0.8374810020420527,
+        "n_participants_usable": 11
+      },
+      "ci": {
+        "eta2_score_ordinal": [
+          0.23141553604080473,
+          0.6999306764659503
+        ],
+        "eta2_label_ordinal": [
+          0.06221691436378075,
+          0.670977622007405
+        ],
+        "eta2_score_decisive": [
+          0.14619661986250365,
+          0.46420452817856345
+        ],
+        "eta2_label_decisive": [
+          0.038015447397993216,
+          0.14196316312541415
+        ],
+        "rho_b": [
+          -0.28581441922563416,
+          0.8009478672985781
+        ],
+        "auc_within_person": [
+          0.7916234529221157,
+          0.8842873136189542
+        ],
+        "diff_ordinal": [
+          0.001937674172015741,
+          0.28586167126003004
+        ],
+        "diff_decisive": [
+          0.051038493797847376,
+          0.39458841667813793
+        ]
+      },
+      "diff_ordinal_point": 0.10708152186284475,
+      "diff_decisive_point": 0.2511708246867076
+    },
+    {
+      "tag": "of_mlp_s0",
+      "split": "validation",
+      "n_clips": 1071,
+      "n_participants": 11,
+      "point": {
+        "eta2_score_ordinal": 0.5742974773644265,
+        "eta2_label_ordinal": 0.46275852046310745,
+        "eta2_score_decisive": 0.3422546971597683,
+        "eta2_label_decisive": 0.08811277389914254,
+        "rho_b": 0.3727272727272728,
+        "auc_within_person": 0.8375564530565057,
+        "n_participants_usable": 11
+      },
+      "ci": {
+        "eta2_score_ordinal": [
+          0.21134448625612723,
+          0.7016523721390947
+        ],
+        "eta2_label_ordinal": [
+          0.061600714681856746,
+          0.6729243971642211
+        ],
+        "eta2_score_decisive": [
+          0.15006147633993894,
+          0.454453744692785
+        ],
+        "eta2_label_decisive": [
+          0.03735617112645198,
+          0.1375808953214153
+        ],
+        "rho_b": [
+          -0.29302325581395355,
+          0.8269845971563976
+        ],
+        "auc_within_person": [
+          0.7914458738420236,
+          0.8861529693706344
+        ],
+        "diff_ordinal": [
+          -0.014373876841373952,
+          0.3436516952430398
+        ],
+        "diff_decisive": [
+          0.05513545287680956,
+          0.38258712750010293
+        ]
+      },
+      "diff_ordinal_point": 0.11153895690131904,
+      "diff_decisive_point": 0.2541419232606258
+    },
+    {
+      "tag": "of_mlp_s1",
+      "split": "validation",
+      "n_clips": 1071,
+      "n_participants": 11,
+      "point": {
+        "eta2_score_ordinal": 0.5571652615579443,
+        "eta2_label_ordinal": 0.46275852046310745,
+        "eta2_score_decisive": 0.34686659294287125,
+        "eta2_label_decisive": 0.08811277389914254,
+        "rho_b": 0.3272727272727273,
+        "auc_within_person": 0.8409219428162654,
+        "n_participants_usable": 11
+      },
+      "ci": {
+        "eta2_score_ordinal": [
+          0.23511236598420887,
+          0.6755725224971986
+        ],
+        "eta2_label_ordinal": [
+          0.05930291153459918,
+          0.672528337221061
+        ],
+        "eta2_score_decisive": [
+          0.1643243144523298,
+          0.45842055714447466
+        ],
+        "eta2_label_decisive": [
+          0.038952265347189395,
+          0.14264323093441222
+        ],
+        "rho_b": [
+          -0.3518518518518518,
+          0.8037383177570092
+        ],
+        "auc_within_person": [
+          0.7887939021353532,
+          0.8929824831119155
+        ],
+        "diff_ordinal": [
+          -0.03441858421821106,
+          0.2913115906557077
+        ],
+        "diff_decisive": [
+          0.061819409648649265,
+          0.3852097967416203
+        ]
+      },
+      "diff_ordinal_point": 0.09440674109483688,
+      "diff_decisive_point": 0.25875381904372874
+    },
+    {
+      "tag": "of_mlp_s2",
+      "split": "validation",
+      "n_clips": 1071,
+      "n_participants": 11,
+      "point": {
+        "eta2_score_ordinal": 0.5349208607490121,
+        "eta2_label_ordinal": 0.46275852046310745,
+        "eta2_score_decisive": 0.34195029207593075,
+        "eta2_label_decisive": 0.08811277389914254,
+        "rho_b": 0.45454545454545453,
+        "auc_within_person": 0.8331295998965262,
+        "n_participants_usable": 11
+      },
+      "ci": {
+        "eta2_score_ordinal": [
+          0.18862543669028958,
+          0.6671666851869057
+        ],
+        "eta2_label_ordinal": [
+          0.05803658817388549,
+          0.6689891380279422
+        ],
+        "eta2_score_decisive": [
+          0.1607759646342976,
+          0.45062327292543164
+        ],
+        "eta2_label_decisive": [
+          0.03703733480593375,
+          0.14085778982350824
+        ],
+        "rho_b": [
+          -0.14302403204272363,
+          0.8334330143540664
+        ],
+        "auc_within_person": [
+          0.7795201708283404,
+          0.8880877959751603
+        ],
+        "diff_ordinal": [
+          -0.034240025269819646,
+          0.20563721091353593
+        ],
+        "diff_decisive": [
+          0.06824934766655452,
+          0.3832333038895619
+        ]
+      },
+      "diff_ordinal_point": 0.07216234028590468,
+      "diff_decisive_point": 0.25383751817678823
+    },
+    {
+      "tag": "of_tcn_s0",
+      "split": "validation",
+      "n_clips": 1071,
+      "n_participants": 11,
+      "point": {
+        "eta2_score_ordinal": 0.5202699281662613,
+        "eta2_label_ordinal": 0.46275852046310745,
+        "eta2_score_decisive": 0.2751646350993332,
+        "eta2_label_decisive": 0.08811277389914254,
+        "rho_b": 0.4727272727272727,
+        "auc_within_person": 0.7988986587651362,
+        "n_participants_usable": 11
+      },
+      "ci": {
+        "eta2_score_ordinal": [
+          0.15719406075957965,
+          0.6579262049158063
+        ],
+        "eta2_label_ordinal": [
+          0.06436224014819185,
+          0.6676834426803645
+        ],
+        "eta2_score_decisive": [
+          0.11871671022196988,
+          0.3922769322993656
+        ],
+        "eta2_label_decisive": [
+          0.03715417683940852,
+          0.1377212202637129
+        ],
+        "rho_b": [
+          -0.20751301416623996,
+          0.9052244478225878
+        ],
+        "auc_within_person": [
+          0.7506395101373611,
+          0.849166989347984
+        ],
+        "diff_ordinal": [
+          -0.053275281579535955,
+          0.18554201654360475
+        ],
+        "diff_decisive": [
+          0.03848612716602983,
+          0.2903417324072005
+        ]
+      },
+      "diff_ordinal_point": 0.05751140770315383,
+      "diff_decisive_point": 0.18705186120019066
+    },
+    {
+      "tag": "of_tcn_s1",
+      "split": "validation",
+      "n_clips": 1071,
+      "n_participants": 11,
+      "point": {
+        "eta2_score_ordinal": 0.5600747392775314,
+        "eta2_label_ordinal": 0.46275852046310745,
+        "eta2_score_decisive": 0.2631732694042565,
+        "eta2_label_decisive": 0.08811277389914254,
+        "rho_b": 0.4272727272727273,
+        "auc_within_person": 0.8286029087228659,
+        "n_participants_usable": 11
+      },
+      "ci": {
+        "eta2_score_ordinal": [
+          0.15281294116017893,
+          0.6804817422011663
+        ],
+        "eta2_label_ordinal": [
+          0.06248885924443086,
+          0.6614354108924396
+        ],
+        "eta2_score_decisive": [
+          0.0718270363709093,
+          0.3757862809679087
+        ],
+        "eta2_label_decisive": [
+          0.03908989739780522,
+          0.1368879870668663
+        ],
+        "rho_b": [
+          -0.1982027649769585,
+          0.7757009345794391
+        ],
+        "auc_within_person": [
+          0.7782750127444537,
+          0.8780202085796405
+        ],
+        "diff_ordinal": [
+          -0.006050635217673744,
+          0.24373470094655694
+        ],
+        "diff_decisive": [
+          -0.019750535946592294,
+          0.3141420209541333
+        ]
+      },
+      "diff_ordinal_point": 0.09731621881442393,
+      "diff_decisive_point": 0.17506049550511396
+    },
+    {
+      "tag": "of_tcn_s2",
+      "split": "validation",
+      "n_clips": 1071,
+      "n_participants": 11,
+      "point": {
+        "eta2_score_ordinal": 0.5479523863189514,
+        "eta2_label_ordinal": 0.46275852046310745,
+        "eta2_score_decisive": 0.34715139795186867,
+        "eta2_label_decisive": 0.08811277389914254,
+        "rho_b": 0.3090909090909091,
+        "auc_within_person": 0.8011201803356461,
+        "n_participants_usable": 11
+      },
+      "ci": {
+        "eta2_score_ordinal": [
+          0.2156709099889762,
+          0.6642468311645459
+        ],
+        "eta2_label_ordinal": [
+          0.0615282390317621,
+          0.6577774145186527
+        ],
+        "eta2_score_decisive": [
+          0.14339769050498932,
+          0.49102526945050184
+        ],
+        "eta2_label_decisive": [
+          0.038813898748636395,
+          0.14315552241845358
+        ],
+        "rho_b": [
+          -0.3551559130122214,
+          0.8564933445202838
+        ],
+        "auc_within_person": [
+          0.7399491448915884,
+          0.8608884226123737
+        ],
+        "diff_ordinal": [
+          -0.05100891499901497,
+          0.3134911432918744
+        ],
+        "diff_decisive": [
+          0.05730443586440674,
+          0.40151241661909826
+        ]
+      },
+      "diff_ordinal_point": 0.08519386585584393,
+      "diff_decisive_point": 0.25903862405272615
+    },
+    {
+      "tag": "of_transformer_s0",
+      "split": "validation",
+      "n_clips": 1071,
+      "n_participants": 11,
+      "point": {
+        "eta2_score_ordinal": 0.553483974029698,
+        "eta2_label_ordinal": 0.46275852046310745,
+        "eta2_score_decisive": 0.28795346974080416,
+        "eta2_label_decisive": 0.08811277389914254,
+        "rho_b": 0.33636363636363636,
+        "auc_within_person": 0.8136782251335432,
+        "n_participants_usable": 11
+      },
+      "ci": {
+        "eta2_score_ordinal": [
+          0.20107611682444412,
+          0.7064277628534719
+        ],
+        "eta2_label_ordinal": [
+          0.06358172109151913,
+          0.6715699658186561
+        ],
+        "eta2_score_decisive": [
+          0.11069782705232943,
+          0.3898083939566529
+        ],
+        "eta2_label_decisive": [
+          0.0365168666930931,
+          0.13785248287465263
+        ],
+        "rho_b": [
+          -0.3465614315021655,
+          0.7631162244762364
+        ],
+        "auc_within_person": [
+          0.7699815735678429,
+          0.8585522276007748
+        ],
+        "diff_ordinal": [
+          0.00012939501637540573,
+          0.2309039311525311
+        ],
+        "diff_decisive": [
+          0.004487806368043108,
+          0.3332281654099627
+        ]
+      },
+      "diff_ordinal_point": 0.09072545356659051,
+      "diff_decisive_point": 0.19984069584166161
+    },
+    {
+      "tag": "of_transformer_s1",
+      "split": "validation",
+      "n_clips": 1071,
+      "n_participants": 11,
+      "point": {
+        "eta2_score_ordinal": 0.5455348521006427,
+        "eta2_label_ordinal": 0.46275852046310745,
+        "eta2_score_decisive": 0.29196245948915517,
+        "eta2_label_decisive": 0.08811277389914254,
+        "rho_b": 0.43636363636363645,
+        "auc_within_person": 0.7784242768527411,
+        "n_participants_usable": 11
+      },
+      "ci": {
+        "eta2_score_ordinal": [
+          0.17403335959279245,
+          0.673947245383436
+        ],
+        "eta2_label_ordinal": [
+          0.06319667135181474,
+          0.6700931806540876
+        ],
+        "eta2_score_decisive": [
+          0.07307130631314092,
+          0.44219523393281274
+        ],
+        "eta2_label_decisive": [
+          0.03961770668065,
+          0.14435036079227564
+        ],
+        "rho_b": [
+          -0.1635806074766355,
+          0.8181818181818182
+        ],
+        "auc_within_person": [
+          0.7160051427949052,
+          0.8395148886253481
+        ],
+        "diff_ordinal": [
+          -0.02274746114626852,
+          0.28201265055168834
+        ],
+        "diff_decisive": [
+          -0.025513607798522124,
+          0.37818874474214453
+        ]
+      },
+      "diff_ordinal_point": 0.08277633163753523,
+      "diff_decisive_point": 0.20384968559001262
+    },
+    {
+      "tag": "of_transformer_s2",
+      "split": "validation",
+      "n_clips": 1071,
+      "n_participants": 11,
+      "point": {
+        "eta2_score_ordinal": 0.49902211151636355,
+        "eta2_label_ordinal": 0.46275852046310745,
+        "eta2_score_decisive": 0.17553140744410234,
+        "eta2_label_decisive": 0.08811277389914254,
+        "rho_b": 0.6272727272727273,
+        "auc_within_person": 0.7491993009169673,
+        "n_participants_usable": 11
+      },
+      "ci": {
+        "eta2_score_ordinal": [
+          0.12060516793324379,
+          0.6640075914996924
+        ],
+        "eta2_label_ordinal": [
+          0.06287383518342149,
+          0.6666090002449082
+        ],
+        "eta2_score_decisive": [
+          0.06444761388917465,
+          0.275477997115725
+        ],
+        "eta2_label_decisive": [
+          0.03826009162098258,
+          0.13927512402567746
+        ],
+        "rho_b": [
+          -0.02923537882658986,
+          0.8995100502512562
+        ],
+        "auc_within_person": [
+          0.692423810870467,
+          0.8104438228963682
+        ],
+        "diff_ordinal": [
+          -0.044860229917319944,
+          0.1298274625789946
+        ],
+        "diff_decisive": [
+          -0.023771670201654806,
+          0.20029939253871437
+        ]
+      },
+      "diff_ordinal_point": 0.036263591053256106,
+      "diff_decisive_point": 0.0874186335449598
+    },
+    {
+      "tag": "smoke",
+      "split": "validation",
+      "n_clips": 1071,
+      "n_participants": 11,
+      "point": {
+        "eta2_score_ordinal": 0.5764885133770636,
+        "eta2_label_ordinal": 0.46275852046310745,
+        "eta2_score_decisive": 0.4840930096848673,
+        "eta2_label_decisive": 0.08811277389914254,
+        "rho_b": 0.3545454545454546,
+        "auc_within_person": 0.798030667441795,
+        "n_participants_usable": 11
+      },
+      "ci": {
+        "eta2_score_ordinal": [
+          0.20253130180486523,
+          0.7391613368268181
+        ],
+        "eta2_label_ordinal": [
+          0.06069364949793417,
+          0.6675686559207076
+        ],
+        "eta2_score_decisive": [
+          0.24158918188862374,
+          0.6378710420532704
+        ],
+        "eta2_label_decisive": [
+          0.03758777016492687,
+          0.14519964799368235
+        ],
+        "rho_b": [
+          -0.35218836382782676,
+          0.8087674995569725
+        ],
+        "auc_within_person": [
+          0.6949813082422153,
+          0.8803183133188089
+        ],
+        "diff_ordinal": [
+          -0.021056679657556743,
+          0.2734503336133625
+        ],
+        "diff_decisive": [
+          0.14559731341972104,
+          0.570393162088622
+        ]
+      },
+      "diff_ordinal_point": 0.11372999291395619,
+      "diff_decisive_point": 0.3959802357857247
+    },
+    {
+      "tag": "marlin_s0",
+      "split": "test_frozen",
+      "n_clips": 2256,
+      "n_participants": 26,
+      "point": {
+        "eta2_score_ordinal": 0.562226344318084,
+        "eta2_label_ordinal": 0.5317094803731337,
+        "eta2_score_decisive": 0.45637954981023093,
+        "eta2_label_decisive": 0.3229737885636496,
+        "rho_b": 0.49546931823474866,
+        "auc_within_person": 0.7848787500549534,
+        "n_participants_usable": 25
+      },
+      "ci": {
+        "eta2_score_ordinal": [
+          0.37442963404733154,
+          0.6733083379888054
+        ],
+        "eta2_label_ordinal": [
+          0.36539007629395726,
+          0.6468989003677749
+        ],
+        "eta2_score_decisive": [
+          0.2543883827992131,
+          0.5944888403633745
+        ],
+        "eta2_label_decisive": [
+          0.19685017627788967,
+          0.45058196541964307
+        ],
+        "rho_b": [
+          0.08041029373385347,
+          0.7979083083555963
+        ],
+        "auc_within_person": [
+          0.7168812004781988,
+          0.8410573141140749
+        ],
+        "diff_ordinal": [
+          -0.09161814265958886,
+          0.14891675017425776
+        ],
+        "diff_decisive": [
+          -0.0530597483349343,
+          0.2828452414933376
+        ]
+      },
+      "diff_ordinal_point": 0.030516863944950345,
+      "diff_decisive_point": 0.13340576124658132
+    },
+    {
+      "tag": "marlin_s1",
+      "split": "test_frozen",
+      "n_clips": 2256,
+      "n_participants": 26,
+      "point": {
+        "eta2_score_ordinal": 0.5324062178282677,
+        "eta2_label_ordinal": 0.5317094803731337,
+        "eta2_score_decisive": 0.4083845366506913,
+        "eta2_label_decisive": 0.3229737885636496,
+        "rho_b": 0.36792614659806044,
+        "auc_within_person": 0.806564150145629,
+        "n_participants_usable": 25
+      },
+      "ci": {
+        "eta2_score_ordinal": [
+          0.31664501464720674,
+          0.6521938506129065
+        ],
+        "eta2_label_ordinal": [
+          0.36222535143998813,
+          0.6437021270109631
+        ],
+        "eta2_score_decisive": [
+          0.1993926295466592,
+          0.585945446943555
+        ],
+        "eta2_label_decisive": [
+          0.20087083235023176,
+          0.4521830974042741
+        ],
+        "rho_b": [
+          -0.063277846468365,
+          0.7107392865652694
+        ],
+        "auc_within_person": [
+          0.7552790402973681,
+          0.8550663686250033
+        ],
+        "diff_ordinal": [
+          -0.1285709946655435,
+          0.08605854520869402
+        ],
+        "diff_decisive": [
+          -0.14220503755549457,
+          0.27242813151008693
+        ]
+      },
+      "diff_ordinal_point": 0.0006967374551339889,
+      "diff_decisive_point": 0.08541074808704169
+    },
+    {
+      "tag": "marlin_s2",
+      "split": "test_frozen",
+      "n_clips": 2256,
+      "n_participants": 26,
+      "point": {
+        "eta2_score_ordinal": 0.56713583220212,
+        "eta2_label_ordinal": 0.5317094803731337,
+        "eta2_score_decisive": 0.458651770902022,
+        "eta2_label_decisive": 0.3229737885636496,
+        "rho_b": 0.33851940997405194,
+        "auc_within_person": 0.7443801623022478,
+        "n_participants_usable": 25
+      },
+      "ci": {
+        "eta2_score_ordinal": [
+          0.4056720880748818,
+          0.6765351165153473
+        ],
+        "eta2_label_ordinal": [
+          0.37136251518131436,
+          0.6465487216482122
+        ],
+        "eta2_score_decisive": [
+          0.2912963425702923,
+          0.5848888958712404
+        ],
+        "eta2_label_decisive": [
+          0.1999211900579944,
+          0.44233662636105353
+        ],
+        "rho_b": [
+          -0.10145210535347518,
+          0.7048659440750893
+        ],
+        "auc_within_person": [
+          0.683651838710907,
+          0.8006143349617615
+        ],
+        "diff_ordinal": [
+          -0.05329673463026658,
+          0.1157486718491026
+        ],
+        "diff_decisive": [
+          -0.04621177694589043,
+          0.29961554363921356
+        ]
+      },
+      "diff_ordinal_point": 0.03542635182898635,
+      "diff_decisive_point": 0.13567798233837242
+    },
+    {
+      "tag": "of_cnnlstm_s0",
+      "split": "test_frozen",
+      "n_clips": 2256,
+      "n_participants": 26,
+      "point": {
+        "eta2_score_ordinal": 0.6300482000379509,
+        "eta2_label_ordinal": 0.5317094803731337,
+        "eta2_score_decisive": 0.40883493985360736,
+        "eta2_label_decisive": 0.3229737885636496,
+        "rho_b": 0.6992648418150871,
+        "auc_within_person": 0.8058433438003471,
+        "n_participants_usable": 25
+      },
+      "ci": {
+        "eta2_score_ordinal": [
+          0.4526918473472592,
+          0.7399304042408136
+        ],
+        "eta2_label_ordinal": [
+          0.3730873103717586,
+          0.6506236286625867
+        ],
+        "eta2_score_decisive": [
+          0.263696695857218,
+          0.532783166720442
+        ],
+        "eta2_label_decisive": [
+          0.20134787180626798,
+          0.4439072607677591
+        ],
+        "rho_b": [
+          0.4184108768888261,
+          0.8512035831381936
+        ],
+        "auc_within_person": [
+          0.7603834289262117,
+          0.8531550763754958
+        ],
+        "diff_ordinal": [
+          0.017276045687972755,
+          0.1649277238924299
+        ],
+        "diff_decisive": [
+          -0.0887163177880279,
+          0.2507600150743015
+        ]
+      },
+      "diff_ordinal_point": 0.09833871966481722,
+      "diff_decisive_point": 0.08586115128995775
+    },
+    {
+      "tag": "of_cnnlstm_s1",
+      "split": "test_frozen",
+      "n_clips": 2256,
+      "n_participants": 26,
+      "point": {
+        "eta2_score_ordinal": 0.5469694944195792,
+        "eta2_label_ordinal": 0.5317094803731337,
+        "eta2_score_decisive": 0.393391332685813,
+        "eta2_label_decisive": 0.3229737885636496,
+        "rho_b": 0.605573611175804,
+        "auc_within_person": 0.8019730149859526,
+        "n_participants_usable": 25
+      },
+      "ci": {
+        "eta2_score_ordinal": [
+          0.35601425642237267,
+          0.6718786411415281
+        ],
+        "eta2_label_ordinal": [
+          0.37477623432207213,
+          0.6496253006840054
+        ],
+        "eta2_score_decisive": [
+          0.23746253810696752,
+          0.5026975350913483
+        ],
+        "eta2_label_decisive": [
+          0.1970499204584092,
+          0.4489314040833842
+        ],
+        "rho_b": [
+          0.27037337739400336,
+          0.8035174139459298
+        ],
+        "auc_within_person": [
+          0.7615067461193025,
+          0.8424987228737184
+        ],
+        "diff_ordinal": [
+          -0.06887840012442546,
+          0.07646277719040438
+        ],
+        "diff_decisive": [
+          -0.10298309236022496,
+          0.21374553447818515
+        ]
+      },
+      "diff_ordinal_point": 0.015260014046445503,
+      "diff_decisive_point": 0.07041754412216339
+    },
+    {
+      "tag": "of_cnnlstm_s2",
+      "split": "test_frozen",
+      "n_clips": 2256,
+      "n_participants": 26,
+      "point": {
+        "eta2_score_ordinal": 0.567788719047365,
+        "eta2_label_ordinal": 0.5317094803731337,
+        "eta2_score_decisive": 0.35396382221750217,
+        "eta2_label_decisive": 0.3229737885636496,
+        "rho_b": 0.753975049487661,
+        "auc_within_person": 0.8282419207057129,
+        "n_participants_usable": 25
+      },
+      "ci": {
+        "eta2_score_ordinal": [
+          0.3546703857022391,
+          0.6976959689476774
+        ],
+        "eta2_label_ordinal": [
+          0.35986875418934094,
+          0.6476429425311129
+        ],
+        "eta2_score_decisive": [
+          0.18778787578254558,
+          0.48838012658991387
+        ],
+        "eta2_label_decisive": [
+          0.19817601635604765,
+          0.44987794028532996
+        ],
+        "rho_b": [
+          0.503561571606647,
+          0.8706147504901397
+        ],
+        "auc_within_person": [
+          0.7873418847863842,
+          0.8692839813179006
+        ],
+        "diff_ordinal": [
+          -0.07135930635210891,
+          0.10439749483205933
+        ],
+        "diff_decisive": [
+          -0.15190678982727948,
+          0.1919473043581481
+        ]
+      },
+      "diff_ordinal_point": 0.03607923867423135,
+      "diff_decisive_point": 0.030990033653852556
+    },
+    {
+      "tag": "of_lstm_s0",
+      "split": "test_frozen",
+      "n_clips": 2256,
+      "n_participants": 26,
+      "point": {
+        "eta2_score_ordinal": 0.555305132446811,
+        "eta2_label_ordinal": 0.5317094803731337,
+        "eta2_score_decisive": 0.3909099967596739,
+        "eta2_label_decisive": 0.3229737885636496,
+        "rho_b": 0.6195931018919011,
+        "auc_within_person": 0.7417775634772823,
+        "n_participants_usable": 25
+      },
+      "ci": {
+        "eta2_score_ordinal": [
+          0.3736204992350616,
+          0.677220140398683
+        ],
+        "eta2_label_ordinal": [
+          0.3669530706251518,
+          0.6500324104782368
+        ],
+        "eta2_score_decisive": [
+          0.2422358261075831,
+          0.5030839892580817
+        ],
+        "eta2_label_decisive": [
+          0.1984965319581111,
+          0.4467149207506199
+        ],
+        "rho_b": [
+          0.2797211608279855,
+          0.8140256648774556
+        ],
+        "auc_within_person": [
+          0.6881036753148962,
+          0.7940892206962734
+        ],
+        "diff_ordinal": [
+          -0.046651626209676514,
+          0.07965800899693228
+        ],
+        "diff_decisive": [
+          -0.11172115036831007,
+          0.21740762161813662
+        ]
+      },
+      "diff_ordinal_point": 0.02359565207367731,
+      "diff_decisive_point": 0.0679362081960243
+    },
+    {
+      "tag": "of_lstm_s1",
+      "split": "test_frozen",
+      "n_clips": 2256,
+      "n_participants": 26,
+      "point": {
+        "eta2_score_ordinal": 0.5544677869173772,
+        "eta2_label_ordinal": 0.5317094803731337,
+        "eta2_score_decisive": 0.345709265082649,
+        "eta2_label_decisive": 0.3229737885636496,
+        "rho_b": 0.7074713729659732,
+        "auc_within_person": 0.7934863779554946,
+        "n_participants_usable": 25
+      },
+      "ci": {
+        "eta2_score_ordinal": [
+          0.34313686850762004,
+          0.6887947524294039
+        ],
+        "eta2_label_ordinal": [
+          0.3626187646710303,
+          0.648516394365042
+        ],
+        "eta2_score_decisive": [
+          0.18786552230104123,
+          0.45801788366770146
+        ],
+        "eta2_label_decisive": [
+          0.1944171838602477,
+          0.44476739691424977
+        ],
+        "rho_b": [
+          0.3973296680568705,
+          0.8700792957047218
+        ],
+        "auc_within_person": [
+          0.7558037652705852,
+          0.833109731820048
+        ],
+        "diff_ordinal": [
+          -0.0680718290891468,
+          0.08972199684677282
+        ],
+        "diff_decisive": [
+          -0.14067228956401787,
+          0.1746487962632863
+        ]
+      },
+      "diff_ordinal_point": 0.02275830654424349,
+      "diff_decisive_point": 0.022735476518999376
+    },
+    {
+      "tag": "of_lstm_s2",
+      "split": "test_frozen",
+      "n_clips": 2256,
+      "n_participants": 26,
+      "point": {
+        "eta2_score_ordinal": 0.5885071366001114,
+        "eta2_label_ordinal": 0.5317094803731337,
+        "eta2_score_decisive": 0.3626892977946833,
+        "eta2_label_decisive": 0.3229737885636496,
+        "rho_b": 0.7190972920963951,
+        "auc_within_person": 0.8150103040348706,
+        "n_participants_usable": 25
+      },
+      "ci": {
+        "eta2_score_ordinal": [
+          0.38414904282557283,
+          0.7042988668793035
+        ],
+        "eta2_label_ordinal": [
+          0.35979928983303194,
+          0.6440664355240876
+        ],
+        "eta2_score_decisive": [
+          0.21138242696956555,
+          0.49018373373201696
+        ],
+        "eta2_label_decisive": [
+          0.19376828207175303,
+          0.4367650596518801
+        ],
+        "rho_b": [
+          0.4383846336088539,
+          0.8605080424301785
+        ],
+        "auc_within_person": [
+          0.7710439469427854,
+          0.8601744464868806
+        ],
+        "diff_ordinal": [
+          -0.03090108414639314,
+          0.12497595962177586
+        ],
+        "diff_decisive": [
+          -0.1398859614551692,
+          0.20428754246468298
+        ]
+      },
+      "diff_ordinal_point": 0.056797656226977744,
+      "diff_decisive_point": 0.039715509231033674
+    },
+    {
+      "tag": "of_mlp_s0",
+      "split": "test_frozen",
+      "n_clips": 2256,
+      "n_participants": 26,
+      "point": {
+        "eta2_score_ordinal": 0.5743320482891493,
+        "eta2_label_ordinal": 0.5317094803731337,
+        "eta2_score_decisive": 0.35579664554276763,
+        "eta2_label_decisive": 0.3229737885636496,
+        "rho_b": 0.7529492330938002,
+        "auc_within_person": 0.8226052764641909,
+        "n_participants_usable": 25
+      },
+      "ci": {
+        "eta2_score_ordinal": [
+          0.38770679228044286,
+          0.686180533874696
+        ],
+        "eta2_label_ordinal": [
+          0.3622689962425176,
+          0.6430723502919196
+        ],
+        "eta2_score_decisive": [
+          0.18470364146664792,
+          0.4946025682181844
+        ],
+        "eta2_label_decisive": [
+          0.19983229950391085,
+          0.45042954164253857
+        ],
+        "rho_b": [
+          0.509606624401708,
+          0.8824698587878947
+        ],
+        "auc_within_person": [
+          0.7737579008978331,
+          0.8701133360820009
+        ],
+        "diff_ordinal": [
+          -0.04220872531451142,
+          0.10333242786732866
+        ],
+        "diff_decisive": [
+          -0.15013959322005366,
+          0.19392396478877208
+        ]
+      },
+      "diff_ordinal_point": 0.0426225679160156,
+      "diff_decisive_point": 0.03282285697911802
+    },
+    {
+      "tag": "of_mlp_s1",
+      "split": "test_frozen",
+      "n_clips": 2256,
+      "n_participants": 26,
+      "point": {
+        "eta2_score_ordinal": 0.5671969441147051,
+        "eta2_label_ordinal": 0.5317094803731337,
+        "eta2_score_decisive": 0.353958229933246,
+        "eta2_label_decisive": 0.3229737885636496,
+        "rho_b": 0.7430330079531462,
+        "auc_within_person": 0.822910034634146,
+        "n_participants_usable": 25
+      },
+      "ci": {
+        "eta2_score_ordinal": [
+          0.382491883248285,
+          0.6805038957836209
+        ],
+        "eta2_label_ordinal": [
+          0.35878245942864245,
+          0.6556259698160543
+        ],
+        "eta2_score_decisive": [
+          0.19451606619272846,
+          0.4869172186238386
+        ],
+        "eta2_label_decisive": [
+          0.19161898314084322,
+          0.4459158851095654
+        ],
+        "rho_b": [
+          0.4886485589658361,
+          0.8848272641682631
+        ],
+        "auc_within_person": [
+          0.7789819233125405,
+          0.868240046564268
+        ],
+        "diff_ordinal": [
+          -0.03335041838796191,
+          0.09397071459312853
+        ],
+        "diff_decisive": [
+          -0.1353076165986155,
+          0.19306820993007387
+        ]
+      },
+      "diff_ordinal_point": 0.03548746374157141,
+      "diff_decisive_point": 0.030984441369596383
+    },
+    {
+      "tag": "of_mlp_s2",
+      "split": "test_frozen",
+      "n_clips": 2256,
+      "n_participants": 26,
+      "point": {
+        "eta2_score_ordinal": 0.5480795106179488,
+        "eta2_label_ordinal": 0.5317094803731337,
+        "eta2_score_decisive": 0.3613477472620979,
+        "eta2_label_decisive": 0.3229737885636496,
+        "rho_b": 0.6702000439890321,
+        "auc_within_person": 0.8190190240998672,
+        "n_participants_usable": 25
+      },
+      "ci": {
+        "eta2_score_ordinal": [
+          0.3595424414948604,
+          0.6700391936088518
+        ],
+        "eta2_label_ordinal": [
+          0.3637426509169548,
+          0.6462596291552685
+        ],
+        "eta2_score_decisive": [
+          0.1915933624275676,
+          0.4919717216685792
+        ],
+        "eta2_label_decisive": [
+          0.1963873399574151,
+          0.45113391489583415
+        ],
+        "rho_b": [
+          0.3860301620417017,
+          0.8288115593799462
+        ],
+        "auc_within_person": [
+          0.7724751990293369,
+          0.8637872684046581
+        ],
+        "diff_ordinal": [
+          -0.06155579432542938,
+          0.07333790581574746
+        ],
+        "diff_decisive": [
+          -0.14894219686167465,
+          0.2005842929383222
+        ]
+      },
+      "diff_ordinal_point": 0.016370030244815093,
+      "diff_decisive_point": 0.038373958698448285
+    },
+    {
+      "tag": "of_tcn_s0",
+      "split": "test_frozen",
+      "n_clips": 2256,
+      "n_participants": 26,
+      "point": {
+        "eta2_score_ordinal": 0.5646430394379326,
+        "eta2_label_ordinal": 0.5317094803731337,
+        "eta2_score_decisive": 0.3520425326010639,
+        "eta2_label_decisive": 0.3229737885636496,
+        "rho_b": 0.7351684156002137,
+        "auc_within_person": 0.7722442617346716,
+        "n_participants_usable": 25
+      },
+      "ci": {
+        "eta2_score_ordinal": [
+          0.368945130879674,
+          0.6879616995440888
+        ],
+        "eta2_label_ordinal": [
+          0.3717838722593344,
+          0.6451536818110547
+        ],
+        "eta2_score_decisive": [
+          0.22474222930375765,
+          0.46684736326312365
+        ],
+        "eta2_label_decisive": [
+          0.19414537400735762,
+          0.453369743174102
+        ],
+        "rho_b": [
+          0.442128562593652,
+          0.8694418224458229
+        ],
+        "auc_within_person": [
+          0.7156289048815577,
+          0.8248742904488967
+        ],
+        "diff_ordinal": [
+          -0.04268990503561467,
+          0.0865740857190683
+        ],
+        "diff_decisive": [
+          -0.13399216087979296,
+          0.1755142489860822
+        ]
+      },
+      "diff_ordinal_point": 0.03293355906479889,
+      "diff_decisive_point": 0.029068744037414274
+    },
+    {
+      "tag": "of_tcn_s1",
+      "split": "test_frozen",
+      "n_clips": 2256,
+      "n_participants": 26,
+      "point": {
+        "eta2_score_ordinal": 0.5969839470475469,
+        "eta2_label_ordinal": 0.5317094803731337,
+        "eta2_score_decisive": 0.4161726113612136,
+        "eta2_label_decisive": 0.3229737885636496,
+        "rho_b": 0.7020003521987158,
+        "auc_within_person": 0.790051873103006,
+        "n_participants_usable": 25
+      },
+      "ci": {
+        "eta2_score_ordinal": [
+          0.4101957438837474,
+          0.7093136022902695
+        ],
+        "eta2_label_ordinal": [
+          0.3688063933123154,
+          0.6464830845876096
+        ],
+        "eta2_score_decisive": [
+          0.253188203305443,
+          0.5412200251649851
+        ],
+        "eta2_label_decisive": [
+          0.1983036384862051,
+          0.44791523331896876
+        ],
+        "rho_b": [
+          0.40121736087134263,
+          0.8784883329301668
+        ],
+        "auc_within_person": [
+          0.7444423265053699,
+          0.8348751279883155
+        ],
+        "diff_ordinal": [
+          -0.008320165380135525,
+          0.12018591601682102
+        ],
+        "diff_decisive": [
+          -0.06993309911630113,
+          0.25028036419667626
+        ]
+      },
+      "diff_ordinal_point": 0.06527446667441317,
+      "diff_decisive_point": 0.09319882279756397
+    },
+    {
+      "tag": "of_tcn_s2",
+      "split": "test_frozen",
+      "n_clips": 2256,
+      "n_participants": 26,
+      "point": {
+        "eta2_score_ordinal": 0.5745137776311973,
+        "eta2_label_ordinal": 0.5317094803731337,
+        "eta2_score_decisive": 0.41622222583801743,
+        "eta2_label_decisive": 0.3229737885636496,
+        "rho_b": 0.5296631980301075,
+        "auc_within_person": 0.782226157255023,
+        "n_participants_usable": 25
+      },
+      "ci": {
+        "eta2_score_ordinal": [
+          0.3915477611704938,
+          0.6909816689686464
+        ],
+        "eta2_label_ordinal": [
+          0.3640109778724249,
+          0.6531795417823641
+        ],
+        "eta2_score_decisive": [
+          0.26834659701397556,
+          0.5337209711907563
+        ],
+        "eta2_label_decisive": [
+          0.1932610540069659,
+          0.4519515215180314
+        ],
+        "rho_b": [
+          0.14472100218402034,
+          0.776330745099729
+        ],
+        "auc_within_person": [
+          0.7382948492603447,
+          0.8277145922777387
+        ],
+        "diff_ordinal": [
+          -0.02838152202928528,
+          0.10534511831693323
+        ],
+        "diff_decisive": [
+          -0.06111909925770533,
+          0.239966839321105
+        ]
+      },
+      "diff_ordinal_point": 0.04280429725806356,
+      "diff_decisive_point": 0.09324843727436782
+    },
+    {
+      "tag": "of_transformer_s0",
+      "split": "test_frozen",
+      "n_clips": 2256,
+      "n_participants": 26,
+      "point": {
+        "eta2_score_ordinal": 0.5537746640688904,
+        "eta2_label_ordinal": 0.5317094803731337,
+        "eta2_score_decisive": 0.32049458046106366,
+        "eta2_label_decisive": 0.3229737885636496,
+        "rho_b": 0.6872969838867116,
+        "auc_within_person": 0.817987694107088,
+        "n_participants_usable": 25
+      },
+      "ci": {
+        "eta2_score_ordinal": [
+          0.3607942469979833,
+          0.6750310199036544
+        ],
+        "eta2_label_ordinal": [
+          0.3726716335228818,
+          0.6424667690848969
+        ],
+        "eta2_score_decisive": [
+          0.18885074030708365,
+          0.43874108833039926
+        ],
+        "eta2_label_decisive": [
+          0.20136320446226136,
+          0.44787912896999565
+        ],
+        "rho_b": [
+          0.394961041158689,
+          0.8473317247050154
+        ],
+        "auc_within_person": [
+          0.7753070987349238,
+          0.8601180699600081
+        ],
+        "diff_ordinal": [
+          -0.0728713853532588,
+          0.08676879103461538
+        ],
+        "diff_decisive": [
+          -0.1652884674829289,
+          0.1517808538795847
+        ]
+      },
+      "diff_ordinal_point": 0.022065183695756718,
+      "diff_decisive_point": -0.0024792081025859503
+    },
+    {
+      "tag": "of_transformer_s1",
+      "split": "test_frozen",
+      "n_clips": 2256,
+      "n_participants": 26,
+      "point": {
+        "eta2_score_ordinal": 0.5252400106780386,
+        "eta2_label_ordinal": 0.5317094803731337,
+        "eta2_score_decisive": 0.3123864867019567,
+        "eta2_label_decisive": 0.3229737885636496,
+        "rho_b": 0.6989229030171336,
+        "auc_within_person": 0.7871043764012157,
+        "n_participants_usable": 25
+      },
+      "ci": {
+        "eta2_score_ordinal": [
+          0.3335074552892306,
+          0.6382201281489202
+        ],
+        "eta2_label_ordinal": [
+          0.3666430023926072,
+          0.6497457380088676
+        ],
+        "eta2_score_decisive": [
+          0.1713194326640426,
+          0.43813321756745227
+        ],
+        "eta2_label_decisive": [
+          0.1975774675913449,
+          0.44989013583982373
+        ],
+        "rho_b": [
+          0.4177135777680106,
+          0.854351599626839
+        ],
+        "auc_within_person": [
+          0.7297953627925446,
+          0.8415224078611373
+        ],
+        "diff_ordinal": [
+          -0.08612474923945518,
+          0.06016124891420899
+        ],
+        "diff_decisive": [
+          -0.1923846958461925,
+          0.1541236331331945
+        ]
+      },
+      "diff_ordinal_point": -0.006469469695095098,
+      "diff_decisive_point": -0.010587301861692933
+    },
+    {
+      "tag": "of_transformer_s2",
+      "split": "test_frozen",
+      "n_clips": 2256,
+      "n_participants": 26,
+      "point": {
+        "eta2_score_ordinal": 0.5104260290996758,
+        "eta2_label_ordinal": 0.5317094803731337,
+        "eta2_score_decisive": 0.2677084175968749,
+        "eta2_label_decisive": 0.3229737885636496,
+        "rho_b": 0.759788009052872,
+        "auc_within_person": 0.7177994027060063,
+        "n_participants_usable": 25
+      },
+      "ci": {
+        "eta2_score_ordinal": [
+          0.32513181149562903,
+          0.6248048047249575
+        ],
+        "eta2_label_ordinal": [
+          0.3608955373180247,
+          0.6510798698624649
+        ],
+        "eta2_score_decisive": [
+          0.17048339419760059,
+          0.3516313970523795
+        ],
+        "eta2_label_decisive": [
+          0.19574432942838838,
+          0.44629603091742454
+        ],
+        "rho_b": [
+          0.43788124307738413,
+          0.8969806726292575
+        ],
+        "auc_within_person": [
+          0.6578502333674837,
+          0.7765078259750783
+        ],
+        "diff_ordinal": [
+          -0.09312843980726444,
+          0.04501145699309471
+        ],
+        "diff_decisive": [
+          -0.20388403399581237,
+          0.07769572345221172
+        ]
+      },
+      "diff_ordinal_point": -0.021283451273457876,
+      "diff_decisive_point": -0.055265370966774696
+    },
+    {
+      "tag": "tv_cnnlstm_s0",
+      "split": "test_frozen",
+      "n_clips": 2256,
+      "n_participants": 26,
+      "point": {
+        "eta2_score_ordinal": 0.5857281441007083,
+        "eta2_label_ordinal": 0.5317094803731337,
+        "eta2_score_decisive": 0.42599530729706575,
+        "eta2_label_decisive": 0.3229737885636496,
+        "rho_b": 0.6831937183112684,
+        "auc_within_person": 0.81830275754173,
+        "n_participants_usable": 25
+      },
+      "ci": {
+        "eta2_score_ordinal": [
+          0.39890096998427443,
+          0.7078899735542328
+        ],
+        "eta2_label_ordinal": [
+          0.37236612432162536,
+          0.6479844178355612
+        ],
+        "eta2_score_decisive": [
+          0.2756295482933048,
+          0.5462781724160075
+        ],
+        "eta2_label_decisive": [
+          0.19932450589146997,
+          0.44865116949481676
+        ],
+        "rho_b": [
+          0.35091688634730733,
+          0.8887801926321794
+        ],
+        "auc_within_person": [
+          0.7716000109135212,
+          0.8625281150249269
+        ],
+        "diff_ordinal": [
+          -0.03435574253446595,
+          0.12568664435121576
+        ],
+        "diff_decisive": [
+          -0.061216713098823476,
+          0.2536709390935736
+        ]
+      },
+      "diff_ordinal_point": 0.05401866372757458,
+      "diff_decisive_point": 0.10302151873341614
+    },
+    {
+      "tag": "tv_cnnlstm_s1",
+      "split": "test_frozen",
+      "n_clips": 2256,
+      "n_participants": 26,
+      "point": {
+        "eta2_score_ordinal": 0.5688185490832142,
+        "eta2_label_ordinal": 0.5317094803731337,
+        "eta2_score_decisive": 0.38055779029504955,
+        "eta2_label_decisive": 0.3229737885636496,
+        "rho_b": 0.7163617817127663,
+        "auc_within_person": 0.8208891136582724,
+        "n_participants_usable": 25
+      },
+      "ci": {
+        "eta2_score_ordinal": [
+          0.3677639034907893,
+          0.7005864137123802
+        ],
+        "eta2_label_ordinal": [
+          0.3670536648949182,
+          0.6495423341877742
+        ],
+        "eta2_score_decisive": [
+          0.2175366338447891,
+          0.5151147412975854
+        ],
+        "eta2_label_decisive": [
+          0.20070996580623238,
+          0.45045638511817265
+        ],
+        "rho_b": [
+          0.43959823258200525,
+          0.8789951132238053
+        ],
+        "auc_within_person": [
+          0.7793273622857617,
+          0.8637838807368863
+        ],
+        "diff_ordinal": [
+          -0.05587731371556247,
+          0.10546431192265304
+        ],
+        "diff_decisive": [
+          -0.12082943011885962,
+          0.20967020722606317
+        ]
+      },
+      "diff_ordinal_point": 0.03710906871008046,
+      "diff_decisive_point": 0.057584001731399936
+    },
+    {
+      "tag": "tv_cnnlstm_s2",
+      "split": "test_frozen",
+      "n_clips": 2256,
+      "n_participants": 26,
+      "point": {
+        "eta2_score_ordinal": 0.5900367759258079,
+        "eta2_label_ordinal": 0.5317094803731337,
+        "eta2_score_decisive": 0.3854741206880545,
+        "eta2_label_decisive": 0.3229737885636496,
+        "rho_b": 0.7751752549607835,
+        "auc_within_person": 0.8293887736610591,
+        "n_participants_usable": 25
+      },
+      "ci": {
+        "eta2_score_ordinal": [
+          0.39097623039725904,
+          0.7015051171300811
+        ],
+        "eta2_label_ordinal": [
+          0.37323542993788955,
+          0.6401818889399449
+        ],
+        "eta2_score_decisive": [
+          0.2381268262526257,
+          0.5162487524141083
+        ],
+        "eta2_label_decisive": [
+          0.198350358334948,
+          0.449005240364605
+        ],
+        "rho_b": [
+          0.5306379818784692,
+          0.8946697995791381
+        ],
+        "auc_within_person": [
+          0.7860086042569855,
+          0.8696716083205402
+        ],
+        "diff_ordinal": [
+          -0.0322264558986011,
+          0.12913286377477887
+        ],
+        "diff_decisive": [
+          -0.1057705072698925,
+          0.2251111298620641
+        ]
+      },
+      "diff_ordinal_point": 0.05832729555267424,
+      "diff_decisive_point": 0.06250033212440487
+    },
+    {
+      "tag": "tv_lstm_s0",
+      "split": "test_frozen",
+      "n_clips": 2256,
+      "n_participants": 26,
+      "point": {
+        "eta2_score_ordinal": 0.5429256826611392,
+        "eta2_label_ordinal": 0.5317094803731337,
+        "eta2_score_decisive": 0.38679710261041267,
+        "eta2_label_decisive": 0.3229737885636496,
+        "rho_b": 0.6592580024545173,
+        "auc_within_person": 0.8066657602301285,
+        "n_participants_usable": 25
+      },
+      "ci": {
+        "eta2_score_ordinal": [
+          0.3380236620969569,
+          0.6773897770198318
+        ],
+        "eta2_label_ordinal": [
+          0.3707893696743052,
+          0.6509377690629832
+        ],
+        "eta2_score_decisive": [
+          0.23699847214129696,
+          0.499457356855124
+        ],
+        "eta2_label_decisive": [
+          0.1991956051238736,
+          0.4454096049701638
+        ],
+        "rho_b": [
+          0.3207963211991577,
+          0.86350239001604
+        ],
+        "auc_within_person": [
+          0.7666488468450126,
+          0.8473661707886552
+        ],
+        "diff_ordinal": [
+          -0.08199200828879077,
+          0.088260718521301
+        ],
+        "diff_decisive": [
+          -0.10789078162007555,
+          0.21130346370401248
+        ]
+      },
+      "diff_ordinal_point": 0.011216202288005461,
+      "diff_decisive_point": 0.06382331404676306
+    },
+    {
+      "tag": "tv_lstm_s1",
+      "split": "test_frozen",
+      "n_clips": 2256,
+      "n_participants": 26,
+      "point": {
+        "eta2_score_ordinal": 0.549073554658054,
+        "eta2_label_ordinal": 0.5317094803731337,
+        "eta2_score_decisive": 0.37102574758733686,
+        "eta2_label_decisive": 0.3229737885636496,
+        "rho_b": 0.6291673882346016,
+        "auc_within_person": 0.7976814997632969,
+        "n_participants_usable": 25
+      },
+      "ci": {
+        "eta2_score_ordinal": [
+          0.3435269824913744,
+          0.6770768296579249
+        ],
+        "eta2_label_ordinal": [
+          0.3699827085325079,
+          0.6447694449131889
+        ],
+        "eta2_score_decisive": [
+          0.21047829321086248,
+          0.49620866066785574
+        ],
+        "eta2_label_decisive": [
+          0.19682550333404644,
+          0.4432715565533063
+        ],
+        "rho_b": [
+          0.2744147343719863,
+          0.8493504123146607
+        ],
+        "auc_within_person": [
+          0.7566737688156139,
+          0.8401962503779472
+        ],
+        "diff_ordinal": [
+          -0.074140327685612,
+          0.0860807013544291
+        ],
+        "diff_decisive": [
+          -0.12799541741121034,
+          0.19909518772293822
+        ]
+      },
+      "diff_ordinal_point": 0.01736407428492026,
+      "diff_decisive_point": 0.04805195902368725
+    },
+    {
+      "tag": "tv_lstm_s2",
+      "split": "test_frozen",
+      "n_clips": 2256,
+      "n_participants": 26,
+      "point": {
+        "eta2_score_ordinal": 0.5385675703289441,
+        "eta2_label_ordinal": 0.5317094803731337,
+        "eta2_score_decisive": 0.3910726200180681,
+        "eta2_label_decisive": 0.3229737885636496,
+        "rho_b": 0.6821679019174076,
+        "auc_within_person": 0.8144438884253365,
+        "n_participants_usable": 25
+      },
+      "ci": {
+        "eta2_score_ordinal": [
+          0.3602099752550808,
+          0.6590537263837448
+        ],
+        "eta2_label_ordinal": [
+          0.37412375918997776,
+          0.6498650526908307
+        ],
+        "eta2_score_decisive": [
+          0.24394252298887562,
+          0.5121072035971502
+        ],
+        "eta2_label_decisive": [
+          0.1989591904715301,
+          0.44642913446272947
+        ],
+        "rho_b": [
+          0.3822133423601954,
+          0.8631928141066755
+        ],
+        "auc_within_person": [
+          0.7668897386600388,
+          0.8565111782213999
+        ],
+        "diff_ordinal": [
+          -0.07750763271360944,
+          0.07338682702303878
+        ],
+        "diff_decisive": [
+          -0.10055971647488067,
+          0.2227056997684389
+        ]
+      },
+      "diff_ordinal_point": 0.006858089955810387,
+      "diff_decisive_point": 0.06809883145441847
+    },
+    {
+      "tag": "tv_mlp_s0",
+      "split": "test_frozen",
+      "n_clips": 2256,
+      "n_participants": 26,
+      "point": {
+        "eta2_score_ordinal": 0.555747757888921,
+        "eta2_label_ordinal": 0.5317094803731337,
+        "eta2_score_decisive": 0.3353503594898165,
+        "eta2_label_decisive": 0.3229737885636496,
+        "rho_b": 0.7662848462139902,
+        "auc_within_person": 0.8344525411071168,
+        "n_participants_usable": 25
+      },
+      "ci": {
+        "eta2_score_ordinal": [
+          0.36801123091703397,
+          0.6689745798503294
+        ],
+        "eta2_label_ordinal": [
+          0.3668140891972813,
+          0.6442616871393395
+        ],
+        "eta2_score_decisive": [
+          0.2033625939077356,
+          0.443736753531889
+        ],
+        "eta2_label_decisive": [
+          0.19893231062963596,
+          0.446421516728595
+        ],
+        "rho_b": [
+          0.5167397301626497,
+          0.8886636146862993
+        ],
+        "auc_within_person": [
+          0.7900758012470855,
+          0.8758172452859169
+        ],
+        "diff_ordinal": [
+          -0.04718493819065888,
+          0.07284154342765943
+        ],
+        "diff_decisive": [
+          -0.14604370345099907,
+          0.15500563472592932
+        ]
+      },
+      "diff_ordinal_point": 0.024038277515787243,
+      "diff_decisive_point": 0.012376570926166897
+    },
+    {
+      "tag": "tv_mlp_s1",
+      "split": "test_frozen",
+      "n_clips": 2256,
+      "n_participants": 26,
+      "point": {
+        "eta2_score_ordinal": 0.55009133167849,
+        "eta2_label_ordinal": 0.5317094803731337,
+        "eta2_score_decisive": 0.329392114522681,
+        "eta2_label_decisive": 0.3229737885636496,
+        "rho_b": 0.788852806878927,
+        "auc_within_person": 0.8329612086476188,
+        "n_participants_usable": 25
+      },
+      "ci": {
+        "eta2_score_ordinal": [
+          0.331553707990039,
+          0.6720287297366744
+        ],
+        "eta2_label_ordinal": [
+          0.36512959674685175,
+          0.646990838359143
+        ],
+        "eta2_score_decisive": [
+          0.191033363188716,
+          0.4498949778734059
+        ],
+        "eta2_label_decisive": [
+          0.19956300175633704,
+          0.44681461594904154
+        ],
+        "rho_b": [
+          0.5750970961388155,
+          0.8996782653071064
+        ],
+        "auc_within_person": [
+          0.7892425479610857,
+          0.8750747085967766
+        ],
+        "diff_ordinal": [
+          -0.06810922670631647,
+          0.07042489160332138
+        ],
+        "diff_decisive": [
+          -0.14663816972711186,
+          0.15203383303836193
+        ]
+      },
+      "diff_ordinal_point": 0.0183818513053563,
+      "diff_decisive_point": 0.006418325959031412
+    },
+    {
+      "tag": "tv_mlp_s2",
+      "split": "test_frozen",
+      "n_clips": 2256,
+      "n_participants": 26,
+      "point": {
+        "eta2_score_ordinal": 0.5413490932675691,
+        "eta2_label_ordinal": 0.5317094803731337,
+        "eta2_score_decisive": 0.3318639875883022,
+        "eta2_label_decisive": 0.3229737885636496,
+        "rho_b": 0.7755171937587371,
+        "auc_within_person": 0.8283043638440768,
+        "n_participants_usable": 25
+      },
+      "ci": {
+        "eta2_score_ordinal": [
+          0.35015321634155233,
+          0.6694275154040673
+        ],
+        "eta2_label_ordinal": [
+          0.37648259423569874,
+          0.6531860537766718
+        ],
+        "eta2_score_decisive": [
+          0.2080579809051861,
+          0.4316124944434212
+        ],
+        "eta2_label_decisive": [
+          0.19561477513602155,
+          0.4443931525395219
+        ],
+        "rho_b": [
+          0.53854856321363,
+          0.8885838422141205
+        ],
+        "auc_within_person": [
+          0.7841220753916196,
+          0.8728990068556709
+        ],
+        "diff_ordinal": [
+          -0.06570421085890485,
+          0.06455769538245781
+        ],
+        "diff_decisive": [
+          -0.13615870050696388,
+          0.14450744264839913
+        ]
+      },
+      "diff_ordinal_point": 0.009639612894435379,
+      "diff_decisive_point": 0.0088901990246526
+    },
+    {
+      "tag": "tv_tcn_s0",
+      "split": "test_frozen",
+      "n_clips": 2256,
+      "n_participants": 26,
+      "point": {
+        "eta2_score_ordinal": 0.5382900778150014,
+        "eta2_label_ordinal": 0.5317094803731337,
+        "eta2_score_decisive": 0.4140312062079063,
+        "eta2_label_decisive": 0.3229737885636496,
+        "rho_b": 0.6702000439890321,
+        "auc_within_person": 0.7950263253883075,
+        "n_participants_usable": 25
+      },
+      "ci": {
+        "eta2_score_ordinal": [
+          0.3508527377856692,
+          0.6663989437450152
+        ],
+        "eta2_label_ordinal": [
+          0.37406358868911044,
+          0.6443042862939491
+        ],
+        "eta2_score_decisive": [
+          0.26113427865176503,
+          0.5234034080515174
+        ],
+        "eta2_label_decisive": [
+          0.20024382052211107,
+          0.4488757617552093
+        ],
+        "rho_b": [
+          0.33943861486319155,
+          0.8797532200330392
+        ],
+        "auc_within_person": [
+          0.7515375078967601,
+          0.8395782609646387
+        ],
+        "diff_ordinal": [
+          -0.0787124732835367,
+          0.07009641433794427
+        ],
+        "diff_decisive": [
+          -0.07936072131565236,
+          0.23601022934217403
+        ]
+      },
+      "diff_ordinal_point": 0.006580597441867675,
+      "diff_decisive_point": 0.09105741764425668
+    },
+    {
+      "tag": "tv_tcn_s1",
+      "split": "test_frozen",
+      "n_clips": 2256,
+      "n_participants": 26,
+      "point": {
+        "eta2_score_ordinal": 0.5499842027664315,
+        "eta2_label_ordinal": 0.5317094803731337,
+        "eta2_score_decisive": 0.386479750033731,
+        "eta2_label_decisive": 0.3229737885636496,
+        "rho_b": 0.7136262713291377,
+        "auc_within_person": 0.7926403571058285,
+        "n_participants_usable": 25
+      },
+      "ci": {
+        "eta2_score_ordinal": [
+          0.3315116285262424,
+          0.6885220608935088
+        ],
+        "eta2_label_ordinal": [
+          0.3639309960236455,
+          0.6547008190510197
+        ],
+        "eta2_score_decisive": [
+          0.23186013128153704,
+          0.5002040737353468
+        ],
+        "eta2_label_decisive": [
+          0.20111805285683718,
+          0.44177075488625006
+        ],
+        "rho_b": [
+          0.39769762443019674,
+          0.8839210783907934
+        ],
+        "auc_within_person": [
+          0.7477278562736491,
+          0.8335869545375852
+        ],
+        "diff_ordinal": [
+          -0.08337126003109907,
+          0.07887624248163085
+        ],
+        "diff_decisive": [
+          -0.09880837894738446,
+          0.21034358400411726
+        ]
+      },
+      "diff_ordinal_point": 0.01827472239329775,
+      "diff_decisive_point": 0.06350596147008136
+    },
+    {
+      "tag": "tv_tcn_s2",
+      "split": "test_frozen",
+      "n_clips": 2256,
+      "n_participants": 26,
+      "point": {
+        "eta2_score_ordinal": 0.5547382766894758,
+        "eta2_label_ordinal": 0.5317094803731337,
+        "eta2_score_decisive": 0.3719284418110455,
+        "eta2_label_decisive": 0.3229737885636496,
+        "rho_b": 0.7098649445516482,
+        "auc_within_person": 0.7904810435607991,
+        "n_participants_usable": 25
+      },
+      "ci": {
+        "eta2_score_ordinal": [
+          0.3384886757285865,
+          0.6799466703254124
+        ],
+        "eta2_label_ordinal": [
+          0.3770886428271344,
+          0.6485987083236752
+        ],
+        "eta2_score_decisive": [
+          0.22950772045355017,
+          0.49340144137015496
+        ],
+        "eta2_label_decisive": [
+          0.1995043415274205,
+          0.44566087666016074
+        ],
+        "rho_b": [
+          0.40224556343854856,
+          0.887139658125323
+        ],
+        "auc_within_person": [
+          0.7330926961627936,
+          0.8404441870776141
+        ],
+        "diff_ordinal": [
+          -0.06079885765513476,
+          0.07588047424572313
+        ],
+        "diff_decisive": [
+          -0.10901291416745178,
+          0.1921994909959229
+        ]
+      },
+      "diff_ordinal_point": 0.023028796316342137,
+      "diff_decisive_point": 0.048954653247395896
+    },
+    {
+      "tag": "tv_transformer_s0",
+      "split": "test_frozen",
+      "n_clips": 2256,
+      "n_participants": 26,
+      "point": {
+        "eta2_score_ordinal": 0.523977163942494,
+        "eta2_label_ordinal": 0.5317094803731337,
+        "eta2_score_decisive": 0.25299454375517777,
+        "eta2_label_decisive": 0.3229737885636496,
+        "rho_b": 0.7878269904850662,
+        "auc_within_person": 0.8365927282005065,
+        "n_participants_usable": 25
+      },
+      "ci": {
+        "eta2_score_ordinal": [
+          0.32496446797583206,
+          0.6476321107241483
+        ],
+        "eta2_label_ordinal": [
+          0.3651502649323657,
+          0.6465794199495628
+        ],
+        "eta2_score_decisive": [
+          0.14584067552332122,
+          0.3522492161880908
+        ],
+        "eta2_label_decisive": [
+          0.19392773784039186,
+          0.4417210668237126
+        ],
+        "rho_b": [
+          0.5703395426638141,
+          0.9085627815330265
+        ],
+        "auc_within_person": [
+          0.7979864361501806,
+          0.8773955522360032
+        ],
+        "diff_ordinal": [
+          -0.09558268757415629,
+          0.05691808240488419
+        ],
+        "diff_decisive": [
+          -0.22207746822394467,
+          0.07653405530000366
+        ]
+      },
+      "diff_ordinal_point": -0.007732316430639652,
+      "diff_decisive_point": -0.06997924480847184
+    },
+    {
+      "tag": "tv_transformer_s1",
+      "split": "test_frozen",
+      "n_clips": 2256,
+      "n_participants": 26,
+      "point": {
+        "eta2_score_ordinal": 0.517066551246583,
+        "eta2_label_ordinal": 0.5317094803731337,
+        "eta2_score_decisive": 0.2781656045822585,
+        "eta2_label_decisive": 0.3229737885636496,
+        "rho_b": 0.8144982167254461,
+        "auc_within_person": 0.803291170459966,
+        "n_participants_usable": 25
+      },
+      "ci": {
+        "eta2_score_ordinal": [
+          0.3163687541431063,
+          0.642119118474017
+        ],
+        "eta2_label_ordinal": [
+          0.36859472740175125,
+          0.6467189595616653
+        ],
+        "eta2_score_decisive": [
+          0.16330741865378082,
+          0.37787955305619436
+        ],
+        "eta2_label_decisive": [
+          0.19878525887008638,
+          0.448676895111626
+        ],
+        "rho_b": [
+          0.5594377258067446,
+          0.9238696172754889
+        ],
+        "auc_within_person": [
+          0.755054465735354,
+          0.8495255370685062
+        ],
+        "diff_ordinal": [
+          -0.09077268406002967,
+          0.04156400433036356
+        ],
+        "diff_decisive": [
+          -0.20068204300263143,
+          0.08457944080264149
+        ]
+      },
+      "diff_ordinal_point": -0.014642929126550741,
+      "diff_decisive_point": -0.044808183981391136
+    },
+    {
+      "tag": "tv_transformer_s2",
+      "split": "test_frozen",
+      "n_clips": 2256,
+      "n_participants": 26,
+      "point": {
+        "eta2_score_ordinal": 0.5021149718457592,
+        "eta2_label_ordinal": 0.5317094803731337,
+        "eta2_score_decisive": 0.2701532668587842,
+        "eta2_label_decisive": 0.3229737885636496,
+        "rho_b": 0.7426910691551926,
+        "auc_within_person": 0.8137392906759356,
+        "n_participants_usable": 25
+      },
+      "ci": {
+        "eta2_score_ordinal": [
+          0.2996596870686289,
+          0.6250751930019821
+        ],
+        "eta2_label_ordinal": [
+          0.365657939924235,
+          0.651028335729025
+        ],
+        "eta2_score_decisive": [
+          0.14590687925398585,
+          0.3740751933576937
+        ],
+        "eta2_label_decisive": [
+          0.1973577677463671,
+          0.4465355765232256
+        ],
+        "rho_b": [
+          0.45127108037877045,
+          0.8947477433721296
+        ],
+        "auc_within_person": [
+          0.7763983393560957,
+          0.8531513739071767
+        ],
+        "diff_ordinal": [
+          -0.10909538824164015,
+          0.028668227861599282
+        ],
+        "diff_decisive": [
+          -0.21500371209001848,
+          0.08535815586722875
+        ]
+      },
+      "diff_ordinal_point": -0.029594508527374552,
+      "diff_decisive_point": -0.0528205217048654
+    }
+  ]
+}

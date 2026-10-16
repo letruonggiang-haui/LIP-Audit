@@ -1,0 +1,42 @@
+test descriptors: 2256 chunks, 26 participants, floor 0.5027
+of_cnnlstm_s0        acc 0.6742  CI [0.5925, 0.7558]  UAR 0.559  F1 0.565  QWK 0.732  MAE 0.445
+of_cnnlstm_s1        acc 0.6432  CI [0.5599, 0.7271]  UAR 0.554  F1 0.549  QWK 0.728  MAE 0.477
+of_cnnlstm_s2        acc 0.6640  CI [0.5883, 0.7441]  UAR 0.562  F1 0.562  QWK 0.750  MAE 0.438
+of_lstm_s0           acc 0.6303  CI [0.5414, 0.7185]  UAR 0.530  F1 0.530  QWK 0.737  MAE 0.478
+of_lstm_s1           acc 0.6507  CI [0.5700, 0.7293]  UAR 0.551  F1 0.550  QWK 0.749  MAE 0.459
+of_lstm_s2           acc 0.6698  CI [0.5830, 0.7529]  UAR 0.540  F1 0.542  QWK 0.728  MAE 0.461
+of_mlp_s0            acc 0.6715  CI [0.5892, 0.7530]  UAR 0.554  F1 0.555  QWK 0.731  MAE 0.457
+of_mlp_s1            acc 0.6543  CI [0.5750, 0.7354]  UAR 0.553  F1 0.555  QWK 0.726  MAE 0.464
+of_mlp_s2            acc 0.6343  CI [0.5581, 0.7106]  UAR 0.534  F1 0.535  QWK 0.722  MAE 0.482
+of_tcn_s0            acc 0.6693  CI [0.5843, 0.7541]  UAR 0.543  F1 0.554  QWK 0.742  MAE 0.437
+of_tcn_s1            acc 0.6631  CI [0.5736, 0.7508]  UAR 0.562  F1 0.565  QWK 0.748  MAE 0.441
+of_tcn_s2            acc 0.6507  CI [0.5659, 0.7336]  UAR 0.552  F1 0.556  QWK 0.743  MAE 0.451
+~/p4/code/p4_train_of.py:148: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.enc = nn.TransformerEncoder(layer, num_layers=n_block)
+of_transformer_s0    acc 0.6618  CI [0.5849, 0.7354]  UAR 0.557  F1 0.558  QWK 0.746  MAE 0.445
+~/p4/code/p4_train_of.py:148: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.enc = nn.TransformerEncoder(layer, num_layers=n_block)
+of_transformer_s1    acc 0.6520  CI [0.5660, 0.7349]  UAR 0.542  F1 0.546  QWK 0.716  MAE 0.476
+~/p4/code/p4_train_of.py:148: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.enc = nn.TransformerEncoder(layer, num_layers=n_block)
+of_transformer_s2    acc 0.6738  CI [0.5918, 0.7490]  UAR 0.564  F1 0.565  QWK 0.748  MAE 0.439
+~/p4/code/p4_train_marlin.py:55: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.enc = nn.TransformerEncoder(layer, num_layers=n_block)
+marlin_s0            acc 0.5851  CI [0.4906, 0.6732]  UAR 0.510  F1 0.506  QWK 0.605  MAE 0.605
+~/p4/code/p4_train_marlin.py:55: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.enc = nn.TransformerEncoder(layer, num_layers=n_block)
+marlin_s1            acc 0.5776  CI [0.4791, 0.6628]  UAR 0.511  F1 0.512  QWK 0.612  MAE 0.594
+~/p4/code/p4_train_marlin.py:55: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.enc = nn.TransformerEncoder(layer, num_layers=n_block)
+marlin_s2            acc 0.5731  CI [0.4604, 0.6724]  UAR 0.509  F1 0.503  QWK 0.596  MAE 0.625
+
+majority-class floor on test: 0.5027
+system           acc (3 seeds)    published  gap      UAR     QWK     MAE
+marlin           0.5786 +- 0.0049  65.20      -7.3     0.510   0.604   0.608
+of_cnnlstm       0.6605 +- 0.0129  65.16      +0.9     0.558   0.737   0.454
+of_lstm          0.6503 +- 0.0161  62.37      +2.7     0.540   0.738   0.466
+of_mlp           0.6534 +- 0.0152  -          -        0.547   0.726   0.467
+of_tcn           0.6611 +- 0.0077  65.60      +0.5     0.552   0.744   0.443
+of_transformer   0.6625 +- 0.0089  67.61      -1.4     0.554   0.737   0.453
+
+wrote ~/p4/analysis/E10_test.json

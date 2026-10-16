@@ -1,0 +1,70 @@
+[05:29:37] campaign starts, 20 parallel
+Validation: 1071 labelled chunks, 1071 reduced, 1071 joined
+  long population: MARLIN says 204, frame count says 204
+  frames_total: median 300, 90th pct 10000, max 10000
+  tracked-frame rate: median 1.000, min 0.000
+  clips with no tracked frame: 9
+CHECK PASSED for Validation
+Validation: X (1071, 98)  X_seq (1071, 9, 98) -> ~/p4/feats/openface98_validation.npz
+clips with no tracked frame: 9 of 1071
+frames per clip: median 300, 90th pct 10000, max 10000
+[06:51:08] Validation: packed, deleting clips
+/dev/mapper/ubuntu--vg-ubuntu--lv  490G  449G   17G  97% /
+[06:51:09] === Train: extraction starts ===
+[07:24:11] Train: extraction done, waiting for the reducer
+[07:26:47] Train: reduction done
+PACK REFUSED for Train: 520 of 7983 labelled chunks reduced; 7463 missing (first: ['subject_104_06lc4xlb48_vid_1_3.mp4', 'subject_104_06lc4xlb48_vid_1_30.mp4', 'subject_104_06lc4xlb48_vid_1_31.mp4']), 0 unexpected (first: [])
+[07:26:47] Train: PACK FAILED, clips kept
+[09:10:52] === campaign restarts, 20 parallel, up to 12 attempts ===
+[09:11:11] Train: attempt 1, 7463 clips still to extract
+[10:07:21] Train: attempt 1 finished, 2805 reduced
+[10:07:37] Train: attempt 2, 5178 clips still to extract
+[10:19:41] Train: attempt 2 finished, 2825 reduced
+[10:19:58] Train: attempt 3, 5158 clips still to extract
+[11:06:03] Train: attempt 3 finished, 2992 reduced
+[11:06:20] Train: attempt 4, 4991 clips still to extract
+[14:22:32] Train: attempt 4 finished, 5300 reduced
+[14:22:49] Train: attempt 5, 2683 clips still to extract
+[14:27:20] Train: attempt 5 finished, 5433 reduced
+[14:27:36] Train: attempt 6, 2550 clips still to extract
+[15:04:59] Train: attempt 6 finished, 7983 reduced
+[15:05:15] Train: attempt 7, 0 clips still to extract
+[15:05:32] Train: extraction complete
+Train: 7983 labelled chunks, 7983 reduced, 7983 joined
+  long population: MARLIN says 702, frame count says 702
+  frames_total: median 300, 90th pct 301, max 10000
+  tracked-frame rate: median 1.000, min 0.000
+  clips with no tracked frame: 146
+  FAIL interior clips under 150 frames: 263 clips, first: ['subject_60_dalrgj02of_vid_0_0.mp4', 'subject_60_dalrgj02of_vid_0_1.mp4', 'subject_60_dalrgj02of_vid_0_10.mp4']
+CHECK FAILED for Train
+[15:05:33] Train: frame-count check FAILED, stopping, clips kept
+[03:48:39] === finishing Train ===
+Train: 7983 clips
+  declared partial (OpenFace aborts): 12 clips, coverage 0.000 to 1.000
+  2000 / 7983
+  4000 / 7983
+  6000 / 7983
+checked 7982, missing a descriptor 1, short against source 0
+[03:49:43] Train: source-frame verification FAILED, clips kept
+[03:49:56] === finishing Train ===
+Train: 7983 clips
+  declared partial (OpenFace aborts): 7 clips, coverage 0.310 to 0.833
+  2000 / 7983
+  4000 / 7983
+  6000 / 7983
+checked 7983, missing a descriptor 0, short against source 0
+Train: 7983 labelled chunks, 7983 reduced, 7983 joined
+  declared partial and exempt: 7 clips
+  inferred capture rate, frames per second, over 85 participants: {7.5: 2, 7.7: 1, 10.0: 1, 12.5: 1, 15.0: 7, 15.1: 1, 16.6: 1, 16.7: 1, 19.6: 1, 20.0: 1, 25.0: 1, 29.5: 1, 29.9: 1, 30.0: 61, 30.1: 1, 76.8: 1, 123.5: 1, 133.0: 1}
+  long population: MARLIN says 702, frame count says 702
+  frames_total: median 300, 90th pct 301, max 10000
+  tracked-frame rate: median 1.000, min 0.000
+  clips with no tracked frame: 146
+CHECK PASSED for Train
+Train: X (7983, 98)  X_seq (7983, 9, 98) -> ~/p4/feats/openface98_train.npz
+clips with no tracked frame: 146 of 7983
+frames per clip: median 300, 90th pct 301, max 10000
+[03:51:03] Train: packed, deleting clips and OpenFace leftovers
+/dev/mapper/ubuntu--vg-ubuntu--lv  490G  427G   38G  92% /
+[03:51:05] === E3 training starts ===
+[03:55:44] === campaign done ===

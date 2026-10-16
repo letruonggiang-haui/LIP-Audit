@@ -1,0 +1,34 @@
+{
+  "tag": "of_lstm_s0",
+  "model": "lstm",
+  "seed": 0,
+  "best_epoch": 9,
+  "last_epoch": 29,
+  "selection_rule": "epoch chosen by accuracy on the same validation split that is reported; this is the published baselines' protocol and it is optimistic. The last-epoch probabilities are stored in the same file as P_last so that a selection-free reading is available.",
+  "validation": {
+    "acc": 0.6591970121381886,
+    "uar": 0.5782766445712834,
+    "macro_f1": 0.5672670785497482,
+    "qwk": 0.7037378977899424,
+    "mae": 0.43790849673202614,
+    "floor": 0.5312791783380019
+  },
+  "validation_last_epoch": {
+    "acc": 0.6181139122315593,
+    "uar": 0.5559729482917206,
+    "macro_f1": 0.5461571144989508,
+    "qwk": 0.6891401574527265,
+    "mae": 0.4733893557422969
+  },
+  "args": {
+    "model": "lstm",
+    "seed": 0,
+    "tag": null,
+    "epochs": 80,
+    "batch": 64,
+    "lr": 0.001,
+    "wd": 0.01,
+    "patience": 20
+  },
+  "finished": "2026-09-05 03:51:51"
+}

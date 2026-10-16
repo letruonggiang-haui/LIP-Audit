@@ -1,0 +1,34 @@
+{
+  "tag": "of_tcn_s1",
+  "model": "tcn",
+  "seed": 1,
+  "best_epoch": 3,
+  "last_epoch": 23,
+  "selection_rule": "epoch chosen by accuracy on the same validation split that is reported; this is the published baselines' protocol and it is optimistic. The last-epoch probabilities are stored in the same file as P_last so that a selection-free reading is available.",
+  "validation": {
+    "acc": 0.6629318394024276,
+    "uar": 0.5846616211200488,
+    "macro_f1": 0.5893038758911117,
+    "qwk": 0.7652475075377464,
+    "mae": 0.3865546218487395,
+    "floor": 0.5312791783380019
+  },
+  "validation_last_epoch": {
+    "acc": 0.6097105508870215,
+    "uar": 0.5302588252373551,
+    "macro_f1": 0.5235079562000382,
+    "qwk": 0.6724614256022483,
+    "mae": 0.488328664799253
+  },
+  "args": {
+    "model": "tcn",
+    "seed": 1,
+    "tag": null,
+    "epochs": 80,
+    "batch": 64,
+    "lr": 0.001,
+    "wd": 0.01,
+    "patience": 20
+  },
+  "finished": "2026-09-05 03:53:28"
+}

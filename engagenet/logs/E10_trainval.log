@@ -1,0 +1,32 @@
+test descriptors: 2256 chunks, 26 participants, floor 0.5027
+tv_cnnlstm_s0        acc 0.6711  CI [0.5808, 0.7616]  UAR 0.528  F1 0.515  QWK 0.727  MAE 0.468
+tv_cnnlstm_s1        acc 0.6755  CI [0.5912, 0.7598]  UAR 0.555  F1 0.561  QWK 0.739  MAE 0.441
+tv_cnnlstm_s2        acc 0.6884  CI [0.6075, 0.7741]  UAR 0.559  F1 0.571  QWK 0.749  MAE 0.419
+tv_lstm_s0           acc 0.6547  CI [0.5684, 0.7392]  UAR 0.541  F1 0.543  QWK 0.745  MAE 0.454
+tv_lstm_s1           acc 0.6507  CI [0.5637, 0.7369]  UAR 0.547  F1 0.552  QWK 0.735  MAE 0.460
+tv_lstm_s2           acc 0.6556  CI [0.5683, 0.7410]  UAR 0.549  F1 0.553  QWK 0.734  MAE 0.457
+tv_mlp_s0            acc 0.6862  CI [0.6063, 0.7664]  UAR 0.552  F1 0.559  QWK 0.730  MAE 0.445
+tv_mlp_s1            acc 0.6915  CI [0.6129, 0.7735]  UAR 0.550  F1 0.561  QWK 0.735  MAE 0.434
+tv_mlp_s2            acc 0.6879  CI [0.6089, 0.7702]  UAR 0.547  F1 0.560  QWK 0.739  MAE 0.431
+tv_tcn_s0            acc 0.6565  CI [0.5655, 0.7432]  UAR 0.526  F1 0.531  QWK 0.732  MAE 0.461
+tv_tcn_s1            acc 0.6782  CI [0.6003, 0.7582]  UAR 0.546  F1 0.556  QWK 0.755  MAE 0.426
+tv_tcn_s2            acc 0.6702  CI [0.5844, 0.7534]  UAR 0.543  F1 0.553  QWK 0.745  MAE 0.437
+~/p4/code/p4_train_of.py:148: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.enc = nn.TransformerEncoder(layer, num_layers=n_block)
+tv_transformer_s0    acc 0.6596  CI [0.5841, 0.7297]  UAR 0.547  F1 0.551  QWK 0.747  MAE 0.446
+~/p4/code/p4_train_of.py:148: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.enc = nn.TransformerEncoder(layer, num_layers=n_block)
+tv_transformer_s1    acc 0.6680  CI [0.5840, 0.7459]  UAR 0.552  F1 0.554  QWK 0.753  MAE 0.440
+~/p4/code/p4_train_of.py:148: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.enc = nn.TransformerEncoder(layer, num_layers=n_block)
+tv_transformer_s2    acc 0.6454  CI [0.5673, 0.7221]  UAR 0.534  F1 0.537  QWK 0.739  MAE 0.464
+
+majority-class floor on test: 0.5027
+system           acc (3 seeds)    published  gap      UAR     QWK     MAE
+tv_cnnlstm       0.6783 +- 0.0073  -          -        0.547   0.738   0.443
+tv_lstm          0.6537 +- 0.0021  -          -        0.546   0.738   0.457
+tv_mlp           0.6885 +- 0.0022  -          -        0.550   0.735   0.437
+tv_tcn           0.6683 +- 0.0090  -          -        0.538   0.744   0.441
+tv_transformer   0.6577 +- 0.0093  -          -        0.544   0.746   0.450
+
+wrote ~/p4/analysis/E10_test_trainval.json

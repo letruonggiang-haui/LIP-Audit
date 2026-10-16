@@ -1,0 +1,22 @@
+{
+  "acc_maj_validation": {
+    "decisive_clips": 1263,
+    "subjects": 19,
+    "floor": 0.6437,
+    "in_sample": 0.6785,
+    "leave_one_out": 0.673
+  },
+  "acc_maj_test": {
+    "decisive_clips": 1696,
+    "subjects": 21,
+    "floor": 0.52,
+    "in_sample": 0.6368,
+    "leave_one_out": 0.6368
+  },
+  "within_person_auc23_test_ensemble": {
+    "subjects_with_both_classes": 21,
+    "clip_weighted": 0.5721,
+    "unweighted": 0.5609,
+    "pair_weighted": 0.5724
+  }
+}

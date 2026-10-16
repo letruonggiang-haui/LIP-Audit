@@ -1,0 +1,1060 @@
+{
+  "probe_pooled_tap": [
+    {
+      "tag": "of_cnnlstm_s0",
+      "model": "cnnlstm",
+      "dim": 256,
+      "logistic_M": 75.50965447154472,
+      "ncm_M": 22.75,
+      "logistic_M_centred": 3.6991869918699187
+    },
+    {
+      "tag": "of_cnnlstm_s1",
+      "model": "cnnlstm",
+      "dim": 256,
+      "logistic_M": 76.57317073170731,
+      "ncm_M": 31.165650406504064,
+      "logistic_M_centred": 4.207825203252033
+    },
+    {
+      "tag": "of_cnnlstm_s2",
+      "model": "cnnlstm",
+      "dim": 256,
+      "logistic_M": 74.58485772357723,
+      "ncm_M": 22.981199186991873,
+      "logistic_M_centred": 4.1153455284552845
+    },
+    {
+      "tag": "of_lstm_s0",
+      "model": "lstm",
+      "dim": 256,
+      "logistic_M": 75.64837398373983,
+      "ncm_M": 21.732723577235774,
+      "logistic_M_centred": 3.8841463414634148
+    },
+    {
+      "tag": "of_lstm_s1",
+      "model": "lstm",
+      "dim": 256,
+      "logistic_M": 78.97764227642277,
+      "ncm_M": 26.35670731707317,
+      "logistic_M_centred": 4.76270325203252
+    },
+    {
+      "tag": "of_lstm_s2",
+      "model": "lstm",
+      "dim": 256,
+      "logistic_M": 82.21443089430895,
+      "ncm_M": 26.264227642276424,
+      "logistic_M_centred": 4.392784552845528
+    },
+    {
+      "tag": "of_mlp_s0",
+      "model": "mlp",
+      "dim": 256,
+      "logistic_M": 83.0005081300813,
+      "ncm_M": 60.48170731707317,
+      "logistic_M_centred": 3.144308943089431
+    },
+    {
+      "tag": "of_mlp_s1",
+      "model": "mlp",
+      "dim": 256,
+      "logistic_M": 83.04674796747967,
+      "ncm_M": 61.54522357723577,
+      "logistic_M_centred": 3.514227642276423
+    },
+    {
+      "tag": "of_mlp_s2",
+      "model": "mlp",
+      "dim": 256,
+      "logistic_M": 83.8790650406504,
+      "ncm_M": 67.6951219512195,
+      "logistic_M_centred": 3.0518292682926833
+    },
+    {
+      "tag": "of_tcn_s0",
+      "model": "tcn",
+      "dim": 128,
+      "logistic_M": 61.91514227642277,
+      "ncm_M": 27.697662601626018,
+      "logistic_M_centred": 1.7571138211382116
+    },
+    {
+      "tag": "of_tcn_s1",
+      "model": "tcn",
+      "dim": 128,
+      "logistic_M": 63.81097560975609,
+      "ncm_M": 30.009654471544714,
+      "logistic_M_centred": 2.635670731707317
+    },
+    {
+      "tag": "of_tcn_s2",
+      "model": "tcn",
+      "dim": 128,
+      "logistic_M": 64.04217479674797,
+      "ncm_M": 31.67428861788618,
+      "logistic_M_centred": 2.635670731707317
+    },
+    {
+      "tag": "of_transformer_s0",
+      "model": "transformer",
+      "dim": 256,
+      "logistic_M": 80.04115853658536,
+      "ncm_M": 25.15447154471545,
+      "logistic_M_centred": 2.635670731707317
+    },
+    {
+      "tag": "of_transformer_s1",
+      "model": "transformer",
+      "dim": 256,
+      "logistic_M": 76.75813008130082,
+      "ncm_M": 26.541666666666668,
+      "logistic_M_centred": 1.9883130081300813
+    },
+    {
+      "tag": "of_transformer_s2",
+      "model": "transformer",
+      "dim": 256,
+      "logistic_M": 71.4405487804878,
+      "ncm_M": 17.709857723577237,
+      "logistic_M_centred": 1.7108739837398375
+    }
+  ],
+  "within_person_detail": [
+    {
+      "tag": "of_cnnlstm_s0",
+      "n_participants": 11,
+      "weighted_mean": 0.8189359645641714,
+      "unweighted_mean": 0.8298966394128489,
+      "min": 0.7006269592476488,
+      "max": 1.0,
+      "clips_per_participant": [
+        12,
+        98,
+        51,
+        101,
+        94,
+        46,
+        81,
+        94,
+        90,
+        78,
+        97
+      ],
+      "mean_30fps_group": 0.8389684951349559,
+      "n_30fps": 10,
+      "mean_low_fps_group": null,
+      "n_low_fps": 0
+    },
+    {
+      "tag": "of_cnnlstm_s1",
+      "n_participants": 11,
+      "weighted_mean": 0.8073745685135306,
+      "unweighted_mean": 0.8044928557714982,
+      "min": 0.6206896551724138,
+      "max": 0.9653505237711523,
+      "clips_per_participant": [
+        12,
+        98,
+        51,
+        101,
+        94,
+        46,
+        81,
+        94,
+        90,
+        78,
+        97
+      ],
+      "mean_30fps_group": 0.8195174838144016,
+      "n_30fps": 10,
+      "mean_low_fps_group": null,
+      "n_low_fps": 0
+    },
+    {
+      "tag": "of_cnnlstm_s2",
+      "n_participants": 11,
+      "weighted_mean": 0.8314745836487154,
+      "unweighted_mean": 0.8373594308661173,
+      "min": 0.7163009404388715,
+      "max": 0.9621273166800967,
+      "clips_per_participant": [
+        12,
+        98,
+        51,
+        101,
+        94,
+        46,
+        81,
+        94,
+        90,
+        78,
+        97
+      ],
+      "mean_30fps_group": 0.847287154774647,
+      "n_30fps": 10,
+      "mean_low_fps_group": null,
+      "n_low_fps": 0
+    },
+    {
+      "tag": "of_lstm_s0",
+      "n_participants": 11,
+      "weighted_mean": 0.8031972923906052,
+      "unweighted_mean": 0.8071100756503946,
+      "min": 0.6836363636363636,
+      "max": 0.9226430298146655,
+      "clips_per_participant": [
+        12,
+        98,
+        51,
+        101,
+        94,
+        46,
+        81,
+        94,
+        90,
+        78,
+        97
+      ],
+      "mean_30fps_group": 0.8157662886948861,
+      "n_30fps": 10,
+      "mean_low_fps_group": null,
+      "n_low_fps": 0
+    },
+    {
+      "tag": "of_lstm_s1",
+      "n_participants": 11,
+      "weighted_mean": 0.7990344468194477,
+      "unweighted_mean": 0.7942370592860967,
+      "min": 0.5993055555555555,
+      "max": 0.9653505237711522,
+      "clips_per_participant": [
+        12,
+        98,
+        51,
+        101,
+        94,
+        46,
+        81,
+        94,
+        90,
+        78,
+        97
+      ],
+      "mean_30fps_group": 0.8017155597352543,
+      "n_30fps": 10,
+      "mean_low_fps_group": null,
+      "n_low_fps": 0
+    },
+    {
+      "tag": "of_lstm_s2",
+      "n_participants": 11,
+      "weighted_mean": 0.8303525391687695,
+      "unweighted_mean": 0.8374810020420527,
+      "min": 0.7178683385579937,
+      "max": 0.9500000000000001,
+      "clips_per_participant": [
+        12,
+        98,
+        51,
+        101,
+        94,
+        46,
+        81,
+        94,
+        90,
+        78,
+        97
+      ],
+      "mean_30fps_group": 0.848955129643518,
+      "n_30fps": 10,
+      "mean_low_fps_group": null,
+      "n_low_fps": 0
+    },
+    {
+      "tag": "of_mlp_s0",
+      "n_participants": 11,
+      "weighted_mean": 0.826848227717497,
+      "unweighted_mean": 0.8375564530565057,
+      "min": 0.725705329153605,
+      "max": 1.0,
+      "clips_per_participant": [
+        12,
+        98,
+        51,
+        101,
+        94,
+        46,
+        81,
+        94,
+        90,
+        78,
+        97
+      ],
+      "mean_30fps_group": 0.8470655230196906,
+      "n_30fps": 10,
+      "mean_low_fps_group": null,
+      "n_low_fps": 0
+    },
+    {
+      "tag": "of_mlp_s1",
+      "n_participants": 11,
+      "weighted_mean": 0.8296324772210045,
+      "unweighted_mean": 0.8409219428162654,
+      "min": 0.6832876712328767,
+      "max": 1.0,
+      "clips_per_participant": [
+        12,
+        98,
+        51,
+        101,
+        94,
+        46,
+        81,
+        94,
+        90,
+        78,
+        97
+      ],
+      "mean_30fps_group": 0.8566853699746042,
+      "n_30fps": 10,
+      "mean_low_fps_group": null,
+      "n_low_fps": 0
+    },
+    {
+      "tag": "of_mlp_s2",
+      "n_participants": 11,
+      "weighted_mean": 0.8206602303796652,
+      "unweighted_mean": 0.8331295998965262,
+      "min": 0.6872727272727273,
+      "max": 1.0,
+      "clips_per_participant": [
+        12,
+        98,
+        51,
+        101,
+        94,
+        46,
+        81,
+        94,
+        90,
+        78,
+        97
+      ],
+      "mean_30fps_group": 0.8413192722149458,
+      "n_30fps": 10,
+      "mean_low_fps_group": null,
+      "n_low_fps": 0
+    },
+    {
+      "tag": "of_tcn_s0",
+      "n_participants": 11,
+      "weighted_mean": 0.7994845460202111,
+      "unweighted_mean": 0.7988986587651362,
+      "min": 0.6663013698630136,
+      "max": 0.9782433521353746,
+      "clips_per_participant": [
+        12,
+        98,
+        51,
+        101,
+        94,
+        46,
+        81,
+        94,
+        90,
+        78,
+        97
+      ],
+      "mean_30fps_group": 0.8121583876553486,
+      "n_30fps": 10,
+      "mean_low_fps_group": null,
+      "n_low_fps": 0
+    },
+    {
+      "tag": "of_tcn_s1",
+      "n_participants": 11,
+      "weighted_mean": 0.8277769130269734,
+      "unweighted_mean": 0.8286029087228659,
+      "min": 0.6771159874608149,
+      "max": 0.9790491539081385,
+      "clips_per_participant": [
+        12,
+        98,
+        51,
+        101,
+        94,
+        46,
+        81,
+        94,
+        90,
+        78,
+        97
+      ],
+      "mean_30fps_group": 0.8410522406910429,
+      "n_30fps": 10,
+      "mean_low_fps_group": null,
+      "n_low_fps": 0
+    },
+    {
+      "tag": "of_tcn_s2",
+      "n_participants": 11,
+      "weighted_mean": 0.796250741052397,
+      "unweighted_mean": 0.8011201803356461,
+      "min": 0.5951388888888889,
+      "max": 0.943593875906527,
+      "clips_per_participant": [
+        12,
+        98,
+        51,
+        101,
+        94,
+        46,
+        81,
+        94,
+        90,
+        78,
+        97
+      ],
+      "mean_30fps_group": 0.8125198696020876,
+      "n_30fps": 10,
+      "mean_low_fps_group": null,
+      "n_low_fps": 0
+    },
+    {
+      "tag": "of_transformer_s0",
+      "n_participants": 11,
+      "weighted_mean": 0.8125479640695484,
+      "unweighted_mean": 0.8136782251335432,
+      "min": 0.673972602739726,
+      "max": 0.9693795326349717,
+      "clips_per_participant": [
+        12,
+        98,
+        51,
+        101,
+        94,
+        46,
+        81,
+        94,
+        90,
+        78,
+        97
+      ],
+      "mean_30fps_group": 0.8276487873729248,
+      "n_30fps": 10,
+      "mean_low_fps_group": null,
+      "n_low_fps": 0
+    },
+    {
+      "tag": "of_transformer_s1",
+      "n_participants": 11,
+      "weighted_mean": 0.78860292284432,
+      "unweighted_mean": 0.7784242768527411,
+      "min": 0.5791780821917808,
+      "max": 0.9846897663174858,
+      "clips_per_participant": [
+        12,
+        98,
+        51,
+        101,
+        94,
+        46,
+        81,
+        94,
+        90,
+        78,
+        97
+      ],
+      "mean_30fps_group": 0.798348896318837,
+      "n_30fps": 10,
+      "mean_low_fps_group": null,
+      "n_low_fps": 0
+    },
+    {
+      "tag": "of_transformer_s2",
+      "n_participants": 11,
+      "weighted_mean": 0.7588434734166706,
+      "unweighted_mean": 0.7491993009169673,
+      "min": 0.5578082191780822,
+      "max": 0.951651893634166,
+      "clips_per_participant": [
+        12,
+        98,
+        51,
+        101,
+        94,
+        46,
+        81,
+        94,
+        90,
+        78,
+        97
+      ],
+      "mean_30fps_group": 0.7683384090908558,
+      "n_30fps": 10,
+      "mean_low_fps_group": null,
+      "n_low_fps": 0
+    }
+  ],
+  "zero_descriptor": [
+    {
+      "tag": "of_cnnlstm_s0",
+      "model": "cnnlstm",
+      "probs": [
+        0.9134,
+        0.0513,
+        0.0292,
+        0.0061
+      ],
+      "argmax": 0
+    },
+    {
+      "tag": "of_cnnlstm_s1",
+      "model": "cnnlstm",
+      "probs": [
+        0.9844,
+        0.0092,
+        0.0041,
+        0.0023
+      ],
+      "argmax": 0
+    },
+    {
+      "tag": "of_cnnlstm_s2",
+      "model": "cnnlstm",
+      "probs": [
+        0.9322,
+        0.0506,
+        0.0133,
+        0.0039
+      ],
+      "argmax": 0
+    },
+    {
+      "tag": "of_lstm_s0",
+      "model": "lstm",
+      "probs": [
+        0.9579,
+        0.0268,
+        0.0109,
+        0.0044
+      ],
+      "argmax": 0
+    },
+    {
+      "tag": "of_lstm_s1",
+      "model": "lstm",
+      "probs": [
+        0.9629,
+        0.0209,
+        0.0121,
+        0.0041
+      ],
+      "argmax": 0
+    },
+    {
+      "tag": "of_lstm_s2",
+      "model": "lstm",
+      "probs": [
+        0.9929,
+        0.0032,
+        0.0032,
+        0.0007
+      ],
+      "argmax": 0
+    },
+    {
+      "tag": "of_mlp_s0",
+      "model": "mlp",
+      "probs": [
+        0.9893,
+        0.0084,
+        0.0018,
+        0.0005
+      ],
+      "argmax": 0
+    },
+    {
+      "tag": "of_mlp_s1",
+      "model": "mlp",
+      "probs": [
+        0.9806,
+        0.0143,
+        0.0042,
+        0.0009
+      ],
+      "argmax": 0
+    },
+    {
+      "tag": "of_mlp_s2",
+      "model": "mlp",
+      "probs": [
+        0.9494,
+        0.0305,
+        0.0159,
+        0.0042
+      ],
+      "argmax": 0
+    },
+    {
+      "tag": "of_tcn_s0",
+      "model": "tcn",
+      "probs": [
+        0.9632,
+        0.0212,
+        0.0101,
+        0.0055
+      ],
+      "argmax": 0
+    },
+    {
+      "tag": "of_tcn_s1",
+      "model": "tcn",
+      "probs": [
+        0.9598,
+        0.0243,
+        0.013,
+        0.0029
+      ],
+      "argmax": 0
+    },
+    {
+      "tag": "of_tcn_s2",
+      "model": "tcn",
+      "probs": [
+        0.923,
+        0.0473,
+        0.0181,
+        0.0115
+      ],
+      "argmax": 0
+    },
+    {
+      "tag": "of_transformer_s0",
+      "model": "transformer",
+      "probs": [
+        0.97,
+        0.0208,
+        0.0067,
+        0.0024
+      ],
+      "argmax": 0
+    },
+    {
+      "tag": "of_transformer_s1",
+      "model": "transformer",
+      "probs": [
+        0.9763,
+        0.0146,
+        0.0049,
+        0.0042
+      ],
+      "argmax": 0
+    },
+    {
+      "tag": "of_transformer_s2",
+      "model": "transformer",
+      "probs": [
+        0.9837,
+        0.0093,
+        0.0042,
+        0.0028
+      ],
+      "argmax": 0
+    }
+  ],
+  "confusions": {
+    "of_cnnlstm_s0": [
+      [
+        98,
+        23,
+        8,
+        3
+      ],
+      [
+        10,
+        28,
+        36,
+        23
+      ],
+      [
+        5,
+        43,
+        98,
+        127
+      ],
+      [
+        2,
+        10,
+        90,
+        467
+      ]
+    ],
+    "of_cnnlstm_s1": [
+      [
+        97,
+        29,
+        4,
+        2
+      ],
+      [
+        10,
+        38,
+        29,
+        20
+      ],
+      [
+        13,
+        61,
+        83,
+        116
+      ],
+      [
+        7,
+        23,
+        66,
+        473
+      ]
+    ],
+    "of_cnnlstm_s2": [
+      [
+        93,
+        30,
+        7,
+        2
+      ],
+      [
+        8,
+        36,
+        36,
+        17
+      ],
+      [
+        14,
+        46,
+        99,
+        114
+      ],
+      [
+        13,
+        17,
+        76,
+        463
+      ]
+    ],
+    "of_lstm_s0": [
+      [
+        104,
+        20,
+        6,
+        2
+      ],
+      [
+        11,
+        25,
+        38,
+        23
+      ],
+      [
+        24,
+        34,
+        133,
+        82
+      ],
+      [
+        15,
+        17,
+        93,
+        444
+      ]
+    ],
+    "of_lstm_s1": [
+      [
+        102,
+        22,
+        4,
+        4
+      ],
+      [
+        19,
+        31,
+        30,
+        17
+      ],
+      [
+        18,
+        38,
+        102,
+        115
+      ],
+      [
+        2,
+        25,
+        83,
+        459
+      ]
+    ],
+    "of_lstm_s2": [
+      [
+        104,
+        20,
+        5,
+        3
+      ],
+      [
+        14,
+        29,
+        32,
+        22
+      ],
+      [
+        13,
+        47,
+        87,
+        126
+      ],
+      [
+        0,
+        22,
+        68,
+        479
+      ]
+    ],
+    "of_mlp_s0": [
+      [
+        103,
+        21,
+        8,
+        0
+      ],
+      [
+        18,
+        30,
+        30,
+        19
+      ],
+      [
+        18,
+        35,
+        104,
+        116
+      ],
+      [
+        8,
+        15,
+        84,
+        462
+      ]
+    ],
+    "of_mlp_s1": [
+      [
+        98,
+        26,
+        6,
+        2
+      ],
+      [
+        10,
+        34,
+        34,
+        19
+      ],
+      [
+        13,
+        41,
+        102,
+        117
+      ],
+      [
+        0,
+        17,
+        97,
+        455
+      ]
+    ],
+    "of_mlp_s2": [
+      [
+        95,
+        23,
+        12,
+        2
+      ],
+      [
+        10,
+        27,
+        45,
+        15
+      ],
+      [
+        11,
+        36,
+        128,
+        98
+      ],
+      [
+        6,
+        16,
+        105,
+        442
+      ]
+    ],
+    "of_tcn_s0": [
+      [
+        87,
+        26,
+        16,
+        3
+      ],
+      [
+        6,
+        29,
+        38,
+        24
+      ],
+      [
+        11,
+        24,
+        124,
+        114
+      ],
+      [
+        8,
+        13,
+        90,
+        458
+      ]
+    ],
+    "of_tcn_s1": [
+      [
+        100,
+        24,
+        6,
+        2
+      ],
+      [
+        10,
+        31,
+        42,
+        14
+      ],
+      [
+        8,
+        33,
+        128,
+        104
+      ],
+      [
+        4,
+        13,
+        101,
+        451
+      ]
+    ],
+    "of_tcn_s2": [
+      [
+        98,
+        22,
+        9,
+        3
+      ],
+      [
+        11,
+        24,
+        42,
+        20
+      ],
+      [
+        11,
+        34,
+        119,
+        109
+      ],
+      [
+        1,
+        20,
+        81,
+        467
+      ]
+    ],
+    "of_transformer_s0": [
+      [
+        101,
+        22,
+        8,
+        1
+      ],
+      [
+        11,
+        26,
+        44,
+        16
+      ],
+      [
+        9,
+        35,
+        120,
+        109
+      ],
+      [
+        1,
+        14,
+        98,
+        456
+      ]
+    ],
+    "of_transformer_s1": [
+      [
+        96,
+        27,
+        6,
+        3
+      ],
+      [
+        12,
+        30,
+        37,
+        18
+      ],
+      [
+        6,
+        41,
+        115,
+        111
+      ],
+      [
+        4,
+        20,
+        86,
+        459
+      ]
+    ],
+    "of_transformer_s2": [
+      [
+        101,
+        21,
+        8,
+        2
+      ],
+      [
+        13,
+        29,
+        33,
+        22
+      ],
+      [
+        6,
+        47,
+        113,
+        107
+      ],
+      [
+        1,
+        15,
+        95,
+        458
+      ]
+    ]
+  }
+}

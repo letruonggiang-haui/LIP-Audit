@@ -1,0 +1,26 @@
+/bin/bash: line 1:     7 Aborted                 (core dumped) /home/openface-build/build/bin/FeatureExtraction -f /data/clips/Train/subject_104_06lc4xlb48_vid_1_17.mp4 -aus -pose -gaze -out_dir /data/openface/Train > /dev/null 2>&1
+Train: 12 clips OpenFace could not finish
+   1/12 subject_104_06lc4xlb48_vid_1_17                174 rows
+/bin/bash: line 1:     7 Aborted                 (core dumped) /home/openface-build/build/bin/FeatureExtraction -f /data/clips/Train/subject_104_06lc4xlb48_vid_1_21.mp4 -aus -pose -gaze -out_dir /data/openface/Train > /dev/null 2>&1
+   2/12 subject_104_06lc4xlb48_vid_1_21                190 rows
+/bin/bash: line 1:     7 Aborted                 (core dumped) /home/openface-build/build/bin/FeatureExtraction -f /data/clips/Train/subject_22_37kn4gou0j_vid_2_21.mp4 -aus -pose -gaze -out_dir /data/openface/Train > /dev/null 2>&1
+   3/12 subject_22_37kn4gou0j_vid_2_21                 250 rows
+/bin/bash: line 1:     7 Aborted                 (core dumped) /home/openface-build/build/bin/FeatureExtraction -f /data/clips/Train/subject_23_randombhxelhr8yy_vid_0_25.mp4 -aus -pose -gaze -out_dir /data/openface/Train > /dev/null 2>&1
+   4/12 subject_23_randombhxelhr8yy_vid_0_25           7495 rows
+/bin/bash: line 1:     7 Aborted                 (core dumped) /home/openface-build/build/bin/FeatureExtraction -f /data/clips/Train/subject_24_35aqq1f9lo_vid_2_3.mp4 -aus -pose -gaze -out_dir /data/openface/Train > /dev/null 2>&1
+   5/12 subject_24_35aqq1f9lo_vid_2_3                  228 rows
+/bin/bash: line 1:     7 Aborted                 (core dumped) /home/openface-build/build/bin/FeatureExtraction -f /data/clips/Train/subject_5_3b5pqp1ldd_vid_2_17.mp4 -aus -pose -gaze -out_dir /data/openface/Train > /dev/null 2>&1
+   6/12 subject_5_3b5pqp1ldd_vid_2_17                  183 rows
+/bin/bash: line 1:     7 Aborted                 (core dumped) /home/openface-build/build/bin/FeatureExtraction -f /data/clips/Train/subject_61_9lo6k238pu_vid_0_1.mp4 -aus -pose -gaze -out_dir /data/openface/Train > /dev/null 2>&1
+   7/12 subject_61_9lo6k238pu_vid_0_1                  93 rows
+   8/12 subject_102_ax9bbn1mcc_vid_1_5                 10000 rows
+   9/12 subject_102_ax9bbn1mcc_vid_1_6                 10000 rows
+  10/12 subject_102_ax9bbn1mcc_vid_1_7                 10000 rows
+  11/12 subject_102_ax9bbn1mcc_vid_1_8                 10000 rows
+  12/12 subject_102_ax9bbn1mcc_vid_1_9                 10000 rows
+[03:48:09] reduced 11 this pass, 11 total, 1 csv left, 0 errors
+reduction finished for Train
+
+manifest written to ~/p4/logs/partial_Train.json
+coverage: min 0.000, median 0.755, 1 clips with none
+no descriptor at all: ['subject_102_ax9bbn1mcc_vid_1_9.mp4']

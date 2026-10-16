@@ -1,0 +1,235 @@
+{
+ "note": "shares of total variance; between_participant_eq6 is the share Eq. (6) of the main text reports; between_recording_total adds the recording-within-participant component",
+ "train": {
+  "n_chunks": 7879,
+  "n_participants": 91,
+  "n_recordings": 247,
+  "participants_multi_recording": 78,
+  "labels_all": {
+   "participant": 0.5104618792193962,
+   "recording_within_participant": 0.09291428066789703,
+   "chunk_within_recording": 0.3966238401127067,
+   "between_participant_eq6": 0.5104618792193962,
+   "between_recording_total": 0.6033761598872933
+  },
+  "labels_multi_recording_participants": {
+   "participant": 0.5076704204872068,
+   "recording_within_participant": 0.09407610510981486,
+   "chunk_within_recording": 0.3982534744029783,
+   "between_participant_eq6": 0.5076704204872068,
+   "between_recording_total": 0.6017465255970217
+  },
+  "labels_single_recording_participants": {
+   "between_participant_eq6": 0.5276596548921773
+  },
+  "binary_decisive_axis_labels": {
+   "participant": 0.25710014769058326,
+   "recording_within_participant": 0.06802943939244183,
+   "chunk_within_recording": 0.6748704129169749,
+   "between_participant_eq6": 0.25710014769058326,
+   "between_recording_total": 0.32512958708302514
+  }
+ },
+ "validation": {
+  "n_chunks": 1071,
+  "n_participants": 11,
+  "n_recordings": 33,
+  "participants_multi_recording": 11,
+  "labels_all": {
+   "participant": 0.46275852046310745,
+   "recording_within_participant": 0.09727954746350295,
+   "chunk_within_recording": 0.43996193207338957,
+   "between_participant_eq6": 0.46275852046310745,
+   "between_recording_total": 0.5600380679266104
+  },
+  "labels_multi_recording_participants": {
+   "participant": 0.46275852046310745,
+   "recording_within_participant": 0.09727954746350295,
+   "chunk_within_recording": 0.43996193207338957,
+   "between_participant_eq6": 0.46275852046310745,
+   "between_recording_total": 0.5600380679266104
+  },
+  "labels_single_recording_participants": null,
+  "binary_decisive_axis_labels": {
+   "participant": 0.08811277389914254,
+   "recording_within_participant": 0.08735774437435458,
+   "chunk_within_recording": 0.824529481726503,
+   "between_participant_eq6": 0.08811277389914254,
+   "between_recording_total": 0.1754705182734971
+  },
+  "score_label_check": {
+   "marlin": 0.46275852046310745,
+   "of_cnnlstm": 0.46275852046310745,
+   "of_lstm": 0.46275852046310745,
+   "of_mlp": 0.46275852046310745,
+   "of_tcn": 0.46275852046310745,
+   "of_transformer": 0.46275852046310745
+  },
+  "scores": {
+   "marlin": {
+    "participant": 0.589810323653034,
+    "recording_within_participant": 0.07611747513465232,
+    "chunk_within_recording": 0.3340722012123137,
+    "between_participant_eq6": 0.589810323653034,
+    "between_recording_total": 0.6659277987876863
+   },
+   "of_cnnlstm": {
+    "participant": 0.5315613167889929,
+    "recording_within_participant": 0.059319390059111195,
+    "chunk_within_recording": 0.4091192931518958,
+    "between_participant_eq6": 0.5315613167889929,
+    "between_recording_total": 0.590880706848104
+   },
+   "of_lstm": {
+    "participant": 0.5133140996804885,
+    "recording_within_participant": 0.05012158747750283,
+    "chunk_within_recording": 0.43656431284200875,
+    "between_participant_eq6": 0.5133140996804885,
+    "between_recording_total": 0.5634356871579912
+   },
+   "of_mlp": {
+    "participant": 0.5554611998904609,
+    "recording_within_participant": 0.050846993336397604,
+    "chunk_within_recording": 0.3936918067731414,
+    "between_participant_eq6": 0.5554611998904609,
+    "between_recording_total": 0.6063081932268585
+   },
+   "of_tcn": {
+    "participant": 0.5427656845875813,
+    "recording_within_participant": 0.053034884902344814,
+    "chunk_within_recording": 0.4041994305100738,
+    "between_participant_eq6": 0.5427656845875813,
+    "between_recording_total": 0.5958005694899262
+   },
+   "of_transformer": {
+    "participant": 0.5326803125489014,
+    "recording_within_participant": 0.038454721276775294,
+    "chunk_within_recording": 0.42886496617432335,
+    "between_participant_eq6": 0.5326803125489014,
+    "between_recording_total": 0.5711350338256767
+   }
+  }
+ },
+ "test": {
+  "n_chunks": 2256,
+  "n_participants": 26,
+  "n_recordings": 75,
+  "participants_multi_recording": 24,
+  "labels_all": {
+   "participant": 0.5317094803731337,
+   "recording_within_participant": 0.06684892390296009,
+   "chunk_within_recording": 0.40144159572390614,
+   "between_participant_eq6": 0.5317094803731337,
+   "between_recording_total": 0.5985584042760939
+  },
+  "labels_multi_recording_participants": {
+   "participant": 0.5326388588827934,
+   "recording_within_participant": 0.06720465941989301,
+   "chunk_within_recording": 0.4001564816973136,
+   "between_participant_eq6": 0.5326388588827934,
+   "between_recording_total": 0.5998435183026865
+  },
+  "labels_single_recording_participants": {
+   "between_participant_eq6": 0.35547355473554737
+  },
+  "binary_decisive_axis_labels": {
+   "participant": 0.3229737885636496,
+   "recording_within_participant": 0.07078403882387425,
+   "chunk_within_recording": 0.6062421726124761,
+   "between_participant_eq6": 0.3229737885636496,
+   "between_recording_total": 0.39375782738752385
+  },
+  "score_label_check": {
+   "marlin": 0.5317094803731337,
+   "of_cnnlstm": 0.5317094803731337,
+   "of_lstm": 0.5317094803731337,
+   "of_mlp": 0.5317094803731337,
+   "of_tcn": 0.5317094803731337,
+   "of_transformer": 0.5317094803731337,
+   "tv_cnnlstm": 0.5317094803731337,
+   "tv_lstm": 0.5317094803731337,
+   "tv_mlp": 0.5317094803731337,
+   "tv_tcn": 0.5317094803731337,
+   "tv_transformer": 0.5317094803731337
+  },
+  "scores": {
+   "marlin": {
+    "participant": 0.5539227981161573,
+    "recording_within_participant": 0.06319653373111418,
+    "chunk_within_recording": 0.3828806681527286,
+    "between_participant_eq6": 0.5539227981161573,
+    "between_recording_total": 0.6171193318472713
+   },
+   "of_cnnlstm": {
+    "participant": 0.5816021378349651,
+    "recording_within_participant": 0.043429638669637484,
+    "chunk_within_recording": 0.3749682234953975,
+    "between_participant_eq6": 0.5816021378349651,
+    "between_recording_total": 0.6250317765046024
+   },
+   "of_lstm": {
+    "participant": 0.5660933519881,
+    "recording_within_participant": 0.03990923622100459,
+    "chunk_within_recording": 0.39399741179089554,
+    "between_participant_eq6": 0.5660933519881,
+    "between_recording_total": 0.6060025882091046
+   },
+   "of_mlp": {
+    "participant": 0.563202834340601,
+    "recording_within_participant": 0.04587762111522273,
+    "chunk_within_recording": 0.3909195445441762,
+    "between_participant_eq6": 0.563202834340601,
+    "between_recording_total": 0.6090804554558238
+   },
+   "of_tcn": {
+    "participant": 0.5787135880388923,
+    "recording_within_participant": 0.043088887778059116,
+    "chunk_within_recording": 0.37819752418304864,
+    "between_participant_eq6": 0.5787135880388923,
+    "between_recording_total": 0.6218024758169514
+   },
+   "of_transformer": {
+    "participant": 0.5298135679488682,
+    "recording_within_participant": 0.0416073273397972,
+    "chunk_within_recording": 0.4285791047113345,
+    "between_participant_eq6": 0.5298135679488682,
+    "between_recording_total": 0.5714208952886656
+   },
+   "tv_cnnlstm": {
+    "participant": 0.5815278230365769,
+    "recording_within_participant": 0.0472862495296408,
+    "chunk_within_recording": 0.37118592743378237,
+    "between_participant_eq6": 0.5815278230365769,
+    "between_recording_total": 0.6288140725662176
+   },
+   "tv_lstm": {
+    "participant": 0.5435222692160457,
+    "recording_within_participant": 0.04342351582595478,
+    "chunk_within_recording": 0.41305421495799943,
+    "between_participant_eq6": 0.5435222692160457,
+    "between_recording_total": 0.5869457850420005
+   },
+   "tv_mlp": {
+    "participant": 0.54906272761166,
+    "recording_within_participant": 0.042178739736125716,
+    "chunk_within_recording": 0.40875853265221423,
+    "between_participant_eq6": 0.54906272761166,
+    "between_recording_total": 0.5912414673477858
+   },
+   "tv_tcn": {
+    "participant": 0.5476708524236362,
+    "recording_within_participant": 0.044845765533918135,
+    "chunk_within_recording": 0.40748338204244566,
+    "between_participant_eq6": 0.5476708524236362,
+    "between_recording_total": 0.5925166179575544
+   },
+   "tv_transformer": {
+    "participant": 0.514386229011612,
+    "recording_within_participant": 0.039588769738588374,
+    "chunk_within_recording": 0.4460250012497995,
+    "between_participant_eq6": 0.514386229011612,
+    "between_recording_total": 0.5539749987502005
+   }
+  }
+ }
+}

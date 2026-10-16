@@ -1,0 +1,10 @@
+train split: 7879 clips, 91 participants, 247 recordings; 78 participants carry >= 2 recordings (7799 clips)
+of_cnnlstm_s0        random    s0 | logistic M none   55.2  oracle  3.56  fitted   2.03 | ncm M none   11.2  fitted   1.62
+of_cnnlstm_s0        recording s0 | logistic M none   38.2  oracle  1.58  fitted   0.87 | ncm M none   10.1  fitted   1.16
+of_cnnlstm_s1        random    s0 | logistic M none   60.0  oracle  3.56  fitted   2.22 | ncm M none   11.7  fitted   1.43
+of_cnnlstm_s1        recording s0 | logistic M none   42.1  oracle  1.79  fitted   0.90 | ncm M none   10.8  fitted   1.13
+of_cnnlstm_s2        random    s0 | logistic M none   54.2  oracle  3.14  fitted   2.31 | ncm M none   10.0  fitted   1.76
+of_cnnlstm_s2        recording s0 | logistic M none   37.4  oracle  2.87  fitted   0.87 | ncm M none    9.9  fitted   2.00
+of_lstm_s0           random    s0 | logistic M none   56.0  oracle  3.10  fitted   3.14 | ncm M none    7.7  fitted   2.73
+of_lstm_s0           recording s0 | logistic M none   38.8  oracle  2.30  fitted   0.87 | ncm M none    7.6  fitted   2.24
+of_lstm_s1           random    s0 | logistic M none   63.7  oracle  3.33  fitted   2.45 | ncm M none   10.1  fitted   1.85

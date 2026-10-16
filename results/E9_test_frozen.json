@@ -1,0 +1,162 @@
+{
+  "systems": [
+    "of_cnnlstm",
+    "of_lstm",
+    "of_mlp",
+    "of_tcn",
+    "of_transformer"
+  ],
+  "variants": {
+    "acc": {
+      "of_cnnlstm": 0.6604609929078014,
+      "of_lstm": 0.6502659574468085,
+      "of_mlp": 0.6533687943262412,
+      "of_tcn": 0.6610520094562649,
+      "of_transformer": 0.6625295508274232
+    },
+    "uar": {
+      "of_cnnlstm": 0.5583686868373076,
+      "of_lstm": 0.5402931087106447,
+      "of_mlp": 0.5470363513337305,
+      "of_tcn": 0.552466486264656,
+      "of_transformer": 0.554474625497224
+    },
+    "macro_f1": {
+      "of_cnnlstm": 0.5587800965011882,
+      "of_lstm": 0.5403531600965593,
+      "of_mlp": 0.5481547556809749,
+      "of_tcn": 0.5583600231799489,
+      "of_transformer": 0.5565340558392996
+    },
+    "qwk": {
+      "of_cnnlstm": 0.7365855988380409,
+      "of_lstm": 0.7380306159631034,
+      "of_mlp": 0.7264751492938265,
+      "of_tcn": 0.7441931710712545,
+      "of_transformer": 0.7369364694508492
+    },
+    "neg_mae": {
+      "of_cnnlstm": -0.45360520094562645,
+      "of_lstm": -0.4658687943262412,
+      "of_mlp": -0.4674940898345154,
+      "of_tcn": -0.44296690307328607,
+      "of_transformer": -0.45345744680851063
+    },
+    "acc_by_participant": {
+      "of_cnnlstm": 0.6535310188685796,
+      "of_lstm": 0.6401378006925277,
+      "of_mlp": 0.6412877213834831,
+      "of_tcn": 0.651963876419304,
+      "of_transformer": 0.6557880225272764
+    },
+    "acc_by_recording": {
+      "of_cnnlstm": 0.64597218401866,
+      "of_lstm": 0.6333793610191161,
+      "of_mlp": 0.6361770235190546,
+      "of_tcn": 0.6432137996418376,
+      "of_transformer": 0.639891145286008
+    }
+  },
+  "ranks": {
+    "acc": {
+      "of_transformer": 0,
+      "of_tcn": 1,
+      "of_cnnlstm": 2,
+      "of_mlp": 3,
+      "of_lstm": 4
+    },
+    "uar": {
+      "of_cnnlstm": 0,
+      "of_transformer": 1,
+      "of_tcn": 2,
+      "of_mlp": 3,
+      "of_lstm": 4
+    },
+    "macro_f1": {
+      "of_cnnlstm": 0,
+      "of_tcn": 1,
+      "of_transformer": 2,
+      "of_mlp": 3,
+      "of_lstm": 4
+    },
+    "qwk": {
+      "of_tcn": 0,
+      "of_lstm": 1,
+      "of_transformer": 2,
+      "of_cnnlstm": 3,
+      "of_mlp": 4
+    },
+    "neg_mae": {
+      "of_tcn": 0,
+      "of_transformer": 1,
+      "of_cnnlstm": 2,
+      "of_lstm": 3,
+      "of_mlp": 4
+    },
+    "acc_by_participant": {
+      "of_transformer": 0,
+      "of_cnnlstm": 1,
+      "of_tcn": 2,
+      "of_mlp": 3,
+      "of_lstm": 4
+    },
+    "acc_by_recording": {
+      "of_cnnlstm": 0,
+      "of_tcn": 1,
+      "of_transformer": 2,
+      "of_mlp": 3,
+      "of_lstm": 4
+    }
+  },
+  "kendall_tau": {
+    "acc vs uar": 0.6,
+    "acc vs macro_f1": 0.39999999999999997,
+    "acc vs qwk": 0.19999999999999998,
+    "acc vs neg_mae": 0.6,
+    "acc vs acc_by_participant": 0.7999999999999999,
+    "acc vs acc_by_recording": 0.39999999999999997,
+    "uar vs macro_f1": 0.7999999999999999,
+    "uar vs qwk": -0.19999999999999998,
+    "uar vs neg_mae": 0.19999999999999998,
+    "uar vs acc_by_participant": 0.7999999999999999,
+    "uar vs acc_by_recording": 0.7999999999999999,
+    "macro_f1 vs qwk": 0.0,
+    "macro_f1 vs neg_mae": 0.39999999999999997,
+    "macro_f1 vs acc_by_participant": 0.6,
+    "macro_f1 vs acc_by_recording": 0.9999999999999999,
+    "qwk vs neg_mae": 0.6,
+    "qwk vs acc_by_participant": 0.0,
+    "qwk vs acc_by_recording": 0.0,
+    "neg_mae vs acc_by_participant": 0.39999999999999997,
+    "neg_mae vs acc_by_recording": 0.39999999999999997,
+    "acc_by_participant vs acc_by_recording": 0.6
+  },
+  "flipping_pairs": [
+    [
+      "of_cnnlstm",
+      "of_lstm"
+    ],
+    [
+      "of_cnnlstm",
+      "of_tcn"
+    ],
+    [
+      "of_cnnlstm",
+      "of_transformer"
+    ],
+    [
+      "of_lstm",
+      "of_mlp"
+    ],
+    [
+      "of_lstm",
+      "of_transformer"
+    ],
+    [
+      "of_tcn",
+      "of_transformer"
+    ]
+  ],
+  "n_distinct_rankings": 6,
+  "note": "stored epoch only: no last-epoch variant exists for a test run"
+}

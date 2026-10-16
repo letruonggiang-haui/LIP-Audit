@@ -1,0 +1,26 @@
+=== E7 on test, trainval: 15 runs ===
+tv_cnnlstm_s0        decisive blended 0.8407 within 0.8319 (p 0.0010, n=25) centred 0.7254 rho_b +0.68 | eta2 score 0.586 label 0.532
+tv_cnnlstm_s1        decisive blended 0.8265 within 0.8255 (p 0.0010, n=25) centred 0.7167 rho_b +0.72 | eta2 score 0.569 label 0.532
+tv_cnnlstm_s2        decisive blended 0.8458 within 0.8313 (p 0.0010, n=25) centred 0.7050 rho_b +0.78 | eta2 score 0.590 label 0.532
+tv_lstm_s0           decisive blended 0.8166 within 0.8029 (p 0.0010, n=25) centred 0.7057 rho_b +0.66 | eta2 score 0.543 label 0.532
+tv_lstm_s1           decisive blended 0.8084 within 0.7925 (p 0.0010, n=25) centred 0.7037 rho_b +0.63 | eta2 score 0.549 label 0.532
+tv_lstm_s2           decisive blended 0.8179 within 0.8217 (p 0.0010, n=25) centred 0.7086 rho_b +0.68 | eta2 score 0.539 label 0.532
+tv_mlp_s0            decisive blended 0.8388 within 0.8468 (p 0.0010, n=25) centred 0.7134 rho_b +0.77 | eta2 score 0.556 label 0.532
+tv_mlp_s1            decisive blended 0.8403 within 0.8480 (p 0.0010, n=25) centred 0.7125 rho_b +0.79 | eta2 score 0.550 label 0.532
+tv_mlp_s2            decisive blended 0.8346 within 0.8430 (p 0.0010, n=25) centred 0.7047 rho_b +0.78 | eta2 score 0.541 label 0.532
+tv_tcn_s0            decisive blended 0.8167 within 0.7976 (p 0.0010, n=25) centred 0.7117 rho_b +0.67 | eta2 score 0.538 label 0.532
+tv_tcn_s1            decisive blended 0.8239 within 0.8010 (p 0.0010, n=25) centred 0.6992 rho_b +0.71 | eta2 score 0.550 label 0.532
+tv_tcn_s2            decisive blended 0.8241 within 0.8046 (p 0.0010, n=25) centred 0.7002 rho_b +0.71 | eta2 score 0.555 label 0.532
+tv_transformer_s0    decisive blended 0.8221 within 0.8565 (p 0.0010, n=25) centred 0.7101 rho_b +0.79 | eta2 score 0.524 label 0.532
+tv_transformer_s1    decisive blended 0.7993 within 0.8263 (p 0.0010, n=25) centred 0.6921 rho_b +0.81 | eta2 score 0.517 label 0.532
+tv_transformer_s2    decisive blended 0.8033 within 0.8404 (p 0.0010, n=25) centred 0.7038 rho_b +0.74 | eta2 score 0.502 label 0.532
+
+=== E9 on test, trainval ===
+acc                  tv_mlp > tv_cnnlstm > tv_tcn > tv_transformer > tv_lstm
+uar                  tv_mlp > tv_cnnlstm > tv_lstm > tv_transformer > tv_tcn
+macro_f1             tv_mlp > tv_lstm > tv_cnnlstm > tv_transformer > tv_tcn
+qwk                  tv_transformer > tv_tcn > tv_cnnlstm > tv_lstm > tv_mlp
+neg_mae              tv_mlp > tv_tcn > tv_cnnlstm > tv_transformer > tv_lstm
+acc_by_participant   tv_mlp > tv_cnnlstm > tv_tcn > tv_transformer > tv_lstm
+acc_by_recording     tv_mlp > tv_cnnlstm > tv_tcn > tv_transformer > tv_lstm
+7 variants, 5 distinct rankings, 10 of 10 pairs flip, tau min -0.80 median 0.20

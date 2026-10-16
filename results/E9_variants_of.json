@@ -1,0 +1,481 @@
+{
+  "systems": [
+    "of_cnnlstm",
+    "of_lstm",
+    "of_mlp",
+    "of_tcn",
+    "of_transformer"
+  ],
+  "variants": {
+    "best/acc": {
+      "of_cnnlstm": 0.6451914098972923,
+      "of_lstm": 0.6532835356364769,
+      "of_mlp": 0.6473700591347651,
+      "of_tcn": 0.6585745409274821,
+      "of_transformer": 0.6548397136632431
+    },
+    "best/uar": {
+      "of_cnnlstm": 0.5603945790790137,
+      "of_lstm": 0.5694235986143473,
+      "of_mlp": 0.5660343748960058,
+      "of_tcn": 0.5668601941374304,
+      "of_transformer": 0.5684662470418816
+    },
+    "best/macro_f1": {
+      "of_cnnlstm": 0.5583229729933024,
+      "of_lstm": 0.5620441245623536,
+      "of_mlp": 0.565199654028716,
+      "of_tcn": 0.5743399898551129,
+      "of_transformer": 0.5734069773881171
+    },
+    "best/qwk": {
+      "of_cnnlstm": 0.7352179159938412,
+      "of_lstm": 0.7333874584585919,
+      "of_mlp": 0.7435808865304416,
+      "of_tcn": 0.7396682164462822,
+      "of_transformer": 0.7588699475619395
+    },
+    "best/neg_mae": {
+      "of_cnnlstm": -0.42296918767507,
+      "of_lstm": -0.4239028944911298,
+      "of_mlp": -0.41643323996265175,
+      "of_tcn": -0.40585122938064117,
+      "of_transformer": -0.3986928104575164
+    },
+    "best/acc_by_participant": {
+      "of_cnnlstm": 0.638088440677037,
+      "of_lstm": 0.6450707554347568,
+      "of_mlp": 0.6397096235923895,
+      "of_tcn": 0.6509781168457747,
+      "of_transformer": 0.6477834083168205
+    },
+    "best/acc_by_recording": {
+      "of_cnnlstm": 0.6331929157967998,
+      "of_lstm": 0.6432133451888927,
+      "of_mlp": 0.6328069018181716,
+      "of_tcn": 0.6489513036057081,
+      "of_transformer": 0.6489302694164722
+    },
+    "last/acc": {
+      "of_cnnlstm": 0.5953937130407718,
+      "of_lstm": 0.614067849361967,
+      "of_mlp": 0.6084656084656085,
+      "of_tcn": 0.6072206660441956,
+      "of_transformer": 0.6156240273887333
+    },
+    "last/uar": {
+      "of_cnnlstm": 0.526238433063121,
+      "of_lstm": 0.5467287143269605,
+      "of_mlp": 0.5329095366169815,
+      "of_tcn": 0.5249335335476241,
+      "of_transformer": 0.5492377787913454
+    },
+    "last/macro_f1": {
+      "of_cnnlstm": 0.5271045252117852,
+      "of_lstm": 0.5469566346416301,
+      "of_mlp": 0.5391879197629869,
+      "of_tcn": 0.5258519875483861,
+      "of_transformer": 0.5493805506157957
+    },
+    "last/qwk": {
+      "of_cnnlstm": 0.6838700410637436,
+      "of_lstm": 0.7050218994820548,
+      "of_mlp": 0.7094089051048202,
+      "of_tcn": 0.6812822225307752,
+      "of_transformer": 0.7200617271391714
+    },
+    "last/neg_mae": {
+      "of_cnnlstm": -0.48677248677248675,
+      "of_lstm": -0.46156240273887333,
+      "of_mlp": -0.4590725178960473,
+      "of_tcn": -0.47961406784936195,
+      "of_transformer": -0.4519140989729225
+    },
+    "last/acc_by_participant": {
+      "of_cnnlstm": 0.588342612544841,
+      "of_lstm": 0.6066205282756202,
+      "of_mlp": 0.6019733690304531,
+      "of_tcn": 0.6004183949068495,
+      "of_transformer": 0.6079014593890087
+    },
+    "last/acc_by_recording": {
+      "of_cnnlstm": 0.5859214178739472,
+      "of_lstm": 0.6088355594020703,
+      "of_mlp": 0.5975924892754785,
+      "of_tcn": 0.5949673118636256,
+      "of_transformer": 0.6063117029439856
+    }
+  },
+  "ranks": {
+    "best/acc": {
+      "of_tcn": 0,
+      "of_transformer": 1,
+      "of_lstm": 2,
+      "of_mlp": 3,
+      "of_cnnlstm": 4
+    },
+    "best/uar": {
+      "of_lstm": 0,
+      "of_transformer": 1,
+      "of_tcn": 2,
+      "of_mlp": 3,
+      "of_cnnlstm": 4
+    },
+    "best/macro_f1": {
+      "of_tcn": 0,
+      "of_transformer": 1,
+      "of_mlp": 2,
+      "of_lstm": 3,
+      "of_cnnlstm": 4
+    },
+    "best/qwk": {
+      "of_transformer": 0,
+      "of_mlp": 1,
+      "of_tcn": 2,
+      "of_cnnlstm": 3,
+      "of_lstm": 4
+    },
+    "best/neg_mae": {
+      "of_transformer": 0,
+      "of_tcn": 1,
+      "of_mlp": 2,
+      "of_cnnlstm": 3,
+      "of_lstm": 4
+    },
+    "best/acc_by_participant": {
+      "of_tcn": 0,
+      "of_transformer": 1,
+      "of_lstm": 2,
+      "of_mlp": 3,
+      "of_cnnlstm": 4
+    },
+    "best/acc_by_recording": {
+      "of_tcn": 0,
+      "of_transformer": 1,
+      "of_lstm": 2,
+      "of_cnnlstm": 3,
+      "of_mlp": 4
+    },
+    "last/acc": {
+      "of_transformer": 0,
+      "of_lstm": 1,
+      "of_mlp": 2,
+      "of_tcn": 3,
+      "of_cnnlstm": 4
+    },
+    "last/uar": {
+      "of_transformer": 0,
+      "of_lstm": 1,
+      "of_mlp": 2,
+      "of_cnnlstm": 3,
+      "of_tcn": 4
+    },
+    "last/macro_f1": {
+      "of_transformer": 0,
+      "of_lstm": 1,
+      "of_mlp": 2,
+      "of_cnnlstm": 3,
+      "of_tcn": 4
+    },
+    "last/qwk": {
+      "of_transformer": 0,
+      "of_mlp": 1,
+      "of_lstm": 2,
+      "of_cnnlstm": 3,
+      "of_tcn": 4
+    },
+    "last/neg_mae": {
+      "of_transformer": 0,
+      "of_mlp": 1,
+      "of_lstm": 2,
+      "of_tcn": 3,
+      "of_cnnlstm": 4
+    },
+    "last/acc_by_participant": {
+      "of_transformer": 0,
+      "of_lstm": 1,
+      "of_mlp": 2,
+      "of_tcn": 3,
+      "of_cnnlstm": 4
+    },
+    "last/acc_by_recording": {
+      "of_lstm": 0,
+      "of_transformer": 1,
+      "of_mlp": 2,
+      "of_tcn": 3,
+      "of_cnnlstm": 4
+    }
+  },
+  "kendall_tau": {
+    "best/acc vs best/acc_by_participant": 0.9999999999999999,
+    "best/acc vs best/acc_by_recording": 0.7999999999999999,
+    "best/acc vs best/macro_f1": 0.7999999999999999,
+    "best/acc vs best/neg_mae": 0.39999999999999997,
+    "best/acc vs best/qwk": 0.19999999999999998,
+    "best/acc vs best/uar": 0.39999999999999997,
+    "best/acc vs last/acc": 0.39999999999999997,
+    "best/acc vs last/acc_by_participant": 0.39999999999999997,
+    "best/acc vs last/acc_by_recording": 0.19999999999999998,
+    "best/acc vs last/macro_f1": 0.19999999999999998,
+    "best/acc vs last/neg_mae": 0.19999999999999998,
+    "best/acc vs last/qwk": 0.0,
+    "best/acc vs last/uar": 0.19999999999999998,
+    "best/acc_by_participant vs best/acc_by_recording": 0.7999999999999999,
+    "best/acc_by_participant vs best/macro_f1": 0.7999999999999999,
+    "best/acc_by_participant vs best/neg_mae": 0.39999999999999997,
+    "best/acc_by_participant vs best/qwk": 0.19999999999999998,
+    "best/acc_by_participant vs best/uar": 0.39999999999999997,
+    "best/acc_by_participant vs last/acc": 0.39999999999999997,
+    "best/acc_by_participant vs last/acc_by_participant": 0.39999999999999997,
+    "best/acc_by_participant vs last/acc_by_recording": 0.19999999999999998,
+    "best/acc_by_participant vs last/macro_f1": 0.19999999999999998,
+    "best/acc_by_participant vs last/neg_mae": 0.19999999999999998,
+    "best/acc_by_participant vs last/qwk": 0.0,
+    "best/acc_by_participant vs last/uar": 0.19999999999999998,
+    "best/acc_by_recording vs best/macro_f1": 0.6,
+    "best/acc_by_recording vs best/neg_mae": 0.19999999999999998,
+    "best/acc_by_recording vs best/qwk": 0.0,
+    "best/acc_by_recording vs best/uar": 0.19999999999999998,
+    "best/acc_by_recording vs last/acc": 0.19999999999999998,
+    "best/acc_by_recording vs last/acc_by_participant": 0.19999999999999998,
+    "best/acc_by_recording vs last/acc_by_recording": 0.0,
+    "best/acc_by_recording vs last/macro_f1": 0.0,
+    "best/acc_by_recording vs last/neg_mae": 0.0,
+    "best/acc_by_recording vs last/qwk": -0.19999999999999998,
+    "best/acc_by_recording vs last/uar": 0.0,
+    "best/macro_f1 vs best/neg_mae": 0.6,
+    "best/macro_f1 vs best/qwk": 0.39999999999999997,
+    "best/macro_f1 vs best/uar": 0.19999999999999998,
+    "best/macro_f1 vs last/acc": 0.19999999999999998,
+    "best/macro_f1 vs last/acc_by_participant": 0.19999999999999998,
+    "best/macro_f1 vs last/acc_by_recording": 0.0,
+    "best/macro_f1 vs last/macro_f1": 0.0,
+    "best/macro_f1 vs last/neg_mae": 0.39999999999999997,
+    "best/macro_f1 vs last/qwk": 0.19999999999999998,
+    "best/macro_f1 vs last/uar": 0.0,
+    "best/neg_mae vs best/qwk": 0.7999999999999999,
+    "best/neg_mae vs best/uar": 0.19999999999999998,
+    "best/neg_mae vs last/acc": 0.19999999999999998,
+    "best/neg_mae vs last/acc_by_participant": 0.19999999999999998,
+    "best/neg_mae vs last/acc_by_recording": 0.0,
+    "best/neg_mae vs last/macro_f1": 0.0,
+    "best/neg_mae vs last/neg_mae": 0.39999999999999997,
+    "best/neg_mae vs last/qwk": 0.19999999999999998,
+    "best/neg_mae vs last/uar": 0.0,
+    "best/qwk vs best/uar": 0.0,
+    "best/qwk vs last/acc": 0.39999999999999997,
+    "best/qwk vs last/acc_by_participant": 0.39999999999999997,
+    "best/qwk vs last/acc_by_recording": 0.19999999999999998,
+    "best/qwk vs last/macro_f1": 0.19999999999999998,
+    "best/qwk vs last/neg_mae": 0.6,
+    "best/qwk vs last/qwk": 0.39999999999999997,
+    "best/qwk vs last/uar": 0.19999999999999998,
+    "best/uar vs last/acc": 0.6,
+    "best/uar vs last/acc_by_participant": 0.6,
+    "best/uar vs last/acc_by_recording": 0.7999999999999999,
+    "best/uar vs last/macro_f1": 0.39999999999999997,
+    "best/uar vs last/neg_mae": 0.39999999999999997,
+    "best/uar vs last/qwk": 0.19999999999999998,
+    "best/uar vs last/uar": 0.39999999999999997,
+    "last/acc vs last/acc_by_participant": 0.9999999999999999,
+    "last/acc vs last/acc_by_recording": 0.7999999999999999,
+    "last/acc vs last/macro_f1": 0.7999999999999999,
+    "last/acc vs last/neg_mae": 0.7999999999999999,
+    "last/acc vs last/qwk": 0.6,
+    "last/acc vs last/uar": 0.7999999999999999,
+    "last/acc_by_participant vs last/acc_by_recording": 0.7999999999999999,
+    "last/acc_by_participant vs last/macro_f1": 0.7999999999999999,
+    "last/acc_by_participant vs last/neg_mae": 0.7999999999999999,
+    "last/acc_by_participant vs last/qwk": 0.6,
+    "last/acc_by_participant vs last/uar": 0.7999999999999999,
+    "last/acc_by_recording vs last/macro_f1": 0.6,
+    "last/acc_by_recording vs last/neg_mae": 0.6,
+    "last/acc_by_recording vs last/qwk": 0.39999999999999997,
+    "last/acc_by_recording vs last/uar": 0.6,
+    "last/macro_f1 vs last/neg_mae": 0.6,
+    "last/macro_f1 vs last/qwk": 0.7999999999999999,
+    "last/macro_f1 vs last/uar": 0.9999999999999999,
+    "last/neg_mae vs last/qwk": 0.7999999999999999,
+    "last/neg_mae vs last/uar": 0.6,
+    "last/qwk vs last/uar": 0.7999999999999999
+  },
+  "flipping_pairs": [
+    {
+      "pair": [
+        "of_cnnlstm",
+        "of_lstm"
+      ],
+      "orderings": {
+        "best/acc": -0.0081,
+        "best/acc_by_participant": -0.007,
+        "best/acc_by_recording": -0.01,
+        "best/macro_f1": -0.0037,
+        "best/neg_mae": 0.0009,
+        "best/qwk": 0.0018,
+        "best/uar": -0.009,
+        "last/acc": -0.0187,
+        "last/acc_by_participant": -0.0183,
+        "last/acc_by_recording": -0.0229,
+        "last/macro_f1": -0.0199,
+        "last/neg_mae": -0.0252,
+        "last/qwk": -0.0212,
+        "last/uar": -0.0205
+      }
+    },
+    {
+      "pair": [
+        "of_cnnlstm",
+        "of_mlp"
+      ],
+      "orderings": {
+        "best/acc": -0.0022,
+        "best/acc_by_participant": -0.0016,
+        "best/acc_by_recording": 0.0004,
+        "best/macro_f1": -0.0069,
+        "best/neg_mae": -0.0065,
+        "best/qwk": -0.0084,
+        "best/uar": -0.0056,
+        "last/acc": -0.0131,
+        "last/acc_by_participant": -0.0136,
+        "last/acc_by_recording": -0.0117,
+        "last/macro_f1": -0.0121,
+        "last/neg_mae": -0.0277,
+        "last/qwk": -0.0255,
+        "last/uar": -0.0067
+      }
+    },
+    {
+      "pair": [
+        "of_cnnlstm",
+        "of_tcn"
+      ],
+      "orderings": {
+        "best/acc": -0.0134,
+        "best/acc_by_participant": -0.0129,
+        "best/acc_by_recording": -0.0158,
+        "best/macro_f1": -0.016,
+        "best/neg_mae": -0.0171,
+        "best/qwk": -0.0045,
+        "best/uar": -0.0065,
+        "last/acc": -0.0118,
+        "last/acc_by_participant": -0.0121,
+        "last/acc_by_recording": -0.009,
+        "last/macro_f1": 0.0013,
+        "last/neg_mae": -0.0072,
+        "last/qwk": 0.0026,
+        "last/uar": 0.0013
+      }
+    },
+    {
+      "pair": [
+        "of_lstm",
+        "of_mlp"
+      ],
+      "orderings": {
+        "best/acc": 0.0059,
+        "best/acc_by_participant": 0.0054,
+        "best/acc_by_recording": 0.0104,
+        "best/macro_f1": -0.0032,
+        "best/neg_mae": -0.0075,
+        "best/qwk": -0.0102,
+        "best/uar": 0.0034,
+        "last/acc": 0.0056,
+        "last/acc_by_participant": 0.0046,
+        "last/acc_by_recording": 0.0112,
+        "last/macro_f1": 0.0078,
+        "last/neg_mae": -0.0025,
+        "last/qwk": -0.0044,
+        "last/uar": 0.0138
+      }
+    },
+    {
+      "pair": [
+        "of_lstm",
+        "of_tcn"
+      ],
+      "orderings": {
+        "best/acc": -0.0053,
+        "best/acc_by_participant": -0.0059,
+        "best/acc_by_recording": -0.0057,
+        "best/macro_f1": -0.0123,
+        "best/neg_mae": -0.0181,
+        "best/qwk": -0.0063,
+        "best/uar": 0.0026,
+        "last/acc": 0.0068,
+        "last/acc_by_participant": 0.0062,
+        "last/acc_by_recording": 0.0139,
+        "last/macro_f1": 0.0211,
+        "last/neg_mae": 0.0181,
+        "last/qwk": 0.0237,
+        "last/uar": 0.0218
+      }
+    },
+    {
+      "pair": [
+        "of_lstm",
+        "of_transformer"
+      ],
+      "orderings": {
+        "best/acc": -0.0016,
+        "best/acc_by_participant": -0.0027,
+        "best/acc_by_recording": -0.0057,
+        "best/macro_f1": -0.0114,
+        "best/neg_mae": -0.0252,
+        "best/qwk": -0.0255,
+        "best/uar": 0.001,
+        "last/acc": -0.0016,
+        "last/acc_by_participant": -0.0013,
+        "last/acc_by_recording": 0.0025,
+        "last/macro_f1": -0.0024,
+        "last/neg_mae": -0.0096,
+        "last/qwk": -0.015,
+        "last/uar": -0.0025
+      }
+    },
+    {
+      "pair": [
+        "of_mlp",
+        "of_tcn"
+      ],
+      "orderings": {
+        "best/acc": -0.0112,
+        "best/acc_by_participant": -0.0113,
+        "best/acc_by_recording": -0.0161,
+        "best/macro_f1": -0.0091,
+        "best/neg_mae": -0.0106,
+        "best/qwk": 0.0039,
+        "best/uar": -0.0008,
+        "last/acc": 0.0012,
+        "last/acc_by_participant": 0.0016,
+        "last/acc_by_recording": 0.0026,
+        "last/macro_f1": 0.0133,
+        "last/neg_mae": 0.0205,
+        "last/qwk": 0.0281,
+        "last/uar": 0.008
+      }
+    },
+    {
+      "pair": [
+        "of_tcn",
+        "of_transformer"
+      ],
+      "orderings": {
+        "best/acc": 0.0037,
+        "best/acc_by_participant": 0.0032,
+        "best/acc_by_recording": 0.0,
+        "best/macro_f1": 0.0009,
+        "best/neg_mae": -0.0072,
+        "best/qwk": -0.0192,
+        "best/uar": -0.0016,
+        "last/acc": -0.0084,
+        "last/acc_by_participant": -0.0075,
+        "last/acc_by_recording": -0.0113,
+        "last/macro_f1": -0.0235,
+        "last/neg_mae": -0.0277,
+        "last/qwk": -0.0388,
+        "last/uar": -0.0243
+      }
+    }
+  ],
+  "snp_note": "The validation split contains no SNP chunk, so the three SNP policies of the plan coincide on it and are not a variant here."
+}

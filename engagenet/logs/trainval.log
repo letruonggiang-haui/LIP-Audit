@@ -1,0 +1,120 @@
+tv_cnnlstm_s0: cnnlstm over 8950 clips, 102 participants, fixed 2 epochs (median of validation epochs [0, 5, 1])
+  ep  0 train loss 0.8361
+  ep  1 train loss 0.6784
+saved tv_cnnlstm_s0_best.pth
+tv_cnnlstm_s1: cnnlstm over 8950 clips, 102 participants, fixed 2 epochs (median of validation epochs [0, 5, 1])
+  ep  0 train loss 0.8473
+  ep  1 train loss 0.6873
+saved tv_cnnlstm_s1_best.pth
+tv_cnnlstm_s2: cnnlstm over 8950 clips, 102 participants, fixed 2 epochs (median of validation epochs [0, 5, 1])
+  ep  0 train loss 0.8394
+  ep  1 train loss 0.6811
+saved tv_cnnlstm_s2_best.pth
+tv_lstm_s0: lstm over 8950 clips, 102 participants, fixed 5 epochs (median of validation epochs [9, 4, 0])
+  ep  0 train loss 0.8369
+  ep  1 train loss 0.6415
+  ep  2 train loss 0.5479
+  ep  3 train loss 0.4648
+  ep  4 train loss 0.4098
+saved tv_lstm_s0_best.pth
+tv_lstm_s1: lstm over 8950 clips, 102 participants, fixed 5 epochs (median of validation epochs [9, 4, 0])
+  ep  0 train loss 0.8253
+  ep  1 train loss 0.6415
+  ep  2 train loss 0.5574
+  ep  3 train loss 0.4783
+  ep  4 train loss 0.4233
+saved tv_lstm_s1_best.pth
+tv_lstm_s2: lstm over 8950 clips, 102 participants, fixed 5 epochs (median of validation epochs [9, 4, 0])
+  ep  0 train loss 0.8447
+  ep  1 train loss 0.6464
+  ep  2 train loss 0.5539
+  ep  3 train loss 0.4745
+  ep  4 train loss 0.4189
+saved tv_lstm_s2_best.pth
+tv_mlp_s0: mlp over 8950 clips, 102 participants, fixed 4 epochs (median of validation epochs [2, 3, 10])
+  ep  0 train loss 0.8660
+  ep  1 train loss 0.7266
+  ep  2 train loss 0.6900
+  ep  3 train loss 0.6487
+saved tv_mlp_s0_best.pth
+tv_mlp_s1: mlp over 8950 clips, 102 participants, fixed 4 epochs (median of validation epochs [2, 3, 10])
+  ep  0 train loss 0.8576
+  ep  1 train loss 0.7278
+  ep  2 train loss 0.6845
+  ep  3 train loss 0.6542
+saved tv_mlp_s1_best.pth
+tv_mlp_s2: mlp over 8950 clips, 102 participants, fixed 4 epochs (median of validation epochs [2, 3, 10])
+  ep  0 train loss 0.8624
+  ep  1 train loss 0.7341
+  ep  2 train loss 0.6828
+  ep  3 train loss 0.6577
+saved tv_mlp_s2_best.pth
+tv_tcn_s0: tcn over 8950 clips, 102 participants, fixed 7 epochs (median of validation epochs [11, 3, 6])
+  ep  0 train loss 0.9079
+  ep  1 train loss 0.7346
+  ep  2 train loss 0.6705
+  ep  3 train loss 0.6092
+  ep  4 train loss 0.5650
+  ep  5 train loss 0.5288
+  ep  6 train loss 0.5012
+saved tv_tcn_s0_best.pth
+tv_tcn_s1: tcn over 8950 clips, 102 participants, fixed 7 epochs (median of validation epochs [11, 3, 6])
+  ep  0 train loss 0.9125
+  ep  1 train loss 0.7369
+  ep  2 train loss 0.6650
+  ep  3 train loss 0.6087
+  ep  4 train loss 0.5657
+  ep  5 train loss 0.5183
+  ep  6 train loss 0.5022
+saved tv_tcn_s1_best.pth
+tv_tcn_s2: tcn over 8950 clips, 102 participants, fixed 7 epochs (median of validation epochs [11, 3, 6])
+  ep  0 train loss 0.9308
+  ep  1 train loss 0.7439
+  ep  2 train loss 0.6776
+  ep  3 train loss 0.6135
+  ep  4 train loss 0.5717
+  ep  5 train loss 0.5242
+  ep  6 train loss 0.5028
+saved tv_tcn_s2_best.pth
+tv_transformer_s0: transformer over 8950 clips, 102 participants, fixed 10 epochs (median of validation epochs [2, 9, 25])
+~/p4/code/p4_train_of.py:148: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.enc = nn.TransformerEncoder(layer, num_layers=n_block)
+  ep  0 train loss 0.8529
+  ep  1 train loss 0.7488
+  ep  2 train loss 0.6808
+  ep  3 train loss 0.6236
+  ep  4 train loss 0.5603
+  ep  5 train loss 0.5040
+  ep  6 train loss 0.4457
+  ep  7 train loss 0.3836
+  ep  8 train loss 0.3436
+  ep  9 train loss 0.3175
+saved tv_transformer_s0_best.pth
+tv_transformer_s1: transformer over 8950 clips, 102 participants, fixed 10 epochs (median of validation epochs [2, 9, 25])
+~/p4/code/p4_train_of.py:148: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.enc = nn.TransformerEncoder(layer, num_layers=n_block)
+  ep  0 train loss 0.8569
+  ep  1 train loss 0.7468
+  ep  2 train loss 0.6902
+  ep  3 train loss 0.6236
+  ep  4 train loss 0.5753
+  ep  5 train loss 0.5107
+  ep  6 train loss 0.4493
+  ep  7 train loss 0.3966
+  ep  8 train loss 0.3511
+  ep  9 train loss 0.3253
+saved tv_transformer_s1_best.pth
+tv_transformer_s2: transformer over 8950 clips, 102 participants, fixed 10 epochs (median of validation epochs [2, 9, 25])
+~/p4/code/p4_train_of.py:148: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.enc = nn.TransformerEncoder(layer, num_layers=n_block)
+  ep  0 train loss 0.8492
+  ep  1 train loss 0.7477
+  ep  2 train loss 0.6834
+  ep  3 train loss 0.6288
+  ep  4 train loss 0.5737
+  ep  5 train loss 0.5129
+  ep  6 train loss 0.4516
+  ep  7 train loss 0.4014
+  ep  8 train loss 0.3524
+  ep  9 train loss 0.3268
+saved tv_transformer_s2_best.pth

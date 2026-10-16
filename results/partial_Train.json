@@ -1,0 +1,58 @@
+[
+  {
+    "chunk": "subject_104_06lc4xlb48_vid_1_17.mp4",
+    "source_frames": 297,
+    "frames_extracted": 174,
+    "frames_tracked": 1,
+    "coverage": 0.5859,
+    "reason": "OpenFace aborts on an out-of-bounds face ROI"
+  },
+  {
+    "chunk": "subject_104_06lc4xlb48_vid_1_21.mp4",
+    "source_frames": 297,
+    "frames_extracted": 190,
+    "frames_tracked": 24,
+    "coverage": 0.6397,
+    "reason": "OpenFace aborts on an out-of-bounds face ROI"
+  },
+  {
+    "chunk": "subject_22_37kn4gou0j_vid_2_21.mp4",
+    "source_frames": 300,
+    "frames_extracted": 250,
+    "frames_tracked": 129,
+    "coverage": 0.8333,
+    "reason": "OpenFace aborts on an out-of-bounds face ROI"
+  },
+  {
+    "chunk": "subject_23_randombhxelhr8yy_vid_0_25.mp4",
+    "source_frames": 10000,
+    "frames_extracted": 7495,
+    "frames_tracked": 7,
+    "coverage": 0.7495,
+    "reason": "OpenFace aborts on an out-of-bounds face ROI"
+  },
+  {
+    "chunk": "subject_24_35aqq1f9lo_vid_2_3.mp4",
+    "source_frames": 300,
+    "frames_extracted": 228,
+    "frames_tracked": 62,
+    "coverage": 0.76,
+    "reason": "OpenFace aborts on an out-of-bounds face ROI"
+  },
+  {
+    "chunk": "subject_5_3b5pqp1ldd_vid_2_17.mp4",
+    "source_frames": 300,
+    "frames_extracted": 183,
+    "frames_tracked": 8,
+    "coverage": 0.61,
+    "reason": "OpenFace aborts on an out-of-bounds face ROI"
+  },
+  {
+    "chunk": "subject_61_9lo6k238pu_vid_0_1.mp4",
+    "source_frames": 300,
+    "frames_extracted": 93,
+    "frames_tracked": 61,
+    "coverage": 0.31,
+    "reason": "OpenFace aborts on an out-of-bounds face ROI"
+  }
+]

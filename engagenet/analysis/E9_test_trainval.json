@@ -1,0 +1,178 @@
+{
+  "systems": [
+    "tv_cnnlstm",
+    "tv_lstm",
+    "tv_mlp",
+    "tv_tcn",
+    "tv_transformer"
+  ],
+  "variants": {
+    "acc": {
+      "tv_cnnlstm": 0.6783392434988179,
+      "tv_lstm": 0.6536643026004728,
+      "tv_mlp": 0.6885342789598109,
+      "tv_tcn": 0.6682919621749409,
+      "tv_transformer": 0.6576536643026004
+    },
+    "uar": {
+      "tv_cnnlstm": 0.5471518795130866,
+      "tv_lstm": 0.5458728097796728,
+      "tv_mlp": 0.5498612163444517,
+      "tv_tcn": 0.5384865732558315,
+      "tv_transformer": 0.5444339191971354
+    },
+    "macro_f1": {
+      "tv_cnnlstm": 0.5492572676038363,
+      "tv_lstm": 0.5492888186097624,
+      "tv_mlp": 0.560117738152922,
+      "tv_tcn": 0.5467758388608646,
+      "tv_transformer": 0.5474140818403215
+    },
+    "qwk": {
+      "tv_cnnlstm": 0.7381964972546836,
+      "tv_lstm": 0.7378583003296669,
+      "tv_mlp": 0.7345735047548928,
+      "tv_tcn": 0.744081991176032,
+      "tv_transformer": 0.7462795293988264
+    },
+    "neg_mae": {
+      "tv_cnnlstm": -0.4428191489361702,
+      "tv_lstm": -0.45715130023640665,
+      "tv_mlp": -0.4367612293144208,
+      "tv_tcn": -0.44148936170212766,
+      "tv_transformer": -0.4497635933806147
+    },
+    "acc_by_participant": {
+      "tv_cnnlstm": 0.6681710103987233,
+      "tv_lstm": 0.6438967166094116,
+      "tv_mlp": 0.6787511694241788,
+      "tv_tcn": 0.6574552578662778,
+      "tv_transformer": 0.6465092153777356
+    },
+    "acc_by_recording": {
+      "tv_cnnlstm": 0.6559437650008714,
+      "tv_lstm": 0.6326316946764443,
+      "tv_mlp": 0.6713534108461152,
+      "tv_tcn": 0.6442535610035178,
+      "tv_transformer": 0.6344755816526791
+    }
+  },
+  "ranks": {
+    "acc": {
+      "tv_mlp": 0,
+      "tv_cnnlstm": 1,
+      "tv_tcn": 2,
+      "tv_transformer": 3,
+      "tv_lstm": 4
+    },
+    "uar": {
+      "tv_mlp": 0,
+      "tv_cnnlstm": 1,
+      "tv_lstm": 2,
+      "tv_transformer": 3,
+      "tv_tcn": 4
+    },
+    "macro_f1": {
+      "tv_mlp": 0,
+      "tv_lstm": 1,
+      "tv_cnnlstm": 2,
+      "tv_transformer": 3,
+      "tv_tcn": 4
+    },
+    "qwk": {
+      "tv_transformer": 0,
+      "tv_tcn": 1,
+      "tv_cnnlstm": 2,
+      "tv_lstm": 3,
+      "tv_mlp": 4
+    },
+    "neg_mae": {
+      "tv_mlp": 0,
+      "tv_tcn": 1,
+      "tv_cnnlstm": 2,
+      "tv_transformer": 3,
+      "tv_lstm": 4
+    },
+    "acc_by_participant": {
+      "tv_mlp": 0,
+      "tv_cnnlstm": 1,
+      "tv_tcn": 2,
+      "tv_transformer": 3,
+      "tv_lstm": 4
+    },
+    "acc_by_recording": {
+      "tv_mlp": 0,
+      "tv_cnnlstm": 1,
+      "tv_tcn": 2,
+      "tv_transformer": 3,
+      "tv_lstm": 4
+    }
+  },
+  "kendall_tau": {
+    "acc vs uar": 0.39999999999999997,
+    "acc vs macro_f1": 0.19999999999999998,
+    "acc vs qwk": -0.39999999999999997,
+    "acc vs neg_mae": 0.7999999999999999,
+    "acc vs acc_by_participant": 0.9999999999999999,
+    "acc vs acc_by_recording": 0.9999999999999999,
+    "uar vs macro_f1": 0.7999999999999999,
+    "uar vs qwk": -0.6,
+    "uar vs neg_mae": 0.19999999999999998,
+    "uar vs acc_by_participant": 0.39999999999999997,
+    "uar vs acc_by_recording": 0.39999999999999997,
+    "macro_f1 vs qwk": -0.7999999999999999,
+    "macro_f1 vs neg_mae": 0.0,
+    "macro_f1 vs acc_by_participant": 0.19999999999999998,
+    "macro_f1 vs acc_by_recording": 0.19999999999999998,
+    "qwk vs neg_mae": -0.19999999999999998,
+    "qwk vs acc_by_participant": -0.39999999999999997,
+    "qwk vs acc_by_recording": -0.39999999999999997,
+    "neg_mae vs acc_by_participant": 0.7999999999999999,
+    "neg_mae vs acc_by_recording": 0.7999999999999999,
+    "acc_by_participant vs acc_by_recording": 0.9999999999999999
+  },
+  "flipping_pairs": [
+    [
+      "tv_cnnlstm",
+      "tv_lstm"
+    ],
+    [
+      "tv_cnnlstm",
+      "tv_mlp"
+    ],
+    [
+      "tv_cnnlstm",
+      "tv_tcn"
+    ],
+    [
+      "tv_cnnlstm",
+      "tv_transformer"
+    ],
+    [
+      "tv_lstm",
+      "tv_mlp"
+    ],
+    [
+      "tv_lstm",
+      "tv_tcn"
+    ],
+    [
+      "tv_lstm",
+      "tv_transformer"
+    ],
+    [
+      "tv_mlp",
+      "tv_tcn"
+    ],
+    [
+      "tv_mlp",
+      "tv_transformer"
+    ],
+    [
+      "tv_tcn",
+      "tv_transformer"
+    ]
+  ],
+  "n_distinct_rankings": 5,
+  "note": "stored epoch only: no last-epoch variant exists for a test run"
+}

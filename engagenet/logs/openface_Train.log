@@ -1,0 +1,28 @@
+Train: 7983 clips on disk, 20 parallel
+already reduced: 0, pending: 7983
+EXTRACT_DONE Train: 369 reduced, 151 csv still to reduce, of 7983
+/dev/mapper/ubuntu--vg-ubuntu--lv  490G  449G   16G  97% /
+Train: 7983 clips on disk, 20 parallel
+already reduced: 520, pending: 7463
+EXTRACT_DONE Train: 2564 reduced, 241 csv still to reduce, of 7983
+/dev/mapper/ubuntu--vg-ubuntu--lv  490G  449G   16G  97% /
+Train: 7983 clips on disk, 20 parallel
+already reduced: 2805, pending: 5178
+EXTRACT_DONE Train: 2807 reduced, 18 csv still to reduce, of 7983
+/dev/mapper/ubuntu--vg-ubuntu--lv  490G  449G   16G  97% /
+Train: 7983 clips on disk, 20 parallel
+already reduced: 2825, pending: 5158
+EXTRACT_DONE Train: 2949 reduced, 43 csv still to reduce, of 7983
+/dev/mapper/ubuntu--vg-ubuntu--lv  490G  449G   16G  97% /
+Train: 7983 clips on disk, 20 parallel
+already reduced: 2992, pending: 4991
+EXTRACT_DONE Train: 5147 reduced, 153 csv still to reduce, of 7983
+/dev/mapper/ubuntu--vg-ubuntu--lv  490G  449G   16G  97% /
+Train: 7983 clips on disk, 20 parallel
+already reduced: 5300, pending: 2683
+EXTRACT_DONE Train: 5300 reduced, 133 csv still to reduce, of 7983
+/dev/mapper/ubuntu--vg-ubuntu--lv  490G  449G   16G  97% /
+Train: 7983 clips on disk, 20 parallel
+already reduced: 5433, pending: 2550
+EXTRACT_DONE Train: 7759 reduced, 224 csv still to reduce, of 7983
+/dev/mapper/ubuntu--vg-ubuntu--lv  490G  449G   16G  97% /

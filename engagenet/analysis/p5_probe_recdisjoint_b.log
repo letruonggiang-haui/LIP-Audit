@@ -1,0 +1,28 @@
+train split: 7879 clips, 91 participants, 247 recordings; 78 participants carry >= 2 recordings (7799 clips)
+of_tcn_s0            random    s0 | logistic M none   51.0  oracle  1.66  fitted   2.54 | ncm M none   15.5  fitted   2.03
+of_tcn_s0            recording s0 | logistic M none   35.8  oracle  1.73  fitted   0.90 | ncm M none   13.2  fitted   2.36
+of_tcn_s1            random    s0 | logistic M none   56.8  oracle  2.87  fitted   2.36 | ncm M none   22.1  fitted   1.53
+of_tcn_s1            recording s0 | logistic M none   38.6  oracle  2.84  fitted   0.87 | ncm M none   16.6  fitted   1.85
+of_tcn_s2            random    s0 | logistic M none   55.2  oracle  2.36  fitted   2.03 | ncm M none   20.6  fitted   2.17
+of_tcn_s2            recording s0 | logistic M none   38.3  oracle  2.66  fitted   0.90 | ncm M none   15.9  fitted   1.31
+~/p4/code/p4_train_of.py:148: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.enc = nn.TransformerEncoder(layer, num_layers=n_block)
+of_transformer_s0    random    s0 | logistic M none   59.0  oracle  4.07  fitted   2.08 | ncm M none   17.5  fitted   1.43
+of_transformer_s0    recording s0 | logistic M none   39.6  oracle  3.23  fitted   0.87 | ncm M none   14.7  fitted   1.40
+~/p4/code/p4_train_of.py:148: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.enc = nn.TransformerEncoder(layer, num_layers=n_block)
+of_transformer_s1    random    s0 | logistic M none   52.4  oracle  3.56  fitted   2.36 | ncm M none   15.1  fitted   2.31
+of_transformer_s1    recording s0 | logistic M none   34.6  oracle  2.24  fitted   1.22 | ncm M none   11.7  fitted   1.70
+~/p4/code/p4_train_of.py:148: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.enc = nn.TransformerEncoder(layer, num_layers=n_block)
+of_transformer_s2    random    s0 | logistic M none   40.0  oracle  2.96  fitted   2.59 | ncm M none    7.4  fitted   1.94
+of_transformer_s2    recording s0 | logistic M none   26.0  oracle  2.72  fitted   0.87 | ncm M none    8.0  fitted   1.64
+
+summary: mean multiple of chance over the 15 checkpoints
+probe      split     no centring  oracle centre fitted centre
+logistic   random    52.4         2.91         2.33        
+logistic   recording 35.5         2.57         0.94        
+ncm        random    16.4         1.25         1.90        
+ncm        recording 13.3         1.40         1.71        
+
+wrote ~/p4/analysis/p5_probe_recdisjoint_b.json

@@ -1,0 +1,11 @@
+===== 16-khung, quy tac last.pth (3 seed vanilla + 2 recipe tuned) =====
+base_s0/last.pth                   acc 0.535 uar 0.282 f1 0.271 AUC_dis 0.568 | **AUC23 0.611** (n=1263)
+base_s1/last.pth                   acc 0.523 uar 0.274 f1 0.262 AUC_dis 0.549 | **AUC23 0.596** (n=1263)
+base_s2/last.pth                   acc 0.558 uar 0.274 f1 0.254 AUC_dis 0.533 | **AUC23 0.595** (n=1263)
+crudetta_s0/last.pth               acc 0.588 uar 0.277 f1 0.247 AUC_dis 0.672 | **AUC23 0.651** (n=1263)
+tuned_s0/last.pth                  acc 0.589 uar 0.286 f1 0.265 AUC_dis 0.632 | **AUC23 0.641** (n=1263)
+===== 5-cua-so, quy tac last.pth =====
+w5_s0/last.pth                     acc 0.605 uar 0.304 f1 0.286 AUC_dis 0.699 | **AUC23 0.675** (n=1263)
+w5_s1/last.pth                     acc 0.591 uar 0.299 f1 0.282 AUC_dis 0.695 | **AUC23 0.671** (n=1263)
+w5_s2/last.pth                     acc 0.603 uar 0.306 f1 0.290 AUC_dis 0.690 | **AUC23 0.663** (n=1263)
+DONE Sun Aug 16 07:59:17 UTC 2026

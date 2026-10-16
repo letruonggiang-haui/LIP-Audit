@@ -1,0 +1,4 @@
+Train       clips  4904  sessions  117  pairs  133034  rho +0.141 (p=0.0010)  d(lag1) 4.812  d(lag>=5) 6.105  diff +1.292 [+1.069, +1.519]
+Validation  clips  1400  sessions   33  pairs   34397  rho +0.135 (p=0.0010)  d(lag1) 4.811  d(lag>=5) 6.498  diff +1.687 [+1.217, +2.195]
+Test        clips  1616  sessions   35  pairs   45665  rho +0.136 (p=0.0010)  d(lag1) 4.863  d(lag>=5) 6.665  diff +1.802 [+1.181, +2.407]
+wrote ~/p4/analysis/p5_daisee_order_curve.json

@@ -1,0 +1,37 @@
+{
+  "tag": "tcct_validation",
+  "n": 1071,
+  "decisive": {
+    "n_clips": 842,
+    "n_participants_usable": 11,
+    "auc_blended": 0.7965069494067736,
+    "auc_within_person": 0.800183543406547,
+    "auc_after_centring": 0.7779859273708132,
+    "rho_between": 0.7727272727272727,
+    "within_person_null": {
+      "observed": 0.800183543406547,
+      "null_mean": 0.49965202404598336,
+      "p": 0.000999000999000999,
+      "n_perm": 1000
+    },
+    "eta2_between_score": 0.13928497342798257,
+    "eta2_between_label": 0.08811277389914254
+  },
+  "disengagement": {
+    "auc_blended": 0.872475598751154,
+    "auc_within_person": 0.7503113456419178,
+    "n_participants_usable": 10,
+    "auc_after_centring": 0.7066819487807156,
+    "within_person_null": {
+      "observed": 0.7503113456419178,
+      "null_mean": 0.4994309164806372,
+      "p": 0.000999000999000999,
+      "n_perm": 1000
+    }
+  },
+  "ordinal": {
+    "eta2_between_score": 0.5139874765071569,
+    "eta2_between_label": 0.46275852046310734
+  },
+  "placeholder": null
+}

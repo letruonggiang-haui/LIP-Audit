@@ -1,0 +1,8 @@
+===== DOI CHUNG KHOP 16-khung, 3 seed, 20 epoch =====
+crudetta_s0/best_acc.pth           acc 0.601 uar 0.288 f1 0.263 AUC_dis 0.697 | **AUC23 0.664** (n=1263)
+crudetta_s0/last.pth               acc 0.588 uar 0.277 f1 0.247 AUC_dis 0.672 | **AUC23 0.651** (n=1263)
+crudetta_s1/best_acc.pth           acc 0.595 uar 0.306 f1 0.289 AUC_dis 0.625 | **AUC23 0.676** (n=1263)
+crudetta_s1/last.pth               acc 0.556 uar 0.287 f1 0.278 AUC_dis 0.559 | **AUC23 0.598** (n=1263)
+crudetta_s2/best_acc.pth           acc 0.607 uar 0.304 f1 0.287 AUC_dis 0.706 | **AUC23 0.679** (n=1263)
+crudetta_s2/last.pth               acc 0.533 uar 0.286 f1 0.271 AUC_dis 0.574 | **AUC23 0.602** (n=1263)
+DONE Sun Aug 16 09:35:58 UTC 2026

@@ -1,0 +1,103 @@
+=== attempt 1: 17 clips to redo (03:01:29) ===
+extraction returned, reducing
+[03:05:24] reduced 12 this pass, 12 total, 5 csv left, 0 errors
+reduction finished for Train
+Train: 7983 clips
+  2000 / 7983
+  4000 / 7983
+  6000 / 7983
+checked 7978, missing a descriptor 5, short against source 7
+  subject_104_06lc4xlb48_vid_1_17.mp4            source    297, stored    174
+  subject_104_06lc4xlb48_vid_1_21.mp4            source    297, stored    190
+  subject_22_37kn4gou0j_vid_2_21.mp4             source    300, stored    250
+  subject_23_randombhxelhr8yy_vid_0_25.mp4       source  10000, stored   7495
+  subject_24_35aqq1f9lo_vid_2_3.mp4              source    300, stored    228
+  subject_5_3b5pqp1ldd_vid_2_17.mp4              source    300, stored    183
+  subject_61_9lo6k238pu_vid_0_1.mp4              source    300, stored     93
+wrote ~/p4/logs/redo_Train.txt
+=== attempt 2: 12 clips to redo (03:06:28) ===
+extraction returned, reducing
+[03:10:22] reduced 7 this pass, 7 total, 5 csv left, 0 errors
+reduction finished for Train
+Train: 7983 clips
+  2000 / 7983
+  4000 / 7983
+  6000 / 7983
+checked 7978, missing a descriptor 5, short against source 7
+  subject_104_06lc4xlb48_vid_1_17.mp4            source    297, stored    174
+  subject_104_06lc4xlb48_vid_1_21.mp4            source    297, stored    190
+  subject_22_37kn4gou0j_vid_2_21.mp4             source    300, stored    250
+  subject_23_randombhxelhr8yy_vid_0_25.mp4       source  10000, stored   7495
+  subject_24_35aqq1f9lo_vid_2_3.mp4              source    300, stored    228
+  subject_5_3b5pqp1ldd_vid_2_17.mp4              source    300, stored    183
+  subject_61_9lo6k238pu_vid_0_1.mp4              source    300, stored     93
+wrote ~/p4/logs/redo_Train.txt
+=== attempt 3: 12 clips to redo (03:11:25) ===
+extraction returned, reducing
+[03:15:21] reduced 7 this pass, 7 total, 5 csv left, 0 errors
+reduction finished for Train
+Train: 7983 clips
+  2000 / 7983
+  4000 / 7983
+  6000 / 7983
+checked 7978, missing a descriptor 5, short against source 7
+  subject_104_06lc4xlb48_vid_1_17.mp4            source    297, stored    174
+  subject_104_06lc4xlb48_vid_1_21.mp4            source    297, stored    190
+  subject_22_37kn4gou0j_vid_2_21.mp4             source    300, stored    250
+  subject_23_randombhxelhr8yy_vid_0_25.mp4       source  10000, stored   7495
+  subject_24_35aqq1f9lo_vid_2_3.mp4              source    300, stored    228
+  subject_5_3b5pqp1ldd_vid_2_17.mp4              source    300, stored    183
+  subject_61_9lo6k238pu_vid_0_1.mp4              source    300, stored     93
+wrote ~/p4/logs/redo_Train.txt
+=== attempt 4: 12 clips to redo (03:16:24) ===
+extraction returned, reducing
+[03:20:20] reduced 7 this pass, 7 total, 5 csv left, 0 errors
+reduction finished for Train
+Train: 7983 clips
+  2000 / 7983
+  4000 / 7983
+  6000 / 7983
+checked 7978, missing a descriptor 5, short against source 7
+  subject_104_06lc4xlb48_vid_1_17.mp4            source    297, stored    174
+  subject_104_06lc4xlb48_vid_1_21.mp4            source    297, stored    190
+  subject_22_37kn4gou0j_vid_2_21.mp4             source    300, stored    250
+  subject_23_randombhxelhr8yy_vid_0_25.mp4       source  10000, stored   7495
+  subject_24_35aqq1f9lo_vid_2_3.mp4              source    300, stored    228
+  subject_5_3b5pqp1ldd_vid_2_17.mp4              source    300, stored    183
+  subject_61_9lo6k238pu_vid_0_1.mp4              source    300, stored     93
+wrote ~/p4/logs/redo_Train.txt
+=== attempt 5: 12 clips to redo (03:21:23) ===
+extraction returned, reducing
+[03:25:19] reduced 7 this pass, 7 total, 5 csv left, 0 errors
+reduction finished for Train
+Train: 7983 clips
+  2000 / 7983
+  4000 / 7983
+  6000 / 7983
+checked 7978, missing a descriptor 5, short against source 7
+  subject_104_06lc4xlb48_vid_1_17.mp4            source    297, stored    174
+  subject_104_06lc4xlb48_vid_1_21.mp4            source    297, stored    190
+  subject_22_37kn4gou0j_vid_2_21.mp4             source    300, stored    250
+  subject_23_randombhxelhr8yy_vid_0_25.mp4       source  10000, stored   7495
+  subject_24_35aqq1f9lo_vid_2_3.mp4              source    300, stored    228
+  subject_5_3b5pqp1ldd_vid_2_17.mp4              source    300, stored    183
+  subject_61_9lo6k238pu_vid_0_1.mp4              source    300, stored     93
+wrote ~/p4/logs/redo_Train.txt
+=== attempt 6: 12 clips to redo (03:26:23) ===
+extraction returned, reducing
+[03:30:19] reduced 7 this pass, 7 total, 5 csv left, 0 errors
+reduction finished for Train
+Train: 7983 clips
+  2000 / 7983
+  4000 / 7983
+  6000 / 7983
+checked 7978, missing a descriptor 5, short against source 7
+  subject_104_06lc4xlb48_vid_1_17.mp4            source    297, stored    174
+  subject_104_06lc4xlb48_vid_1_21.mp4            source    297, stored    190
+  subject_22_37kn4gou0j_vid_2_21.mp4             source    300, stored    250
+  subject_23_randombhxelhr8yy_vid_0_25.mp4       source  10000, stored   7495
+  subject_24_35aqq1f9lo_vid_2_3.mp4              source    300, stored    228
+  subject_5_3b5pqp1ldd_vid_2_17.mp4              source    300, stored    183
+  subject_61_9lo6k238pu_vid_0_1.mp4              source    300, stored     93
+wrote ~/p4/logs/redo_Train.txt
+=== gave up after 6 attempts ===

@@ -1,0 +1,773 @@
+[
+  {
+    "tag": "marlin_s0",
+    "n": 1071,
+    "decisive": {
+      "n_clips": 842,
+      "n_participants_usable": 11,
+      "auc_blended": 0.7109960923669185,
+      "auc_within_person": 0.7539830258291826,
+      "auc_after_centring": 0.7833162736501927,
+      "rho_between": 0.4090909090909091,
+      "within_person_null": {
+        "observed": 0.7539830258291826,
+        "null_mean": 0.4998238684401982,
+        "p": 0.000999000999000999,
+        "n_perm": 1000
+      },
+      "eta2_between_score": 0.47320631308988276,
+      "eta2_between_label": 0.08811277389914254
+    },
+    "disengagement": {
+      "auc_blended": 0.833869244572602,
+      "auc_within_person": 0.7479829893895176,
+      "n_participants_usable": 10,
+      "auc_after_centring": 0.6960397888163968,
+      "within_person_null": {
+        "observed": 0.7479829893895176,
+        "null_mean": 0.5005861958605253,
+        "p": 0.000999000999000999,
+        "n_perm": 1000
+      }
+    },
+    "ordinal": {
+      "eta2_between_score": 0.6461444206964744,
+      "eta2_between_label": 0.46275852046310745
+    },
+    "placeholder": null
+  },
+  {
+    "tag": "marlin_s1",
+    "n": 1071,
+    "decisive": {
+      "n_clips": 842,
+      "n_participants_usable": 11,
+      "auc_blended": 0.7220366042861649,
+      "auc_within_person": 0.7772901246451576,
+      "auc_after_centring": 0.7590271474278504,
+      "rho_between": 0.29090909090909095,
+      "within_person_null": {
+        "observed": 0.7772901246451576,
+        "null_mean": 0.4996715126395545,
+        "p": 0.000999000999000999,
+        "n_perm": 1000
+      },
+      "eta2_between_score": 0.40696958579120773,
+      "eta2_between_label": 0.08811277389914254
+    },
+    "disengagement": {
+      "auc_blended": 0.8159974691159539,
+      "auc_within_person": 0.7419116450632516,
+      "n_participants_usable": 10,
+      "auc_after_centring": 0.6918493086745013,
+      "within_person_null": {
+        "observed": 0.7419116450632516,
+        "null_mean": 0.5004630192108388,
+        "p": 0.000999000999000999,
+        "n_perm": 1000
+      }
+    },
+    "ordinal": {
+      "eta2_between_score": 0.5823923899191574,
+      "eta2_between_label": 0.46275852046310745
+    },
+    "placeholder": null
+  },
+  {
+    "tag": "marlin_s2",
+    "n": 1071,
+    "decisive": {
+      "n_clips": 842,
+      "n_participants_usable": 11,
+      "auc_blended": 0.7633918512653135,
+      "auc_within_person": 0.7673369041400465,
+      "auc_after_centring": 0.7665334080096822,
+      "rho_between": 0.43636363636363645,
+      "within_person_null": {
+        "observed": 0.7673369041400465,
+        "null_mean": 0.49947623708710615,
+        "p": 0.000999000999000999,
+        "n_perm": 1000
+      },
+      "eta2_between_score": 0.3023807146613755,
+      "eta2_between_label": 0.08811277389914254
+    },
+    "disengagement": {
+      "auc_blended": 0.8280191683349065,
+      "auc_within_person": 0.7303238433088098,
+      "n_participants_usable": 10,
+      "auc_after_centring": 0.7186621580972731,
+      "within_person_null": {
+        "observed": 0.7303238433088098,
+        "null_mean": 0.5006408093277221,
+        "p": 0.000999000999000999,
+        "n_perm": 1000
+      }
+    },
+    "ordinal": {
+      "eta2_between_score": 0.5408941603434699,
+      "eta2_between_label": 0.46275852046310745
+    },
+    "placeholder": null
+  },
+  {
+    "tag": "of_cnnlstm_s0",
+    "n": 1071,
+    "decisive": {
+      "n_clips": 842,
+      "n_participants_usable": 11,
+      "auc_blended": 0.7453536504503112,
+      "auc_within_person": 0.8189359645641714,
+      "auc_after_centring": 0.7692629573121664,
+      "rho_between": 0.20909090909090913,
+      "within_person_null": {
+        "observed": 0.8189359645641714,
+        "null_mean": 0.5002842348727566,
+        "p": 0.000999000999000999,
+        "n_perm": 1000
+      },
+      "eta2_between_score": 0.298232440091733,
+      "eta2_between_label": 0.08811277389914254
+    },
+    "disengagement": {
+      "auc_blended": 0.9116420666120382,
+      "auc_within_person": 0.853838995038868,
+      "n_participants_usable": 10,
+      "auc_after_centring": 0.7863270026657263,
+      "within_person_null": {
+        "observed": 0.853838995038868,
+        "null_mean": 0.5004980255269186,
+        "p": 0.000999000999000999,
+        "n_perm": 1000
+      }
+    },
+    "ordinal": {
+      "eta2_between_score": 0.5435561891228463,
+      "eta2_between_label": 0.46275852046310745
+    },
+    "placeholder": {
+      "n_untracked": 9,
+      "accuracy_all": 0.6451914098972923,
+      "accuracy_tracked_only": 0.6421845574387948,
+      "accuracy_on_untracked": 1.0,
+      "untracked_predicted_not_engaged": 1.0,
+      "untracked_truly_not_engaged": 1.0
+    }
+  },
+  {
+    "tag": "of_cnnlstm_s1",
+    "n": 1071,
+    "decisive": {
+      "n_clips": 842,
+      "n_participants_usable": 11,
+      "auc_blended": 0.7696878399866097,
+      "auc_within_person": 0.8073745685135306,
+      "auc_after_centring": 0.7877131655690531,
+      "rho_between": 0.45454545454545453,
+      "within_person_null": {
+        "observed": 0.8073745685135306,
+        "null_mean": 0.50050181388581,
+        "p": 0.000999000999000999,
+        "n_perm": 1000
+      },
+      "eta2_between_score": 0.26758993178751833,
+      "eta2_between_label": 0.08811277389914254
+    },
+    "disengagement": {
+      "auc_blended": 0.8795755582984991,
+      "auc_within_person": 0.763832313855449,
+      "n_participants_usable": 10,
+      "auc_after_centring": 0.7747150162329242,
+      "within_person_null": {
+        "observed": 0.763832313855449,
+        "null_mean": 0.5003514887197859,
+        "p": 0.000999000999000999,
+        "n_perm": 1000
+      }
+    },
+    "ordinal": {
+      "eta2_between_score": 0.5232494134189094,
+      "eta2_between_label": 0.46275852046310745
+    },
+    "placeholder": {
+      "n_untracked": 9,
+      "accuracy_all": 0.6451914098972923,
+      "accuracy_tracked_only": 0.6421845574387948,
+      "accuracy_on_untracked": 1.0,
+      "untracked_predicted_not_engaged": 1.0,
+      "untracked_truly_not_engaged": 1.0
+    }
+  },
+  {
+    "tag": "of_cnnlstm_s2",
+    "n": 1071,
+    "decisive": {
+      "n_clips": 842,
+      "n_participants_usable": 11,
+      "auc_blended": 0.7876745398713764,
+      "auc_within_person": 0.8314745836487154,
+      "auc_after_centring": 0.7961721933602425,
+      "rho_between": 0.41818181818181827,
+      "within_person_null": {
+        "observed": 0.8314745836487154,
+        "null_mean": 0.5004669713839179,
+        "p": 0.000999000999000999,
+        "n_perm": 1000
+      },
+      "eta2_between_score": 0.2876818824691182,
+      "eta2_between_label": 0.08811277389914254
+    },
+    "disengagement": {
+      "auc_blended": 0.8987075895403956,
+      "auc_within_person": 0.8494184203291675,
+      "n_participants_usable": 10,
+      "auc_after_centring": 0.7764161022311195,
+      "within_person_null": {
+        "observed": 0.8494184203291675,
+        "null_mean": 0.5011400185768388,
+        "p": 0.000999000999000999,
+        "n_perm": 1000
+      }
+    },
+    "ordinal": {
+      "eta2_between_score": 0.5278783478252231,
+      "eta2_between_label": 0.46275852046310745
+    },
+    "placeholder": {
+      "n_untracked": 9,
+      "accuracy_all": 0.6451914098972923,
+      "accuracy_tracked_only": 0.6421845574387948,
+      "accuracy_on_untracked": 1.0,
+      "untracked_predicted_not_engaged": 1.0,
+      "untracked_truly_not_engaged": 1.0
+    }
+  },
+  {
+    "tag": "of_lstm_s0",
+    "n": 1071,
+    "decisive": {
+      "n_clips": 842,
+      "n_participants_usable": 11,
+      "auc_blended": 0.7894062586505468,
+      "auc_within_person": 0.8031972923906052,
+      "auc_after_centring": 0.7632373484746068,
+      "rho_between": 0.6000000000000001,
+      "within_person_null": {
+        "observed": 0.8031972923906052,
+        "null_mean": 0.49954864376560515,
+        "p": 0.000999000999000999,
+        "n_perm": 1000
+      },
+      "eta2_between_score": 0.19340407055648526,
+      "eta2_between_label": 0.08811277389914254
+    },
+    "disengagement": {
+      "auc_blended": 0.8146749784771132,
+      "auc_within_person": 0.6936959605750438,
+      "n_participants_usable": 10,
+      "auc_after_centring": 0.7381209223205303,
+      "within_person_null": {
+        "observed": 0.6936959605750438,
+        "null_mean": 0.5012868037192971,
+        "p": 0.000999000999000999,
+        "n_perm": 1000
+      }
+    },
+    "ordinal": {
+      "eta2_between_score": 0.45405565847670926,
+      "eta2_between_label": 0.46275852046310745
+    },
+    "placeholder": {
+      "n_untracked": 9,
+      "accuracy_all": 0.6591970121381886,
+      "accuracy_tracked_only": 0.6563088512241054,
+      "accuracy_on_untracked": 1.0,
+      "untracked_predicted_not_engaged": 1.0,
+      "untracked_truly_not_engaged": 1.0
+    }
+  },
+  {
+    "tag": "of_lstm_s1",
+    "n": 1071,
+    "decisive": {
+      "n_clips": 842,
+      "n_participants_usable": 11,
+      "auc_blended": 0.7791253854522748,
+      "auc_within_person": 0.7990344468194477,
+      "auc_after_centring": 0.7697393409168454,
+      "rho_between": 0.4727272727272727,
+      "within_person_null": {
+        "observed": 0.7990344468194477,
+        "null_mean": 0.49996068590009235,
+        "p": 0.000999000999000999,
+        "n_perm": 1000
+      },
+      "eta2_between_score": 0.30169126341332086,
+      "eta2_between_label": 0.08811277389914254
+    },
+    "disengagement": {
+      "auc_blended": 0.8804364737731953,
+      "auc_within_person": 0.7782755488715483,
+      "n_participants_usable": 10,
+      "auc_after_centring": 0.7846985239967222,
+      "within_person_null": {
+        "observed": 0.7782755488715483,
+        "null_mean": 0.5012118025762292,
+        "p": 0.000999000999000999,
+        "n_perm": 1000
+      }
+    },
+    "ordinal": {
+      "eta2_between_score": 0.5160465982388038,
+      "eta2_between_label": 0.46275852046310745
+    },
+    "placeholder": {
+      "n_untracked": 9,
+      "accuracy_all": 0.6479925303454716,
+      "accuracy_tracked_only": 0.6450094161958568,
+      "accuracy_on_untracked": 1.0,
+      "untracked_predicted_not_engaged": 1.0,
+      "untracked_truly_not_engaged": 1.0
+    }
+  },
+  {
+    "tag": "of_lstm_s2",
+    "n": 1071,
+    "decisive": {
+      "n_clips": 842,
+      "n_participants_usable": 11,
+      "auc_blended": 0.7600121027186054,
+      "auc_within_person": 0.8303525391687695,
+      "auc_after_centring": 0.785002929115407,
+      "rho_between": 0.3181818181818182,
+      "within_person_null": {
+        "observed": 0.8303525391687695,
+        "null_mean": 0.5005247545506291,
+        "p": 0.000999000999000999,
+        "n_perm": 1000
+      },
+      "eta2_between_score": 0.33928359858585017,
+      "eta2_between_label": 0.08811277389914254
+    },
+    "disengagement": {
+      "auc_blended": 0.9149457000902408,
+      "auc_within_person": 0.8521837815298626,
+      "n_participants_usable": 10,
+      "auc_after_centring": 0.786752274165275,
+      "within_person_null": {
+        "observed": 0.8521837815298626,
+        "null_mean": 0.5004793091900659,
+        "p": 0.000999000999000999,
+        "n_perm": 1000
+      }
+    },
+    "ordinal": {
+      "eta2_between_score": 0.5698400423259522,
+      "eta2_between_label": 0.46275852046310745
+    },
+    "placeholder": {
+      "n_untracked": 9,
+      "accuracy_all": 0.6526610644257703,
+      "accuracy_tracked_only": 0.6497175141242938,
+      "accuracy_on_untracked": 1.0,
+      "untracked_predicted_not_engaged": 1.0,
+      "untracked_truly_not_engaged": 1.0
+    }
+  },
+  {
+    "tag": "of_mlp_s0",
+    "n": 1071,
+    "decisive": {
+      "n_clips": 842,
+      "n_participants_usable": 11,
+      "auc_blended": 0.7645313093467752,
+      "auc_within_person": 0.826848227717497,
+      "auc_after_centring": 0.791755988592544,
+      "rho_between": 0.3727272727272728,
+      "within_person_null": {
+        "observed": 0.826848227717497,
+        "null_mean": 0.5005032654068905,
+        "p": 0.000999000999000999,
+        "n_perm": 1000
+      },
+      "eta2_between_score": 0.3422546971597683,
+      "eta2_between_label": 0.08811277389914254
+    },
+    "disengagement": {
+      "auc_blended": 0.9054860023441795,
+      "auc_within_person": 0.8130267231091475,
+      "n_participants_usable": 10,
+      "auc_after_centring": 0.7760997417253576,
+      "within_person_null": {
+        "observed": 0.8130267231091475,
+        "null_mean": 0.501678196355281,
+        "p": 0.000999000999000999,
+        "n_perm": 1000
+      }
+    },
+    "ordinal": {
+      "eta2_between_score": 0.5742974773644265,
+      "eta2_between_label": 0.46275852046310745
+    },
+    "placeholder": {
+      "n_untracked": 9,
+      "accuracy_all": 0.6526610644257703,
+      "accuracy_tracked_only": 0.6497175141242938,
+      "accuracy_on_untracked": 1.0,
+      "untracked_predicted_not_engaged": 1.0,
+      "untracked_truly_not_engaged": 1.0
+    }
+  },
+  {
+    "tag": "of_mlp_s1",
+    "n": 1071,
+    "decisive": {
+      "n_clips": 842,
+      "n_participants_usable": 11,
+      "auc_blended": 0.7587181418464373,
+      "auc_within_person": 0.8296324772210045,
+      "auc_after_centring": 0.791118664580879,
+      "rho_between": 0.3272727272727273,
+      "within_person_null": {
+        "observed": 0.8296324772210045,
+        "null_mean": 0.5006559442457909,
+        "p": 0.000999000999000999,
+        "n_perm": 1000
+      },
+      "eta2_between_score": 0.34686659294287125,
+      "eta2_between_label": 0.08811277389914254
+    },
+    "disengagement": {
+      "auc_blended": 0.9006783599041582,
+      "auc_within_person": 0.8100725936707562,
+      "n_participants_usable": 10,
+      "auc_after_centring": 0.7688286363306331,
+      "within_person_null": {
+        "observed": 0.8100725936707562,
+        "null_mean": 0.5008278930790755,
+        "p": 0.000999000999000999,
+        "n_perm": 1000
+      }
+    },
+    "ordinal": {
+      "eta2_between_score": 0.5571652615579443,
+      "eta2_between_label": 0.46275852046310745
+    },
+    "placeholder": {
+      "n_untracked": 9,
+      "accuracy_all": 0.6433239962651728,
+      "accuracy_tracked_only": 0.64030131826742,
+      "accuracy_on_untracked": 1.0,
+      "untracked_predicted_not_engaged": 1.0,
+      "untracked_truly_not_engaged": 1.0
+    }
+  },
+  {
+    "tag": "of_mlp_s2",
+    "n": 1071,
+    "decisive": {
+      "n_clips": 842,
+      "n_participants_usable": 11,
+      "auc_blended": 0.7691631742598352,
+      "auc_within_person": 0.8206602303796652,
+      "auc_after_centring": 0.785376310859615,
+      "rho_between": 0.45454545454545453,
+      "within_person_null": {
+        "observed": 0.8206602303796652,
+        "null_mean": 0.5001841032092147,
+        "p": 0.000999000999000999,
+        "n_perm": 1000
+      },
+      "eta2_between_score": 0.34195029207593075,
+      "eta2_between_label": 0.08811277389914254
+    },
+    "disengagement": {
+      "auc_blended": 0.8898339366656639,
+      "auc_within_person": 0.7889969391108091,
+      "n_participants_usable": 10,
+      "auc_after_centring": 0.7610544658693691,
+      "within_person_null": {
+        "observed": 0.7889969391108091,
+        "null_mean": 0.5007715915049236,
+        "p": 0.000999000999000999,
+        "n_perm": 1000
+      }
+    },
+    "ordinal": {
+      "eta2_between_score": 0.5349208607490121,
+      "eta2_between_label": 0.46275852046310745
+    },
+    "placeholder": {
+      "n_untracked": 9,
+      "accuracy_all": 0.646125116713352,
+      "accuracy_tracked_only": 0.6431261770244822,
+      "accuracy_on_untracked": 1.0,
+      "untracked_predicted_not_engaged": 1.0,
+      "untracked_truly_not_engaged": 1.0
+    }
+  },
+  {
+    "tag": "of_tcn_s0",
+    "n": 1071,
+    "decisive": {
+      "n_clips": 842,
+      "n_participants_usable": 11,
+      "auc_blended": 0.7749666853357539,
+      "auc_within_person": 0.7994845460202111,
+      "auc_after_centring": 0.7623747078931613,
+      "rho_between": 0.4727272727272727,
+      "within_person_null": {
+        "observed": 0.7994845460202111,
+        "null_mean": 0.5002189843822492,
+        "p": 0.000999000999000999,
+        "n_perm": 1000
+      },
+      "eta2_between_score": 0.2751646350993332,
+      "eta2_between_label": 0.08811277389914254
+    },
+    "disengagement": {
+      "auc_blended": 0.8559937350247384,
+      "auc_within_person": 0.7496915832798883,
+      "n_participants_usable": 10,
+      "auc_after_centring": 0.7449148938377124,
+      "within_person_null": {
+        "observed": 0.7496915832798883,
+        "null_mean": 0.49954755189393385,
+        "p": 0.000999000999000999,
+        "n_perm": 1000
+      }
+    },
+    "ordinal": {
+      "eta2_between_score": 0.5202699281662613,
+      "eta2_between_label": 0.46275852046310745
+    },
+    "placeholder": {
+      "n_untracked": 9,
+      "accuracy_all": 0.6517273576097106,
+      "accuracy_tracked_only": 0.6487758945386064,
+      "accuracy_on_untracked": 1.0,
+      "untracked_predicted_not_engaged": 1.0,
+      "untracked_truly_not_engaged": 1.0
+    }
+  },
+  {
+    "tag": "of_tcn_s1",
+    "n": 1071,
+    "decisive": {
+      "n_clips": 842,
+      "n_participants_usable": 11,
+      "auc_blended": 0.7857625678363815,
+      "auc_within_person": 0.8277769130269734,
+      "auc_after_centring": 0.7958889382439471,
+      "rho_between": 0.4272727272727273,
+      "within_person_null": {
+        "observed": 0.8277769130269734,
+        "null_mean": 0.5004673326782618,
+        "p": 0.000999000999000999,
+        "n_perm": 1000
+      },
+      "eta2_between_score": 0.2631732694042565,
+      "eta2_between_label": 0.08811277389914254
+    },
+    "disengagement": {
+      "auc_blended": 0.9151687083156137,
+      "auc_within_person": 0.8566728342933829,
+      "n_participants_usable": 10,
+      "auc_after_centring": 0.7929602008111277,
+      "within_person_null": {
+        "observed": 0.8566728342933829,
+        "null_mean": 0.5005686127054326,
+        "p": 0.000999000999000999,
+        "n_perm": 1000
+      }
+    },
+    "ordinal": {
+      "eta2_between_score": 0.5600747392775314,
+      "eta2_between_label": 0.46275852046310745
+    },
+    "placeholder": {
+      "n_untracked": 9,
+      "accuracy_all": 0.6629318394024276,
+      "accuracy_tracked_only": 0.660075329566855,
+      "accuracy_on_untracked": 1.0,
+      "untracked_predicted_not_engaged": 1.0,
+      "untracked_truly_not_engaged": 1.0
+    }
+  },
+  {
+    "tag": "of_tcn_s2",
+    "n": 1071,
+    "decisive": {
+      "n_clips": 842,
+      "n_participants_usable": 11,
+      "auc_blended": 0.768574132370266,
+      "auc_within_person": 0.796250741052397,
+      "auc_after_centring": 0.7759902663241854,
+      "rho_between": 0.3090909090909091,
+      "within_person_null": {
+        "observed": 0.796250741052397,
+        "null_mean": 0.5003650227459652,
+        "p": 0.000999000999000999,
+        "n_perm": 1000
+      },
+      "eta2_between_score": 0.34715139795186867,
+      "eta2_between_label": 0.08811277389914254
+    },
+    "disengagement": {
+      "auc_blended": 0.8827650945451152,
+      "auc_within_person": 0.8137766151776115,
+      "n_participants_usable": 10,
+      "auc_after_centring": 0.7782053542719041,
+      "within_person_null": {
+        "observed": 0.8137766151776115,
+        "null_mean": 0.5000886198568578,
+        "p": 0.000999000999000999,
+        "n_perm": 1000
+      }
+    },
+    "ordinal": {
+      "eta2_between_score": 0.5479523863189514,
+      "eta2_between_label": 0.46275852046310745
+    },
+    "placeholder": {
+      "n_untracked": 9,
+      "accuracy_all": 0.6610644257703081,
+      "accuracy_tracked_only": 0.6581920903954802,
+      "accuracy_on_untracked": 1.0,
+      "untracked_predicted_not_engaged": 1.0,
+      "untracked_truly_not_engaged": 1.0
+    }
+  },
+  {
+    "tag": "of_transformer_s0",
+    "n": 1071,
+    "decisive": {
+      "n_clips": 842,
+      "n_participants_usable": 11,
+      "auc_blended": 0.7504071792296748,
+      "auc_within_person": 0.8125479640695484,
+      "auc_after_centring": 0.7728487095798167,
+      "rho_between": 0.33636363636363636,
+      "within_person_null": {
+        "observed": 0.8125479640695484,
+        "null_mean": 0.5001626554369039,
+        "p": 0.000999000999000999,
+        "n_perm": 1000
+      },
+      "eta2_between_score": 0.28795346974080416,
+      "eta2_between_label": 0.08811277389914254
+    },
+    "disengagement": {
+      "auc_blended": 0.9153087367361967,
+      "auc_within_person": 0.8418601872467676,
+      "n_participants_usable": 10,
+      "auc_after_centring": 0.7884741051146678,
+      "within_person_null": {
+        "observed": 0.8418601872467676,
+        "null_mean": 0.5011660441795006,
+        "p": 0.000999000999000999,
+        "n_perm": 1000
+      }
+    },
+    "ordinal": {
+      "eta2_between_score": 0.553483974029698,
+      "eta2_between_label": 0.46275852046310745
+    },
+    "placeholder": {
+      "n_untracked": 9,
+      "accuracy_all": 0.6563958916900093,
+      "accuracy_tracked_only": 0.6534839924670434,
+      "accuracy_on_untracked": 1.0,
+      "untracked_predicted_not_engaged": 1.0,
+      "untracked_truly_not_engaged": 1.0
+    }
+  },
+  {
+    "tag": "of_transformer_s1",
+    "n": 1071,
+    "decisive": {
+      "n_clips": 842,
+      "n_participants_usable": 11,
+      "auc_blended": 0.7508256242878387,
+      "auc_within_person": 0.78860292284432,
+      "auc_after_centring": 0.7723723259751378,
+      "rho_between": 0.43636363636363645,
+      "within_person_null": {
+        "observed": 0.78860292284432,
+        "null_mean": 0.5000131884837213,
+        "p": 0.000999000999000999,
+        "n_perm": 1000
+      },
+      "eta2_between_score": 0.29196245948915517,
+      "eta2_between_label": 0.08811277389914254
+    },
+    "disengagement": {
+      "auc_blended": 0.8928782582538974,
+      "auc_within_person": 0.8050967087676487,
+      "n_participants_usable": 10,
+      "auc_after_centring": 0.7771577342364303,
+      "within_person_null": {
+        "observed": 0.8050967087676487,
+        "null_mean": 0.5003865670377265,
+        "p": 0.000999000999000999,
+        "n_perm": 1000
+      }
+    },
+    "ordinal": {
+      "eta2_between_score": 0.5455348521006427,
+      "eta2_between_label": 0.46275852046310745
+    },
+    "placeholder": {
+      "n_untracked": 9,
+      "accuracy_all": 0.6535947712418301,
+      "accuracy_tracked_only": 0.6506591337099812,
+      "accuracy_on_untracked": 1.0,
+      "untracked_predicted_not_engaged": 1.0,
+      "untracked_truly_not_engaged": 1.0
+    }
+  },
+  {
+    "tag": "of_transformer_s2",
+    "n": 1071,
+    "decisive": {
+      "n_clips": 842,
+      "n_participants_usable": 11,
+      "auc_blended": 0.7532461680089096,
+      "auc_within_person": 0.7588434734166706,
+      "auc_after_centring": 0.7336951273682382,
+      "rho_between": 0.6272727272727273,
+      "within_person_null": {
+        "observed": 0.7588434734166706,
+        "null_mean": 0.49933502830245596,
+        "p": 0.000999000999000999,
+        "n_perm": 1000
+      },
+      "eta2_between_score": 0.17553140744410234,
+      "eta2_between_label": 0.08811277389914254
+    },
+    "disengagement": {
+      "auc_blended": 0.8056561109439989,
+      "auc_within_person": 0.6366054783143789,
+      "n_participants_usable": 10,
+      "auc_after_centring": 0.7571803462332354,
+      "within_person_null": {
+        "observed": 0.6366054783143789,
+        "null_mean": 0.49974569258804413,
+        "p": 0.000999000999000999,
+        "n_perm": 1000
+      }
+    },
+    "ordinal": {
+      "eta2_between_score": 0.49902211151636355,
+      "eta2_between_label": 0.46275852046310745
+    },
+    "placeholder": {
+      "n_untracked": 9,
+      "accuracy_all": 0.6545284780578898,
+      "accuracy_tracked_only": 0.6516007532956686,
+      "accuracy_on_untracked": 1.0,
+      "untracked_predicted_not_engaged": 1.0,
+      "untracked_truly_not_engaged": 1.0
+    }
+  }
+]

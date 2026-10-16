@@ -1,0 +1,15 @@
+{
+  "tag": "tv_tcn_s1",
+  "model": "tcn",
+  "seed": 1,
+  "trained_on": "train+validation",
+  "n_clips": 8950,
+  "fixed_epochs": 7,
+  "validation_epochs_seen": [
+    11,
+    3,
+    6
+  ],
+  "selection_rule": "no epoch selection: validation is inside the training set, so the epoch count is the median of the epochs this family selected on validation when validation was held out. Registered before any test descriptor existed.",
+  "finished": "2026-09-05 10:42:36"
+}

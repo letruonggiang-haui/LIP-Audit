@@ -1,0 +1,34 @@
+{
+  "tag": "of_mlp_s1",
+  "model": "mlp",
+  "seed": 1,
+  "best_epoch": 3,
+  "last_epoch": 23,
+  "selection_rule": "epoch chosen by accuracy on the same validation split that is reported; this is the published baselines' protocol and it is optimistic. The last-epoch probabilities are stored in the same file as P_last so that a selection-free reading is available.",
+  "validation": {
+    "acc": 0.6433239962651728,
+    "uar": 0.566553646529821,
+    "macro_f1": 0.5681381643000442,
+    "qwk": 0.7550573975368964,
+    "mae": 0.4117647058823529,
+    "floor": 0.5312791783380019
+  },
+  "validation_last_epoch": {
+    "acc": 0.6255835667600373,
+    "uar": 0.5535078484376856,
+    "macro_f1": 0.56053973117117,
+    "qwk": 0.7190300013453519,
+    "mae": 0.4407096171802054
+  },
+  "args": {
+    "model": "mlp",
+    "seed": 1,
+    "tag": null,
+    "epochs": 80,
+    "batch": 64,
+    "lr": 0.001,
+    "wd": 0.01,
+    "patience": 20
+  },
+  "finished": "2026-09-05 03:51:23"
+}

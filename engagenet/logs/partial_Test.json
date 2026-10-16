@@ -1,0 +1,10 @@
+[
+  {
+    "chunk": "subject_34_rcvwfhgve6_vid_1_40.mp4",
+    "source_frames": 298,
+    "frames_extracted": 294,
+    "frames_tracked": 38,
+    "coverage": 0.9866,
+    "reason": "OpenFace aborts on an out-of-bounds face ROI"
+  }
+]

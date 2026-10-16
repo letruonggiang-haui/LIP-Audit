@@ -1,0 +1,28 @@
+marlin_s0            decisive blended 0.7110 within 0.7540 (p 0.0010) centred 0.7833 rho_b +0.41 | diseng blended 0.8339 within 0.7480 | eta2 score 0.646 vs label 0.463
+marlin_s1            decisive blended 0.7220 within 0.7773 (p 0.0010) centred 0.7590 rho_b +0.29 | diseng blended 0.8160 within 0.7419 | eta2 score 0.582 vs label 0.463
+marlin_s2            decisive blended 0.7634 within 0.7673 (p 0.0010) centred 0.7665 rho_b +0.44 | diseng blended 0.8280 within 0.7303 | eta2 score 0.541 vs label 0.463
+of_cnnlstm_s0        decisive blended 0.7454 within 0.8189 (p 0.0010) centred 0.7693 rho_b +0.21 | diseng blended 0.9116 within 0.8538 | eta2 score 0.544 vs label 0.463
+of_cnnlstm_s1        decisive blended 0.7697 within 0.8074 (p 0.0010) centred 0.7877 rho_b +0.45 | diseng blended 0.8796 within 0.7638 | eta2 score 0.523 vs label 0.463
+of_cnnlstm_s2        decisive blended 0.7877 within 0.8315 (p 0.0010) centred 0.7962 rho_b +0.42 | diseng blended 0.8987 within 0.8494 | eta2 score 0.528 vs label 0.463
+of_lstm_s0           decisive blended 0.7894 within 0.8032 (p 0.0010) centred 0.7632 rho_b +0.60 | diseng blended 0.8147 within 0.6937 | eta2 score 0.454 vs label 0.463
+of_lstm_s1           decisive blended 0.7791 within 0.7990 (p 0.0010) centred 0.7697 rho_b +0.47 | diseng blended 0.8804 within 0.7783 | eta2 score 0.516 vs label 0.463
+of_lstm_s2           decisive blended 0.7600 within 0.8304 (p 0.0010) centred 0.7850 rho_b +0.32 | diseng blended 0.9149 within 0.8522 | eta2 score 0.570 vs label 0.463
+of_mlp_s0            decisive blended 0.7645 within 0.8268 (p 0.0010) centred 0.7918 rho_b +0.37 | diseng blended 0.9055 within 0.8130 | eta2 score 0.574 vs label 0.463
+of_mlp_s1            decisive blended 0.7587 within 0.8296 (p 0.0010) centred 0.7911 rho_b +0.33 | diseng blended 0.9007 within 0.8101 | eta2 score 0.557 vs label 0.463
+of_mlp_s2            decisive blended 0.7692 within 0.8207 (p 0.0010) centred 0.7854 rho_b +0.45 | diseng blended 0.8898 within 0.7890 | eta2 score 0.535 vs label 0.463
+of_tcn_s0            decisive blended 0.7750 within 0.7995 (p 0.0010) centred 0.7624 rho_b +0.47 | diseng blended 0.8560 within 0.7497 | eta2 score 0.520 vs label 0.463
+of_tcn_s1            decisive blended 0.7858 within 0.8278 (p 0.0010) centred 0.7959 rho_b +0.43 | diseng blended 0.9152 within 0.8567 | eta2 score 0.560 vs label 0.463
+of_tcn_s2            decisive blended 0.7686 within 0.7963 (p 0.0010) centred 0.7760 rho_b +0.31 | diseng blended 0.8828 within 0.8138 | eta2 score 0.548 vs label 0.463
+of_transformer_s0    decisive blended 0.7504 within 0.8125 (p 0.0010) centred 0.7728 rho_b +0.34 | diseng blended 0.9153 within 0.8419 | eta2 score 0.553 vs label 0.463
+of_transformer_s1    decisive blended 0.7508 within 0.7886 (p 0.0010) centred 0.7724 rho_b +0.44 | diseng blended 0.8929 within 0.8051 | eta2 score 0.546 vs label 0.463
+of_transformer_s2    decisive blended 0.7532 within 0.7588 (p 0.0010) centred 0.7337 rho_b +0.63 | diseng blended 0.8057 within 0.6366 | eta2 score 0.499 vs label 0.463
+
+wrote ~/p4/analysis/E7_decompose.json
+
+system           blended AUC    within-person  after centring rho_b      placeholder cost
+marlin           0.7321         0.7662         0.7696         0.38       +nan
+of_cnnlstm       0.7676         0.8193         0.7844         0.36       +0.0030
+of_lstm          0.7762         0.8109         0.7727         0.46       +0.0029
+of_mlp           0.7641         0.8257         0.7894         0.38       +0.0030
+of_tcn           0.7764         0.8078         0.7781         0.40       +0.0029
+of_transformer   0.7515         0.7867         0.7596         0.47       +0.0029

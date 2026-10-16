@@ -1,0 +1,229 @@
+{
+  "seed": 20260910,
+  "n_perm": 1000,
+  "n_boot": 2000,
+  "splits": {
+    "Train": {
+      "clips_used": 4904,
+      "clips_dropped_not_ten_char": 454,
+      "sessions": 117,
+      "within_session_pairs": 133034,
+      "sessions_scored": 113,
+      "sessions_with_positive_rho": 106,
+      "pooled_within_session_rho": 0.14142528596850726,
+      "permutation_p": 0.000999000999000999,
+      "mean_distance_lag1": 4.812459482658591,
+      "mean_distance_lag_ge5": 6.10452206384634,
+      "difference_ge5_minus_1": 1.292062581187749,
+      "difference_ci95_session_clustered": [
+        1.069102453752486,
+        1.518635337108015
+      ],
+      "curve": [
+        {
+          "lag": 1,
+          "n_pairs": 3358,
+          "mean_distance": 4.812459482658591
+        },
+        {
+          "lag": 2,
+          "n_pairs": 3234,
+          "mean_distance": 5.308466644144611
+        },
+        {
+          "lag": 3,
+          "n_pairs": 3119,
+          "mean_distance": 5.474400810959645
+        },
+        {
+          "lag": 4,
+          "n_pairs": 3073,
+          "mean_distance": 5.558700352395041
+        },
+        {
+          "lag": 5,
+          "n_pairs": 3029,
+          "mean_distance": 5.606618607123772
+        },
+        {
+          "lag": 6,
+          "n_pairs": 2954,
+          "mean_distance": 5.6806943027439365
+        },
+        {
+          "lag": 7,
+          "n_pairs": 2942,
+          "mean_distance": 5.748298738892708
+        },
+        {
+          "lag": 8,
+          "n_pairs": 2880,
+          "mean_distance": 5.830246143573735
+        },
+        {
+          "lag": 9,
+          "n_pairs": 2822,
+          "mean_distance": 5.840102714418357
+        },
+        {
+          "lag": 10,
+          "n_pairs": 2767,
+          "mean_distance": 5.865542238251497
+        },
+        {
+          "lag": ">10",
+          "n_pairs": 102856,
+          "mean_distance": 6.162909605950005
+        }
+      ]
+    },
+    "Validation": {
+      "clips_used": 1400,
+      "clips_dropped_not_ten_char": 29,
+      "sessions": 33,
+      "within_session_pairs": 34397,
+      "sessions_scored": 33,
+      "sessions_with_positive_rho": 31,
+      "pooled_within_session_rho": 0.1350173210031633,
+      "permutation_p": 0.000999000999000999,
+      "mean_distance_lag1": 4.810599796250093,
+      "mean_distance_lag_ge5": 6.497723126678227,
+      "difference_ge5_minus_1": 1.6871233304281334,
+      "difference_ci95_session_clustered": [
+        1.2172627419526747,
+        2.194603206858972
+      ],
+      "curve": [
+        {
+          "lag": 1,
+          "n_pairs": 936,
+          "mean_distance": 4.810599796250093
+        },
+        {
+          "lag": 2,
+          "n_pairs": 879,
+          "mean_distance": 5.327958656182532
+        },
+        {
+          "lag": 3,
+          "n_pairs": 857,
+          "mean_distance": 5.533180896657945
+        },
+        {
+          "lag": 4,
+          "n_pairs": 833,
+          "mean_distance": 5.53274798409196
+        },
+        {
+          "lag": 5,
+          "n_pairs": 808,
+          "mean_distance": 5.80179382331329
+        },
+        {
+          "lag": 6,
+          "n_pairs": 781,
+          "mean_distance": 5.862817718003722
+        },
+        {
+          "lag": 7,
+          "n_pairs": 768,
+          "mean_distance": 6.097893169693383
+        },
+        {
+          "lag": 8,
+          "n_pairs": 749,
+          "mean_distance": 6.020588242434926
+        },
+        {
+          "lag": 9,
+          "n_pairs": 754,
+          "mean_distance": 6.12456913769499
+        },
+        {
+          "lag": 10,
+          "n_pairs": 733,
+          "mean_distance": 6.27105166750449
+        },
+        {
+          "lag": ">10",
+          "n_pairs": 26299,
+          "mean_distance": 6.580240474251289
+        }
+      ]
+    },
+    "Test": {
+      "clips_used": 1616,
+      "clips_dropped_not_ten_char": 168,
+      "sessions": 35,
+      "within_session_pairs": 45665,
+      "sessions_scored": 33,
+      "sessions_with_positive_rho": 30,
+      "pooled_within_session_rho": 0.13592571640940884,
+      "permutation_p": 0.000999000999000999,
+      "mean_distance_lag1": 4.862663287502031,
+      "mean_distance_lag_ge5": 6.664717684568658,
+      "difference_ge5_minus_1": 1.8020543970666276,
+      "difference_ci95_session_clustered": [
+        1.1810002709481653,
+        2.4071364741787584
+      ],
+      "curve": [
+        {
+          "lag": 1,
+          "n_pairs": 1118,
+          "mean_distance": 4.862663287502031
+        },
+        {
+          "lag": 2,
+          "n_pairs": 1083,
+          "mean_distance": 5.259186437125707
+        },
+        {
+          "lag": 3,
+          "n_pairs": 1040,
+          "mean_distance": 5.516191100136453
+        },
+        {
+          "lag": 4,
+          "n_pairs": 1030,
+          "mean_distance": 5.509410940602052
+        },
+        {
+          "lag": 5,
+          "n_pairs": 1027,
+          "mean_distance": 5.73362912774389
+        },
+        {
+          "lag": 6,
+          "n_pairs": 1024,
+          "mean_distance": 5.779476573775288
+        },
+        {
+          "lag": 7,
+          "n_pairs": 991,
+          "mean_distance": 5.752789082499275
+        },
+        {
+          "lag": 8,
+          "n_pairs": 977,
+          "mean_distance": 5.890616865474996
+        },
+        {
+          "lag": 9,
+          "n_pairs": 959,
+          "mean_distance": 5.907367175276281
+        },
+        {
+          "lag": 10,
+          "n_pairs": 947,
+          "mean_distance": 5.946817161321019
+        },
+        {
+          "lag": ">10",
+          "n_pairs": 35469,
+          "mean_distance": 6.80368082207306
+        }
+      ]
+    }
+  }
+}

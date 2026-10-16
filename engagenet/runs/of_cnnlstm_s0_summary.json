@@ -1,0 +1,34 @@
+{
+  "tag": "of_cnnlstm_s0",
+  "model": "cnnlstm",
+  "seed": 0,
+  "best_epoch": 0,
+  "last_epoch": 20,
+  "selection_rule": "epoch chosen by accuracy on the same validation split that is reported; this is the published baselines' protocol and it is optimistic. The last-epoch probabilities are stored in the same file as P_last so that a selection-free reading is available.",
+  "validation": {
+    "acc": 0.6451914098972923,
+    "uar": 0.5526991330739088,
+    "macro_f1": 0.5614455266247423,
+    "qwk": 0.7538500952690061,
+    "mae": 0.40709617180205415,
+    "floor": 0.5312791783380019
+  },
+  "validation_last_epoch": {
+    "acc": 0.5929038281979458,
+    "uar": 0.5438858904549754,
+    "macro_f1": 0.5421545719372055,
+    "qwk": 0.6870767388241692,
+    "mae": 0.4864612511671335
+  },
+  "args": {
+    "model": "cnnlstm",
+    "seed": 0,
+    "tag": null,
+    "epochs": 80,
+    "batch": 64,
+    "lr": 0.001,
+    "wd": 0.01,
+    "patience": 20
+  },
+  "finished": "2026-09-05 03:52:29"
+}

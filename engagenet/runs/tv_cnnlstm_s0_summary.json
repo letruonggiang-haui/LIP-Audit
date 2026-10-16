@@ -1,0 +1,15 @@
+{
+  "tag": "tv_cnnlstm_s0",
+  "model": "cnnlstm",
+  "seed": 0,
+  "trained_on": "train+validation",
+  "n_clips": 8950,
+  "fixed_epochs": 2,
+  "validation_epochs_seen": [
+    0,
+    5,
+    1
+  ],
+  "selection_rule": "no epoch selection: validation is inside the training set, so the epoch count is the median of the epochs this family selected on validation when validation was held out. Registered before any test descriptor existed.",
+  "finished": "2026-09-05 10:41:29"
+}
