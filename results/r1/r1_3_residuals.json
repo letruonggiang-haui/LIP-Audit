@@ -1,0 +1,348 @@
+{
+ "DAiSEE_validation": {
+  "au_s0_val_probs.npz": {
+   "resid_mean_t1": 0.028185395523905754,
+   "resid_mean_t0": -0.015600763261318207,
+   "resid_gap": 0.04378615878522396,
+   "eta2_score_unmatched": 0.23942487736058377,
+   "eta2_score_label_matched": 0.22588068801410066,
+   "n_participants_matched": 19,
+   "ci": {
+    "resid_gap": [
+     0.02151233421172947,
+     0.07023863503709435
+    ],
+    "eta2_score_label_matched": [
+     0.12128366739088525,
+     0.32324019599148623
+    ]
+   }
+  },
+  "w5_s0_val_probs.npz": {
+   "resid_mean_t1": 0.02202751114964485,
+   "resid_mean_t0": -0.01219235546886921,
+   "resid_gap": 0.03421986661851406,
+   "eta2_score_unmatched": 0.5665902559666496,
+   "eta2_score_label_matched": 0.5476372626502973,
+   "n_participants_matched": 19,
+   "ci": {
+    "resid_gap": [
+     0.014617287798319011,
+     0.06131646297872066
+    ],
+    "eta2_score_label_matched": [
+     0.24798463887368047,
+     0.7168894040072581
+    ]
+   }
+  },
+  "w5_s1_val_probs.npz": {
+   "resid_mean_t1": 0.008821704424917698,
+   "resid_mean_t0": -0.004882865119725466,
+   "resid_gap": 0.013704569544643164,
+   "eta2_score_unmatched": 0.830927047183617,
+   "eta2_score_label_matched": 0.8229313674765985,
+   "n_participants_matched": 19,
+   "ci": {
+    "resid_gap": [
+     0.007376636419212446,
+     0.022114701161626726
+    ],
+    "eta2_score_label_matched": [
+     0.5796540776150528,
+     0.8973542745661721
+    ]
+   }
+  },
+  "w5_s2_val_probs.npz": {
+   "resid_mean_t1": 0.016870509833097458,
+   "resid_mean_t0": -0.00933792069554329,
+   "resid_gap": 0.026208430528640747,
+   "eta2_score_unmatched": 0.6789407252713269,
+   "eta2_score_label_matched": 0.6649937181925882,
+   "n_participants_matched": 19,
+   "ci": {
+    "resid_gap": [
+     0.009298252715962008,
+     0.05052199247293174
+    ],
+    "eta2_score_label_matched": [
+     0.3662489928761757,
+     0.8150400077941408
+    ]
+   }
+  }
+ },
+ "EngageNet_validation": {
+  "of_cnnlstm_s0_val_probs.npz": {
+   "resid_mean_t1": 0.0648840069770813,
+   "resid_mean_t0": -0.1352345049381256,
+   "resid_gap": 0.2001185119152069,
+   "eta2_score_unmatched": 0.2982323576095352,
+   "eta2_score_label_matched": 0.2759931380389046,
+   "n_participants_matched": 11,
+   "ci": {
+    "resid_gap": [
+     0.1432570439763367,
+     0.2603130634874105
+    ],
+    "eta2_score_label_matched": [
+     0.1340591762965046,
+     0.37240366138967707
+    ]
+   }
+  },
+  "of_cnnlstm_s1_val_probs.npz": {
+   "resid_mean_t1": 0.07993928343057632,
+   "resid_mean_t0": -0.16661334037780762,
+   "resid_gap": 0.24655262380838394,
+   "eta2_score_unmatched": 0.2675899757724925,
+   "eta2_score_label_matched": 0.21417175205019742,
+   "n_participants_matched": 11,
+   "ci": {
+    "resid_gap": [
+     0.18665589652955533,
+     0.32846489623188974
+    ],
+    "eta2_score_label_matched": [
+     0.06494912618364446,
+     0.3176456188081259
+    ]
+   }
+  },
+  "of_cnnlstm_s2_val_probs.npz": {
+   "resid_mean_t1": 0.08637552708387375,
+   "resid_mean_t0": -0.1800280213356018,
+   "resid_gap": 0.26640354841947556,
+   "eta2_score_unmatched": 0.2876818772992607,
+   "eta2_score_label_matched": 0.21684879923873904,
+   "n_participants_matched": 11,
+   "ci": {
+    "resid_gap": [
+     0.19969802666455508,
+     0.3491471568122505
+    ],
+    "eta2_score_label_matched": [
+     0.06304087540822303,
+     0.359152263856892
+    ]
+   }
+  },
+  "of_lstm_s0_val_probs.npz": {
+   "resid_mean_t1": 0.10265874862670898,
+   "resid_mean_t0": -0.21396641433238983,
+   "resid_gap": 0.3166251629590988,
+   "eta2_score_unmatched": 0.1934040502698447,
+   "eta2_score_label_matched": 0.14222020256722154,
+   "n_participants_matched": 11,
+   "ci": {
+    "resid_gap": [
+     0.2635658523067832,
+     0.3918006870895624
+    ],
+    "eta2_score_label_matched": [
+     0.05551449287601415,
+     0.22061396179639306
+    ]
+   }
+  },
+  "of_lstm_s1_val_probs.npz": {
+   "resid_mean_t1": 0.08961865305900574,
+   "resid_mean_t0": -0.18678772449493408,
+   "resid_gap": 0.2764063775539398,
+   "eta2_score_unmatched": 0.3016911898333174,
+   "eta2_score_label_matched": 0.244904770559852,
+   "n_participants_matched": 11,
+   "ci": {
+    "resid_gap": [
+     0.21484096758067608,
+     0.36395139545202254
+    ],
+    "eta2_score_label_matched": [
+     0.08434640162136518,
+     0.36294657985497614
+    ]
+   }
+  },
+  "of_lstm_s2_val_probs.npz": {
+   "resid_mean_t1": 0.0757722333073616,
+   "resid_mean_t0": -0.1579281985759735,
+   "resid_gap": 0.2337004318833351,
+   "eta2_score_unmatched": 0.33928365242168645,
+   "eta2_score_label_matched": 0.3005043191276815,
+   "n_participants_matched": 11,
+   "ci": {
+    "resid_gap": [
+     0.17423691563308238,
+     0.30377373937517405
+    ],
+    "eta2_score_label_matched": [
+     0.15119097554553407,
+     0.41224132188912854
+    ]
+   }
+  },
+  "of_mlp_s0_val_probs.npz": {
+   "resid_mean_t1": 0.07315262407064438,
+   "resid_mean_t0": -0.15246827900409698,
+   "resid_gap": 0.22562090307474136,
+   "eta2_score_unmatched": 0.34225466333317234,
+   "eta2_score_label_matched": 0.29188187469216303,
+   "n_participants_matched": 11,
+   "ci": {
+    "resid_gap": [
+     0.169359561894089,
+     0.30350523777306077
+    ],
+    "eta2_score_label_matched": [
+     0.12480140544036916,
+     0.4175827387084779
+    ]
+   }
+  },
+  "of_mlp_s1_val_probs.npz": {
+   "resid_mean_t1": 0.07725697755813599,
+   "resid_mean_t0": -0.16102278232574463,
+   "resid_gap": 0.23827975988388062,
+   "eta2_score_unmatched": 0.3468665994062179,
+   "eta2_score_label_matched": 0.31523442897732096,
+   "n_participants_matched": 11,
+   "ci": {
+    "resid_gap": [
+     0.18227945417165756,
+     0.3058405764400959
+    ],
+    "eta2_score_label_matched": [
+     0.15980143166283176,
+     0.4297709144923713
+    ]
+   }
+  },
+  "of_mlp_s2_val_probs.npz": {
+   "resid_mean_t1": 0.0788261890411377,
+   "resid_mean_t0": -0.1642933487892151,
+   "resid_gap": 0.24311953783035278,
+   "eta2_score_unmatched": 0.34195032226339256,
+   "eta2_score_label_matched": 0.28893630973702844,
+   "n_participants_matched": 11,
+   "ci": {
+    "resid_gap": [
+     0.18143663983792066,
+     0.32723527550697323
+    ],
+    "eta2_score_label_matched": [
+     0.14209856947530244,
+     0.4115865010922668
+    ]
+   }
+  },
+  "of_tcn_s0_val_probs.npz": {
+   "resid_mean_t1": 0.08406684547662735,
+   "resid_mean_t0": -0.17521615326404572,
+   "resid_gap": 0.25928299874067307,
+   "eta2_score_unmatched": 0.2751647406569383,
+   "eta2_score_label_matched": 0.23005412657259502,
+   "n_participants_matched": 11,
+   "ci": {
+    "resid_gap": [
+     0.19823929807171226,
+     0.3366513844579458
+    ],
+    "eta2_score_label_matched": [
+     0.10596481523918341,
+     0.3161608227572267
+    ]
+   }
+  },
+  "of_tcn_s1_val_probs.npz": {
+   "resid_mean_t1": 0.07304707169532776,
+   "resid_mean_t0": -0.15224815905094147,
+   "resid_gap": 0.22529523074626923,
+   "eta2_score_unmatched": 0.26317329512746185,
+   "eta2_score_label_matched": 0.22618705162814368,
+   "n_participants_matched": 11,
+   "ci": {
+    "resid_gap": [
+     0.17484365105628968,
+     0.28608258068561543
+    ],
+    "eta2_score_label_matched": [
+     0.05984770551229526,
+     0.3445584797795034
+    ]
+   }
+  },
+  "of_tcn_s2_val_probs.npz": {
+   "resid_mean_t1": 0.07723484933376312,
+   "resid_mean_t0": -0.16097664833068848,
+   "resid_gap": 0.2382114976644516,
+   "eta2_score_unmatched": 0.3471513470127301,
+   "eta2_score_label_matched": 0.29887060125021947,
+   "n_participants_matched": 11,
+   "ci": {
+    "resid_gap": [
+     0.17646176917478443,
+     0.3188203645870089
+    ],
+    "eta2_score_label_matched": [
+     0.12601172667470364,
+     0.4209293911855848
+    ]
+   }
+  },
+  "of_transformer_s0_val_probs.npz": {
+   "resid_mean_t1": 0.08310580253601074,
+   "resid_mean_t0": -0.1732131689786911,
+   "resid_gap": 0.25631897151470184,
+   "eta2_score_unmatched": 0.28795347709666835,
+   "eta2_score_label_matched": 0.2601387117655138,
+   "n_participants_matched": 11,
+   "ci": {
+    "resid_gap": [
+     0.19193643406033517,
+     0.3356024911627173
+    ],
+    "eta2_score_label_matched": [
+     0.10843833725181404,
+     0.3711989004749856
+    ]
+   }
+  },
+  "of_transformer_s1_val_probs.npz": {
+   "resid_mean_t1": 0.09711388498544693,
+   "resid_mean_t0": -0.202409565448761,
+   "resid_gap": 0.2995234504342079,
+   "eta2_score_unmatched": 0.29196245982335417,
+   "eta2_score_label_matched": 0.2537919821856496,
+   "n_participants_matched": 11,
+   "ci": {
+    "resid_gap": [
+     0.21953680887818336,
+     0.39988107010722157
+    ],
+    "eta2_score_label_matched": [
+     0.0683962310250767,
+     0.406774788129314
+    ]
+   }
+  },
+  "of_transformer_s2_val_probs.npz": {
+   "resid_mean_t1": 0.09780490398406982,
+   "resid_mean_t0": -0.20384985208511353,
+   "resid_gap": 0.30165475606918335,
+   "eta2_score_unmatched": 0.17553134847012353,
+   "eta2_score_label_matched": 0.1418721555835394,
+   "n_participants_matched": 11,
+   "ci": {
+    "resid_gap": [
+     0.21289496701210736,
+     0.39532025773078205
+    ],
+    "eta2_score_label_matched": [
+     0.05060405125880182,
+     0.2414651349614192
+    ]
+   }
+  }
+ }
+}

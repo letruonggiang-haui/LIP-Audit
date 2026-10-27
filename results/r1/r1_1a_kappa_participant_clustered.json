@@ -1,0 +1,154 @@
+{
+ "DAiSEE": {
+  "Train": {
+   "pairs": 3225,
+   "a": 0.5720930232558139,
+   "a_iid": 0.5002895799343405,
+   "kappa": 0.1436901061859762,
+   "n_subjects": 69,
+   "kappa_ci_subject_clustered": [
+    0.09917100415200403,
+    0.1935818691521927
+   ]
+  },
+  "Validation": {
+   "pairs": 748,
+   "a": 0.5802139037433155,
+   "a_iid": 0.5413025202972225,
+   "kappa": 0.08483016621610054,
+   "n_subjects": 19,
+   "kappa_ci_subject_clustered": [
+    0.019545762986371774,
+    0.14543836497447843
+   ]
+  },
+  "Test": {
+   "pairs": 1045,
+   "a": 0.5272727272727272,
+   "a_iid": 0.5008037780348877,
+   "kappa": 0.0530231361400194,
+   "n_subjects": 21,
+   "kappa_ci_subject_clustered": [
+    -0.02866792856497218,
+    0.12638762316608756
+   ]
+  }
+ },
+ "EngageNet_stored_E2": {
+  "train": {
+   "four_class": {
+    "recording_clustered": {
+     "n_boot": 2000,
+     "n_clusters": 247,
+     "a_lo": 0.6595998442665698,
+     "a_hi": 0.7068579584695428,
+     "kappa_lo": 0.4955733691632133,
+     "kappa_hi": 0.5666625834308385
+    },
+    "subject_clustered": {
+     "n_boot": 2000,
+     "n_clusters": 91,
+     "a_lo": 0.6488959028571243,
+     "a_hi": 0.7155794097545594,
+     "kappa_lo": 0.4811046105490539,
+     "kappa_hi": 0.5800905214856351
+    }
+   },
+   "decisive": {
+    "recording_clustered": {
+     "n_boot": 2000,
+     "n_clusters": 238,
+     "a_lo": 0.7487396765822159,
+     "a_hi": 0.7923209695781916,
+     "kappa_lo": 0.4153773308214166,
+     "kappa_hi": 0.5053544411721007
+    },
+    "subject_clustered": {
+     "n_boot": 2000,
+     "n_clusters": 85,
+     "a_lo": 0.7385860197893394,
+     "a_hi": 0.8016470964771443,
+     "kappa_lo": 0.39227399862442264,
+     "kappa_hi": 0.5215968164658807
+    }
+   }
+  },
+  "validation": {
+   "four_class": {
+    "recording_clustered": {
+     "n_boot": 2000,
+     "n_clusters": 33,
+     "a_lo": 0.5984445728968304,
+     "a_hi": 0.7044700667878859,
+     "kappa_lo": 0.3337240042523274,
+     "kappa_hi": 0.5357735346336546
+    },
+    "subject_clustered": {
+     "n_boot": 2000,
+     "n_clusters": 11,
+     "a_lo": 0.5814258562874384,
+     "a_hi": 0.7204326628235006,
+     "kappa_lo": 0.28212126337412885,
+     "kappa_hi": 0.5793134877401771
+    }
+   },
+   "decisive": {
+    "recording_clustered": {
+     "n_boot": 2000,
+     "n_clusters": 33,
+     "a_lo": 0.6507108490315263,
+     "a_hi": 0.755674993951667,
+     "kappa_lo": 0.22465047934297003,
+     "kappa_hi": 0.41264778552124304
+    },
+    "subject_clustered": {
+     "n_boot": 2000,
+     "n_clusters": 11,
+     "a_lo": 0.6381836384439359,
+     "a_hi": 0.762666363373488,
+     "kappa_lo": 0.22618499224782723,
+     "kappa_hi": 0.4205366334483906
+    }
+   }
+  },
+  "test": {
+   "four_class": {
+    "recording_clustered": {
+     "n_boot": 2000,
+     "n_clusters": 75,
+     "a_lo": 0.6434740349084047,
+     "a_hi": 0.7436668308527916,
+     "kappa_lo": 0.47417516789610115,
+     "kappa_hi": 0.592078707087276
+    },
+    "subject_clustered": {
+     "n_boot": 2000,
+     "n_clusters": 26,
+     "a_lo": 0.6087932965064198,
+     "a_hi": 0.7695960286371292,
+     "kappa_lo": 0.4369525000510636,
+     "kappa_hi": 0.6165116231909684
+    }
+   },
+   "decisive": {
+    "recording_clustered": {
+     "n_boot": 2000,
+     "n_clusters": 72,
+     "a_lo": 0.7856965242102962,
+     "a_hi": 0.8672188333968738,
+     "kappa_lo": 0.4805567658858468,
+     "kappa_hi": 0.6427106762800454
+    },
+    "subject_clustered": {
+     "n_boot": 2000,
+     "n_clusters": 26,
+     "a_lo": 0.756627101494396,
+     "a_hi": 0.8847228379240408,
+     "kappa_lo": 0.45329507329838314,
+     "kappa_hi": 0.6562272399640374
+    }
+   }
+  }
+ },
+ "note": "EngageNet intervals are copied from results/E2_results.json (generated 2026-09-04, 2,000 replicates, same pairing as E1); no EngageNet label file was read for them."
+}

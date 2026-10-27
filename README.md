@@ -68,6 +68,25 @@ Given the corpora's label files (the DAiSEE `Labels` directory; the EngageNet la
 
 The DAiSEE material (`audits/`, `code/p2_*`, `logs/`, `RESULTS_P2.csv`) dates from August and September 2026; the EngageNet material and the `p5_*`, `p6_*` and `p7_*` analyses were added on 25 September 2026; `code/label_join.py`, the `p8_*` analyses and the label-free prediction files on 28 September 2026. The repository was republished with a fresh history on 16 October 2026, so that no earlier commit carries label arrays. Paths under the server account's home directory are written `~` in the logs and scripts. The laboratory journal with the prospectively specified criteria and the EngageNet test registration file are available from the corresponding author on request.
 
+## Analyses added in the first review round (October 2026)
+
+These analyses answer the first-round review of the IEEE Access submission. All were specified in `r1/REGISTRATION_R1_20261026.md` before any was run; its SHA-256 is `ccc9f9065932a67cb8937a0cb10415350c583522f1a1d4ff9e6e9b35386fdf84`. Departures from it are listed in `r1/DEVIATIONS_R1.md`. The outputs are in `results/r1/`, and Supplementary Section S11 reports every registered quantity.
+
+No new script reads a test split.
+- EngageNet: the server scripts read copies of the training and validation files only, and the workstation scripts take EngageNet labels from a directory with no test file.
+- DAiSEE: the released `TestLabels.csv`, already read by the label-only Audit 1 of Table 2, is read again only by the label-only analyses of `r1_label_analyses.py` (`kappa`, `coding`). No model is evaluated on any test split.
+
+| Path | Contents |
+|---|---|
+| `code/r1_label_analyses.py` | Participant-clustered Audit 1 intervals (DAiSEE; EngageNet copied from `results/E2_results.json`), coding sensitivity with a cumulative-logit mixed model and its simulation check, equivalence bounds and minimum detectable differences from the stored paired intervals, within-participant residuals by true label (S11.1–S11.4) |
+| `code/r1_controlled_sim.py` | Synthetic Audit 1 on the real recording structure; semi-synthetic Audit 2 with two score models of equal accuracy (S11.5, S11.6) |
+| `code/r1_engagenet.py` | EngageNet training and validation only: identity overlap against disjointness at matched size, label-balanced training, retraining with shuffled sub-windows, frozen checkpoints read with shuffled sub-windows (S11.7–S11.9) |
+| `code/r1g_frames_prep.py`, `code/r1g_frames_train.py`, `code/r1g_frames_eval.py` | ResNet-TCN frame ablation (16 consecutive, 16 spread, 50 spread frames), DAiSEE training split, validation read every epoch; seeds 1 and 2 of the 50-frame arm were added under departure 6 of `r1/DEVIATIONS_R1.md` (S11.10) |
+| `code/r1_make_tables.py` | The S11 tables, built from the result files |
+| `results/r1/*.json` | Outputs of the scripts above |
+
+The probability files written by `r1_engagenet.py` carry labels and are not deposited. The frame-ablation validation probabilities (`results/r1/r1_frames_val_probs_<arm>.npz`, every epoch) are deposited with clip identifiers and without labels; `r1g_frames_eval.py` joins the labels from the DAiSEE validation label file.
+
 ## Licence
 
 GNU General Public License v3.0, see `LICENSE`.

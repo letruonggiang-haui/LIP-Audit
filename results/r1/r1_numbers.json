@@ -1,0 +1,953 @@
+{
+ "daisee_train_kappa_subjci": [
+  0.09917100415200403,
+  0.1935818691521927
+ ],
+ "daisee_train_kappa_recci": [
+  0.1045,
+  0.1833
+ ],
+ "daisee_validation_kappa_subjci": [
+  0.019545762986371774,
+  0.14543836497447843
+ ],
+ "daisee_validation_kappa_recci": [
+  0.0003,
+  0.1598
+ ],
+ "daisee_test_kappa_subjci": [
+  -0.02866792856497218,
+  0.12638762316608756
+ ],
+ "daisee_test_kappa_recci": [
+  -0.0228,
+  0.1194
+ ],
+ "engagenet_train_four_class_kappa_subjci": [
+  0.4811046105490539,
+  0.5800905214856351
+ ],
+ "engagenet_train_decisive_kappa_subjci": [
+  0.39227399862442264,
+  0.5215968164658807
+ ],
+ "engagenet_validation_four_class_kappa_subjci": [
+  0.28212126337412885,
+  0.5793134877401771
+ ],
+ "engagenet_validation_decisive_kappa_subjci": [
+  0.22618499224782723,
+  0.4205366334483906
+ ],
+ "engagenet_test_four_class_kappa_subjci": [
+  0.4369525000510636,
+  0.6165116231909684
+ ],
+ "engagenet_test_decisive_kappa_subjci": [
+  0.45329507329838314,
+  0.6562272399640374
+ ],
+ "coding_daisee_train": {
+  "equal": 0.13112269545249966,
+  "decisive": 0.12124100686583923,
+  "ridit": 0.13279720135284914,
+  "icc": 0.14983394820221066,
+  "rec": null
+ },
+ "coding_daisee_validation": {
+  "equal": 0.09846409187730906,
+  "decisive": 0.09105170612114546,
+  "ridit": 0.09871860228140174,
+  "icc": 0.1172027513012519,
+  "rec": null
+ },
+ "coding_daisee_test": {
+  "equal": 0.09875099858210472,
+  "decisive": 0.09324726786918495,
+  "ridit": 0.0980348404922392,
+  "icc": 0.12105566696687377,
+  "rec": null
+ },
+ "coding_engagenet_train": {
+  "equal": 0.5104618792193962,
+  "decisive": 0.25710014769058326,
+  "ridit": 0.48809469937499345,
+  "icc": 0.5328625133221971,
+  "rec": 0.12340824127449367
+ },
+ "coding_engagenet_validation": {
+  "equal": 0.46275852046310745,
+  "decisive": 0.08811277389914254,
+  "ridit": 0.3560549270720382,
+  "icc": 0.36931201757054455,
+  "rec": 0.16629908075562885
+ },
+ "equiv_validation_best_epoch": {
+  "max_equivalence_bound_acc": 0.03753592759760644,
+  "max_mdd80_acc": 0.03801985335354469,
+  "max_equivalence_bound_uar": 0.056859607953899105,
+  "max_mdd80_uar": 0.048675703561691416
+ },
+ "equiv_validation_last_epoch": {
+  "max_equivalence_bound_acc": 0.05116532657910502,
+  "max_mdd80_acc": 0.051273367933715334,
+  "max_equivalence_bound_uar": 0.06219938338744681,
+  "max_mdd80_uar": 0.06259179720047146
+ },
+ "equiv_test_frozen": {
+  "max_equivalence_bound_acc": 0.039516714804901404,
+  "max_mdd80_acc": 0.03505116058495938,
+  "max_equivalence_bound_uar": 0.03732037890990113,
+  "max_mdd80_uar": 0.031628231709598276
+ },
+ "equiv_test_trainval": {
+  "max_equivalence_bound_acc": 0.07095823015300234,
+  "max_mdd80_acc": 0.05034460997892259,
+  "max_equivalence_bound_uar": 0.038599700640855016,
+  "max_mdd80_uar": 0.0406265992197096
+ },
+ "resid_DAiSEE_au": {
+  "gap_mean": 0.04378615878522396,
+  "gap_min_lo": 0.02151233421172947,
+  "eta2_matched_mean": 0.22588068801410066,
+  "eta2_matched_min_lo": 0.12128366739088525,
+  "gap_range": [
+   0.04378615878522396,
+   0.04378615878522396
+  ],
+  "eta2m_range": [
+   0.22588068801410066,
+   0.22588068801410066
+  ]
+ },
+ "resid_DAiSEE_w5": {
+  "gap_mean": 0.024710955563932657,
+  "gap_min_lo": 0.007376636419212446,
+  "eta2_matched_mean": 0.6785207827731613,
+  "eta2_matched_min_lo": 0.24798463887368047,
+  "gap_range": [
+   0.013704569544643164,
+   0.03421986661851406
+  ],
+  "eta2m_range": [
+   0.5476372626502973,
+   0.8229313674765985
+  ]
+ },
+ "resid_EngageNet_of_cnnlstm": {
+  "gap_mean": 0.23769156138102213,
+  "gap_min_lo": 0.1432570439763367,
+  "eta2_matched_mean": 0.235671229775947,
+  "eta2_matched_min_lo": 0.06304087540822303,
+  "gap_range": [
+   0.2001185119152069,
+   0.26640354841947556
+  ],
+  "eta2m_range": [
+   0.21417175205019742,
+   0.2759931380389046
+  ]
+ },
+ "resid_EngageNet_of_lstm": {
+  "gap_mean": 0.2755773241321246,
+  "gap_min_lo": 0.17423691563308238,
+  "eta2_matched_mean": 0.22920976408491833,
+  "eta2_matched_min_lo": 0.05551449287601415,
+  "gap_range": [
+   0.2337004318833351,
+   0.3166251629590988
+  ],
+  "eta2m_range": [
+   0.14222020256722154,
+   0.3005043191276815
+  ]
+ },
+ "resid_EngageNet_of_mlp": {
+  "gap_mean": 0.23567340026299158,
+  "gap_min_lo": 0.169359561894089,
+  "eta2_matched_mean": 0.2986842044688375,
+  "eta2_matched_min_lo": 0.12480140544036916,
+  "gap_range": [
+   0.22562090307474136,
+   0.24311953783035278
+  ],
+  "eta2m_range": [
+   0.28893630973702844,
+   0.31523442897732096
+  ]
+ },
+ "resid_EngageNet_of_tcn": {
+  "gap_mean": 0.24092990905046463,
+  "gap_min_lo": 0.17484365105628968,
+  "eta2_matched_mean": 0.25170392648365275,
+  "eta2_matched_min_lo": 0.05984770551229526,
+  "gap_range": [
+   0.22529523074626923,
+   0.25928299874067307
+  ],
+  "eta2m_range": [
+   0.22618705162814368,
+   0.29887060125021947
+  ]
+ },
+ "resid_EngageNet_of_transformer": {
+  "gap_mean": 0.2858323926726977,
+  "gap_min_lo": 0.19193643406033517,
+  "eta2_matched_mean": 0.21860094984490094,
+  "eta2_matched_min_lo": 0.05060405125880182,
+  "gap_range": [
+   0.25631897151470184,
+   0.30165475606918335
+  ],
+  "eta2m_range": [
+   0.1418721555835394,
+   0.2601387117655138
+  ]
+ },
+ "synth_H3": {
+  "DAiSEE marginal four_level": {
+   "decreasing_in_r": true,
+   "decreasing_in_q": true
+  },
+  "DAiSEE marginal decisive": {
+   "decreasing_in_r": true,
+   "decreasing_in_q": true
+  },
+  "DAiSEE boundary four_level": {
+   "decreasing_in_r": false,
+   "decreasing_in_q": true
+  },
+  "DAiSEE boundary decisive": {
+   "decreasing_in_r": true,
+   "decreasing_in_q": true
+  },
+  "EngageNet marginal four_level": {
+   "decreasing_in_r": true,
+   "decreasing_in_q": true
+  },
+  "EngageNet marginal decisive": {
+   "decreasing_in_r": true,
+   "decreasing_in_q": true
+  },
+  "EngageNet boundary four_level": {
+   "decreasing_in_r": false,
+   "decreasing_in_q": true
+  },
+  "EngageNet boundary decisive": {
+   "decreasing_in_r": true,
+   "decreasing_in_q": true
+  }
+ },
+ "synth_H4": [
+  {
+   "corpus": "DAiSEE",
+   "axis": "decisive",
+   "cell_1": [
+    0.0,
+    0.1
+   ],
+   "cell_2": [
+    0.2,
+    0.05
+   ],
+   "mean_1": 0.6625785796616992,
+   "mean_2": 0.6641041595648943
+  },
+  {
+   "corpus": "EngageNet",
+   "axis": "four_level",
+   "cell_1": [
+    0.0,
+    0.2
+   ],
+   "cell_2": [
+    0.3,
+    0.1
+   ],
+   "mean_1": 0.5038168280705816,
+   "mean_2": 0.5084310254719615
+  },
+  {
+   "corpus": "EngageNet",
+   "axis": "four_level",
+   "cell_1": [
+    0.05,
+    0.1
+   ],
+   "cell_2": [
+    0.2,
+    0.05
+   ],
+   "mean_1": 0.6918752517177346,
+   "mean_2": 0.6840675484454383
+  },
+  {
+   "corpus": "EngageNet",
+   "axis": "four_level",
+   "cell_1": [
+    0.05,
+    0.1
+   ],
+   "cell_2": [
+    0.3,
+    0.0
+   ],
+   "mean_1": 0.6918752517177346,
+   "mean_2": 0.6960763271024207
+  }
+ ],
+ "semi": {
+  "S_person_shortcut": {
+   "acc": 0.7399842534271953,
+   "auc_within_person": 0.4410735359058555,
+   "eta2_score": 0.711568130807754,
+   "rho_b": 0.9757740608610126
+  },
+  "W_within_person": {
+   "acc": 0.7398851426454243,
+   "auc_within_person": 0.9548243888291367,
+   "eta2_score": 0.008161970604324022,
+   "rho_b": -2.0670446055546798e-05
+  },
+  "sigma_W": 0.4173663249609354,
+  "H5": {
+   "accuracy_matched_within_0.005": true,
+   "within_auc_W_gt_S": true,
+   "S_within_auc_within_.02_of_.5": false,
+   "eta2_S_gt_W": true,
+   "rho_b_S_gt_W": true
+  }
+ },
+ "C": {
+  "n_heldout_chunks": 2520,
+  "n_heldout_participants": 78,
+  "folds": [
+   [
+    1,
+    3,
+    9,
+    15,
+    16,
+    19,
+    27,
+    52,
+    53,
+    60,
+    70,
+    78,
+    83,
+    84,
+    91,
+    121
+   ],
+   [
+    12,
+    22,
+    23,
+    24,
+    37,
+    39,
+    41,
+    44,
+    47,
+    54,
+    79,
+    92,
+    101,
+    107,
+    124,
+    126
+   ],
+   [
+    2,
+    6,
+    17,
+    29,
+    35,
+    57,
+    65,
+    68,
+    69,
+    75,
+    89,
+    98,
+    100,
+    108,
+    109,
+    123
+   ],
+   [
+    0,
+    5,
+    14,
+    30,
+    31,
+    55,
+    58,
+    59,
+    66,
+    93,
+    102,
+    103,
+    110,
+    111,
+    119
+   ],
+   [
+    10,
+    21,
+    25,
+    43,
+    56,
+    62,
+    63,
+    67,
+    76,
+    77,
+    81,
+    95,
+    99,
+    104,
+    106
+   ]
+  ],
+  "families": {
+   "mlp": {
+    "overlap": {
+     "eta2_score_ordinal": 0.6298417270696208,
+     "eta2_label_ordinal": 0.5801865184413465,
+     "eta2_score_decisive": 0.5217104250491774,
+     "eta2_label_decisive": 0.3556919090507467,
+     "rho_b": 0.6711532932359233,
+     "auc_within_person": 0.845497729798716,
+     "n_participants_usable": 59.0,
+     "acc": 0.6554232804232805,
+     "uar": 0.6140911067773512
+    },
+    "disjoint": {
+     "eta2_score_ordinal": 0.5887865396735967,
+     "eta2_label_ordinal": 0.5801865184413465,
+     "eta2_score_decisive": 0.4955615644333702,
+     "eta2_label_decisive": 0.3556919090507467,
+     "rho_b": 0.5540128728481658,
+     "auc_within_person": 0.8429881089511021,
+     "n_participants_usable": 59.0,
+     "acc": 0.5892857142857143,
+     "uar": 0.5435573736396179
+    },
+    "overlap_minus_disjoint": {
+     "acc": {
+      "point": 0.06613756613756616,
+      "ci": [
+       0.034521749941427,
+       0.09693699289660623
+      ]
+     },
+     "uar": {
+      "point": 0.07053373313773337,
+      "ci": [
+       0.04147122248042997,
+       0.10018807439527552
+      ]
+     },
+     "auc_within_person": {
+      "point": 0.002509620847613858,
+      "ci": [
+       -0.011882631472794142,
+       0.014032150330469605
+      ]
+     },
+     "eta2_score_ordinal": {
+      "point": 0.041055187396024095,
+      "ci": [
+       0.01039873603488054,
+       0.07524314119449106
+      ]
+     },
+     "eta2_score_decisive": {
+      "point": 0.026148860615807235,
+      "ci": [
+       -0.032444580748713384,
+       0.08768688349402487
+      ]
+     },
+     "rho_b": {
+      "point": 0.11714042038775752,
+      "ci": [
+       0.006166077147882979,
+       0.2242495712783904
+      ]
+     }
+    }
+   },
+   "tcn": {
+    "overlap": {
+     "eta2_score_ordinal": 0.6090962225731752,
+     "eta2_label_ordinal": 0.5801865184413465,
+     "eta2_score_decisive": 0.5073877881362931,
+     "eta2_label_decisive": 0.3556919090507467,
+     "rho_b": 0.7020524861442307,
+     "auc_within_person": 0.8288414813554436,
+     "n_participants_usable": 59.0,
+     "acc": 0.6694444444444444,
+     "uar": 0.6108050037959533
+    },
+    "disjoint": {
+     "eta2_score_ordinal": 0.5748439867796992,
+     "eta2_label_ordinal": 0.5801865184413465,
+     "eta2_score_decisive": 0.4946597450245376,
+     "eta2_label_decisive": 0.3556919090507467,
+     "rho_b": 0.534033735615408,
+     "auc_within_person": 0.8002821681997725,
+     "n_participants_usable": 59.0,
+     "acc": 0.6126984126984127,
+     "uar": 0.5509851680595725
+    },
+    "overlap_minus_disjoint": {
+     "acc": {
+      "point": 0.056746031746031655,
+      "ci": [
+       0.026770442584986592,
+       0.08773902574808626
+      ]
+     },
+     "uar": {
+      "point": 0.05981983573638072,
+      "ci": [
+       0.027552226940558956,
+       0.0934386757996982
+      ]
+     },
+     "auc_within_person": {
+      "point": 0.028559313155671062,
+      "ci": [
+       0.0035654460255158922,
+       0.05317811713707945
+      ]
+     },
+     "eta2_score_ordinal": {
+      "point": 0.03425223579347603,
+      "ci": [
+       -0.005260819500645161,
+       0.07664902171925708
+      ]
+     },
+     "eta2_score_decisive": {
+      "point": 0.012728043111755571,
+      "ci": [
+       -0.06655324970639495,
+       0.09016811847240395
+      ]
+     },
+     "rho_b": {
+      "point": 0.16801875052882265,
+      "ci": [
+       0.06108856764286066,
+       0.27763074081188666
+      ]
+     }
+    }
+   }
+  }
+ },
+ "D": {
+  "n_participants": 59,
+  "n_eval_balanced": 2406,
+  "families": {
+   "mlp": {
+    "eval_on_balanced_heldout": {
+     "balanced": {
+      "acc": 0.6975616514269881,
+      "auc_within_person": 0.8185247621611964,
+      "eta2_score": 0.2236567864476332,
+      "auc_blended": 0.7654459952455612
+     },
+     "natural": {
+      "acc": 0.6910501523967859,
+      "auc_within_person": 0.8254907268509325,
+      "eta2_score": 0.25377766309786537,
+      "auc_blended": 0.7649262592111207
+     }
+    },
+    "eval_on_natural_heldout": {
+     "balanced": {
+      "acc": 0.7191742865059573,
+      "auc_within_person": 0.8219022028462387,
+      "eta2_score": 0.2625647965506192,
+      "auc_blended": 0.7743922641704332
+     },
+     "natural": {
+      "acc": 0.7091992241618176,
+      "auc_within_person": 0.8253215668781687,
+      "eta2_score": 0.3051554310487415,
+      "auc_blended": 0.7783112661837134
+     }
+    },
+    "balanced_minus_natural_on_balanced_heldout": {
+     "eta2_score": {
+      "point": -0.030120876650232165,
+      "ci": [
+       -0.08037277693113448,
+       0.016411462515482405
+      ]
+     },
+     "auc_within_person": {
+      "point": -0.006965964689736093,
+      "ci": [
+       -0.016689347782149304,
+       0.003412477079859364
+      ]
+     },
+     "acc": {
+      "point": 0.006511499030202206,
+      "ci": [
+       -0.0071548909242964195,
+       0.019545763760049677
+      ]
+     }
+    },
+    "identity_probe": {
+     "balanced": {
+      "times_chance_mean": 40.2260368365889,
+      "times_chance_min": 39.030800821355236,
+      "top1_mean": 0.8522906173017077
+     },
+     "natural": {
+      "times_chance_mean": 41.02865085987965,
+      "times_chance_min": 38.550561797752806,
+      "top1_mean": 0.869251007125463
+     }
+    }
+   },
+   "tcn": {
+    "eval_on_balanced_heldout": {
+     "balanced": {
+      "acc": 0.6740094208922139,
+      "auc_within_person": 0.7749192858584245,
+      "eta2_score": 0.24044405305175698,
+      "auc_blended": 0.7321074564903894
+     },
+     "natural": {
+      "acc": 0.6611249653643668,
+      "auc_within_person": 0.7688885214692457,
+      "eta2_score": 0.24316871723252742,
+      "auc_blended": 0.7226323219382964
+     }
+    },
+    "eval_on_natural_heldout": {
+     "balanced": {
+      "acc": 0.7075367137711277,
+      "auc_within_person": 0.7816117883329398,
+      "eta2_score": 0.27294565407014876,
+      "auc_blended": 0.7408234228492692
+     },
+     "natural": {
+      "acc": 0.6925741202549182,
+      "auc_within_person": 0.7666892842811038,
+      "eta2_score": 0.26534041620784504,
+      "auc_blended": 0.7280261570514507
+     }
+    },
+    "balanced_minus_natural_on_balanced_heldout": {
+     "eta2_score": {
+      "point": -0.002724664180770442,
+      "ci": [
+       -0.05663508927228082,
+       0.052985515068409775
+      ]
+     },
+     "auc_within_person": {
+      "point": 0.006030764389178822,
+      "ci": [
+       -0.011649327002299453,
+       0.023230479510123633
+      ]
+     },
+     "acc": {
+      "point": 0.012884455527847116,
+      "ci": [
+       -0.00014243167606933503,
+       0.02646212111650151
+      ]
+     }
+    },
+    "identity_probe": {
+     "balanced": {
+      "times_chance_mean": 21.357901553410596,
+      "times_chance_min": 18.720338983050848,
+      "top1_mean": 0.4524574274328698
+     },
+     "natural": {
+      "times_chance_mean": 24.31187803768429,
+      "times_chance_min": 22.57084188911704,
+      "top1_mean": 0.515168185781478
+     }
+    }
+   }
+  }
+ },
+ "F1": {
+  "families": {
+   "mlp": {
+    "point": {
+     "ordered": {
+      "acc": 0.6193588546529724,
+      "uar": 0.5577424326348556,
+      "auc_within_person": 0.8322144246473266,
+      "eta2_score_ordinal": 0.5502783787002525
+     }
+    }
+   },
+   "lstm": {
+    "point": {
+     "ordered": {
+      "acc": 0.617802676626206,
+      "uar": 0.5520050846077244,
+      "auc_within_person": 0.8004451940899409,
+      "eta2_score_ordinal": 0.4806653495419842
+     },
+     "shuffled": {
+      "acc": 0.6271397447868036,
+      "uar": 0.5650033933387347,
+      "auc_within_person": 0.8001009360181083,
+      "eta2_score_ordinal": 0.4936930074598709
+     },
+     "shuffled_readshuffled": {
+      "acc": 0.6311858076563959,
+      "uar": 0.5797720011705482,
+      "auc_within_person": 0.8085111651377345,
+      "eta2_score_ordinal": 0.4949149654218166
+     }
+    },
+    "shuffled_minus_ordered": {
+     "acc": {
+      "point": 0.00933706816059754,
+      "ci": [
+       -0.012076365732676364,
+       0.03495658001028124
+      ]
+     },
+     "uar": {
+      "point": 0.012998308731010377,
+      "ci": [
+       -0.009768954537954833,
+       0.036327496795413125
+      ]
+     },
+     "auc_within_person": {
+      "point": -0.0003442580718325816,
+      "ci": [
+       -0.00860875990814193,
+       0.008583374528162484
+      ]
+     }
+    }
+   },
+   "cnnlstm": {
+    "point": {
+     "ordered": {
+      "acc": 0.6296296296296297,
+      "uar": 0.5672843022767379,
+      "auc_within_person": 0.8210873654898685,
+      "eta2_score_ordinal": 0.5452778376615511
+     },
+     "shuffled": {
+      "acc": 0.6106442577030813,
+      "uar": 0.5640723845081735,
+      "auc_within_person": 0.805257871136253,
+      "eta2_score_ordinal": 0.5172723658731572
+     },
+     "shuffled_readshuffled": {
+      "acc": 0.6028633675692499,
+      "uar": 0.561432756321601,
+      "auc_within_person": 0.8088519611265831,
+      "eta2_score_ordinal": 0.5202828184100144
+     }
+    },
+    "shuffled_minus_ordered": {
+     "acc": {
+      "point": -0.018985371926548367,
+      "ci": [
+       -0.05118964533451851,
+       0.01192936629289836
+      ]
+     },
+     "uar": {
+      "point": -0.003211917768564332,
+      "ci": [
+       -0.026992707458446823,
+       0.04508642685231617
+      ]
+     },
+     "auc_within_person": {
+      "point": -0.01582949435361547,
+      "ci": [
+       -0.03427801796820946,
+       0.002314394971425043
+      ]
+     }
+    }
+   },
+   "tcn": {
+    "point": {
+     "ordered": {
+      "acc": 0.6408341114223467,
+      "uar": 0.552220421087397,
+      "auc_within_person": 0.8012359299263886,
+      "eta2_score_ordinal": 0.5152343606047195
+     },
+     "shuffled": {
+      "acc": 0.6389666977902272,
+      "uar": 0.5654621812196142,
+      "auc_within_person": 0.8047735620175326,
+      "eta2_score_ordinal": 0.5298446680758209
+     },
+     "shuffled_readshuffled": {
+      "acc": 0.6423902894491129,
+      "uar": 0.5689456092507656,
+      "auc_within_person": 0.8046832544556558,
+      "eta2_score_ordinal": 0.5291219410326707
+     }
+    },
+    "shuffled_minus_ordered": {
+     "acc": {
+      "point": -0.0018674136321195078,
+      "ci": [
+       -0.021263869744573224,
+       0.023857846624721166
+      ]
+     },
+     "uar": {
+      "point": 0.013241760132217228,
+      "ci": [
+       -0.003015108169287961,
+       0.033394953973521546
+      ]
+     },
+     "auc_within_person": {
+      "point": 0.003537632091143994,
+      "ci": [
+       -0.010235776584807838,
+       0.014948216514061466
+      ]
+     }
+    }
+   },
+   "transformer": {
+    "point": {
+     "ordered": {
+      "acc": 0.6355431061313414,
+      "uar": 0.5665249385773274,
+      "auc_within_person": 0.7863993029891803,
+      "eta2_score_ordinal": 0.5068853942364694
+     },
+     "shuffled": {
+      "acc": 0.6112667289137877,
+      "uar": 0.5595538102536272,
+      "auc_within_person": 0.7895372930213583,
+      "eta2_score_ordinal": 0.48196688139676236
+     },
+     "shuffled_readshuffled": {
+      "acc": 0.61531279178338,
+      "uar": 0.5630626281297562,
+      "auc_within_person": 0.7882299638431371,
+      "eta2_score_ordinal": 0.4818179508709002
+     }
+    },
+    "shuffled_minus_ordered": {
+     "acc": {
+      "point": -0.024276377217553602,
+      "ci": [
+       -0.04066792768155583,
+       -0.007473308387343296
+      ]
+     },
+     "uar": {
+      "point": -0.006971128323700282,
+      "ci": [
+       -0.023146352111816808,
+       0.013459902355907386
+      ]
+     },
+     "auc_within_person": {
+      "point": 0.003137990032178073,
+      "ci": [
+       -0.009067689001782692,
+       0.015426747758961261
+      ]
+     }
+    }
+   }
+  }
+ },
+ "F2": {
+  "lstm": {
+   "original": {
+    "acc": 0.6532835356364769,
+    "uar": 0.5694235986143473,
+    "auc_within_person": 0.8129427123261813
+   },
+   "reversed": {
+    "acc": 0.6470588235294117,
+    "uar": 0.5655293929452337,
+    "auc_within_person": 0.8045662086683311
+   },
+   "permuted_mean": {
+    "acc": 0.6490040460628695,
+    "uar": 0.5682552849385601,
+    "auc_within_person": 0.8116253027636174
+   }
+  },
+  "cnnlstm": {
+   "original": {
+    "acc": 0.6451914098972923,
+    "uar": 0.5603945790790137,
+    "auc_within_person": 0.8239163086834881
+   },
+   "reversed": {
+    "acc": 0.643635231870526,
+    "uar": 0.563127284593322,
+    "auc_within_person": 0.8239566732524305
+   },
+   "permuted_mean": {
+    "acc": 0.6419234360410829,
+    "uar": 0.5606802395090199,
+    "auc_within_person": 0.8247154503563778
+   }
+  },
+  "tcn": {
+   "original": {
+    "acc": 0.6585745409274821,
+    "uar": 0.5668601941374304,
+    "auc_within_person": 0.8095405826078826
+   },
+   "reversed": {
+    "acc": 0.6479925303454716,
+    "uar": 0.5506378555021498,
+    "auc_within_person": 0.80568020306104
+   },
+   "permuted_mean": {
+    "acc": 0.6523809523809523,
+    "uar": 0.5568635313217394,
+    "auc_within_person": 0.8045237456018363
+   }
+  },
+  "transformer": {
+   "original": {
+    "acc": 0.6548397136632431,
+    "uar": 0.5684662470418816,
+    "auc_within_person": 0.7804339343010839
+   },
+   "reversed": {
+    "acc": 0.6539060068471834,
+    "uar": 0.5684616697177166,
+    "auc_within_person": 0.7843664976602917
+   },
+   "permuted_mean": {
+    "acc": 0.654979769685652,
+    "uar": 0.5682910280696118,
+    "auc_within_person": 0.7832369316239243
+   }
+  }
+ }
+}

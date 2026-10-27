@@ -1,0 +1,208 @@
+{
+ "estimator_check": [
+  {
+   "structure": "DAiSEE Train",
+   "true_icc": 0.1,
+   "rep": 0,
+   "estimated_icc": 0.0881968205930023
+  },
+  {
+   "structure": "DAiSEE Train",
+   "true_icc": 0.1,
+   "rep": 1,
+   "estimated_icc": 0.09672255559921122
+  },
+  {
+   "structure": "DAiSEE Train",
+   "true_icc": 0.1,
+   "rep": 2,
+   "estimated_icc": 0.0994482974195873
+  },
+  {
+   "structure": "DAiSEE Train",
+   "true_icc": 0.3,
+   "rep": 0,
+   "estimated_icc": 0.29556147565060237
+  },
+  {
+   "structure": "DAiSEE Train",
+   "true_icc": 0.3,
+   "rep": 1,
+   "estimated_icc": 0.31796677495805065
+  },
+  {
+   "structure": "DAiSEE Train",
+   "true_icc": 0.3,
+   "rep": 2,
+   "estimated_icc": 0.32196464290191185
+  },
+  {
+   "structure": "DAiSEE Train",
+   "true_icc": 0.5,
+   "rep": 0,
+   "estimated_icc": 0.5332521752504528
+  },
+  {
+   "structure": "DAiSEE Train",
+   "true_icc": 0.5,
+   "rep": 1,
+   "estimated_icc": 0.5549137910250083
+  },
+  {
+   "structure": "DAiSEE Train",
+   "true_icc": 0.5,
+   "rep": 2,
+   "estimated_icc": 0.4422293083457771
+  },
+  {
+   "structure": "EngageNet train",
+   "true_icc": 0.1,
+   "rep": 0,
+   "estimated_icc": 0.06366808900385738
+  },
+  {
+   "structure": "EngageNet train",
+   "true_icc": 0.1,
+   "rep": 1,
+   "estimated_icc": 0.12839207611374803
+  },
+  {
+   "structure": "EngageNet train",
+   "true_icc": 0.1,
+   "rep": 2,
+   "estimated_icc": 0.10485942376132908
+  },
+  {
+   "structure": "EngageNet train",
+   "true_icc": 0.3,
+   "rep": 0,
+   "estimated_icc": 0.36399305412791166
+  },
+  {
+   "structure": "EngageNet train",
+   "true_icc": 0.3,
+   "rep": 1,
+   "estimated_icc": 0.29739129017777016
+  },
+  {
+   "structure": "EngageNet train",
+   "true_icc": 0.3,
+   "rep": 2,
+   "estimated_icc": 0.2825014216272554
+  },
+  {
+   "structure": "EngageNet train",
+   "true_icc": 0.5,
+   "rep": 0,
+   "estimated_icc": 0.5463235710477967
+  },
+  {
+   "structure": "EngageNet train",
+   "true_icc": 0.5,
+   "rep": 1,
+   "estimated_icc": 0.4475724311992585
+  },
+  {
+   "structure": "EngageNet train",
+   "true_icc": 0.5,
+   "rep": 2,
+   "estimated_icc": 0.5370429098128173
+  }
+ ],
+ "splits": {
+  "DAiSEE Train": {
+   "n_clips": 5358,
+   "n_participants": 69,
+   "eta2_equal_interval": 0.13112269545249966,
+   "eta2_decisive": 0.12124100686583923,
+   "eta2_ridit": 0.13279720135284914,
+   "clmm": {
+    "thresholds": [
+     -5.256270661463744,
+     -3.2024807055392546,
+     0.2280328792649331
+    ],
+    "sd_cluster": 0.7614519050965777,
+    "icc_latent": 0.14983394820221066,
+    "converged": true,
+    "negll": 4368.882775489343
+   }
+  },
+  "DAiSEE Validation": {
+   "n_clips": 1429,
+   "n_participants": 19,
+   "eta2_equal_interval": 0.09846409187730906,
+   "eta2_decisive": 0.09105170612114546,
+   "eta2_ridit": 0.09871860228140174,
+   "clmm": {
+    "thresholds": [
+     -4.294629606722008,
+     -2.1760563703123585,
+     0.8240837755347621
+    ],
+    "sd_cluster": 0.6608876909713578,
+    "icc_latent": 0.1172027513012519,
+    "converged": true,
+    "negll": 1357.8439886492067
+   }
+  },
+  "DAiSEE Test": {
+   "n_clips": 1784,
+   "n_participants": 21,
+   "eta2_equal_interval": 0.09875099858210472,
+   "eta2_decisive": 0.09324726786918495,
+   "eta2_ridit": 0.0980348404922392,
+   "clmm": {
+    "thresholds": [
+     -6.372305303147933,
+     -3.2041965179543435,
+     0.10733173931333839
+    ],
+    "sd_cluster": 0.6731333726355148,
+    "icc_latent": 0.12105566696687377,
+    "converged": true,
+    "negll": 1480.367329045093
+   }
+  },
+  "EngageNet train": {
+   "n_clips": 7879,
+   "n_participants": 91,
+   "eta2_equal_interval": 0.5104618792193962,
+   "eta2_decisive": 0.25710014769058326,
+   "eta2_ridit": 0.48809469937499345,
+   "clmm": {
+    "thresholds": [
+     -2.5680984206613555,
+     -1.1617353247562696,
+     0.4774307370269
+    ],
+    "sd_cluster": 2.25833615494015,
+    "icc_latent": 0.5328625133221971,
+    "converged": true,
+    "negll": 7129.099243179707,
+    "sd_unit": 1.0868086455430068,
+    "unit_share_latent": 0.12340824127449367
+   }
+  },
+  "EngageNet validation": {
+   "n_clips": 1071,
+   "n_participants": 11,
+   "eta2_equal_interval": 0.46275852046310745,
+   "eta2_decisive": 0.08811277389914254,
+   "eta2_ridit": 0.3560549270720382,
+   "clmm": {
+    "thresholds": [
+     -3.07371737291137,
+     -1.8103699161878384,
+     0.0993597343268553
+    ],
+    "sd_cluster": 1.617502830405563,
+    "icc_latent": 0.36931201757054455,
+    "converged": true,
+    "negll": 959.070506264808,
+    "sd_unit": 1.085408588239385,
+    "unit_share_latent": 0.16629908075562885
+   }
+  }
+ }
+}

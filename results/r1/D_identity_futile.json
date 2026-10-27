@@ -1,0 +1,136 @@
+{
+ "n_participants": 59,
+ "n_eval_balanced": 2406,
+ "families": {
+  "mlp": {
+   "eval_on_balanced_heldout": {
+    "balanced": {
+     "acc": 0.6975616514269881,
+     "auc_within_person": 0.8185247621611964,
+     "eta2_score": 0.2236567864476332,
+     "auc_blended": 0.7654459952455612
+    },
+    "natural": {
+     "acc": 0.6910501523967859,
+     "auc_within_person": 0.8254907268509325,
+     "eta2_score": 0.25377766309786537,
+     "auc_blended": 0.7649262592111207
+    }
+   },
+   "eval_on_natural_heldout": {
+    "balanced": {
+     "acc": 0.7191742865059573,
+     "auc_within_person": 0.8219022028462387,
+     "eta2_score": 0.2625647965506192,
+     "auc_blended": 0.7743922641704332
+    },
+    "natural": {
+     "acc": 0.7091992241618176,
+     "auc_within_person": 0.8253215668781687,
+     "eta2_score": 0.3051554310487415,
+     "auc_blended": 0.7783112661837134
+    }
+   },
+   "balanced_minus_natural_on_balanced_heldout": {
+    "eta2_score": {
+     "point": -0.030120876650232165,
+     "ci": [
+      -0.08037277693113448,
+      0.016411462515482405
+     ]
+    },
+    "auc_within_person": {
+     "point": -0.006965964689736093,
+     "ci": [
+      -0.016689347782149304,
+      0.003412477079859364
+     ]
+    },
+    "acc": {
+     "point": 0.006511499030202206,
+     "ci": [
+      -0.0071548909242964195,
+      0.019545763760049677
+     ]
+    }
+   },
+   "identity_probe": {
+    "balanced": {
+     "times_chance_mean": 40.2260368365889,
+     "times_chance_min": 39.030800821355236,
+     "top1_mean": 0.8522906173017077
+    },
+    "natural": {
+     "times_chance_mean": 41.02865085987965,
+     "times_chance_min": 38.550561797752806,
+     "top1_mean": 0.869251007125463
+    }
+   }
+  },
+  "tcn": {
+   "eval_on_balanced_heldout": {
+    "balanced": {
+     "acc": 0.6740094208922139,
+     "auc_within_person": 0.7749192858584245,
+     "eta2_score": 0.24044405305175698,
+     "auc_blended": 0.7321074564903894
+    },
+    "natural": {
+     "acc": 0.6611249653643668,
+     "auc_within_person": 0.7688885214692457,
+     "eta2_score": 0.24316871723252742,
+     "auc_blended": 0.7226323219382964
+    }
+   },
+   "eval_on_natural_heldout": {
+    "balanced": {
+     "acc": 0.7075367137711277,
+     "auc_within_person": 0.7816117883329398,
+     "eta2_score": 0.27294565407014876,
+     "auc_blended": 0.7408234228492692
+    },
+    "natural": {
+     "acc": 0.6925741202549182,
+     "auc_within_person": 0.7666892842811038,
+     "eta2_score": 0.26534041620784504,
+     "auc_blended": 0.7280261570514507
+    }
+   },
+   "balanced_minus_natural_on_balanced_heldout": {
+    "eta2_score": {
+     "point": -0.002724664180770442,
+     "ci": [
+      -0.05663508927228082,
+      0.052985515068409775
+     ]
+    },
+    "auc_within_person": {
+     "point": 0.006030764389178822,
+     "ci": [
+      -0.011649327002299453,
+      0.023230479510123633
+     ]
+    },
+    "acc": {
+     "point": 0.012884455527847116,
+     "ci": [
+      -0.00014243167606933503,
+      0.02646212111650151
+     ]
+    }
+   },
+   "identity_probe": {
+    "balanced": {
+     "times_chance_mean": 21.357901553410596,
+     "times_chance_min": 18.720338983050848,
+     "top1_mean": 0.4524574274328698
+    },
+    "natural": {
+     "times_chance_mean": 24.31187803768429,
+     "times_chance_min": 22.57084188911704,
+     "top1_mean": 0.515168185781478
+    }
+   }
+  }
+ }
+}
