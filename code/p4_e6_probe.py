@@ -10,8 +10,7 @@ top-1 accuracy and as a multiple of chance, M = accuracy x |S|.
 
 A nearest-class-mean probe runs alongside, because the two families disagreed on
 identical DAiSEE embeddings and a single family invites false conclusions. Both
-are repeated after per-participant centring, which is the operation that
-collapsed the RGB channel in P1.
+are repeated after per-participant centring.
 
 Usage:  python p4_e6_probe.py            # every of_* checkpoint
         python p4_e6_probe.py --models transformer tcn

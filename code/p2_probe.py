@@ -1,22 +1,24 @@
-"""P2 Phase 1 — do identity leakage cua model fine-tuned (giao thuc ke thua A3/P1).
+"""Phase 1: identity leakage of a fine-tuned model.
 
-1. Trich embedding z [N,512] tu ckpt cho moi clip CO NHAN cua Train+Validation
-   (Test khong dung). Cache ra ~/p2/probe/<run>_z.npz.
-2. Identity-probe: logistic regression du doan subject ID tu z — split 75/25 clip
-   TRONG tung subject (identity chi dinh nghia cho subject da thay). Top-1 acc vs
-   chance 1/88. Do tren z tho va z da per-subject centering (doi chieu).
-3. Collapse test: linear probe 4 bai toan nhi phan (giao thuc P1), 5 resplit doc lap
-   doi tuong (GroupShuffleSplit 75/25, random_state=rep), none vs trans centering.
-   Khac A3: dau vao la embedding clip-level 512d (model tu pool) -> linear probe
-   thay MLP/BiLSTM; khai bao khi viet.
-   ⚠️ CANH BAO NHIEM: voi model fine-tuned, backbone DA HOC nhan cua clip Train
-   -> resplit tren pool Train+Val bi thoi phong boi memorization. Chi dung muc nay
-   de doi chieu voi A3 (backbone dong bang). So SACH la muc 4.
-4. Official-probe: probe hoc tren embedding Train, test tren Validation (doi tuong
-   doc lap, clip/nhan chua tung thay) — none vs trans centering. Day la con so
-   subject-fair chinh thuc cho model fine-tuned.
+1. Extract the embedding z [N,512] from the checkpoint for every LABELED clip of
+   Train+Validation (Test is not used). Cached to ~/p2/probe/<run>_z.npz.
+2. Identity probe: logistic regression predicting the subject ID from z, with a
+   75/25 clip split WITHIN each subject (identity is defined only for subjects
+   already seen). Top-1 accuracy against chance 1/88. Measured on raw z and on z
+   after per-subject centering (for comparison).
+3. Collapse test: linear probe on 4 binary tasks, 5 independent subject-disjoint
+   resplits (GroupShuffleSplit 75/25, random_state=rep), none vs trans centering.
+   The input is the clip-level 512-d embedding (pooled by the model) and the
+   probe is linear rather than an MLP/BiLSTM; state this when reporting.
+   WARNING, CONTAMINATION: with a fine-tuned model the backbone HAS LEARNED the
+   labels of the Train clips, so resplits over the Train+Val pool are inflated by
+   memorization. Use this item only for comparison with a frozen-backbone
+   reading. The CLEAN number is item 4.
+4. Official probe: the probe is trained on Train embeddings and tested on
+   Validation (subject-disjoint, clips and labels never seen), none vs trans
+   centering. This is the official subject-fair number for the fine-tuned model.
 
-Chay: ~/p2/venv/bin/python p2_probe.py --ckpt ~/p2/runs/base_s0/best.pth
+Run: ~/p2/venv/bin/python p2_probe.py --ckpt ~/p2/runs/base_s0/best.pth
 """
 import argparse
 import csv

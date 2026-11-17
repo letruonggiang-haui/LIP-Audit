@@ -1,7 +1,8 @@
-"""Kenh full-frame RGB (ResNet18 dong bang, 16x512, ke thua P1) tren truc 2-vs-3.
+"""Full-frame RGB channel (frozen ResNet18, 16x512) on the 2-vs-3 axis.
 
-Manh cuoi cua buc tranh: face-crop vut bo than the/tu the — kenh cua chinh
-Abedi/Selim. Do ca tron lan TRONG-doi-tuong, co/khong per-subject centering.
+The last piece of the picture: the face crop discards the body and posture, which
+is the channel Abedi/Selim use. Measured on the mixed pool and WITHIN subjects,
+with and without per-subject centering.
 """
 import os
 

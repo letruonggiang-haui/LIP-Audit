@@ -1,12 +1,13 @@
-"""Kenh AU/gaze/pose (300x22, DAY DU do phan giai thoi gian) tren truc 2-vs-3.
+"""AU/gaze/pose channel (300x22, full temporal resolution) on the 2-vs-3 axis.
 
-Ly do ton tai: backbone thi giac cua P2 chi nhin 16-80 trong 300 khung va HOAN TOAN
-bo qua AU/gaze/pose. P1 cho thay AU thang RGB-frozen duoi centering, nhung chua ai do
-AU tren truc 2-vs-3 — truc quyet dinh bang chuan. Do bang CUNG mot thuoc voi
-p2_eval_auc23.py de so duoc.
+Why it exists: the visual backbone sees only 16-80 of the 300 frames and ignores
+AU/gaze/pose entirely, and AU features had not been measured on the 2-vs-3 axis,
+the axis that decides the benchmark. Measured with the same yardstick as
+p2_eval_auc23.py so that the two are comparable.
 
-Xuat them xac suat tung clip -> do TUONG QUAN LOI voi mo hinh thi giac. Loi khong
-tuong quan = fusion co duong song; loi tuong quan = fusion vo nghia.
+Also writes the per-clip probabilities, to measure how far its errors correlate
+with those of the visual model. Uncorrelated errors leave room for fusion;
+correlated errors make fusion pointless.
 """
 import argparse
 import os

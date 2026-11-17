@@ -2,7 +2,7 @@
 
 Code, logs and stored predictions for
 
-> Le, T.-G., Xu, X., Mai, X.-D. *Auditing Label Consistency and Person-Level Variance in Video-Based Engagement Recognition Benchmarks: Evidence From DAiSEE and EngageNet.* Submitted to IEEE Access, 2026.
+> Le, T.-G., Xu, X., Mai, X.-D. *Auditing Label Consistency and Person-Level Variance in Video-Based Engagement Recognition Benchmarks: Evidence From DAiSEE and EngageNet.* Accepted for publication in IEEE Access, 2026.
 
 LIP-Audit is a three-instrument audit of a clip-level video benchmark that needs no new data: **L**abel consistency across adjacent clips of one recording, **I**dentity decodability of a frozen representation by a retrained probe, and **P**erson-level variance (the within-/between-person decomposition of labels and model scores). The paper applies it to DAiSEE and EngageNet and reports two different failure modes.
 
