@@ -1,20 +1,21 @@
-"""WSR — within-subject ranking (dang ky 19/08, nhat ky muc 'DE XUAT: WSR').
+"""WSR - within-subject ranking (registered 19/08, log section 'PROPOSAL: WSR').
 
-Tin hieu huan luyen MOI, chua run nao thu: toi uu truc tiep cau hoi quyet dinh bang
-chuan — "trong hai clip cua CUNG mot nguoi, clip nao muc 3?". CE tuyet doi bi prior
-giua-nguoi nuot gradient (AUC23 trong-nguoi ket qua chi .57-.61 tren 5 kenh); ranking
-cap trong-nguoi loai prior ra khoi loss theo cau truc.
+A NEW training signal, not tried by any run so far: directly optimise the question that decides
+the standard benchmark - "of two clips of the SAME person, which one is level 3?". Absolute CE
+has its gradient swallowed by the between-person prior (within-person AUC23 only .57-.61 across
+5 channels); within-person pairwise ranking removes the prior from the loss by construction.
 
-- Backbone MAE-DFER + nguyen goi w5 (Clips5: 5 cua so, temporal aug, gop 5 view eval).
-- Batch P=2 nguoi x K=4 clip. Score xep hang = logit3 - logit2. Loss =
-  margin-ranking tren moi cap cung-nguoi (y=3, y=2) trong batch + w_ce * CE (mo neo
-  tuyet doi, giu dau auc_dis).
-- Eval moi epoch: acc/auc_dis/auc23 + **within23** (AUC23 trong-nguoi, TB tron so
-  theo nguoi) — chi so phan xu cua pilot. Luu best theo within23 + last.
+- MAE-DFER backbone + the whole w5 package (Clips5: 5 windows, temporal aug, 5-view eval pooling).
+- Batch P=2 persons x K=4 clips. Ranking score = logit3 - logit2. Loss =
+  margin-ranking over every same-person pair (y=3, y=2) in the batch + w_ce * CE (absolute
+  anchor, keeps the auc_dis head).
+- Eval each epoch: acc/auc_dis/auc23 + **within23** (within-person AUC23, mean weighted
+  by person) - the pilot's deciding metric. Saves best by within23 + last.
 
-Moc phan xu (dang ky truoc): within23 Val < .65 -> DUNG vinh vien muc tieu bang chuan.
+Decision threshold (pre-registered): within23 Val < .65 -> STOP the standard-benchmark goal
+permanently.
 
-Chay: p2_train_v11.py --seed 0 --out ~/p2/runs/wsr_s0
+Run: p2_train_v11.py --seed 0 --out ~/p2/runs/wsr_s0
 """
 import argparse
 import json
@@ -35,7 +36,7 @@ from p2_train_v7 import Clips5
 
 
 class PKSampler(torch.utils.data.Sampler):
-    """Moi batch: P nguoi x K clip. Uu tien nguoi co CA muc 2 lan muc 3 (prob 0.8)."""
+    """Each batch: P persons x K clips. Prefers persons with BOTH level 2 and level 3 (prob 0.8)."""
 
     def __init__(self, ds, P=2, K=4, seed=0):
         self.P, self.K = P, K
@@ -67,7 +68,7 @@ class PKSampler(torch.utils.data.Sampler):
 
 
 def rank_loss(score, y, subj, margin):
-    """Margin ranking tren moi cap cung-nguoi (y=3 truoc y=2)."""
+    """Margin ranking over every same-person pair (y=3 ranked above y=2)."""
     losses = []
     for s in subj.unique():
         k = subj == s
@@ -91,14 +92,14 @@ def evaluate(model, ds, dev, batch):
         xx = x.reshape(B * W, *x.shape[2:]).to(dev, non_blocking=True)
         with torch.autocast("cuda", dtype=torch.bfloat16):
             lg, _, _ = model(xx)
-        ps.append(lg.float().reshape(B, W, -1).mean(1).cpu())   # TB logit 5 view
+        ps.append(lg.float().reshape(B, W, -1).mean(1).cpu())   # mean logit over 5 views
         ys.append(y)
     Z, Y = torch.cat(ps).numpy(), torch.cat(ys).numpy()
     P = torch.softmax(torch.tensor(Z), -1).numpy()
     pred = P.argmax(1)
     rec = [float((pred[Y == c] == c).mean()) for c in np.unique(Y)]
     m = Y >= 2
-    sc = Z[m, 3] - Z[m, 2]                                 # score xep hang
+    sc = Z[m, 3] - Z[m, 2]                                 # ranking score
     t = (Y[m] == 3).astype(int)
     subj = np.array([s[:6] for _, s in ds.rows])[m]
     aucs, ws = [], []
@@ -115,7 +116,7 @@ def evaluate(model, ds, dev, batch):
 
 
 class WithIdx(torch.utils.data.Dataset):
-    """Boc dataset de tra kem chi so — can cho viec tra cuu subject trong batch."""
+    """Wraps the dataset to also return the index - needed to look up the subject in the batch."""
 
     def __init__(self, ds):
         self.ds = ds

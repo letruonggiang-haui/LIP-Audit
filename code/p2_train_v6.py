@@ -1,23 +1,23 @@
-"""P2 vong 6 — DUNG DUNG CONG THUC FINE-TUNE CUA MAE-DFER (muc tieu: bang chuan).
+"""P2 round 6 - USE THE ACTUAL MAE-DFER FINE-TUNE RECIPE (goal: the standard benchmark).
 
-Phat hien 15/08: cong thuc goc trong `run_class_finetuning.py` cua MAE-DFER dung
+Found 15/08: the original recipe in MAE-DFER's `run_class_finetuning.py` uses
   layer_decay 0.75 | label smoothing 0.1 | mixup 0.8 + cutmix 1.0 | RandAugment
   rand-m7-n4 | random erasing 0.25 | test_num_segment 2 x test_num_crop 2 (TTA 4 view)
-Toan bo p2_train.py cua ta dung LR DONG DEU, khong smoothing, khong mixup/erasing,
-khong TTA -> duoi-chinh-quy-hoa nang so voi cong thuc ma checkpoint duoc thiet ke cho.
-Do la ly do duong cong luon dinh o ep0-6 roi sup (overfit).
+All of our p2_train.py uses a UNIFORM LR, no smoothing, no mixup/erasing,
+no TTA -> heavily under-regularised compared with the recipe the checkpoint was designed for.
+That is why the curve always peaks at ep0-6 and then collapses (overfit).
 
-Script nay bo sung, theo thu tu don bay/chi phi:
-  1. LAYER-WISE LR DECAY 0.75  <- don bay lon nhat cho fine-tune ViT
+This script adds, in order of payoff/cost:
+  1. LAYER-WISE LR DECAY 0.75  <- the biggest lever for ViT fine-tuning
   2. label smoothing 0.1
-  3. random erasing + color jitter (aug khong gian manh hon, lam trung tren toan clip)
-  4. TTA luc eval: 2 crop x flip (4 view), trung binh xac suat
-Mixup/CutMix CHUA bat: voi 4 lop mat can bang nang (lop 0+1 ~5.8%) mixup de lam nhoe
-lop hiem; se ablate rieng neu buoc 1-4 chua du.
+  3. random erasing + color jitter (stronger spatial aug, applied identically over the clip)
+  4. TTA at eval: 2 crops x flip (4 views), averaging probabilities
+Mixup/CutMix NOT YET enabled: with 4 heavily imbalanced classes (classes 0+1 ~5.8%) mixup
+tends to blur the rare classes; will be ablated separately if steps 1-4 are not enough.
 
-Test VAN NIEM PHONG. Moi so o day la official Train -> Validation.
+Test STAYS SEALED. Every number here is official Train -> Validation.
 
-Chay: p2_train_v6.py --seed 0 --layer_decay 0.75 --out ~/p2/runs/tuned_s0
+Run: p2_train_v6.py --seed 0 --layer_decay 0.75 --out ~/p2/runs/tuned_s0
 """
 import argparse
 import json
@@ -34,9 +34,9 @@ import torch.nn.functional as F
 from p2_train import MEAN, STD, Clips, P2Model, load_pretrained
 
 
-# ---------------------------------------------------------------- du lieu + aug
+# ---------------------------------------------------------------- data + aug
 class ClipsAug(Clips):
-    """Them random erasing + color jitter, ap DONG NHAT tren ca 16 khung."""
+    """Adds random erasing + color jitter, applied IDENTICALLY to all 16 frames."""
 
     def __init__(self, split, train_aug, reprob=0.25, jitter=0.2):
         super().__init__(split, train_aug)
@@ -56,12 +56,12 @@ class ClipsAug(Clips):
                               mode="bilinear", align_corners=False)
             if random.random() < 0.5:
                 x = torch.flip(x, dims=[3])
-            if self.jitter > 0:  # brightness/contrast dong nhat theo thoi gian
+            if self.jitter > 0:  # brightness/contrast identical across time
                 b = 1.0 + random.uniform(-self.jitter, self.jitter)
                 c = 1.0 + random.uniform(-self.jitter, self.jitter)
                 x = ((x * b - x.mean()) * c + x.mean()).clamp(0, 1)
             x = (x - MEAN) / STD
-            if random.random() < self.reprob:  # random erasing, cung vi tri moi khung
+            if random.random() < self.reprob:  # random erasing, same position in every frame
                 eh, ew = random.randint(20, 56), random.randint(20, 56)
                 ey, ex = random.randint(0, 160 - eh), random.randint(0, 160 - ew)
                 x[:, :, ey:ey + eh, ex:ex + ew] = torch.randn(3, 1, eh, ew)
@@ -72,10 +72,10 @@ class ClipsAug(Clips):
 
 # ---------------------------------------------------------------- layer decay
 def param_groups_layer_decay(model, lr, lr_head, wd, decay):
-    """Gan moi tham so mot layer_id -> lr = lr * decay^(n_layers - layer_id).
+    """Assign each parameter a layer_id -> lr = lr * decay^(n_layers - layer_id).
 
     patch_embed & lg_region_tokens = 0; blocks[i] = i+1; fc_norm/head = n_layers.
-    Khong weight-decay cho bias va cac tham so 1 chieu (chuan cho ViT fine-tune).
+    No weight decay for biases and 1-D parameters (standard for ViT fine-tuning).
     """
     n_blocks = len(model.backbone.blocks)
     n_layers = n_blocks + 1
@@ -112,7 +112,7 @@ def param_groups_layer_decay(model, lr, lr_head, wd, decay):
 # ---------------------------------------------------------------- eval + TTA
 @torch.no_grad()
 def evaluate_tta(model, ds, dev, batch, tta=True):
-    """TTA: 2 crop (full + center 0.875) x 2 flip = 4 view, trung binh xac suat."""
+    """TTA: 2 crops (full + center 0.875) x 2 flips = 4 views, averaging probabilities."""
     from sklearn.metrics import f1_score, roc_auc_score
     model.eval()
     dl = torch.utils.data.DataLoader(ds, batch_size=batch, shuffle=False,
@@ -122,8 +122,8 @@ def evaluate_tta(model, ds, dev, batch, tta=True):
         x = x.to(dev, non_blocking=True)
         views = [x]
         if tta:
-            # x la [B,C,T,H,W]: cat theo H,W (chieu 3,4) — KHONG phai 2,3 (do la T,H).
-            # interpolate nhan 4D nen gop B,C lai va coi T la kenh, giong ham aug luc train.
+            # x is [B,C,T,H,W]: crop along H,W (dims 3,4) - NOT 2,3 (those are T,H).
+            # interpolate takes 4D, so merge B,C and treat T as channels, like the train aug.
             B, C, T, H, W = x.shape
             c = int(H * 0.875)
             o = (H - c) // 2
@@ -131,7 +131,7 @@ def evaluate_tta(model, ds, dev, batch, tta=True):
             xc = F.interpolate(xc, size=(H, W), mode="bilinear",
                                align_corners=False).reshape(B, C, T, H, W)
             views.append(xc)
-            views = views + [torch.flip(v, dims=[4]) for v in views]  # lat NGANG = chieu 4
+            views = views + [torch.flip(v, dims=[4]) for v in views]  # HORIZONTAL flip = dim 4
         acc = 0
         for v in views:
             with torch.autocast("cuda", dtype=torch.bfloat16):
@@ -229,8 +229,8 @@ def main():
             best_acc = m["acc"]
             torch.save({"model": model.state_dict(), "ep": ep, "args": vars(args),
                         "val": m}, out / "best_acc.pth")
-        # LUU THEO AUC: dinh AUC luon roi vao ep2-6 va truoc gio KHONG duoc luu -> khong
-        # ensemble duoc cac model tot nhat. Day la lo hong da lam mat 3 checkpoint baseline.
+        # SAVE BY AUC: the AUC peak always falls at ep2-6 and was NOT saved until now -> the
+        # best models could not be ensembled. This gap lost 3 baseline checkpoints.
         if m["auc_dis"] > best_auc:
             best_auc = m["auc_dis"]
             torch.save({"model": model.state_dict(), "ep": ep, "args": vars(args),

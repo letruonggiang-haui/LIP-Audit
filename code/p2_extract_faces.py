@@ -1,12 +1,12 @@
-"""P2 Phase 0 — trich 16 khung mat 160x160/clip cho pipeline MAE-DFER.
+"""P2 Phase 0 - extract 16 face frames of 160x160 per clip for the MAE-DFER pipeline.
 
-Bbox mat tinh tu eye landmarks OpenFace (median toan clip, khong can landmark 68 diem):
-  - eye1 = trung binh eye_lmk_{x,y}_0..27, eye2 = trung binh 28..55
-  - d = khoang cach hai mat; canh vuong = 3.2*d, tam = (mid_x, mid_y + 0.55*d)
-  - fallback (thieu CSV / <10 dong hop le / d<10px): crop vuong giua khung 480x480
+Face bbox from OpenFace eye landmarks (median over the whole clip, no 68-point landmarks needed):
+  - eye1 = mean of eye_lmk_{x,y}_0..27, eye2 = mean of 28..55
+  - d = distance between the two eyes; square side = 3.2*d, centre = (mid_x, mid_y + 0.55*d)
+  - fallback (missing CSV / <10 valid rows / d<10px): central 480x480 square crop of the frame
 
-Dau ra: ~/p2/faces/<Split>_X.npy [N,16,160,160,3] uint8 (RGB), <Split>_ids.npy.
-Chay: ~/p2/venv/bin/python p2_extract_faces.py <Split>   # Train|Validation|Test
+Output: ~/p2/faces/<Split>_X.npy [N,16,160,160,3] uint8 (RGB), <Split>_ids.npy.
+Run: ~/p2/venv/bin/python p2_extract_faces.py <Split>   # Train|Validation|Test
 """
 import os
 import sys
@@ -28,7 +28,7 @@ EYE_Y2 = [f"eye_lmk_y_{i}" for i in range(28, 56)]
 
 
 def clip_bbox(csv_path, w, h):
-    """Bbox vuong (x0,y0,x1,y1) tu median eye landmarks; None -> fallback."""
+    """Square bbox (x0,y0,x1,y1) from the median eye landmarks; None -> fallback."""
     try:
         df = pd.read_csv(csv_path)
         df.columns = [c.strip() for c in df.columns]
@@ -58,14 +58,14 @@ def center_square(w, h):
 
 
 def decode(args):
-    """Ben voi video hong duoi/thieu khung: pad khung cuoi; chi None khi 0 khung."""
+    """Tolerates corrupt-tail/short videos: pads with the last frame; None only with 0 frames."""
     path_str, csv_str = args
     cap = cv2.VideoCapture(path_str)
     n = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
     w = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
     h = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
     if n <= 0:
-        n = 400  # metadata hong -> doc tuan tu toi da 400 khung
+        n = 400  # broken metadata -> read sequentially, at most 400 frames
     box = clip_bbox(csv_str, w, h) if w > 0 and h > 0 else None
     idxs = np.linspace(0, n - 1, N_FRAMES).astype(int)
     frames, j = [], 0

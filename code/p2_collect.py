@@ -1,12 +1,12 @@
-"""Gom moi run + probe cua P2 thanh MOT bang duy nhat (CSV + markdown cho bai bao).
+"""Collect every P2 run + probe into ONE single table (CSV + markdown for the paper).
 
-Doc:
-  ~/p2/runs/<tag>/log.jsonl   -> duong cong train (dinh acc, dinh acc-late, dinh AUC, ep cuoi)
-  ~/p2/probe/<tag>_<ck>_probe.log -> identity-probe (88 lop), identity-probe-69 (neu co),
-                                     official-none/trans AUC 4 bai toan
-Xuat: ~/p2/RESULTS.csv + in bang markdown ra stdout.
+Reads:
+  ~/p2/runs/<tag>/log.jsonl   -> training curve (peak acc, peak acc-late, peak AUC, last ep)
+  ~/p2/probe/<tag>_<ck>_probe.log -> identity-probe (88 classes), identity-probe-69 (if any),
+                                     official-none/trans AUC for the 4 tasks
+Writes: ~/p2/RESULTS.csv + prints the markdown table to stdout.
 
-Chay: ~/p2/venv/bin/python p2_collect.py
+Run: ~/p2/venv/bin/python p2_collect.py
 """
 import csv
 import json
@@ -30,7 +30,7 @@ def curve(tag):
     best = max(rows, key=lambda r: r["acc"])
     bl = max(late, key=lambda r: r["acc"]) if late else None
     bu = max(rows, key=lambda r: r["auc_dis"])
-    # auc23 chi co o cac run giai doan 3 (v7/v8) — truc quyet dinh cua bang chuan
+    # auc23 exists only for stage-3 runs (v7/v8) - the deciding axis of the standard benchmark
     has23 = [r for r in rows if "auc23" in r]
     b23 = max(has23, key=lambda r: r["auc23"]) if has23 else None
     return dict(
@@ -108,7 +108,7 @@ def main():
     def s(v, f="%.3f"):
         return "—" if v is None else (f % v if isinstance(v, float) else str(v))
 
-    # con so bang deu quy ve BOI SO CHANCE de so duoc giua cac khong gian nhan
+    # table numbers are all expressed as MULTIPLES OF CHANCE to compare across label spaces
     print("| run | ckpt | acc-late | đỉnh AUC_dis | **đỉnh AUC23** | id69 (×chance) "
           "| proto69 (×chance) | adv top-1 (×chance) | off-none dis/bor/conf/fru |")
     print("|---|---|---|---|---|---|---|---|---|")

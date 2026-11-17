@@ -1,10 +1,10 @@
-"""Dump xac suat 4 lop tren Validation cho MOT checkpoint -> npz.
+"""Dump the 4-class probabilities on Validation for ONE checkpoint -> npz.
 
-Ly do ton tai: uoc tinh accuracy Test cua ta ('.60') la mot CHUOI SUY DIEN
-(AUC -> d' -> balanced acc -> nhan .95), chua bao gio do. Co xac suat tung clip
-thi tinh duoc truc tiep: tai trong lai Validation ve dung ti le lop cua Test roi
-doc accuracy 4 lop. Test VAN NIEM PHONG - chi dung THONG KE PHAN BO da cong bo
-cua Test (.002/.047/.494/.456), khong dung nhan hay du lieu Test.
+Why it exists: our Test accuracy estimate ('.60') is a CHAIN OF INFERENCE
+(AUC -> d' -> balanced acc -> times .95), never measured. With per-clip probabilities
+it can be computed directly: reweight Validation to the exact class proportions of Test,
+then read the 4-class accuracy. Test STAYS SEALED - only the published DISTRIBUTION
+STATISTICS of Test (.002/.047/.494/.456) are used, not Test labels or data.
 """
 import argparse
 import os

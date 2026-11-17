@@ -1,12 +1,12 @@
-"""Tai hien ResNet-TCN (abedidev/ResNet-TCN) — TRUNG THANH voi train.py cua repo.
+"""Reproduction of ResNet-TCN (abedidev/ResNet-TCN) - FAITHFUL to the repo's train.py.
 
-Giu nguyen: kien truc ResTCN, SGD lr .001 momentum .9, batch 4, 100 epoch,
-torch.manual_seed(0), CE, khong scheduler step, danh gia Test moi epoch (nhu repo —
-day chinh la giao thuc cua ho). Khac duy nhat: (a) csv/duong dan cua ta,
-(b) ghi log jsonl moi epoch, (c) luu xac suat Test tai epoch best-acc va epoch cuoi
-(de chay Audit 2 tren prediction cua HO), (d) num_workers cho dataloader.
+Kept unchanged: ResTCN architecture, SGD lr .001 momentum .9, batch 4, 100 epochs,
+torch.manual_seed(0), CE, no scheduler step, Test evaluated every epoch (as in the repo -
+that is their protocol). Only differences: (a) our csv/paths,
+(b) jsonl log written every epoch, (c) Test probabilities saved at the best-acc epoch and the
+last epoch (to run Audit 2 on THEIR predictions), (d) num_workers for the dataloader.
 
-Chay: ~/p2/venv/bin/python train_repro.py  (cwd = ~/p2/repro/ResNet-TCN)
+Run: ~/p2/venv/bin/python train_repro.py  (cwd = ~/p2/repro/ResNet-TCN)
 """
 import json
 import os
@@ -30,7 +30,7 @@ lr = .001
 device = torch.device("cuda")
 OUT = os.path.expanduser("~/p2/repro")
 
-# repo utils.get_dataloader boc VideoDataset + transform; tai tao truc tiep:
+# the repo's utils.get_dataloader wraps VideoDataset + transform; rebuilt directly here:
 transform = VideoFolderPathToTensor()
 train_ds = VideoDataset(os.path.join(OUT, "train_repro.csv"), "", transform=transform)
 test_ds = VideoDataset(os.path.join(OUT, "test_repro.csv"), "", transform=transform)

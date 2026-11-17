@@ -40,7 +40,7 @@ class TCN(nn.Module):
     def __init__(self, cin=512, h=256, nc=4):
         super().__init__()
         L, d, c = [], 1, cin
-        for _ in range(4):                       # 16 buoc -> RF 31, du
+        for _ in range(4):                       # 16 steps -> RF 31, enough
             L += [nn.Conv1d(c, h, 3, padding=d, dilation=d), nn.BatchNorm1d(h), nn.GELU()]
             c, d = h, d * 2
         self.f = nn.Sequential(*L)

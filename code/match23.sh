@@ -1,5 +1,5 @@
 #!/bin/bash
-# Phep so KHOP THUOC: AUC23 tren best_acc.pth cua CA HAI the he, cung Validation.
+# MATCHED-YARDSTICK comparison: AUC23 on best_acc.pth of BOTH generations, same Validation.
 cd ~/p2/code
 L=~/p2/runs/match23.log
 PY=~/p2/venv/bin/python

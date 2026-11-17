@@ -32,7 +32,7 @@ def metrics(p, y):
 
 
 class TCN(nn.Module):
-    """Dilated TCN: 300 buoc -> receptive field phu ca clip 10s."""
+    """Dilated TCN: 300 steps -> receptive field covers the whole 10s clip."""
 
     def __init__(self, cin=22, h=128, nc=4):
         super().__init__()
@@ -52,7 +52,7 @@ class TCN(nn.Module):
 def load(split, center):
     d = np.load(f"{ROOT}/{split}.npz", allow_pickle=True)
     X, ids, y = d["X"].astype(np.float32), d["ids"], d["y"][:, 1].astype(np.int64)
-    if center:                                   # tru trung binh tung doi tuong (transductive)
+    if center:                                   # subtract each subject's mean (transductive)
         subj = np.array([i[:6] for i in ids])
         for s in np.unique(subj):
             m = subj == s
@@ -73,7 +73,7 @@ def main():
 
     Xtr, ytr, _ = load("Train", a.center)
     Xva, yva, iva = load("Validation", a.center)
-    mu, sd = Xtr.mean((0, 1)), Xtr.std((0, 1)) + 1e-6      # chuan hoa theo Train
+    mu, sd = Xtr.mean((0, 1)), Xtr.std((0, 1)) + 1e-6      # standardise with Train statistics
     Xtr, Xva = (Xtr - mu) / sd, (Xva - mu) / sd
     Xtr_t = torch.tensor(Xtr)
     ytr_t = torch.tensor(ytr)

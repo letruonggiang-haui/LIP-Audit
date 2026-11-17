@@ -1,10 +1,11 @@
-"""Do TOP-1 accuracy cua adversary head (subj_head) tren chinh du lieu Train cua no.
+"""Measure the TOP-1 accuracy of the adversary head (subj_head) on its own Train data.
 
-Ly do: loss_subj ~4.1 (ln69=4.234) KHONG dong nghia adversary o chance — CE khuech
-tan van co the di kem top-1 20-40%. Menh de "adversary dat chance nhung identity van
-con" chi dung neu top-1 cung gan chance (1/69 = .0145). Script nay lay dung con so do.
+Why: loss_subj ~4.1 (ln69=4.234) does NOT mean the adversary is at chance - a diffuse CE
+can still come with a top-1 of 20-40%. The statement "the adversary reaches chance but
+identity remains" holds only if top-1 is also near chance (1/69 = .0145). This script
+gets exactly that number.
 
-Chay: ~/p2/venv/bin/python p2_adv_acc.py --ckpt ~/p2/runs/mlp025_s0/last.pth
+Run: ~/p2/venv/bin/python p2_adv_acc.py --ckpt ~/p2/runs/mlp025_s0/last.pth
 """
 import argparse
 import os
@@ -28,7 +29,7 @@ def main():
     ck = torch.load(os.path.expanduser(args.ckpt), map_location="cpu", weights_only=False)
     sd, cargs = ck["model"], ck.get("args", {})
     adv_hidden = int(cargs.get("adv_hidden", 0))
-    # suy n_subj tu shape lop cuoi cua subj_head (linear: subj_head.weight;
+    # infer n_subj from the shape of the last layer of subj_head (linear: subj_head.weight;
     # MLP: subj_head.2.weight)
     key = "subj_head.2.weight" if adv_hidden > 0 else "subj_head.weight"
     n_subj = sd[key].shape[0]
@@ -58,8 +59,8 @@ def main():
     print(f"ADVERSARY tren Train (du lieu train cua chinh no): top-1 {hits/tot:.4f} "
           f"(chance {1/n_subj:.4f}, {n_subj} lop) = {hits/tot*n_subj:.2f}x chance | "
           f"CE {sum(ce)/tot:.3f} (ln{n_subj}={np.log(n_subj):.3f}) | n={tot}", flush=True)
-    # phan biet hai kich ban: "mu that" (entropy cao, du doan trai deu) vs
-    # "sup do / tu tin sai" (entropy thap, chi vai lop duoc du doan)
+    # distinguish two scenarios: "truly blind" (high entropy, predictions spread evenly) vs
+    # "collapsed / confidently wrong" (low entropy, only a few classes predicted)
     print(f"  che do hong: entropy TB {sum(ent)/tot:.3f} (uniform={np.log(n_subj):.3f}) | "
           f"so lop argmax phan biet {len(cnt)}/{n_subj} | lop pho bien nhat chiem "
           f"{cnt.max()/tot:.1%} so clip", flush=True)

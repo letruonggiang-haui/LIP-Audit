@@ -1,6 +1,6 @@
 #!/bin/bash
-# Doi chung KHOP cua w5 (crudetta = cung sieu tham so, chi khac cach lay mau khung)
-# hien chi co n=1 -> chay seed 1,2 de co n=3 vs n=3. 20 epoch cho khop ngan sach w5.
+# MATCHED control for w5 (crudetta = same hyperparameters, differs only in frame sampling)
+# currently n=1 only -> run seeds 1,2 to get n=3 vs n=3. 20 epochs to match the w5 budget.
 cd ~/p2/code
 PY=~/p2/venv/bin/python
 rm -f ~/p2/runs/CTRL_SEEDS_DONE

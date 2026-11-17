@@ -1,8 +1,8 @@
-"""Chuan bi tai hien ResNet-TCN: trich 16 khung DAU moi clip + build csv.
+"""Prepare the ResNet-TCN reproduction: extract the FIRST 16 frames of each clip + build the csv.
 
-Trung thanh voi transforms.py cua repo (EXTRACT_FREQUENCY=1, num_time_steps=16,
-doc theo sorted filename): luu 00.jpg..15.jpg (zero-pad de sorted() dung thu tu).
-Train+Val -> train.csv (giao thuc Abedi), Test -> test.csv.
+Faithful to the repo's transforms.py (EXTRACT_FREQUENCY=1, num_time_steps=16, read in sorted
+filename order): saves 00.jpg..15.jpg (zero-padded so that sorted() gives the right order).
+Train+Val -> train.csv (Abedi protocol), Test -> test.csv.
 """
 import os
 from multiprocessing import Pool
@@ -50,7 +50,7 @@ def extract_one(args):
         last = frame
         i += 1
     cap.release()
-    # pad khung cuoi neu video ngan/hong dau (giu du 16 de transform khong crash)
+    # pad with the last frame if the video is short/broken (keep 16 so the transform does not crash)
     while 0 < i < N_FRAMES and last is not None:
         cv2.imwrite(os.path.join(outdir, f"{i:02d}.jpg"), last,
                     [cv2.IMWRITE_JPEG_QUALITY, 92])

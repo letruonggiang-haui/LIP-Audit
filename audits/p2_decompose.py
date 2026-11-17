@@ -1,9 +1,9 @@
-"""Phan tach tin hieu 2-vs-3: TRONG-doi-tuong vs GIUA-doi-tuong, va do xang cua
+"""Decomposition of the 2-vs-3 signal: WITHIN-subject vs BETWEEN-subject, and the headroom of
 transductive per-subject calibration.
 
-KHONG cham Test them lan nao: dung xac suat da dump (TEST_FINAL_probs.npz) +
-w5_s0_val_probs.npz (model Train-only -> Val la held-out sach, subject-independent).
-Day la buoc PHAT TRIEN tren Val, XAC NHAN mot lan tren file Test da luu.
+Does NOT touch Test again: uses the dumped probabilities (TEST_FINAL_probs.npz) +
+w5_s0_val_probs.npz (Train-only model -> Val is a clean held-out set, subject-independent).
+This is the DEVELOPMENT step on Val, CONFIRMED once on the stored Test file.
 """
 import os
 
@@ -14,7 +14,7 @@ from sklearn.metrics import roc_auc_score
 
 HOME = os.path.expanduser('~')  # the server account that ran this script
 
-P23_TRAIN = 0.465 / (0.488 + 0.465)      # P(y=3 | y>=2) theo prior Train
+P23_TRAIN = 0.465 / (0.488 + 0.465)      # P(y=3 | y>=2) under the Train prior
 
 
 def load_ids(split):
@@ -49,10 +49,10 @@ def analyze(P, y, ids, name):
 
     pred = P.argmax(1)
     print('acc(2/3) argmax goc:         %.4f' % (pred[m] == y[m]).mean())
-    # A: nguong toan cuc theo prior Train (khong transductive) — doi chung
+    # A: global threshold from the Train prior (not transductive) - control
     th = np.quantile(sc, 1 - P23_TRAIN)
     print('acc(2/3) nguong toan cuc:    %.4f' % ((np.where(sc >= th, 3, 2)) == y[m]).mean())
-    # B: per-subject centering (shrinkage lam) + nguong toan cuc
+    # B: per-subject centering (shrinkage lam) + global threshold
     for lam in (0.5, 1.0):
         scc = sc.copy()
         for s in us:
@@ -60,14 +60,14 @@ def analyze(P, y, ids, name):
             scc[k] = sc[k] - lam * (sc[k].mean() - sc.mean())
         th = np.quantile(scc, 1 - P23_TRAIN)
         print('acc(2/3) centering lam=%.1f:  %.4f' % (lam, ((np.where(scc >= th, 3, 2)) == y[m]).mean()))
-    # C: per-subject quantile matching (moi doi tuong nhan dung prior toan cuc)
+    # C: per-subject quantile matching (each subject is given exactly the global prior)
     p23 = np.empty(len(sc), int)
     for s in us:
         k = sj == s
         ths = np.quantile(sc[k], 1 - P23_TRAIN)
         p23[k] = np.where(sc[k] >= ths, 3, 2)
     print('acc(2/3) per-subj quantile:  %.4f' % (p23 == y[m]).mean())
-    # D: ORACLE nguong toi uu tung doi tuong — TRAN cua moi phep transductive
+    # D: ORACLE optimal threshold per subject - CEILING of any transductive method
     accо = []
     for s in us:
         k = sj == s
@@ -75,7 +75,7 @@ def analyze(P, y, ids, name):
                    np.unique(np.concatenate([sc[k], [sc[k].max() + 1]])))
         accо.append(best * k.sum())
     print('acc(2/3) ORACLE per-subj th: %.4f  <- tran transductive' % (np.sum(accо) / len(sc)))
-    # E: ORACLE prior dung + nguong quantile per-subject
+    # E: ORACLE true prior + per-subject quantile threshold
     p23o = np.empty(len(sc), int)
     for s in us:
         k = sj == s

@@ -1,23 +1,24 @@
-"""P2 vong 4 — phat danh tinh BAT BIEN TI LE bang prototype-confusion (khong tham so).
+"""P2 round 4 - SCALE-INVARIANT identity penalty via prototype-confusion (parameter-free).
 
-Bai hoc tu vong 3 (xem NHAT_KY_P2.md 14/08): phat S_b/S_w bi lach bang CO SUP PHUONG SAI
-(std moi chieu 0.258 -> 0.0043, tuc ~11.700x theo binh phuong khoang cach) trong khi
-identity-probe VAN doc .9955. Ly do: probe dung StandardScaler -> BAT BIEN TI LE. Mo hinh
-bop phuong sai de ha ti so vet ma giu nguyen HUONG phan biet — dung thu probe doc.
+Lesson from round 3 (see NHAT_KY_P2.md 14/08): the S_b/S_w penalty was evaded by VARIANCE
+COLLAPSE (per-dimension std 0.258 -> 0.0043, i.e. ~11.700x in squared distance) while the
+identity-probe STILL read .9955. Reason: the probe uses StandardScaler -> SCALE-INVARIANT. The
+model squeezed the variance to lower the trace ratio but kept the discriminative DIRECTION
+intact - exactly what the probe reads.
 
-=> Nguyen tac vong 4: phat phai tinh tren bieu dien CHUAN HOA Y HET CACH PROBE CHUAN HOA.
-   Chuan hoa tung chieu bang thong ke batch NGAY TRONG ham phat -> co sup toan cuc bi
-   chuan hoa mat, khong con la nghiem.
+=> Round-4 principle: the penalty must be computed on a representation STANDARDISED EXACTLY AS
+   THE PROBE STANDARDISES. Standardising each dimension with batch statistics RIGHT INSIDE the
+   penalty -> a global collapse is normalised away and is no longer a solution.
 
-Co che: prototype-confusion, khong co tham so nao de lua (khac han adversary).
-  1. z_n = (z - mean_batch) / (std_batch + eps)          <- bat bien ti le
-  2. prototype moi doi tuong trong batch, LEAVE-ONE-OUT cho anchor (bat buoc: neu z_i nam
-     trong prototype cua chinh no thi voi K=4 no chiem 25%, classifier dung tu dong va
-     phat toi uu hoa mot artifact)
+Mechanism: prototype-confusion, no parameters at all to fool (unlike the adversary).
+  1. z_n = (z - mean_batch) / (std_batch + eps)          <- scale-invariant
+  2. one prototype per subject in the batch, LEAVE-ONE-OUT for the anchor (mandatory: if z_i
+     is inside its own prototype then with K=4 it makes up 25%, the classifier is right
+     automatically and the penalty optimises an artifact)
   3. logit_{i,t} = -(||z_n_i - mu_t||^2 / D) / tau
-  4. L_id = CE(uniform, softmax(logit)) -> toi thieu khi du doan danh tinh la DEU
+  4. L_id = CE(uniform, softmax(logit)) -> minimal when the identity prediction is UNIFORM
 
-Chay: p2_train_v4.py --seed 0 --lambda_id 1.0 --pk_p 4 --pk_k 4 --out ~/p2/runs/proto10_s0
+Run: p2_train_v4.py --seed 0 --lambda_id 1.0 --pk_p 4 --pk_k 4 --out ~/p2/runs/proto10_s0
 """
 import argparse
 import json
@@ -35,7 +36,7 @@ from p2_train_v3 import PKSampler
 
 
 def prototype_confusion(z, ys, tau=0.5, eps=1e-5):
-    """Tra ve (loss_confusion, top1_prototype). Bat bien ti le nho chuan hoa batch."""
+    """Returns (loss_confusion, top1_prototype). Scale-invariant thanks to batch standardisation."""
     z = z.float()
     z = (z - z.mean(0, keepdim=True)) / (z.std(0, keepdim=True) + eps)
     d = z.shape[1]
@@ -49,9 +50,9 @@ def prototype_confusion(z, ys, tau=0.5, eps=1e-5):
         cnts.append(m.sum())
     sums = torch.stack(sums)                       # [P,D]
     cnts = torch.stack(cnts).float().unsqueeze(1)  # [P,1]
-    tgt = torch.stack([(uniq == y).nonzero()[0, 0] for y in ys])  # chi so prototype dung
+    tgt = torch.stack([(uniq == y).nonzero()[0, 0] for y in ys])  # index of the correct prototype
 
-    # leave-one-out: voi anchor i thuoc doi tuong s, tru chinh z_i khoi tong cua s
+    # leave-one-out: for anchor i of subject s, subtract z_i itself from the sum of s
     mu = sums.unsqueeze(0).expand(len(z), -1, -1).clone()          # [B,P,D]
     cn = cnts.unsqueeze(0).expand(len(z), -1, -1).clone()          # [B,P,1]
     ar = torch.arange(len(z), device=z.device)
@@ -62,7 +63,7 @@ def prototype_confusion(z, ys, tau=0.5, eps=1e-5):
     dist2 = ((z.unsqueeze(1) - mu) ** 2).sum(-1) / d               # [B,P]
     logits = -dist2 / tau
     logp = F.log_softmax(logits, dim=-1)
-    loss = -logp.mean()          # CE toi uniform: toi thieu khi softmax deu
+    loss = -logp.mean()          # CE to uniform: minimal when the softmax is uniform
     top1 = float((logits.argmax(-1) == tgt).float().mean())
     return loss, top1
 
@@ -137,7 +138,7 @@ def main():
             losses.append(loss_e.item())
             cfs.append(float(cf.detach()))
             p1s.append(p1)
-            stds.append(float(z.detach().float().std(0).mean()))  # canh chung co sup
+            stds.append(float(z.detach().float().std(0).mean()))  # watch for collapse
             if (it + 1) % args.accum == 0:
                 opt.step()
                 sched.step()

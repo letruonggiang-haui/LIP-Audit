@@ -1,22 +1,23 @@
-"""P2 giai doan 3b — ORDINAL (CORAL) thay cho CE 4 lop. Phat cuoi nham truc 2-vs-3.
+"""P2 stage 3b - ORDINAL (CORAL) instead of 4-class CE. A final attempt aimed at the 2-vs-3 axis.
 
-Ly do: engagement la thang co THU TU 0<1<2<3, nhung CE 4 lop coi muc 2 va muc 3 la hai
-pham tru KHONG lien quan — trong khi toan bo accuracy cua bang chuan nam o ranh gioi 2|3.
-CORAL bien bai toan thanh 3 cau hoi tich luy co thu tu: P(y>0), P(y>1), P(y>2), dung chung
-vector trong so w va 3 bias rieng (dam bao nhat quan thu hang). Ranh gioi 2|3 tro thanh mot
-NHIEM VU HOC TRUC TIEP (dau ra P(y>2)) thay vi he qua phu cua softmax 4 chieu.
+Why: engagement is a scale with an ORDER 0<1<2<3, but 4-class CE treats level 2 and level 3 as
+two UNRELATED categories - while all of the standard benchmark's accuracy sits at the 2|3
+boundary. CORAL turns the problem into 3 ordered cumulative questions: P(y>0), P(y>1), P(y>2),
+sharing one weight vector w with 3 separate biases (guaranteeing rank consistency). The 2|3
+boundary becomes a DIRECT LEARNING TASK (output P(y>2)) instead of a side effect of a 4-way
+softmax.
 
-Giu nguyen moi thu khac cua v7 (du lieu 5 cua so, temporal aug, gop 5 view luc eval) de
-chenh lech chi den tu HAM MUC TIEU.
+Everything else is kept as in v7 (5-window data, temporal aug, 5-view pooling at eval) so
+that the difference comes only from the OBJECTIVE FUNCTION.
 
-Chi so bao cao giong het v7 de so truc tiep:
-  auc_dis = 1 - sigmoid(logit_1)  -> P(y<=1)      (sach hon cong hai xac suat softmax)
-  auc23   = sigmoid(logit_2)      -> P(y>2) tren rieng phan y>=2
+Metrics reported exactly as in v7 for direct comparison:
+  auc_dis = 1 - sigmoid(logit_1)  -> P(y<=1)      (cleaner than adding two softmax probabilities)
+  auc23   = sigmoid(logit_2)      -> P(y>2) on the y>=2 subset only
 
-MOC PHAN XU dat truoc khi chay: neu AUC23 khong vuot .72 thi backbone la rang buoc that su,
-khong ham mat mat nao chua duoc — dung, khong tinh chinh tiep.
+DECISION THRESHOLD set before running: if AUC23 does not exceed .72 then the backbone is the
+real constraint, which no loss function can fix - stop, no further tuning.
 
-Chay: p2_train_v8.py --seed 0 --out ~/p2/runs/coral_s0
+Run: p2_train_v8.py --seed 0 --out ~/p2/runs/coral_s0
 """
 import argparse
 import json
@@ -39,7 +40,7 @@ CKPT = os.path.expanduser("~/MAE-DFER/saved/model/finetuning/dfew/fold1.pth")
 
 
 class CoralModel(nn.Module):
-    """Backbone + dau CORAL: mot w dung chung, 3 bias -> logit_k = w.z + b_k."""
+    """Backbone + CORAL head: one shared w, 3 biases -> logit_k = w.z + b_k."""
 
     def __init__(self, n_cuts=3):
         super().__init__()
@@ -65,12 +66,12 @@ def load_pretrained(model):
 
 
 def coral_targets(y, n_cuts=3):
-    """y [B] -> [B,3] nhi phan: (y>0, y>1, y>2)."""
+    """y [B] -> [B,3] binary: (y>0, y>1, y>2)."""
     return torch.stack([(y > k).float() for k in range(n_cuts)], dim=1)
 
 
 def probs_from_cum(logits):
-    """Xac suat tung lop tu 3 logit tich luy; clamp + chuan hoa phong truong hop khong don dieu."""
+    """Class probabilities from the 3 cumulative logits; clamp + renormalise if not monotone."""
     c = torch.sigmoid(logits)                      # [B,3] = P(y>0),P(y>1),P(y>2)
     ones = torch.ones_like(c[:, :1])
     zeros = torch.zeros_like(c[:, :1])
@@ -91,10 +92,10 @@ def evaluate(model, ds, dev, batch):
         x = xs.reshape(B * W, *xs.shape[2:]).to(dev, non_blocking=True)
         with torch.autocast("cuda", dtype=torch.bfloat16):
             lg, _ = model(x)
-        L.append(torch.sigmoid(lg.float()).reshape(B, W, -1).mean(1).cpu())  # gop 5 view
+        L.append(torch.sigmoid(lg.float()).reshape(B, W, -1).mean(1).cpu())  # pool 5 views
         ys.append(y)
     c, y = torch.cat(L).numpy(), torch.cat(ys).numpy()
-    pred = (c > 0.5).sum(1)                                   # thu hang -> lop 0..3
+    pred = (c > 0.5).sum(1)                                   # rank -> class 0..3
     rec = [float((pred[y == k] == k).mean()) for k in np.unique(y)]
     m23 = y >= 2
     model.train()
@@ -134,7 +135,7 @@ def main():
     load_pretrained(model)
     model = model.to(dev).train()
 
-    # tai dung bo nhom layer-decay cua v6; dau CORAL (w,b) dong vai "head"
+    # reuse the layer-decay grouping of v6; the CORAL head (w,b) acts as "head"
     groups = param_groups_layer_decay(
         type("M", (), {"backbone": model.backbone,
                        "named_parameters": model.named_parameters,

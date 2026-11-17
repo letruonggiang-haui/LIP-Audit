@@ -1,12 +1,12 @@
-"""Phan xu tai hien ResNet-TCN theo gate DA DANG KY (NHAT_KY_P2.md 20/08):
-(1) dat <=> dinh acc Test trong [0.619, 0.659]
-(2) within-person AUC23 tai best-acc < 0.65 => defuse DA-C2; >= 0.65 => DA-C2 DUNG
-(3) ghi ca acc epoch cuoi lan dinh (bang chung test-set selection)
+"""Adjudicate the ResNet-TCN reproduction by the PRE-REGISTERED gates (NHAT_KY_P2.md 20/08):
+(1) pass <=> peak Test acc within [0.619, 0.659]
+(2) within-person AUC23 at best-acc < 0.65 => defuse DA-C2; >= 0.65 => DA-C2 STANDS
+(3) record both the last-epoch acc and the peak (evidence of test-set selection)
 
-Dinh nghia AUC giong het audits/p2_decompose.py: s23 = P3/(P2+P3),
-within-person = TB co trong so theo so clip cua tung doi tuong (chi doi tuong co ca 2 lop).
-Them: hoan vi nhan TRONG-doi-tuong B=1000 cho within-AUC (p-value).
-Chay CPU, khong cham GPU: ~/p2/venv/bin/python ~/p2/repro/repro_audit2.py
+AUC definition identical to audits/p2_decompose.py: s23 = P3/(P2+P3),
+within-person = mean weighted by each subject's clip count (only subjects with both classes).
+Also: WITHIN-subject label permutation B=1000 for the within-AUC (p-value).
+Runs on CPU, does not touch the GPU: ~/p2/venv/bin/python ~/p2/repro/repro_audit2.py
 """
 import json, os
 import numpy as np
@@ -17,7 +17,7 @@ from sklearn.metrics import roc_auc_score
 OUT = os.path.expanduser('~/p2/repro')
 rng = np.random.default_rng(0)
 
-# (1)+(3) duong cong acc
+# (1)+(3) acc curve
 recs = [json.loads(l) for l in open(os.path.join(OUT, 'repro_log.jsonl'))]
 accs = np.array([r['test_acc'] for r in recs])
 best_ep = int(accs.argmax())
@@ -47,7 +47,7 @@ def analyze(tag):
         return np.average(aucs, weights=ws)
     w_obs = within(t)
     print('AUC23 TRONG-doi-tuong (TB): %.4f' % w_obs)
-    # hoan vi nhan trong-nguoi
+    # within-person label permutation
     perm = []
     for _ in range(1000):
         tp = t.copy()

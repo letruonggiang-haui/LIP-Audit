@@ -120,7 +120,7 @@ def main():
     ap.add_argument("--ckpt", required=True)
     args = ap.parse_args()
     ck = Path(os.path.expanduser(args.ckpt))
-    run = f"{ck.parent.name}_{ck.stem}"  # vd base_s0_last — tranh va cham cache giua best/last
+    run = f"{ck.parent.name}_{ck.stem}"  # e.g. base_s0_last - avoids a best/last cache collision
     z0, y, subj = extract(os.path.expanduser(args.ckpt), OUT / f"{run}_z.npz")
     print(f"pool {z0.shape}, {len(np.unique(subj))} doi tuong")
 
@@ -146,7 +146,7 @@ def main():
             print(f"[{mode:5s}|{task:13s}] AUC {np.mean(aucs):.3f}+-{np.std(aucs):.3f}",
                   flush=True)
 
-    # official-probe: hoc tren Train, test tren Validation (doi tuong doc lap)
+    # official-probe: train on Train, test on Validation (independent subjects)
     val_lab = pd.read_csv(DAISEE / "DAiSEE" / "Labels" / "ValidationLabels.csv")
     val_lab.columns = [c.strip() for c in val_lab.columns]
     val_subjects = set(val_lab["ClipID"].astype(str).str[:6])

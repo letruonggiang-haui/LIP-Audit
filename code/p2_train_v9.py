@@ -1,16 +1,17 @@
-"""GIAI DOAN 4b: backbone VideoMAE (Kinetics-400 fine-tuned, HF) tren faces5.
+"""STAGE 4b: VideoMAE backbone (Kinetics-400 fine-tuned, HF) on faces5.
 
-Vi sao: chan doan giai doan 3 — frozen .659 ~ full-FT .680 -> tran nam o BIEU DIEN
-cua MAE-DFER (pretrain DFEW 16k clip). VideoMAE Kinetics pretrain tren video quy mo
-lon hon nhieu; day la don "doi bieu dien", don duy nhat chua thu.
+Why: stage-3 diagnosis - frozen .659 ~ full-FT .680 -> the ceiling lies in the REPRESENTATION
+of MAE-DFER (pretrained on DFEW, 16k clips). VideoMAE Kinetics is pretrained on video at a
+much larger scale; this is the "change the representation" move, the only one not yet tried.
 
-Giu NGUYEN goi chong-sup cua v7: temporal aug (1/5 cua so ngau nhien moi epoch),
-gop 5 view luc eval, bao cao auc23, luu best theo acc/auc_dis/auc23.
-Khac v7: backbone HF VideoMAE [B,T,C,H,W] 224px (resize tu 160), chuan hoa ImageNet.
---merge_val: gop Validation vao Train (giao thuc Abedi & Khan) — khi do eval tren
-Validation CHI de ghi duong cong tham khao, KHONG dung chon checkpoint.
+KEEPS the anti-collapse package of v7: temporal aug (1 of 5 windows at random each epoch),
+5-view pooling at eval, auc23 reporting, best saved by acc/auc_dis/auc23.
+Differs from v7: HF VideoMAE backbone [B,T,C,H,W] 224px (resized from 160), ImageNet
+normalisation.
+--merge_val: merge Validation into Train (Abedi & Khan protocol) - eval on Validation is then
+ONLY to record a reference curve, NOT used to select checkpoints.
 
-Chay: p2_train_v9.py --seed 0 --out ~/p2/runs/vmae_s0
+Run: p2_train_v9.py --seed 0 --out ~/p2/runs/vmae_s0
 """
 import argparse
 import json
@@ -28,9 +29,9 @@ from sklearn.metrics import f1_score, roc_auc_score
 os.environ.setdefault("HF_HOME", os.path.expanduser("~/p2/hf"))
 from transformers import VideoMAEModel  # noqa: E402
 
-from p2_train_v7 import Clips5  # dung lai y nguyen dataset (160px, chuan hoa MEAN/STD cua v7)
+from p2_train_v7 import Clips5  # reuse the dataset unchanged (160px, MEAN/STD normalisation of v7)
 
-# Clips5 chuan hoa theo MEAN/STD cua MAE-DFER (0.485.../0.229... — trung ImageNet) -> giu.
+# Clips5 normalises with the MAE-DFER MEAN/STD (0.485.../0.229... - same as ImageNet) -> kept.
 
 
 class VMae(nn.Module):
@@ -80,7 +81,7 @@ def main():
     ap.add_argument("--seed", type=int, default=0)
     ap.add_argument("--epochs", type=int, default=20)
     ap.add_argument("--batch", type=int, default=4)
-    ap.add_argument("--accum", type=int, default=8)      # effective 32 nhu v7
+    ap.add_argument("--accum", type=int, default=8)      # effective 32 as in v7
     ap.add_argument("--lr", type=float, default=1e-4)
     ap.add_argument("--lr_head", type=float, default=1e-3)
     ap.add_argument("--wd", type=float, default=0.05)

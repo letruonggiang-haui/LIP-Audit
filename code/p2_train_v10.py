@@ -1,13 +1,14 @@
-"""GIAI DOAN 4a: v7 + --merge_val (giao thuc Abedi & Khan: gop Validation vao Train).
+"""STAGE 4a: v7 + --merge_val (Abedi & Khan protocol: merge Validation into Train).
 
-Khac v7 DUY NHAT o du lieu train. Khi --merge_val:
-- Train = Train + Validation, ca hai deu temporal aug.
-- Eval moi epoch tren Validation CHI DE GHI THAM KHAO (Val nam trong train, so nay
-  khong duoc dung chon checkpoint hay bao cao).
-- Checkpoint chinh thuc = last.pth, ngan sach 20 epoch co dinh (dang ky truoc) —
-  hop le vi goi w5 da chung minh cuoi ~ dinh. Van luu best_* de doi chieu sau.
+Differs from v7 ONLY in the training data. With --merge_val:
+- Train = Train + Validation, both with temporal aug.
+- Eval each epoch on Validation is ONLY RECORDED FOR REFERENCE (Val is in the training data;
+  this number must not be used to select a checkpoint or be reported).
+- Official checkpoint = last.pth, fixed budget of 20 epochs (pre-registered) -
+  valid because the w5 package has shown last ~ peak. best_* is still saved for later
+  comparison.
 
-Chay: p2_train_v10.py --seed 0 --merge_val --out ~/p2/runs/w5m_s0
+Run: p2_train_v10.py --seed 0 --merge_val --out ~/p2/runs/w5m_s0
 """
 import argparse
 import json
@@ -90,7 +91,7 @@ def main():
                 opt.step()
                 opt.zero_grad(set_to_none=True)
                 gstep += 1
-        m = evaluate5(model, va, dev, max(1, args.batch // 4))   # THAM KHAO (Val in-train)
+        m = evaluate5(model, va, dev, max(1, args.batch // 4))   # REFERENCE ONLY (Val in-train)
         rec = dict(ep=ep, loss=float(np.mean(losses)), mins=round((time.time() - t0) / 60, 1),
                    ref_only=bool(args.merge_val), **m)
         print(json.dumps(rec), flush=True)

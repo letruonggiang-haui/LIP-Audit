@@ -1,12 +1,14 @@
-"""Danh gia ENSEMBLE nhieu checkpoint (+ TTA) tren Validation — do dong gop tung thanh phan.
+"""Evaluate an ENSEMBLE of several checkpoints (+ TTA) on Validation; measures the contribution
+of each component.
 
-Dung cho buoc day bang chuan: ensemble cac best_auc.pth cua nhieu seed, trung binh XAC SUAT.
-In ca ket qua tung checkpoint rieng le lan ensemble luy tien (1, 1+2, 1+2+3...) de thay
-ensemble co thuc su them gia tri hay chi lap lai model tot nhat.
+Used for the step that pushes the standard benchmark: ensemble the best_auc.pth of several
+seeds, averaging PROBABILITIES. Prints both each single checkpoint's result and the cumulative
+ensemble (1, 1+2, 1+2+3...) to see whether the ensemble really adds value or just repeats the
+best model.
 
-Test VAN NIEM PHONG — script nay chi cham Validation.
+Test STAYS SEALED - this script touches only Validation.
 
-Chay: p2_ensemble.py --ckpt ~/p2/runs/a/best_auc.pth ~/p2/runs/b/best_auc.pth [--no_tta]
+Run: p2_ensemble.py --ckpt ~/p2/runs/a/best_auc.pth ~/p2/runs/b/best_auc.pth [--no_tta]
 """
 import argparse
 import os

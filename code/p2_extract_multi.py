@@ -1,21 +1,23 @@
-"""P2 giai doan 3 — trich 5 CUA SO x 16 khung o sampling rate 4, KHOP domain pretraining.
+"""P2 stage 3 - extract 5 WINDOWS x 16 frames at sampling rate 4, MATCHING the pretraining domain.
 
-Chan doan 15/08: AUC phan biet muc 2 vs muc 3 chi .60 (can ~.79 de cham SOTA). Mot trong
-cac nguyen nhan chua loai tru duoc la CACH LAY MAU KHUNG. Ban cu lay 16 khung TRAI DEU tren
-10 giay (~0,63s/khung) — MAE-DFER duoc pretrain tren 16 khung LIEN TIEP o sampling rate 4
-(~2,1s). Sai khac nay vua lech domain, vua vut bo 95% video (16/300 khung).
+Diagnosis 15/08: the AUC separating level 2 from level 3 is only .60 (~.79 needed to reach
+SOTA). One of the causes not yet ruled out is the FRAME SAMPLING METHOD. The old version took
+16 frames SPREAD EVENLY over 10 seconds (~0,63s/frame) - MAE-DFER was pretrained on 16
+CONSECUTIVE frames at sampling rate 4 (~2,1s). This mismatch both shifts the domain and
+throws away 95% of the video (16/300 frames).
 
-Ban nay sua MOT LUC BON thieu sot da ghi nhan:
-  1. Khop domain pretraining: moi cua so = 16 khung x sr4 = 2,1s (dung nhu DFEW).
-  2. Dung 80/300 khung thay vi 16/300 — nhieu thong tin thoi gian hon 5 lan.
-  3. Cho phep TANG CUONG THOI GIAN luc train (moi epoch chon ngau nhien 1 trong 5 cua so) —
-     truoc gio khung co dinh nen KHONG co temporal aug, da ghi la han che tu Phase 0.
-  4. Cho phep GOP DA CUA SO luc test (giong --test_num_segment cua cong thuc goc).
+This version fixes FOUR recorded shortcomings AT ONCE:
+  1. Matches the pretraining domain: each window = 16 frames x sr4 = 2,1s (exactly as DFEW).
+  2. Uses 80/300 frames instead of 16/300 - 5 times more temporal information.
+  3. Allows TEMPORAL AUGMENTATION during training (each epoch picks 1 of the 5 windows at
+     random) - until now the frames were fixed, so there was NO temporal aug, recorded as a
+     limitation since Phase 0.
+  4. Allows MULTI-WINDOW POOLING at test time (like --test_num_segment of the original recipe).
 
-Dau ra: ~/p2/faces5/<Split>_X.npy [N,5,16,160,160,3] uint8, <Split>_ids.npy.
-Kich thuoc: Train 33,7GB + Val 10,6GB + Test 11,5GB = 55,8GB (con 112GB trong).
+Output: ~/p2/faces5/<Split>_X.npy [N,5,16,160,160,3] uint8, <Split>_ids.npy.
+Size: Train 33,7GB + Val 10,6GB + Test 11,5GB = 55,8GB (112GB still free).
 
-Chay: ~/p2/venv/bin/python p2_extract_multi.py <Split> [--limit N]
+Run: ~/p2/venv/bin/python p2_extract_multi.py <Split> [--limit N]
 """
 import os
 import sys
@@ -26,7 +28,7 @@ import cv2
 import numpy as np
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from p2_extract_faces import center_square, clip_bbox  # dung lai y het logic bbox
+from p2_extract_faces import center_square, clip_bbox  # reuse exactly the same bbox logic
 
 ROOT = Path(os.environ.get("DAISEE_ROOT", os.path.expanduser("~/daisee")))
 OUT = Path(os.path.expanduser("~/p2/faces5"))
@@ -34,11 +36,11 @@ N_WIN, N_FRAMES, SR, SIZE = 5, 16, 4, 160
 
 
 def window_starts(n):
-    """5 diem bat dau phu deu clip; moi cua so trai dai span = 16*sr khung."""
+    """5 start points spread evenly over the clip; each window spans span = 16*sr frames."""
     span = N_FRAMES * SR
     if n >= span:
         return np.linspace(0, n - span, N_WIN).astype(int), SR
-    # clip qua ngan: giam sr de cua so van nam gon trong clip
+    # clip too short: reduce sr so that the window still fits inside the clip
     sr = max(1, n // N_FRAMES)
     return np.zeros(N_WIN, dtype=int), sr
 
@@ -77,7 +79,7 @@ def decode(args):
     if not got:
         return None
 
-    # pad ben: khung thieu -> lay khung da giai ma gan nhat
+    # tolerant padding: missing frame -> take the nearest decoded frame
     keys = np.array(sorted(got))
     out = np.empty((N_WIN, N_FRAMES, SIZE, SIZE, 3), dtype=np.uint8)
     for a, wn in enumerate(wins):
@@ -102,7 +104,7 @@ def main():
         for c, arr in zip(clips, pool.imap(decode, jobs, chunksize=4)):
             if arr is None:
                 continue
-            if mm is None:  # ghi thang ra memmap, khong giu 34GB trong RAM
+            if mm is None:  # write straight to the memmap, do not hold 34GB in RAM
                 mm = np.lib.format.open_memmap(
                     OUT / f"{split}_X.npy", mode="w+", dtype=np.uint8,
                     shape=(len(clips), N_WIN, N_FRAMES, SIZE, SIZE, 3))
@@ -112,7 +114,7 @@ def main():
                 print(f"  {len(ids)}/{len(clips)}", flush=True)
     mm.flush()
     del mm
-    # cat bot phan du neu co clip hong
+    # trim the excess if any clip was broken
     if len(ids) < len(clips):
         full = np.load(OUT / f"{split}_X.npy", mmap_mode="r")
         np.save(OUT / f"{split}_X_tmp.npy", np.asarray(full[:len(ids)]))

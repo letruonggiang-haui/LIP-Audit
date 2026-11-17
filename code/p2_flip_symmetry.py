@@ -1,18 +1,18 @@
-"""Kiem dinh bo sung theo dot phan bien noi bo truoc khi nop bai (Major 1): gia dinh feature-independence
-cua mo hinh flip-rate Eq.(1).
+"""Additional check from the internal review round before submission (Major 1): the
+feature-independence assumption of the flip-rate model Eq.(1).
 
-Cau hoi: cac cap clip lien ke (gap-1, cung phien, ca hai muc >=2) BAT DONG nhan
-co khac biet he thong ve hanh vi quan sat duoc (17 AU intensity + pose 3 + gaze 2,
-trung binh theo thoi gian, z-score theo split) so voi cap DONG THUAN khong?
+Question: do adjacent clip pairs (gap-1, same session, both at level >=2) that DISAGREE in
+label differ systematically in observable behaviour (17 AU intensity + pose 3 + gaze 2,
+time-averaged, z-scored within split) from pairs that AGREE?
 
-- Neu khong phat hien khac biet -> ho tro doc "flip khong gan voi thay doi nhin thay"
-  (nhat quan voi gia dinh doc lap dac trung cua Eq. 1).
-- Neu co khac biet -> flip di kem thay doi hanh vi that -> doc "state dynamics" (r>0),
-  da duoc chan boi duong nhay cam q(r) trong bai.
-Ca hai chieu deu duoc bao cao trung thuc. Chi dung nhan cong khai + seq npz co san;
-KHONG phai danh gia mo hinh (khong cham giao thuc sealed test).
+- If no difference is detected -> supports the reading "flips are not tied to visible change"
+  (consistent with the feature-independence assumption of Eq. 1).
+- If there is a difference -> flips come with real behavioural change -> the "state dynamics"
+  reading (r>0), which is already bounded by the sensitivity curve q(r) in the paper.
+Both directions are reported faithfully. Uses only the public labels + the existing seq npz;
+NOT a model evaluation (does not touch the sealed-test protocol).
 
-Chay: ~/p2/venv/bin/python p2_flip_symmetry.py
+Run: ~/p2/venv/bin/python p2_flip_symmetry.py
 """
 import os
 import numpy as np
@@ -35,7 +35,7 @@ def load_split(split):
     X = X[keep]
     ids = [ids[i] for i in keep]
     y = np.array([ymap[s] for s in ids])
-    # dac trung clip: trung binh thoi gian roi z-score tung chieu trong split
+    # clip features: time average, then z-score each dimension within the split
     F = np.nanmean(X, axis=1)
     F = (F - np.nanmean(F, 0)) / (np.nanstd(F, 0) + 1e-9)
     return F, ids, y
@@ -60,7 +60,7 @@ def analyze(split):
     na, nd = len(d_agree), len(d_dis)
     diff = d_dis.mean() - d_agree.mean()
     pooled_sd = np.concatenate([d_agree, d_dis]).std()
-    # hoan vi nhan agree/disagree
+    # permute the agree/disagree labels
     allv = np.concatenate([d_agree, d_dis])
     perm = np.empty(B)
     for i in range(B):

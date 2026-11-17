@@ -1,5 +1,5 @@
 #!/bin/bash
-# 4a: 3 seed w5 + merge_val, tuan tu. Checkpoint chinh thuc = last.pth (dang ky truoc).
+# 4a: 3 seeds w5 + merge_val, sequential. Official checkpoint = last.pth (pre-registered).
 cd ~/p2/code
 rm -f ~/p2/runs/W5M_SEEDS_DONE
 for s in 0 1 2; do

@@ -1,16 +1,18 @@
-"""P2 giai doan 3 — huan luyen tren 5 cua so x 16 khung sr4 (khop domain pretraining).
+"""P2 stage 3 - training on 5 windows x 16 frames sr4 (matching the pretraining domain).
 
-Khac ban truoc o DUNG BA cho, tat ca deu la thieu sot da ghi nhan:
-  1. Du lieu `faces5`: moi clip co 5 cua so 2,1s (dung nhu DFEW pretrain) thay vi 16 khung
-     trai deu 10s. Dung 80/300 khung thay vi 16/300.
-  2. TANG CUONG THOI GIAN luc train: moi lan lay mau chon NGAU NHIEN 1 trong 5 cua so.
-     Truoc gio khung co dinh -> khong co temporal aug (han che ghi tu Phase 0).
-  3. GOP DA CUA SO luc eval: chay ca 5 cua so, trung binh XAC SUAT (giong test_num_segment).
+Differs from the previous version in EXACTLY THREE places, all of them recorded shortcomings:
+  1. Data `faces5`: each clip has 5 windows of 2,1s (exactly as in DFEW pretraining) instead
+     of 16 frames spread over 10s. Uses 80/300 frames instead of 16/300.
+  2. TEMPORAL AUGMENTATION during training: each sample picks 1 of the 5 windows AT RANDOM.
+     Until now the frames were fixed -> no temporal aug (limitation recorded since Phase 0).
+  3. MULTI-WINDOW POOLING at eval: run all 5 windows, average the PROBABILITIES (like
+     test_num_segment).
 
-Bao cao them **AUC muc 2 vs muc 3** — day moi la truc quyet dinh accuracy cua bang chuan
-(95% du lieu nam o muc 2,3), chi so ma toan bo du an truoc day khong theo doi.
+Also reports **AUC level 2 vs level 3** - this is the axis that actually decides accuracy on
+the standard benchmark (95% of the data is at levels 2,3), a metric the whole project had not
+tracked before.
 
-Chay: p2_train_v7.py --seed 0 --out ~/p2/runs/w5_s0
+Run: p2_train_v7.py --seed 0 --out ~/p2/runs/w5_s0
 """
 import argparse
 import json
@@ -34,7 +36,7 @@ FACES5 = Path(os.path.expanduser("~/p2/faces5"))
 
 
 class Clips5(torch.utils.data.Dataset):
-    """X la [N,5,16,160,160,3]. train: chon ngau nhien 1 cua so. eval: tra ca 5."""
+    """X is [N,5,16,160,160,3]. train: pick 1 window at random. eval: return all 5."""
 
     def __init__(self, split, train_aug):
         self.X = np.load(FACES5 / f"{split}_X.npy", mmap_mode="r")
@@ -70,7 +72,7 @@ class Clips5(torch.utils.data.Dataset):
     def __getitem__(self, k):
         i, _ = self.rows[k]
         if self.train_aug:
-            w = random.randrange(self.X.shape[1])          # tang cuong thoi gian
+            w = random.randrange(self.X.shape[1])          # temporal augmentation
             return self._prep(self.X[i, w], True), self.y[k]
         xs = torch.stack([self._prep(self.X[i, w], False) for w in range(self.X.shape[1])])
         return xs, self.y[k]                                # [5,C,T,H,W]
@@ -78,7 +80,7 @@ class Clips5(torch.utils.data.Dataset):
 
 @torch.no_grad()
 def evaluate5(model, ds, dev, batch):
-    """Chay ca 5 cua so, trung binh xac suat. Bao cao them AUC muc2-vs-muc3."""
+    """Run all 5 windows, average the probabilities. Also reports AUC level2-vs-level3."""
     model.eval()
     dl = torch.utils.data.DataLoader(ds, batch_size=batch, shuffle=False,
                                      num_workers=6, pin_memory=True)
@@ -96,7 +98,7 @@ def evaluate5(model, ds, dev, batch):
     rec = [float((pred[y == c] == c).mean()) for c in np.unique(y)]
     dis = (y <= 1).astype(int)
     m23 = y >= 2
-    # AUC muc 3 vs muc 2 tren rieng phan du lieu muc>=2 — truc quyet dinh bang chuan
+    # AUC level 3 vs level 2 on the level>=2 data only - deciding axis of the standard benchmark
     auc23 = float(roc_auc_score((y[m23] == 3).astype(int),
                                 (p[m23, 3] / (p[m23, 2] + p[m23, 3] + 1e-9))))
     model.train()
@@ -168,8 +170,8 @@ def main():
                 opt.step()
                 opt.zero_grad(set_to_none=True)
                 gstep += 1
-        # eval nap 5 cua so/clip -> batch hieu dung gap 5. Chia 4 de giu VRAM ~5GB
-        # (GPU dung chung, job nguoi khac ~13GB; da OOM mot lan vi khong tinh cho nay).
+        # eval loads 5 windows/clip -> the effective batch is 5x. Divide by 4 to keep VRAM ~5GB
+        # (shared GPU, another user's job ~13GB; went OOM once by not accounting for this).
         m = evaluate5(model, va, dev, max(1, args.batch // 4))
         rec = dict(ep=ep, loss=float(np.mean(losses)), mins=round((time.time() - t0) / 60, 1), **m)
         print(json.dumps(rec), flush=True)

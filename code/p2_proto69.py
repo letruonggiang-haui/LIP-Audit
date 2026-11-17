@@ -1,14 +1,17 @@
-"""Do prototype classifier 69 LOP (nearest-class-mean, leave-one-out) tren embedding cache.
+"""Measure a 69-CLASS prototype classifier (nearest-class-mean, leave-one-out) on the
+embedding cache.
 
-Ly do: `proto_top1` ghi trong log train la bai toan 4 LOP (P=4 prototype moi batch), khong
-so truc tiep duoc voi adversary top-1 (69 lop) hay identity-probe (69/88 lop). Bang xuong
-song cua bai phai dung chung so lop. Script nay cho ra con so 69 lop cua CHINH dai luong
-ma phat toi uu hoa -> hang thu 3 cua bang so sanh duoc voi hai hang dau.
+Why: `proto_top1` recorded in the training log is a 4-CLASS problem (P=4 prototypes per
+batch), not directly comparable with the adversary top-1 (69 classes) or the identity-probe
+(69/88 classes). The paper's backbone table must use the same number of classes. This script
+gives the 69-class number for the VERY quantity that the penalty optimises -> the 3rd row of
+the table becomes comparable with the first two rows.
 
-Chuan hoa tung chieu bang thong ke pool (giong het ham phat chuan hoa bang thong ke batch).
-CPU-only, doc cache z co san.
+Each dimension is standardised with pool statistics (exactly as the penalty standardises with
+batch statistics).
+CPU-only, reads the existing z cache.
 
-Chay: ~/p2/venv/bin/python p2_proto69.py --z ~/p2/probe/proto2_s0_best_acc_late_z.npz
+Run: ~/p2/venv/bin/python p2_proto69.py --z ~/p2/probe/proto2_s0_best_acc_late_z.npz
 """
 import argparse
 import os
@@ -33,14 +36,14 @@ def main():
     keep = np.array([s not in val_subjects for s in subj])
     z, subj = z[keep].astype(np.float64), subj[keep]
 
-    z = (z - z.mean(0)) / (z.std(0) + 1e-5)  # giong chuan hoa trong ham phat
+    z = (z - z.mean(0)) / (z.std(0) + 1e-5)  # same as the standardisation inside the penalty
     subs = np.unique(subj)
     idx = {s: np.where(subj == s)[0] for s in subs}
     sums = np.stack([z[idx[s]].sum(0) for s in subs])
     cnts = np.array([len(idx[s]) for s in subs], dtype=np.float64)
     lab = np.array([np.where(subs == s)[0][0] for s in subj])
 
-    # leave-one-out: tru chinh anchor khoi prototype cua lop no
+    # leave-one-out: remove the anchor itself from its own class prototype
     hits = 0
     for i in range(len(z)):
         S, C = sums.copy(), cnts.copy()

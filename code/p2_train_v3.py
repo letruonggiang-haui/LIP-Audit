@@ -1,26 +1,28 @@
-"""P2 vong 3 — bat bien danh tinh bang PHAT TACH BIET DANG DONG (khong adversary).
+"""P2 round 3 - identity invariance through a CLOSED-FORM SEPARABILITY PENALTY (no adversary).
 
-Ly do bo adversary (bang chung 14/08, xem NHAT_KY_P2.md): 6/6 cau hinh GRL that bai.
-Adversary bi day ve chance (top-1 .0213 tren chinh clip train, 1.47x chance; dau ra sup
-ve 11/69 lop) NHUNG probe tuyen tinh huan luyen lai doc danh tinh .959 tren clip held-out
-cung 69 lop. Backbone chi danh bai BO THAM SO HIEN THOI cua adversary. => Bo han ho
-adversary huan luyen chung; dung phat tinh trong dong dang dong, khong co tham so de lua.
+Why the adversary was dropped (evidence 14/08, see NHAT_KY_P2.md): 6/6 GRL configurations
+failed. The adversary was pushed to chance (top-1 .0213 on its own train clips, 1.47x chance;
+its output collapsed onto 11/69 classes) BUT a retrained linear probe reads identity at .959 on
+held-out clips of the same 69 classes. The backbone only defeats the adversary's CURRENT
+PARAMETER SET. => Drop the jointly trained adversary family entirely; use a penalty computed in
+closed form, with no parameters to fool.
 
-Co che: LDA-style separability. Voi batch P doi tuong x K clip, embedding z:
-  S_b = mean_s ||mu_s - mu||^2      (tan xa GIUA doi tuong — chinh la thu probe khai thac)
-  S_w = mean_s mean_{i in s} ||z_i - mu_s||^2   (tan xa TRONG doi tuong)
-  L_id = S_b / (S_w + eps)          -> toi thieu hoa
-Chia cho S_w chan nghiem tam thuong "co cum toan bo" (thu nho moi thu thi ca hai cung
-giam, ti so khong loi); CE engagement giu tin hieu nhiem vu.
+Mechanism: LDA-style separability. For a batch of P subjects x K clips, embedding z:
+  S_b = mean_s ||mu_s - mu||^2      (BETWEEN-subject scatter - exactly what the probe exploits)
+  S_w = mean_s mean_{i in s} ||z_i - mu_s||^2   (WITHIN-subject scatter)
+  L_id = S_b / (S_w + eps)          -> minimise
+Dividing by S_w blocks the trivial solution "collapse everything" (shrinking everything lowers
+both, so the ratio gains nothing); the engagement CE keeps the task signal.
 
-BAT BUOC sampler P x K: batch 8 tren 69 doi tuong => hau het clip la mot doi tuong rieng,
-S_w uoc luong tu ~1 mau => phat chi la nhieu. Sampler duoi day dam bao K clip/doi tuong.
+P x K sampler is MANDATORY: batch 8 over 69 subjects => most clips are a subject on their own,
+S_w is estimated from ~1 sample => the penalty is just noise. The sampler below guarantees K
+clips/subject.
 
-Tieu chi thanh cong (KHONG phai "identity giam" don thuan): official-AUC do DUOI centering
-giu vung trong khi identity-probe giam. Moi cau hinh tu truoc toi nay deu day identity giam
-mot chut va tin hieu nhiem vu giam nhieu — sai huong.
+Success criterion (NOT simply "identity goes down"): official-AUC measured UNDER centering
+holds steady while identity-probe goes down. Every configuration so far has pushed identity
+down a little and the task signal down a lot - the wrong direction.
 
-Chay: p2_train_v3.py --seed 0 --lambda_id 1.0 --pk_p 4 --pk_k 4 --out ~/p2/runs/idsep10_s0
+Run: p2_train_v3.py --seed 0 --lambda_id 1.0 --pk_p 4 --pk_k 4 --out ~/p2/runs/idsep10_s0
 """
 import argparse
 import json
@@ -37,7 +39,7 @@ from p2_train import Clips, P2Model, evaluate, load_pretrained
 
 
 class PKSampler(torch.utils.data.Sampler):
-    """Moi batch: P doi tuong x K clip. Bo qua doi tuong co < K clip trong vong do."""
+    """Each batch: P subjects x K clips. Skips subjects with < K clips in that pass."""
 
     def __init__(self, subjects, p, k, seed=0):
         self.by_subj = {}
@@ -68,7 +70,7 @@ class PKSampler(torch.utils.data.Sampler):
 
 
 def identity_separability(z, ys):
-    """S_b / S_w tren batch. z [B,D] float32, ys [B] subject index."""
+    """S_b / S_w on the batch. z [B,D] float32, ys [B] subject index."""
     z = z.float()
     uniq = torch.unique(ys)
     mus, within = [], []
@@ -122,7 +124,7 @@ def main():
     lv = torch.utils.data.DataLoader(va, batch_size=batch, shuffle=False,
                                      num_workers=4, pin_memory=True)
 
-    model = P2Model(n_subj=2)  # subj_head khong dung, giu de tuong thich p2_probe
+    model = P2Model(n_subj=2)  # subj_head unused, kept for compatibility with p2_probe
     load_pretrained(model)
     model = model.to(dev).train()
 
@@ -153,7 +155,7 @@ def main():
             with torch.autocast("cuda", dtype=torch.bfloat16):
                 le, _, z = model(x)
                 loss_e = F.cross_entropy(le, y)
-            s = identity_separability(z, ys)  # float32 ngoai autocast cho on dinh
+            s = identity_separability(z, ys)  # float32 outside autocast for stability
             loss = loss_e + lam * s
             (loss / args.accum).backward()
             losses.append(loss_e.item())

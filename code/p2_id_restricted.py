@@ -1,11 +1,12 @@
-"""Identity-probe GIOI HAN tren 69 doi tuong Train — de cung khong gian nhan voi adversary.
+"""Identity-probe RESTRICTED to the 69 Train subjects - to share the adversary's label space.
 
-Ly do: adversary phan loai 69 doi tuong Train (chance .0145) tren clip Train; identity-probe
-mac dinh chay tren pool Train+Val = 88 doi tuong (chance .0114). So truc tiep hai con so la
-so lech khong gian nhan. Script nay chay probe tren DUNG 69 doi tuong Train, dung clip Train,
-split 75/25 trong tung doi tuong -> so sanh chinh danh voi top-1 cua adversary.
+Why: the adversary classifies 69 Train subjects (chance .0145) on Train clips; the identity-probe
+by default runs on the Train+Val pool = 88 subjects (chance .0114). Comparing the two numbers
+directly compares mismatched label spaces. This script runs the probe on EXACTLY the 69 Train
+subjects, using Train clips, split 75/25 within each subject -> a legitimate comparison with
+the adversary's top-1.
 
-CPU-only, doc cache z co san. Chay:
+CPU-only, reads the existing z cache. Run:
   ~/p2/venv/bin/python p2_id_restricted.py --z ~/p2/probe/mlp025_s0_last_z.npz
 """
 import argparse

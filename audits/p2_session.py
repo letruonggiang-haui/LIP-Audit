@@ -1,12 +1,12 @@
-"""Nguon tin hieu cuoi cung chua do: NGU CANH PHIEN.
+"""The last signal source not yet measured: SESSION CONTEXT.
 
-Clip 10s cua DAiSEE cat tu phien quay dai (ID = subj6 + phien1 + thutu3). Engagement
-la trang thai bien doi cham -> nhan clip lien ke tu tuong quan? Neu co, smoothing
-diem qua lang gieng trong CUNG phien la mo diem chua ai khai thac (moi mo hinh,
-ke ca SOTA, xu ly tung clip doc lap).
+DAiSEE 10s clips are cut from long recording sessions (ID = subj6 + session1 + order3).
+Engagement is a slowly changing state -> are the labels of adjacent clips autocorrelated?
+If so, smoothing scores over neighbours in the SAME session is a source of gains nobody
+has exploited yet (every model, SOTA included, processes each clip independently).
 
-Phat trien tren Val (w5_s0 Train-only, held-out sach); xac nhan MOT lan tren
-xac suat Test da dump (hau nghiem, khong forward Test them).
+Developed on Val (w5_s0 Train-only, clean held-out); confirmed ONCE on the dumped Test
+probabilities (post hoc, no further Test forward pass).
 """
 import os
 
@@ -33,13 +33,13 @@ def analyze(P, y, ids, name):
     order = np.array([int(s[7:]) for s in ids])
     print(f'\n===== {name}: n={len(y)}, {len(np.unique(sess))} phien =====')
 
-    # 1. TU TUONG QUAN NHAN giua clip lien ke trong cung phien (truc 2/3 va 4 muc)
+    # 1. LABEL AUTOCORRELATION between adjacent clips in the same session (2/3 axis and 4 levels)
     agree23, agree4, gap1 = [], [], 0
     for s in np.unique(sess):
         k = np.where(sess == s)[0]
         k = k[np.argsort(order[k])]
         for a, b in zip(k[:-1], k[1:]):
-            if order[b] - order[a] <= 2:               # lien ke (cho phep thieu 1 clip)
+            if order[b] - order[a] <= 2:               # adjacent (one missing clip allowed)
                 gap1 += 1
                 agree4.append(y[a] == y[b])
                 if y[a] >= 2 and y[b] >= 2:
@@ -49,7 +49,7 @@ def analyze(P, y, ids, name):
     print('cap lien ke: %d | dong nhan 4-muc %.3f | dong nhan 2/3 %.3f (san doan da so %.3f)'
           % (gap1, np.mean(agree4), np.mean(agree23), base23))
 
-    # 2. SMOOTHING xac suat qua lang gieng cung phien: P'_i = (1-w)P_i + w*TB(hang xom)
+    # 2. SMOOTHING probabilities over same-session neighbours: P'_i = (1-w)P_i + w*mean(neighbours)
     t = (y[m] == 3).astype(int)
     pred0 = P.argmax(1)
     print('goc      : acc %.4f | AUC23 %.4f' % ((pred0 == y).mean(),
@@ -72,7 +72,7 @@ def analyze(P, y, ids, name):
             print('W=%d w=%.1f: acc %.4f | AUC23 %.4f' % (W, w, (pred == y).mean(),
                   roc_auc_score(t, s23)))
 
-    # 3. TRAN: oracle "nhan da so cua phien" (transductive oracle, chi de biet gioi han)
+    # 3. CEILING: oracle "session majority label" (transductive oracle, only to know the limit)
     accs = 0
     for s in np.unique(sess):
         k = sess == s

@@ -1,5 +1,5 @@
 #!/bin/bash
-# Bound seed noise cua AUC23 trong ho 16-khung: quy tac 'last.pth' ap chung.
+# Bound the seed noise of AUC23 in the 16-frame family: the 'last.pth' rule applied to all.
 cd ~/p2/code
 PY=~/p2/venv/bin/python
 rm -f ~/p2/runs/NOISE23_DONE

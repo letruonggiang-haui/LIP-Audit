@@ -39,7 +39,7 @@ def save(fig, name):
     print("saved", name)
 
 
-# ---------- Fig 2 trong bai: Audit 1 dot plot (Table 2) ----------
+# ---------- Fig 2 in the paper: Audit 1 dot plot (Table 2) ----------
 fig, ax = plt.subplots(figsize=(3.45, 1.95))
 # intervals from the deposited script code/p7_audit1_daisee.py (25/09/2026)
 rows = {"Validation": (0.580, 0.541, 0.644, (0.536, 0.628)), "Test": (0.527, 0.501, 0.520, (0.493, 0.561))}
@@ -117,16 +117,16 @@ ax.legend(frameon=False, ncol=1, loc="lower right", bbox_to_anchor=(1.0, 1.0),
           handletextpad=0.4, fontsize=8.5)
 save(fig, "figC_identity")
 
-# ---------- Fig 4: transfer slope (IV-E) — thiet ke lai ----------
+# ---------- Fig 4: transfer slope (IV-E) - redesigned ----------
 fig, ax = plt.subplots(figsize=(3.6, 2.5))
-# AUC_dis: tang (xanh duong)
+# AUC_dis: rises (blue)
 ax.plot([0, 1], [0.71, 0.76], "-", color=BLUE, linewidth=2.6, zorder=2,
         solid_capstyle="round")
 ax.plot([0, 1], [0.71, 0.76], "s", mfc=BLUE, mec="white", mew=1.0, ms=9, zorder=3)
 ax.errorbar(1, 0.76, yerr=[[0.76-0.644], [0.839-0.76]], color=BLUE, capsize=4, elinewidth=1.4, capthick=1.4, zorder=2, alpha=0.8)
 ax.errorbar(0, 0.71, yerr=[[0.01], [0.01]], color=BLUE, capsize=4,
             elinewidth=1.6, capthick=1.6, zorder=2)
-# AUC_23: sup (do cam)
+# AUC_23: collapses (red-orange)
 ax.plot([0, 1], [0.68, 0.60], "-", color=VERM, linewidth=2.6, zorder=2,
         solid_capstyle="round")
 ax.plot([0, 1], [0.68, 0.60], "o", mfc=VERM, mec="white", mew=1.0, ms=9, zorder=3)
@@ -135,7 +135,7 @@ ax.errorbar(1, 0.60, yerr=[[0.60-0.548], [0.656-0.60]], color=VERM, capsize=4, e
 # the same variability definition as the AUC_dis validation whisker (.70-.72);
 # test whiskers = subject-clustered 95% intervals of Table 7
 ax.errorbar(0, 0.68, yerr=[[0.68-0.679], [0.682-0.68]], color=VERM, capsize=4, elinewidth=1.4, capthick=1.4, zorder=2, alpha=0.8)
-# nhan truc tiep hai dau mut
+# direct labels at the two endpoints
 ax.text(-0.09, 0.71, "0.70–0.72", ha="right", va="center", fontsize=8.5, color=BLUE,
         bbox=LBOX, zorder=4)
 ax.text(-0.09, 0.68, "0.68", ha="right", va="center", fontsize=8.5, color=VERM,

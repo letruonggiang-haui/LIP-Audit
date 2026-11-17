@@ -1,12 +1,12 @@
-"""MO NIEM PHONG TEST — MOT LAN DUY NHAT. Chi chay khi tac gia da gat dau.
+"""UNSEALING THE TEST SET - ONCE ONLY. Run only after the author has approved.
 
-Giao thuc dang ky truoc (nhat ky 19/08):
-- 3 checkpoint w5m_s{0,1,2}/last.pth (Train+Val, 20 epoch co dinh, KHONG chon theo Val).
-- Bao cao TUNG seed + ensemble trung binh xac suat.
-- Chi so: acc 4 muc (bang chuan), UAR, macro-F1, AUC_dis, AUC23, recall tung lop,
-  canh base rate Test .494.
-- Doi chieu: Abedi & Khan 63,9% (Train+Val, giao thuc KHOP); Selim 67,48% (Train-only).
-- Ket qua tung clip dump ra npz de kiem tra lai — Test chi duoc cham MOT lan.
+Pre-registered protocol (log 19/08):
+- 3 checkpoints w5m_s{0,1,2}/last.pth (Train+Val, fixed 20 epochs, NOT selected on Val).
+- Report EACH seed + the ensemble averaging probabilities.
+- Metrics: 4-level acc (standard benchmark), UAR, macro-F1, AUC_dis, AUC23, per-class recall,
+  beside the Test base rate .494.
+- For comparison: Abedi & Khan 63,9% (Train+Val, MATCHED protocol); Selim 67,48% (Train-only).
+- Per-clip results dumped to npz for re-checking - Test is touched only ONCE.
 """
 import json
 import os

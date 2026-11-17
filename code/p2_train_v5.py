@@ -1,21 +1,25 @@
-"""P2 vong 5 — prototype-confusion TOAN CUC (69 doi tuong) qua memory bank EMA.
+"""P2 round 5 - GLOBAL prototype-confusion (69 subjects) through an EMA memory bank.
 
-Bai hoc vong 4 (NHAT_KY_P2.md 14/08): phat prototype 4 lop (chi cac doi tuong CO MAT trong
-batch) dat chance o 4 lop (.266 vs .25) nhung dai luong TUONG UNG o 69 lop lai .7898 —
-CAO HON ca run chung khong phat (.7436). Mo hinh lam lan 4 doi tuong ngau nhien trong batch
-ma khong dong toi cau truc toan cuc. => Loi la PHAM VI, khong phai co che.
+Lesson from round 4 (NHAT_KY_P2.md 14/08): the 4-class prototype penalty (only the subjects
+PRESENT in the batch) reached chance on 4 classes (.266 vs .25) but the CORRESPONDING quantity
+on 69 classes was .7898 - HIGHER than even the control run without the penalty (.7436). The
+model confused the 4 random subjects in the batch without touching the global structure. =>
+The flaw is SCOPE, not mechanism.
 
-Vong 5: giu nguyen prototype-confusion (khong tham so, bat bien ti le) nhung tinh tren
-TOAN BO 69 prototype:
-  - Memory bank M [69, D] cap nhat EMA tu embedding da chuan hoa cua moi batch (detach).
-  - Anchor i so voi ca 69 prototype; prototype cua chinh doi tuong anchor dung ban EMA
-    (khong chua z_i vi bank da detach va cap nhat SAU khi tinh loss) -> khong can LOO.
-  - logit = -(||z_n - M_t||^2 / D) / tau ; phat = CE ve phan bo DEU tren 69 lop.
-Bank chi cap nhat bang thong ke da detach nen khong tao duong gradient vong lai.
+Round 5: keep prototype-confusion (parameter-free, scale-invariant) but compute it over ALL
+69 prototypes:
+  - Memory bank M [69, D] updated by EMA from the standardised embeddings of each batch (detach).
+  - Anchor i is compared with all 69 prototypes; the prototype of the anchor's own subject uses
+    the EMA copy (it does not contain z_i since the bank is detached and updated AFTER the loss
+    is computed) -> no LOO needed.
+  - logit = -(||z_n - M_t||^2 / D) / tau ; penalty = CE towards the UNIFORM distribution over
+    69 classes.
+The bank is updated only with detached statistics, so no gradient loop is created.
 
-Warmup: 3 epoch dau lam=0 nhung VAN cap nhat bank (de bank da hoi tu truoc khi phat bat).
+Warmup: first 3 epochs lam=0 but the bank is STILL updated (so that the bank has converged
+before the penalty switches on).
 
-Chay: p2_train_v5.py --seed 0 --lambda_id 2 --out ~/p2/runs/gproto2_s0
+Run: p2_train_v5.py --seed 0 --lambda_id 2 --out ~/p2/runs/gproto2_s0
 """
 import argparse
 import json
@@ -33,7 +37,7 @@ from p2_train_v3 import PKSampler
 
 
 class GlobalProtoBank:
-    """Memory bank EMA cho 69 prototype, tren khong gian da chuan hoa tung chieu."""
+    """EMA memory bank for 69 prototypes, in the per-dimension standardised space."""
 
     def __init__(self, n_subj, dim, momentum=0.9, dev="cuda"):
         self.M = torch.zeros(n_subj, dim, device=dev)
@@ -52,24 +56,24 @@ class GlobalProtoBank:
 
 
 def global_confusion(z, ys, bank, tau=0.5, eps=1e-5):
-    """Phat CE-ve-deu tren TOAN BO prototype da thay. Tra ve (loss, top1_69lop)."""
+    """CE-to-uniform penalty over ALL prototypes seen so far. Returns (loss, 69-class top-1)."""
     z = z.float()
     z_n = (z - z.mean(0, keepdim=True)) / (z.std(0, keepdim=True) + eps)
     if bank.seen.sum() < 2:
         bank.update(z_n.detach(), ys)
         return z.new_zeros(()), 0.0
-    idx = bank.seen.nonzero().squeeze(1)              # cac lop da co prototype
+    idx = bank.seen.nonzero().squeeze(1)              # classes that already have a prototype
     M = bank.M[idx]                                    # [S,D]
     d = z_n.shape[1]
     dist2 = ((z_n.unsqueeze(1) - M.unsqueeze(0)) ** 2).sum(-1) / d
     logits = -dist2 / tau
-    loss = -F.log_softmax(logits, dim=-1).mean()       # toi thieu khi deu tren S lop
+    loss = -F.log_softmax(logits, dim=-1).mean()       # minimal when uniform over the S classes
     pos = torch.full((len(ys),), -1, device=z.device, dtype=torch.long)
     for k, s in enumerate(idx):
         pos[ys == s] = k
     valid = pos >= 0
     top1 = float((logits.argmax(-1)[valid] == pos[valid]).float().mean()) if valid.any() else 0.0
-    bank.update(z_n.detach(), ys)                      # cap nhat SAU khi tinh loss
+    bank.update(z_n.detach(), ys)                      # update AFTER computing the loss
     return loss, top1
 
 

@@ -1,16 +1,17 @@
-"""Danh gia MOT checkpoint bat ky tren Validation, bao cao day du KE CA auc23.
+"""Evaluate ONE checkpoint (any) on Validation, reporting everything INCLUDING auc23.
 
-Ly do ton tai: con so 2-vs-3 cua cac model CU (.595/.598) do bang PROBE TUYEN TINH tren
-embedding; con `auc23` cua `p2_train_v7.py` do bang CHINH DAU PHAN LOAI cua model. Hai cach
-do khac nhau -> so truc tiep la sai. Script nay tinh auc23 **bang dau phan loai** cho ca hai
-loai model, tren cung tap Validation, de phep so la chinh danh.
+Why it exists: the 2-vs-3 numbers of the OLD models (.595/.598) were measured with a LINEAR
+PROBE on the embedding; the `auc23` of `p2_train_v7.py` is measured with the model's OWN
+CLASSIFIER HEAD. The two measurements differ -> comparing them directly is wrong. This script
+computes auc23 **with the classifier head** for both kinds of model, on the same Validation
+set, so that the comparison is legitimate.
 
-  --data faces   : bo cu [N,16,...]        (1 view)
-  --data faces5  : bo moi [N,5,16,...]     (trung binh 5 cua so)
+  --data faces   : old set [N,16,...]      (1 view)
+  --data faces5  : new set [N,5,16,...]    (mean over 5 windows)
 
-Test VAN NIEM PHONG.
+Test STAYS SEALED.
 
-Chay: p2_eval_auc23.py --ckpt ~/p2/runs/crudetta_s0/best_auc.pth --data faces
+Run: p2_eval_auc23.py --ckpt ~/p2/runs/crudetta_s0/best_auc.pth --data faces
 """
 import argparse
 import os
@@ -66,7 +67,7 @@ def main():
     ps, ys = [], []
     for batch in dl:
         x, y = batch[0], batch[1]
-        if args.data == "faces5":                       # [B,5,C,T,H,W] -> trung binh 5 view
+        if args.data == "faces5":                       # [B,5,C,T,H,W] -> mean over 5 views
             B, W = x.shape[0], x.shape[1]
             xx = x.reshape(B * W, *x.shape[2:]).to(dev, non_blocking=True)
             with torch.autocast("cuda", dtype=torch.bfloat16):

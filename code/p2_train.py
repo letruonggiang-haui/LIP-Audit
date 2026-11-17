@@ -1,13 +1,13 @@
-"""P2 — fine-tune MAE-DFER tren DAiSEE engagement 4 muc, official split.
+"""P2 - fine-tune MAE-DFER on 4-level DAiSEE engagement, official split.
 
 Phase 1 (baseline):  p2_train.py --seed 0 --out ~/p2/runs/base_s0
 Phase 2 (GRL):       p2_train.py --seed 0 --lambda_grl 0.5 --out ~/p2/runs/grl05_s0
 
 - Backbone: vit_base_dim512_no_depth_patch16_160 (LGI-Former, depth 16), init fold1.pth.
-- Dau engagement 4 muc (CE); dau subject (chi train split) qua gradient reversal khi
-  lambda_grl > 0. Bao cao: acc 4 muc, UAR, macro-F1, AUC disengagement (p0+p1).
-- Du lieu: ~/p2/faces/<Split>_X.npy (uint8 [N,16,160,160,3], memmap) tu p2_extract_faces.py.
-- Test KHONG duoc cham trong script nay (chi Train/Validation).
+- 4-level engagement head (CE); subject head (train split only) through gradient reversal when
+  lambda_grl > 0. Reports: 4-level acc, UAR, macro-F1, AUC disengagement (p0+p1).
+- Data: ~/p2/faces/<Split>_X.npy (uint8 [N,16,160,160,3], memmap) from p2_extract_faces.py.
+- Test is NOT touched in this script (Train/Validation only).
 """
 import argparse
 import json
@@ -33,7 +33,7 @@ MEAN = torch.tensor([0.485, 0.456, 0.406]).view(3, 1, 1, 1)
 STD = torch.tensor([0.229, 0.224, 0.225]).view(3, 1, 1, 1)
 
 
-# ---------------------------------------------------------------- du lieu
+# ---------------------------------------------------------------- data
 class Clips(torch.utils.data.Dataset):
     def __init__(self, split, train_aug, subj_to_idx=None):
         self.X = np.load(FACES / f"{split}_X.npy", mmap_mode="r")
@@ -61,7 +61,7 @@ class Clips(torch.utils.data.Dataset):
         x = torch.from_numpy(np.ascontiguousarray(self.X[i])).float() / 255.0
         x = x.permute(3, 0, 1, 2)  # [C,T,H,W]
         if self.train_aug:
-            # random resized crop dong nhat theo thoi gian + hflip
+            # random resized crop, identical across time + hflip
             s = random.uniform(0.7, 1.0)
             ar = random.uniform(3 / 4, 4 / 3)
             h = min(160, int(round(160 * (s * ar) ** 0.5)))
@@ -75,7 +75,7 @@ class Clips(torch.utils.data.Dataset):
         return x, self.y[k], self.y_subj[k]
 
 
-# ---------------------------------------------------------------- mo hinh
+# ---------------------------------------------------------------- model
 class GRL(torch.autograd.Function):
     @staticmethod
     def forward(ctx, x, lam):
@@ -88,8 +88,8 @@ class GRL(torch.autograd.Function):
 
 
 def build_backbone():
-    # num_classes=0 se crash: __init__ goi self.head.weight.data.mul_ khong guard
-    # (modeling_finetune.py:487-491) -> dung head that roi thay Identity sau.
+    # num_classes=0 would crash: __init__ calls self.head.weight.data.mul_ without a guard
+    # (modeling_finetune.py:487-491) -> build a real head, then replace it with Identity.
     m = modeling_finetune.vit_base_dim512_no_depth_patch16_160(
         num_classes=4, all_frames=16, tubelet_size=2, depth=16,
         drop_rate=0.0, drop_path_rate=0.1, attn_drop_rate=0.0,
@@ -99,7 +99,7 @@ def build_backbone():
         lg_attn_param_sharing_first_third=False, lg_attn_param_sharing_all=False,
         lg_classify_token_type="region", lg_no_second=False, lg_no_third=False,
     )
-    m.head = nn.Identity()  # forward tra ve embedding 512d
+    m.head = nn.Identity()  # forward returns the 512d embedding
     return m
 
 
@@ -109,8 +109,8 @@ class P2Model(nn.Module):
         self.backbone = build_backbone()
         self.eng_head = nn.Linear(512, 4)
         if adv_hidden > 0:
-            # adversary MLP: dau tuyen tinh bi backbone danh lua qua de (pilot 13/08:
-            # identity-probe van .97-.98 sau 25 epoch GRL) -> tang suc adversary
+            # adversary MLP: the backbone fools a linear head too easily (pilot 13/08:
+            # identity-probe still .97-.98 after 25 GRL epochs) -> strengthen the adversary
             self.subj_head = nn.Sequential(
                 nn.Linear(512, adv_hidden), nn.GELU(), nn.Linear(adv_hidden, n_subj))
             for m in self.subj_head:
@@ -137,7 +137,7 @@ def load_pretrained(model):
     print(f"init fold1: missing={len(missing)} unexpected={len(unexpected)}", flush=True)
 
 
-# ---------------------------------------------------------------- danh gia
+# ---------------------------------------------------------------- evaluation
 @torch.no_grad()
 def evaluate(model, loader, dev):
     model.eval()
